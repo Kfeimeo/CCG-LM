@@ -1,5 +1,6 @@
 .venv/
 .uv-cache/
+/.hf_token
 __pycache__/
 .pytest_cache/
 .pytest_tmp/

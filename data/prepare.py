@@ -66,7 +66,7 @@ def demo_stories(count, offset=0):
         yield f"{name} saw a {obj}. The {obj} was red. {name} took it home. It made {name} happy!"
 
 
-def cache_raw(root, split, limit, demo):
+def cache_raw(root, split, limit, demo, hf_token=None):
     root.mkdir(parents=True, exist_ok=True)
     path = root / f"{'demo' if demo else 'tinystories'}_{split}_{limit or 'all'}.jsonl"
     if path.exists():
@@ -76,7 +76,11 @@ def cache_raw(root, split, limit, demo):
         iterator = demo_stories(limit or (96 if split == "train" else 24), 0 if split == "train" else 1000)
     else:
         from datasets import load_dataset
-        dataset = load_dataset("roneneldan/TinyStories", split=split, streaming=True)
+        token = hf_token or os.environ.get("HF_TOKEN") or None
+        token_path = Path(__file__).resolve().parents[1] / ".hf_token"
+        if not token and token_path.is_file():
+            token = token_path.read_text(encoding="utf-8").strip() or None
+        dataset = load_dataset("roneneldan/TinyStories", split=split, streaming=True, token=token)
         iterator = (row["text"] for row in dataset)
         if limit:
             iterator = itertools.islice(iterator, limit)
@@ -124,7 +128,7 @@ def verify_cache(root, manifest):
             raise ValueError(f"Corrupt cache file: {relative}")
 
 
-def prepare(cfg, demo=False, max_train_stories=None, max_validation_stories=None, verify=False):
+def prepare(cfg, demo=False, max_train_stories=None, max_validation_stories=None, verify=False, hf_token=None):
     from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
     root = Path(cfg["cache_dir"])
     root.mkdir(parents=True, exist_ok=True)
@@ -139,8 +143,8 @@ def prepare(cfg, demo=False, max_train_stories=None, max_validation_stories=None
             verify_cache(root, manifest)
         print(f"Reusing cache {root}; fingerprint={manifest['fingerprint']}")
         return manifest
-    raw_train = cache_raw(root / "raw", "train", max_train_stories, demo)
-    raw_val = cache_raw(root / "raw", "validation", max_validation_stories, demo)
+    raw_train = cache_raw(root / "raw", "train", max_train_stories, demo, hf_token=hf_token)
+    raw_val = cache_raw(root / "raw", "validation", max_validation_stories, demo, hf_token=hf_token)
     counter = Counter()
     for text in read_raw(raw_train):
         counter.update(word_tokenize(text))
@@ -190,8 +194,10 @@ def main():
     parser.add_argument("--max-train-stories", type=int)
     parser.add_argument("--max-validation-stories", type=int)
     parser.add_argument("--verify-cache", action="store_true", help="Check all SHA256 hashes when reusing a cache")
+    parser.add_argument("--hf-token", "--token", dest="hf_token", help="Hugging Face token (overrides HF_TOKEN and .hf_token)")
     args = parser.parse_args()
-    prepare(load_config(args.config)["data"], args.demo, args.max_train_stories, args.max_validation_stories, args.verify_cache)
+    prepare(load_config(args.config)["data"], args.demo, args.max_train_stories, args.max_validation_stories,
+            args.verify_cache, hf_token=args.hf_token)
 
 
 if __name__ == "__main__":

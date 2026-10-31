@@ -52,6 +52,14 @@ Syntax 与 Semantic Embedding 各为独立的 256 维参数。Syntax Encoder 的
 
 ## 数据与缓存
 
+下载认证优先使用命令行参数 `--hf-token`（也可写作 `--token`），其次使用环境变量 `HF_TOKEN`，再读取项目根目录的 `.hf_token` 文件（只填写 token，已被 Git 忽略）。均未设置时使用 Hugging Face 默认认证。新机器需要单独配置 token；不要将真实 token 写入源码或 Notebook。
+
+```bash
+python -m data.prepare --config configs/main_125m.yaml --hf-token "你的HF_TOKEN"
+```
+
+Python 调用也可通过 `prepare(cfg, hf_token="你的HF_TOKEN")` 传入；token 不写入缓存配置或 manifest。
+
 - 官方源：[roneneldan/TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories)，字段 `text`。以 streaming 下载到本地 JSONL，重启后复用。
 - 官方 train 单独拟合 Byte-level BPE 和词级词表；BPE 目标 16K、词级最多 20K，二者 Token ID 独立。小型 demo 的实际词表可能更小；模型配置保留词表容量上限。
 - 官方 validation 使用 seed=2026 的故事 ID 随机排列，一半开发、一半最终测试；之后各自保持原始故事顺序。任何训练样本不跨故事边界。
