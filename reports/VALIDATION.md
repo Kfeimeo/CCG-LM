@@ -70,3 +70,9 @@ main_125m batch1/4 的 B/R/E 各执行一组完整 CE forward/backward 配对（
 CPU Scalar/Vector各8步；真实TinyStories smoke模型从B2 seed42/500步恢复到520，8000到8320CE tokens，V3第510→511步checkpoint重放的参数/Optimizer/RNG/scheduler/sampler逐位一致。另以microbatch1、effectiveCE16测20步，实际每次更新2–3个microbatch。权重与数值score漂移完整记录，不声称训练轨迹逐位等价。
 
 九组最终GPU配对，每臂warmup2+有效8样本；另A/Lazy与B/A各两组独立同轮对照。逐width有效数/Kernel/选择/Gather/装配、score/forest F/B、profile与普通整步、共享/独立缓存峰值分别记录。无界K=None且R=None的额外严格梯度探针初次失败后保留原搜索兼容路径，未放宽容差或删除失败测试。默认score_first未改，未使用Triton/Compile/CUDA Graph。详见 [完整V3报告](cky_v3/summary.md)、[覆盖与交付校验](cky_v3/completion.json)。
+
+## 顶层训练 Notebook（2026-11-01）
+
+新增根目录 `Train.ipynb`，19个单元，复用原 `train.run()` 与评估代码。通过 nbformat schema、全部代码单元语法检查；使用 nbclient 启动真实 py312 CUDA 内核执行，V3 smoke/真实小缓存先训练512 CE Token，再通过 Notebook追加恢复到768，步数[1,2,3]、学习率与调度计数连续。训练曲线和开发集前两个batch评估（116目标Token）实际完成。另验证顶部恢复配置保留checkpoint中的模型/Seed/effective tokens，忽略新训练参数，累计预算单独提高。
+
+交付Notebook执行计数与输出均清空；原始执行副本在`runs/notebook_validation/executed_train.ipynb`，实际环境、路径和断言记录见 [Notebook 验证记录](notebook_training_validation.json)。本次没有修改模型、优化器或训练脚本，也没有重新进行研究Benchmark。

@@ -2,7 +2,9 @@
 
 一个从零训练的小型语言模型研究项目：完成的历史句子先经过潜在连续二叉树组合，得到多个带权语义候选；GPT Decoder 通过 Semantic Cross-Attention 预测下一句。无 CCG 范畴、人工句法标签或 Lambda Term。
 
-完整实验入口是 `colab_experiment.ipynb`。源码使用 Python 3.11+、PyTorch 2.x 和原生 SDPA，不需要编译自定义 CUDA 扩展。Blackwell 上请使用支持实际 GPU 架构的 CUDA 版 PyTorch；Notebook 会运行真实 CUDA/SDPA 运算检查，不能只依据 `nvidia-smi` 判断可运行性。
+顶层训练入口是 [Train.ipynb](Train.ipynb)：选择 py312 CUDA 内核，修改参数区并顺序运行，可直接显示 tqdm、保存检查点、恢复训练、查看曲线和评估开发集。默认 V3 smoke + 已有真实 TinyStories 小缓存，先训练512个CE Token；`EXTRA_TOKENS`可追加训练，或在顶部指定`RESUME_CHECKPOINT`和更大的累计预算。默认新建唯一输出目录，主模型使用`configs/v3_main_125m.yaml`。Notebook内提供Jupyter内核注册命令。
+
+Colab完整实验入口保留为 `colab_experiment.ipynb`。源码使用 Python 3.11+、PyTorch 2.x 和原生 SDPA，不需要编译自定义 CUDA 扩展。Blackwell 上请使用支持实际 GPU 架构的 CUDA 版 PyTorch；Notebook 会运行真实 CUDA/SDPA 运算检查，不能只依据 `nvidia-smi` 判断可运行性。
 
 ## 快速开始
 

@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-01",
+  "notebook": "Train.ipynb",
+  "python": "E:\\anaconda3\\envs\\py312\\python.exe",
+  "torch": "2.12.1+cu132",
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "model": "smoke",
+  "implementation": "lazy_tensorized",
+  "effective_tokens": 256,
+  "micro_batch_size": 2,
+  "target_tokens": [
+    256,
+    512,
+    768
+  ],
+  "steps": [
+    1,
+    2,
+    3
+  ],
+  "resume_from_tokens": 512,
+  "final_tokens": 768,
+  "learning_rate_continuity": true,
+  "dev_target_tokens": 116,
+  "dev_nll": 9.74163660509833,
+  "run_directory": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_smoke_20261031T161204Z_cea0c4",
+  "executed_notebook": "runs/notebook_validation/executed_train.ipynb",
+  "shipped_notebook_outputs_cleared": true,
+  "top_resume_configuration_checked": true,
+  "checkpoint_effective_tokens_seed_model_preserved": true,
+  "schema_validated": true,
+  "all_code_cells_compile": true,
+  "notebook_sha256": "4ecff3e411cdd5e684f1bcf37845a31b1e4249eb3a7dca797f14276b03ece07e",
+  "bundled_cache_offline_extraction_checked": true
+}
