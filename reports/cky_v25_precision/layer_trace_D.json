@@ -1,0 +1,4139 @@
+{
+  "status": "completed",
+  "root_id": 4044,
+  "root_errors": {
+    "max_absolute_error": 0.00390625,
+    "normalized_l2_error": 0.0006982915485382531,
+    "rms_error": 0.0006982856011128788,
+    "reference_norm": 63.99945490501102,
+    "actual_norm": 63.99978553945381
+  },
+  "nodes": [
+    {
+      "candidate_id": 96,
+      "row": 0,
+      "span": [
+        0,
+        2
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.668200732940045,
+          "actual_norm": 9.668200732940045
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.816334035251591,
+          "actual_norm": 8.816334035251591
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.692682335453986,
+          "actual_norm": 9.692682335453986
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 13.493931724251532,
+          "actual_norm": 13.493931724251532
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.45854623084041,
+          "actual_norm": 8.45854623084041
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.338447738793911,
+          "actual_norm": 3.338447738793911
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.593253587371311,
+          "actual_norm": 12.593253587371311
+        },
+        "norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999871959990019,
+          "actual_norm": 15.999871959990019
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.81740037801623,
+          "actual_norm": 15.81740037801623
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 17.00817210302152,
+          "actual_norm": 17.00817210302152
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.552235799832783,
+          "actual_norm": 8.552235799832783
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.435911744399672,
+          "actual_norm": 12.435911744399672
+        },
+        "parent": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999871959990019,
+          "actual_norm": 15.999871959990019
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.99955212428323,
+          "actual_norm": 15.99955212428323
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 2.4080276489257812e-05,
+        "max_absolute": 3.224609375,
+        "fp16_subnormal_range": 1
+      }
+    },
+    {
+      "candidate_id": 116,
+      "row": 0,
+      "span": [
+        5,
+        7
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.262514768689332,
+          "actual_norm": 9.262514768689332
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.86395636316525,
+          "actual_norm": 8.86395636316525
+        },
+        "right_residual": {
+          "max_absolute_error": 6.103515625e-05,
+          "normalized_l2_error": 6.446936552885342e-06,
+          "rms_error": 3.814697265625e-06,
+          "reference_norm": 9.467311450844598,
+          "actual_norm": 9.467312219526852
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.254202936452597,
+          "actual_norm": 12.254202936452597
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 6.57742562450597,
+          "actual_norm": 6.57742562450597
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 2.706932420520049,
+          "actual_norm": 2.706932420520049
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.883565116528624,
+          "actual_norm": 12.883565116528624
+        },
+        "norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999876175456532,
+          "actual_norm": 15.999876175456532
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.773374680144538,
+          "actual_norm": 15.773374680144538
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.77064634487047,
+          "actual_norm": 16.77064634487047
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.085618519595762,
+          "actual_norm": 8.085618519595762
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.823420850186263,
+          "actual_norm": 12.823420850186263
+        },
+        "parent": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999876175456532,
+          "actual_norm": 15.999876175456532
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999984137954339,
+          "actual_norm": 15.999984137954339
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.005229949951171875,
+        "max_absolute": 2.91796875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 148,
+      "row": 0,
+      "span": [
+        13,
+        15
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.978477335169309,
+          "actual_norm": 8.978477335169309
+        },
+        "left_residual": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "normalized_l2_error": 5.2626331622738795e-08,
+          "rms_error": 2.9802322387695312e-08,
+          "reference_norm": 9.060809361013739,
+          "actual_norm": 9.060809361055659
+        },
+        "right_residual": {
+          "max_absolute_error": 5.960464477539063e-08,
+          "normalized_l2_error": 6.992240325217977e-09,
+          "rms_error": 3.725290298461914e-09,
+          "reference_norm": 8.524398762499986,
+          "actual_norm": 8.524398762500555
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.855590490093295,
+          "actual_norm": 12.855590490093295
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 7.598115409178675,
+          "actual_norm": 7.598115409178675
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.2795071094115524,
+          "actual_norm": 3.2795071094115524
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.291326624083903,
+          "actual_norm": 12.291326624083903
+        },
+        "norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999863801284121,
+          "actual_norm": 15.999863801284121
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.380420143228829,
+          "actual_norm": 15.380420143228829
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 14.930786286415325,
+          "actual_norm": 14.930786286415325
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.414795599216989,
+          "actual_norm": 8.414795599216989
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.257170040682624,
+          "actual_norm": 12.257170040682624
+        },
+        "parent": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999863801284121,
+          "actual_norm": 15.999863801284121
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.000367435048492,
+          "actual_norm": 16.000367435048492
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0018253326416015625,
+        "max_absolute": 3.0390625,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 160,
+      "row": 0,
+      "span": [
+        16,
+        18
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.58211494256805,
+          "actual_norm": 8.58211494256805
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.000439851991144,
+          "actual_norm": 9.000439851991144
+        },
+        "right_residual": {
+          "max_absolute_error": 1.52587890625e-05,
+          "normalized_l2_error": 1.5961551495262161e-06,
+          "rms_error": 9.5367431640625e-07,
+          "reference_norm": 9.559715461889303,
+          "actual_norm": 9.559715503232585
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 13.921192211782312,
+          "actual_norm": 13.921192211782312
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.436422396909746,
+          "actual_norm": 8.436422396909746
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.458071332257306,
+          "actual_norm": 3.458071332257306
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.97166522424741,
+          "actual_norm": 12.97166522424741
+        },
+        "norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999877652262034,
+          "actual_norm": 15.999877652262034
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.559618406850202,
+          "actual_norm": 16.559618406850202
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.603534427667242,
+          "actual_norm": 16.603534427667242
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.305181510134316,
+          "actual_norm": 8.305181510134316
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.944671855332153,
+          "actual_norm": 12.944671855332153
+        },
+        "parent": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999877652262034,
+          "actual_norm": 15.999877652262034
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999683339945996,
+          "actual_norm": 15.999683339945996
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0008292198181152344,
+        "max_absolute": 2.791015625,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 176,
+      "row": 0,
+      "span": [
+        20,
+        22
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 10.175992469357823,
+          "actual_norm": 10.175992469357823
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 10.269633030962488,
+          "actual_norm": 10.269633030962488
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.691344296229218,
+          "actual_norm": 8.691344296229218
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 14.297784797783569,
+          "actual_norm": 14.297784797783569
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.271198255251646,
+          "actual_norm": 8.271198255251646
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.337849188424916,
+          "actual_norm": 3.337849188424916
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 13.748097746136525,
+          "actual_norm": 13.748097746136525
+        },
+        "norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999890617525056,
+          "actual_norm": 15.999890617525056
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 17.511866622983295,
+          "actual_norm": 17.511866622983295
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.63167064821683,
+          "actual_norm": 15.63167064821683
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.32074875829612,
+          "actual_norm": 8.32074875829612
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 13.490877030003093,
+          "actual_norm": 13.490877030003093
+        },
+        "parent": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999890617525056,
+          "actual_norm": 15.999890617525056
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.00041935767328,
+          "actual_norm": 16.00041935767328
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.006923675537109375,
+        "max_absolute": 3.4140625,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 184,
+      "row": 0,
+      "span": [
+        22,
+        24
+      ],
+      "slot": 0,
+      "width": 2,
+      "height": 1,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.49421704089822,
+          "actual_norm": 8.49421704089822
+        },
+        "left_residual": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 5.5446416227543606e-05,
+          "rms_error": 3.411968959808029e-05,
+          "reference_norm": 9.845812781279369,
+          "actual_norm": 9.845856710627766
+        },
+        "right_residual": {
+          "max_absolute_error": 3.0517578125e-05,
+          "normalized_l2_error": 3.4519285071591004e-06,
+          "rms_error": 1.9075814492470335e-06,
+          "reference_norm": 8.841812084072169,
+          "actual_norm": 8.84181222457528
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 12.939193196881636,
+          "actual_norm": 12.939193196881636
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 7.4422845457260856,
+          "actual_norm": 7.4422845457260856
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.273292880024212,
+          "actual_norm": 3.273292880024212
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 8.665884836352525e-05,
+          "rms_error": 6.823937919616058e-05,
+          "reference_norm": 12.599175822859436,
+          "actual_norm": 12.599264412198115
+        },
+        "norm": {
+          "max_absolute_error": 0.0012292861938476562,
+          "normalized_l2_error": 8.633732114261024e-05,
+          "rms_error": 8.633662578116206e-05,
+          "reference_norm": 15.999871135877004,
+          "actual_norm": 15.999871118193955
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.067411132427143,
+          "actual_norm": 16.067411132427143
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 14.920689683329924,
+          "actual_norm": 14.920689683329924
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.28970415686096,
+          "actual_norm": 8.28970415686096
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 8.732833223779218e-05,
+          "rms_error": 6.823937919616058e-05,
+          "reference_norm": 12.502586951569759,
+          "actual_norm": 12.502692939622555
+        },
+        "parent": {
+          "max_absolute_error": 0.0012292861938476562,
+          "normalized_l2_error": 8.633732114261024e-05,
+          "rms_error": 8.633662578116206e-05,
+          "reference_norm": 15.999871135877004,
+          "actual_norm": 15.999871118193955
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 6.825533288433333e-05,
+          "rms_error": 6.825478796081079e-05,
+          "reference_norm": 15.99987226234212,
+          "actual_norm": 15.999960976310536
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.00731658935546875,
+        "max_absolute": 2.83203125,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 228,
+      "row": 0,
+      "span": [
+        5,
+        8
+      ],
+      "slot": 0,
+      "width": 3,
+      "height": 2,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.75573461501327,
+          "actual_norm": 9.75573461501327
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.749719405603962,
+          "actual_norm": 9.749719405603962
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.79862744835462,
+          "actual_norm": 9.79862744835462
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0003844170773186618,
+          "rms_error": 0.0002381877676003905,
+          "reference_norm": 14.020121007376094,
+          "actual_norm": 14.020295345707185
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00046660809249821935,
+          "rms_error": 0.00017831274166854388,
+          "reference_norm": 8.646992683267179,
+          "actual_norm": 8.646825634666865
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0005364382505037537,
+          "rms_error": 0.0001289658200538854,
+          "reference_norm": 3.8465808859163886,
+          "actual_norm": 3.846496379875149
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00017427852441739806,
+          "rms_error": 0.00015024835437603252,
+          "reference_norm": 13.793860592134633,
+          "actual_norm": 13.793899473713354
+        },
+        "norm": {
+          "max_absolute_error": 0.0011382102966308594,
+          "normalized_l2_error": 0.00017433391953342885,
+          "rms_error": 0.00017433275244480503,
+          "reference_norm": 15.999892887063911,
+          "actual_norm": 15.999893197274735
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999984137954339,
+          "actual_norm": 15.999984137954339
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.843001252773464,
+          "actual_norm": 15.843001252773464
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.313100824476514,
+          "actual_norm": 8.313100824476514
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 13.641355304077804,
+          "actual_norm": 13.641355304077804
+        },
+        "parent": {
+          "max_absolute_error": 0.0011382102966308594,
+          "normalized_l2_error": 0.00017433391953342885,
+          "rms_error": 0.00017433275244480503,
+          "reference_norm": 15.999892887063911,
+          "actual_norm": 15.999893197274735
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00019462828012988377,
+          "rms_error": 0.00019462025517327536,
+          "reference_norm": 15.99934028443529,
+          "actual_norm": 15.999594701077152
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0011796951293945312,
+        "max_absolute": 2.638671875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 284,
+      "row": 0,
+      "span": [
+        12,
+        15
+      ],
+      "slot": 0,
+      "width": 3,
+      "height": 2,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.639930097303145,
+          "actual_norm": 8.639930097303145
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.246750149233774,
+          "actual_norm": 9.246750149233774
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.77625170019909,
+          "actual_norm": 9.77625170019909
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00041824850082496193,
+          "rms_error": 0.00023520749675095168,
+          "reference_norm": 12.724822921145803,
+          "actual_norm": 12.72457092778005
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005334278527251118,
+          "rms_error": 0.0001831591238046683,
+          "reference_norm": 7.7694065844864575,
+          "actual_norm": 7.769391060350479
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0006102570911793292,
+          "rms_error": 0.00012403696503298007,
+          "reference_norm": 3.2520579755860504,
+          "actual_norm": 3.2521149145796313
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00017605447586913135,
+          "rms_error": 0.0001550609993739202,
+          "reference_norm": 14.092092676058611,
+          "actual_norm": 14.092055276408281
+        },
+        "norm": {
+          "max_absolute_error": 0.0011156797409057617,
+          "normalized_l2_error": 0.00017616582215160942,
+          "rms_error": 0.0001761646765929588,
+          "reference_norm": 15.999895956331448,
+          "actual_norm": 15.999897562189256
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.22194543254905,
+          "actual_norm": 15.22194543254905
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.000367435048492,
+          "actual_norm": 16.000367435048492
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.317017761654112,
+          "actual_norm": 8.317017761654112
+        },
+        "residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 14.020470714905281,
+          "actual_norm": 14.020470714905281
+        },
+        "parent": {
+          "max_absolute_error": 0.0011156797409057617,
+          "normalized_l2_error": 0.00017616582215160942,
+          "rms_error": 0.0001761646765929588,
+          "reference_norm": 15.999895956331448,
+          "actual_norm": 15.999897562189256
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00017575843711891673,
+          "rms_error": 0.00017575654260399537,
+          "reference_norm": 15.999827534659284,
+          "actual_norm": 15.999854892343604
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0065460205078125,
+        "max_absolute": 2.994140625,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 444,
+      "row": 0,
+      "span": [
+        5,
+        9
+      ],
+      "slot": 0,
+      "width": 4,
+      "height": 3,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0002158953411339079,
+          "rms_error": 0.0001185005097950999,
+          "reference_norm": 8.782070732807568,
+          "actual_norm": 8.78198190317903
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00030534256908783063,
+          "rms_error": 0.00017849645706143587,
+          "reference_norm": 9.353243216347842,
+          "actual_norm": 9.353941379444457
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.575841445756918,
+          "actual_norm": 9.575841445756918
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0004745782595506707,
+          "rms_error": 0.00027155577873152467,
+          "reference_norm": 12.947508066181214,
+          "actual_norm": 12.947638846242638
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0005978648580411963,
+          "rms_error": 0.00019404832097422918,
+          "reference_norm": 7.34415515042225,
+          "actual_norm": 7.344482894447805
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0003662109375,
+          "normalized_l2_error": 0.0006902462440652191,
+          "rms_error": 0.0001221998270071579,
+          "reference_norm": 2.8326082886005333,
+          "actual_norm": 2.8326842488032584
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00031599393349645807,
+          "rms_error": 0.0002806817593948253,
+          "reference_norm": 14.212007492123398,
+          "actual_norm": 14.211928436865675
+        },
+        "norm": {
+          "max_absolute_error": 0.0021741390228271484,
+          "normalized_l2_error": 0.00031451703973870115,
+          "rms_error": 0.00031451504544670095,
+          "reference_norm": 15.999898547080216,
+          "actual_norm": 15.999897694345659
+        },
+        "left_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00019462828012988377,
+          "rms_error": 0.00019462025517327536,
+          "reference_norm": 15.99934028443529,
+          "actual_norm": 15.999594701077152
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.77698031794376,
+          "actual_norm": 15.77698031794376
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00015948837496609726,
+          "rms_error": 8.357582969744356e-05,
+          "reference_norm": 8.384393379413082,
+          "actual_norm": 8.384254731457759
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00022755059238879424,
+          "rms_error": 0.00019892283801699735,
+          "reference_norm": 13.987067117073757,
+          "actual_norm": 13.987090549921884
+        },
+        "parent": {
+          "max_absolute_error": 0.0021741390228271484,
+          "normalized_l2_error": 0.00031451703973870115,
+          "rms_error": 0.00031451504544670095,
+          "reference_norm": 15.999898547080216,
+          "actual_norm": 15.999897694345659
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00037597264800828665,
+          "rms_error": 0.0003759806686543355,
+          "reference_norm": 16.00034132891704,
+          "actual_norm": 15.99981123844317
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.00028014183044433594,
+        "max_absolute": 3.201171875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 540,
+      "row": 0,
+      "span": [
+        11,
+        15
+      ],
+      "slot": 0,
+      "width": 4,
+      "height": 3,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00019698102640277598,
+          "rms_error": 0.00012043017807874645,
+          "reference_norm": 9.782073352181438,
+          "actual_norm": 9.782061519016564
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.590893755302359,
+          "actual_norm": 9.590893755302359
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00031692679872536025,
+          "rms_error": 0.00019001646649529857,
+          "reference_norm": 9.592951672601796,
+          "actual_norm": 9.592858271749122
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0004419313389883535,
+          "rms_error": 0.0002529683781487518,
+          "reference_norm": 12.952285739171568,
+          "actual_norm": 12.950958287756054
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005642176798789783,
+          "rms_error": 0.0001891552770989445,
+          "reference_norm": 7.585893680613393,
+          "actual_norm": 7.584399990601111
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0006850999419698242,
+          "rms_error": 0.00013889503998266013,
+          "reference_norm": 3.2437904363746775,
+          "actual_norm": 3.2430808602164682
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00031863638177264504,
+          "rms_error": 0.00026830131596886645,
+          "reference_norm": 13.472476154856972,
+          "actual_norm": 13.472211502757746
+        },
+        "norm": {
+          "max_absolute_error": 0.001172184944152832,
+          "normalized_l2_error": 0.0003169652137201712,
+          "rms_error": 0.00031696296606278685,
+          "reference_norm": 15.999886541119992,
+          "actual_norm": 15.99988578821696
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.288667453798464,
+          "actual_norm": 16.288667453798464
+        },
+        "right_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00017575843711891673,
+          "rms_error": 0.00017575654260399537,
+          "reference_norm": 15.999827534659284,
+          "actual_norm": 15.999854892343604
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00015496157743359373,
+          "rms_error": 8.074192233473482e-05,
+          "reference_norm": 8.336716615506624,
+          "actual_norm": 8.336724523020925
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0002460500310478151,
+          "rms_error": 0.00020662845709153505,
+          "reference_norm": 13.436516546596543,
+          "actual_norm": 13.436317145917332
+        },
+        "parent": {
+          "max_absolute_error": 0.001172184944152832,
+          "normalized_l2_error": 0.0003169652137201712,
+          "rms_error": 0.00031696296606278685,
+          "reference_norm": 15.999886541119992,
+          "actual_norm": 15.99988578821696
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0003332783398834508,
+          "rms_error": 0.00033327199321967534,
+          "reference_norm": 15.999695309870893,
+          "actual_norm": 15.999680815720675
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.01371002197265625,
+        "max_absolute": 3.71484375,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 780,
+      "row": 0,
+      "span": [
+        5,
+        10
+      ],
+      "slot": 0,
+      "width": 5,
+      "height": 4,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0004331393271514995,
+          "rms_error": 0.00023306658663211423,
+          "reference_norm": 8.609389986907168,
+          "actual_norm": 8.609243087918689
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00048748561522874643,
+          "rms_error": 0.00028360389856058195,
+          "reference_norm": 9.30830005074113,
+          "actual_norm": 9.308181205953339
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.14597736742481,
+          "actual_norm": 9.14597736742481
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00039054520065629075,
+          "rms_error": 0.0002383795646694276,
+          "reference_norm": 13.811240810296455,
+          "actual_norm": 13.810514733785503
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0004206588992088169,
+          "rms_error": 0.000165500375869714,
+          "reference_norm": 8.902333993570771,
+          "actual_norm": 8.901597641382851
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00049509279299046,
+          "rms_error": 0.00011778046726451789,
+          "reference_norm": 3.806331869324138,
+          "actual_norm": 3.8059200532762594
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0004657772527548399,
+          "rms_error": 0.00039841023318453085,
+          "reference_norm": 13.685863131464947,
+          "actual_norm": 13.686253502765629
+        },
+        "norm": {
+          "max_absolute_error": 0.0022945404052734375,
+          "normalized_l2_error": 0.0004635657992816621,
+          "rms_error": 0.00046356264638873544,
+          "reference_norm": 15.999891177720823,
+          "actual_norm": 15.999890034194076
+        },
+        "left_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00037597264800828665,
+          "rms_error": 0.0003759806686543355,
+          "reference_norm": 16.00034132891704,
+          "actual_norm": 15.99981123844317
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.39747801769728,
+          "actual_norm": 15.39747801769728
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00015993155293894266,
+          "rms_error": 8.074192233473482e-05,
+          "reference_norm": 8.077647803801147,
+          "actual_norm": 8.077595173193304
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0004318999352420665,
+          "rms_error": 0.0003685590348830051,
+          "reference_norm": 13.653497203751668,
+          "actual_norm": 13.653666139726203
+        },
+        "parent": {
+          "max_absolute_error": 0.0022945404052734375,
+          "normalized_l2_error": 0.0004635657992816621,
+          "rms_error": 0.00046356264638873544,
+          "reference_norm": 15.999891177720823,
+          "actual_norm": 15.999890034194076
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0004830205097232828,
+          "rms_error": 0.0004830081441166568,
+          "reference_norm": 15.999590390672791,
+          "actual_norm": 15.999810680017335
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 2.8908252716064453e-05,
+        "max_absolute": 2.84765625,
+        "fp16_subnormal_range": 1
+      }
+    },
+    {
+      "candidate_id": 1100,
+      "row": 0,
+      "span": [
+        5,
+        11
+      ],
+      "slot": 0,
+      "width": 6,
+      "height": 5,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00045387448518070887,
+          "rms_error": 0.0002578055716148293,
+          "reference_norm": 9.088171467041061,
+          "actual_norm": 9.088639394380186
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005756645425392277,
+          "rms_error": 0.00030446272508884153,
+          "reference_norm": 8.462226247136822,
+          "actual_norm": 8.461884061502733
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.836695117404188,
+          "actual_norm": 8.836695117404188
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0004020044852440819,
+          "rms_error": 0.0002346699320811706,
+          "reference_norm": 13.208744193144554,
+          "actual_norm": 13.208714572438595
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00043100190465977166,
+          "rms_error": 0.00014909280859547186,
+          "reference_norm": 7.827309148787332,
+          "actual_norm": 7.827436798235883
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0005316287616039328,
+          "rms_error": 0.00011173779594931381,
+          "reference_norm": 3.362881891106088,
+          "actual_norm": 3.3630088095872237
+        },
+        "norm_input": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.00048626946613199135,
+          "rms_error": 0.0003820081725419888,
+          "reference_norm": 12.569431532048457,
+          "actual_norm": 12.569291941341106
+        },
+        "norm": {
+          "max_absolute_error": 0.0018832683563232422,
+          "normalized_l2_error": 0.00048546332244667445,
+          "rms_error": 0.0004854594155383684,
+          "reference_norm": 15.999871235312728,
+          "actual_norm": 15.999871015540812
+        },
+        "left_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0004830205097232828,
+          "rms_error": 0.0004830081441166568,
+          "reference_norm": 15.999590390672791,
+          "actual_norm": 15.999810680017335
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.02378390625291,
+          "actual_norm": 16.02378390625291
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0002534896903887875,
+          "rms_error": 0.00013345989749554367,
+          "reference_norm": 8.42384696850437,
+          "actual_norm": 8.423868443237586
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00044688555057843284,
+          "rms_error": 0.00035010759694991317,
+          "reference_norm": 12.535025005726725,
+          "actual_norm": 12.534674562720191
+        },
+        "parent": {
+          "max_absolute_error": 0.0018832683563232422,
+          "normalized_l2_error": 0.00048546332244667445,
+          "rms_error": 0.0004854594155383684,
+          "reference_norm": 15.999871235312728,
+          "actual_norm": 15.999871015540812
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005285453285716319,
+          "rms_error": 0.0005285492010674647,
+          "reference_norm": 16.000117227283972,
+          "actual_norm": 15.999895149109088
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.01110076904296875,
+        "max_absolute": 3.822265625,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 2220,
+      "row": 0,
+      "span": [
+        5,
+        15
+      ],
+      "slot": 0,
+      "width": 10,
+      "height": 6,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005854134918115304,
+          "rms_error": 0.0003181075712433374,
+          "reference_norm": 8.694232727953588,
+          "actual_norm": 8.694811120944966
+        },
+        "left_residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006536551522647492,
+          "rms_error": 0.0003588003172202112,
+          "reference_norm": 8.782620401037072,
+          "actual_norm": 8.78216662998425
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0003858017562280981,
+          "rms_error": 0.00023626297782079468,
+          "reference_norm": 9.798316322069144,
+          "actual_norm": 9.798506824401835
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005052647452423357,
+          "rms_error": 0.000305676169355699,
+          "reference_norm": 13.689184166284898,
+          "actual_norm": 13.68908561187152
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0005284271882563599,
+          "rms_error": 0.0001983748639162472,
+          "reference_norm": 8.494473538652862,
+          "actual_norm": 8.49475371987465
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0003662109375,
+          "normalized_l2_error": 0.0005826260056096728,
+          "rms_error": 0.00013087855377989126,
+          "reference_norm": 3.5941699140033965,
+          "actual_norm": 3.5941738637687086
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006526195544326397,
+          "rms_error": 0.0005354584051291807,
+          "reference_norm": 13.127609223286262,
+          "actual_norm": 13.12716004764676
+        },
+        "norm": {
+          "max_absolute_error": 0.002463698387145996,
+          "normalized_l2_error": 0.0006512404158604496,
+          "rms_error": 0.0006512355769015443,
+          "reference_norm": 15.999881114039303,
+          "actual_norm": 15.99988115701557
+        },
+        "left_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005285453285716319,
+          "rms_error": 0.0005285492010674647,
+          "reference_norm": 16.000117227283972,
+          "actual_norm": 15.999895149109088
+        },
+        "right_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0003332783398834508,
+          "rms_error": 0.00033327199321967534,
+          "reference_norm": 15.999695309870893,
+          "actual_norm": 15.999680815720675
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00028408426855824106,
+          "rms_error": 0.0001433433092350459,
+          "reference_norm": 8.073283886504745,
+          "actual_norm": 8.073238044720172
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006140331104829982,
+          "rms_error": 0.0005044856007722342,
+          "reference_norm": 13.145495698117152,
+          "actual_norm": 13.145093307622494
+        },
+        "parent": {
+          "max_absolute_error": 0.002463698387145996,
+          "normalized_l2_error": 0.0006512404158604496,
+          "rms_error": 0.0006512355769015443,
+          "reference_norm": 15.999881114039303,
+          "actual_norm": 15.99988115701557
+        },
+        "stored_state": {
+          "max_absolute_error": 0.00244140625,
+          "normalized_l2_error": 0.0006779374923500235,
+          "rms_error": 0.0006779424226486745,
+          "reference_norm": 16.00011635995841,
+          "actual_norm": 15.999913684157951
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0076904296875,
+        "max_absolute": 2.73046875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 2460,
+      "row": 0,
+      "span": [
+        5,
+        16
+      ],
+      "slot": 0,
+      "width": 11,
+      "height": 7,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005171772639322313,
+          "rms_error": 0.0003063631269002737,
+          "reference_norm": 9.47800758512596,
+          "actual_norm": 9.478005044374832
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006587765697010448,
+          "rms_error": 0.00038862294214579067,
+          "reference_norm": 9.4386585077766,
+          "actual_norm": 9.438270422811547
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.09112113202999,
+          "actual_norm": 9.09112113202999
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006308664686323487,
+          "rms_error": 0.0003589495238030801,
+          "reference_norm": 12.874516177603681,
+          "actual_norm": 12.875104553202277
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0006763400009843812,
+          "rms_error": 0.00022780023837752926,
+          "reference_norm": 7.621212671885496,
+          "actual_norm": 7.621817919719071
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0003662109375,
+          "normalized_l2_error": 0.0006500269836625445,
+          "rms_error": 0.0001295003365806816,
+          "reference_norm": 3.187568266191497,
+          "actual_norm": 3.1878652391499087
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005989731523251943,
+          "rms_error": 0.0004934257828493638,
+          "reference_norm": 13.180578286259436,
+          "actual_norm": 13.179809137743387
+        },
+        "norm": {
+          "max_absolute_error": 0.0025267601013183594,
+          "normalized_l2_error": 0.0005959004764150438,
+          "rms_error": 0.0005958960408238287,
+          "reference_norm": 15.999880903838392,
+          "actual_norm": 15.999881681667732
+        },
+        "left_input": {
+          "max_absolute_error": 0.00244140625,
+          "normalized_l2_error": 0.0006779374923500235,
+          "rms_error": 0.0006779424226486745,
+          "reference_norm": 16.00011635995841,
+          "actual_norm": 15.999913684157951
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.16028421834782,
+          "actual_norm": 16.16028421834782
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00024205783505141352,
+          "rms_error": 0.00012605828584181446,
+          "reference_norm": 8.33244076995331,
+          "actual_norm": 8.33240755968839
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005610401038047163,
+          "rms_error": 0.0004629673826280016,
+          "reference_norm": 13.203116981859072,
+          "actual_norm": 13.202517274328393
+        },
+        "parent": {
+          "max_absolute_error": 0.0025267601013183594,
+          "normalized_l2_error": 0.0005959004764150438,
+          "rms_error": 0.0005958960408238287,
+          "reference_norm": 15.999880903838392,
+          "actual_norm": 15.999881681667732
+        },
+        "stored_state": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.000681601861650272,
+          "rms_error": 0.0006816038170813114,
+          "reference_norm": 16.000045902011703,
+          "actual_norm": 16.00034317939879
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.008331298828125,
+        "max_absolute": 3.13671875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 2892,
+      "row": 0,
+      "span": [
+        5,
+        18
+      ],
+      "slot": 0,
+      "width": 13,
+      "height": 8,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006038199715614208,
+          "rms_error": 0.0003314399011267976,
+          "reference_norm": 8.782482640174372,
+          "actual_norm": 8.782991961088563
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0010986328125,
+          "normalized_l2_error": 0.0007939401955558814,
+          "rms_error": 0.0004526960184636679,
+          "reference_norm": 9.123025053980756,
+          "actual_norm": 9.123297111070286
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.248298386959181,
+          "actual_norm": 9.248298386959181
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005869566728350706,
+          "rms_error": 0.0003491517074068033,
+          "reference_norm": 13.45993945496335,
+          "actual_norm": 13.46034675959947
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007037714283516915,
+          "rms_error": 0.00024388985402140718,
+          "reference_norm": 7.841462733776282,
+          "actual_norm": 7.842043090534993
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0006610511134235367,
+          "rms_error": 0.0001412396799011537,
+          "reference_norm": 3.418547874028886,
+          "actual_norm": 3.418811761828836
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.000652045802486646,
+          "rms_error": 0.0005405676384339222,
+          "reference_norm": 13.264531696943006,
+          "actual_norm": 13.264672950656543
+        },
+        "norm": {
+          "max_absolute_error": 0.002363443374633789,
+          "normalized_l2_error": 0.0006517941176236035,
+          "rms_error": 0.0006517893170506788,
+          "reference_norm": 15.999882157318211,
+          "actual_norm": 15.99988358351638
+        },
+        "left_input": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.000681601861650272,
+          "rms_error": 0.0006816038170813114,
+          "reference_norm": 16.000045902011703,
+          "actual_norm": 16.00034317939879
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.999683339945996,
+          "actual_norm": 15.999683339945996
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00026443979513573324,
+          "rms_error": 0.00013605159378148656,
+          "reference_norm": 8.231837796525484,
+          "actual_norm": 8.231663995069798
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006236175538959336,
+          "rms_error": 0.0005110982589135023,
+          "reference_norm": 13.113120519985669,
+          "actual_norm": 13.113255867558511
+        },
+        "parent": {
+          "max_absolute_error": 0.002363443374633789,
+          "normalized_l2_error": 0.0006517941176236035,
+          "rms_error": 0.0006517893170506788,
+          "reference_norm": 15.999882157318211,
+          "actual_norm": 15.99988358351638
+        },
+        "stored_state": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.0007024991018786787,
+          "rms_error": 0.0007024981556773094,
+          "reference_norm": 15.999978449478629,
+          "actual_norm": 15.999381104909046
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 9.888410568237305e-05,
+        "max_absolute": 3.15234375,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3084,
+      "row": 0,
+      "span": [
+        5,
+        19
+      ],
+      "slot": 0,
+      "width": 14,
+      "height": 9,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0005578022838263458,
+          "rms_error": 0.00032479487583136576,
+          "reference_norm": 9.31641580535315,
+          "actual_norm": 9.316115695158597
+        },
+        "left_residual": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0007972846442425939,
+          "rms_error": 0.0004185496887262305,
+          "reference_norm": 8.39950332416288,
+          "actual_norm": 8.39981773876964
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.843121296029603,
+          "actual_norm": 8.843121296029603
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0006969806262138136,
+          "rms_error": 0.00038242509397779396,
+          "reference_norm": 12.415398285789147,
+          "actual_norm": 12.415085290891236
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.000771843521859031,
+          "rms_error": 0.0002476266341040013,
+          "reference_norm": 7.2594391881133316,
+          "actual_norm": 7.258992093288195
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.000457763671875,
+          "normalized_l2_error": 0.0008776070596211954,
+          "rms_error": 0.00015543361474108035,
+          "reference_norm": 2.8337714568188765,
+          "actual_norm": 2.8338988003491954
+        },
+        "norm_input": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0006583222377768637,
+          "rms_error": 0.0005239830727907262,
+          "reference_norm": 12.734993113650917,
+          "actual_norm": 12.736026457868832
+        },
+        "norm": {
+          "max_absolute_error": 0.0035566091537475586,
+          "normalized_l2_error": 0.0006563001855523086,
+          "rms_error": 0.0006562949626902764,
+          "reference_norm": 15.999872671386731,
+          "actual_norm": 15.999873492623749
+        },
+        "left_input": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.0007024991018786787,
+          "rms_error": 0.0007024981556773094,
+          "reference_norm": 15.999978449478629,
+          "actual_norm": 15.999381104909046
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.300754510609424,
+          "actual_norm": 15.300754510609424
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0002610395759211412,
+          "rms_error": 0.00013345989749554367,
+          "reference_norm": 8.180209274373707,
+          "actual_norm": 8.1801793233868
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006006170495452695,
+          "rms_error": 0.0004745313205917558,
+          "reference_norm": 12.641168170661185,
+          "actual_norm": 12.642163260740189
+        },
+        "parent": {
+          "max_absolute_error": 0.0035566091537475586,
+          "normalized_l2_error": 0.0006563001855523086,
+          "rms_error": 0.0006562949626902764,
+          "reference_norm": 15.999872671386731,
+          "actual_norm": 15.999873492623749
+        },
+        "stored_state": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.0006946195347088497,
+          "rms_error": 0.0006945853011063968,
+          "reference_norm": 15.999211456614914,
+          "actual_norm": 15.999820637682769
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0117340087890625,
+        "max_absolute": 3.36328125,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3260,
+      "row": 0,
+      "span": [
+        5,
+        20
+      ],
+      "slot": 0,
+      "width": 15,
+      "height": 10,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005986497289953653,
+          "rms_error": 0.0003292887771644509,
+          "reference_norm": 8.800839922658687,
+          "actual_norm": 8.801503954970489
+        },
+        "left_residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0008258774740593779,
+          "rms_error": 0.0004486261337632201,
+          "reference_norm": 8.691383850112668,
+          "actual_norm": 8.691087741142425
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.631779377764317,
+          "actual_norm": 8.631779377764317
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006225600876401321,
+          "rms_error": 0.0003797684297701078,
+          "reference_norm": 13.802970658857234,
+          "actual_norm": 13.80341140643862
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0007716754872105096,
+          "rms_error": 0.00027227418716574067,
+          "reference_norm": 7.983746630404187,
+          "actual_norm": 7.984043357596827
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0008138301287427031,
+          "rms_error": 0.00016522920355950692,
+          "reference_norm": 3.248426377426389,
+          "actual_norm": 3.248346195116914
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007005632572431745,
+          "rms_error": 0.0005325502598036463,
+          "reference_norm": 12.162790538557548,
+          "actual_norm": 12.162167786112219
+        },
+        "norm": {
+          "max_absolute_error": 0.0025482177734375,
+          "normalized_l2_error": 0.0006985544985423771,
+          "rms_error": 0.0006985484521008183,
+          "reference_norm": 15.99986150963863,
+          "actual_norm": 15.999861239766231
+        },
+        "left_input": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.0006946195347088497,
+          "rms_error": 0.0006945853011063968,
+          "reference_norm": 15.999211456614914,
+          "actual_norm": 15.999820637682769
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.416750883864808,
+          "actual_norm": 16.416750883864808
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0003096497356915921,
+          "rms_error": 0.0001569134811493159,
+          "reference_norm": 8.107921334993812,
+          "actual_norm": 8.108016659233272
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006437962690725018,
+          "rms_error": 0.0004902331261504934,
+          "reference_norm": 12.183559295408973,
+          "actual_norm": 12.18284256048189
+        },
+        "parent": {
+          "max_absolute_error": 0.0025482177734375,
+          "normalized_l2_error": 0.0006985544985423771,
+          "rms_error": 0.0006985484521008183,
+          "reference_norm": 15.99986150963863,
+          "actual_norm": 15.999861239766231
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0007362938368028198,
+          "rms_error": 0.0007363156291043018,
+          "reference_norm": 16.000473556624115,
+          "actual_norm": 16.000200332765445
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0091552734375,
+        "max_absolute": 2.626953125,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3564,
+      "row": 0,
+      "span": [
+        5,
+        22
+      ],
+      "slot": 0,
+      "width": 17,
+      "height": 11,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.00060051819009371,
+          "rms_error": 0.00033969862672569135,
+          "reference_norm": 9.050813309689937,
+          "actual_norm": 9.050718613576699
+        },
+        "left_residual": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0008235200433115676,
+          "rms_error": 0.0004887591338727954,
+          "reference_norm": 9.495999770106483,
+          "actual_norm": 9.495661591471887
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.916435139379502,
+          "actual_norm": 9.916435139379502
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006213077106344237,
+          "rms_error": 0.00036861522147941264,
+          "reference_norm": 13.424604564615292,
+          "actual_norm": 13.424478912002543
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007097010007886748,
+          "rms_error": 0.0002526430811723311,
+          "reference_norm": 8.055026473099801,
+          "actual_norm": 8.055053420178734
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0007678454123407948,
+          "rms_error": 0.00016126800823293961,
+          "reference_norm": 3.3604265783928624,
+          "actual_norm": 3.360334629311865
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006803915294960318,
+          "rms_error": 0.0005462100441909286,
+          "reference_norm": 12.844605389970287,
+          "actual_norm": 12.844285254074428
+        },
+        "norm": {
+          "max_absolute_error": 0.0025055408477783203,
+          "normalized_l2_error": 0.0006838241067039435,
+          "rms_error": 0.0006838187414436393,
+          "reference_norm": 15.999874464553054,
+          "actual_norm": 15.99987379324589
+        },
+        "left_input": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0007362938368028198,
+          "rms_error": 0.0007363156291043018,
+          "reference_norm": 16.000473556624115,
+          "actual_norm": 16.000200332765445
+        },
+        "right_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.00041935767328,
+          "actual_norm": 16.00041935767328
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0002339291277983287,
+          "rms_error": 0.00012111288350210224,
+          "reference_norm": 8.283731719395913,
+          "actual_norm": 8.283673670418368
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006430364098142076,
+          "rms_error": 0.0005132150286511883,
+          "reference_norm": 12.769790844023193,
+          "actual_norm": 12.769299727233204
+        },
+        "parent": {
+          "max_absolute_error": 0.0025055408477783203,
+          "normalized_l2_error": 0.0006838241067039435,
+          "rms_error": 0.0006838187414436393,
+          "reference_norm": 15.999874464553054,
+          "actual_norm": 15.99987379324589
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007201497240968297,
+          "rms_error": 0.0007201494650948616,
+          "reference_norm": 15.999994245597337,
+          "actual_norm": 15.999995299863931
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.004459381103515625,
+        "max_absolute": 3.130859375,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3676,
+      "row": 0,
+      "span": [
+        4,
+        22
+      ],
+      "slot": 0,
+      "width": 18,
+      "height": 12,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005345338090142653,
+          "rms_error": 0.00030858459220608125,
+          "reference_norm": 9.236746847504897,
+          "actual_norm": 9.237186112765983
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.064535879073597,
+          "actual_norm": 9.064535879073597
+        },
+        "right_residual": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0008003692129728052,
+          "rms_error": 0.00044875122716001806,
+          "reference_norm": 8.970884334608021,
+          "actual_norm": 8.971423321433237
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006439519476300793,
+          "rms_error": 0.00037670311859478546,
+          "reference_norm": 13.236730753357888,
+          "actual_norm": 13.236066157336365
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006822456835239337,
+          "rms_error": 0.0002359327088467603,
+          "reference_norm": 7.824963815031448,
+          "actual_norm": 7.824734845013587
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0007514849962079589,
+          "rms_error": 0.00014785939999335484,
+          "reference_norm": 3.1481006431683993,
+          "actual_norm": 3.1477455542931976
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006831722847453542,
+          "rms_error": 0.0005419765625346735,
+          "reference_norm": 12.693174465921198,
+          "actual_norm": 12.693190838184947
+        },
+        "norm": {
+          "max_absolute_error": 0.0023849010467529297,
+          "normalized_l2_error": 0.0006774938138425407,
+          "rms_error": 0.0006774884083459083,
+          "reference_norm": 15.99987234134932,
+          "actual_norm": 15.999871887916637
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.328518445819292,
+          "actual_norm": 15.328518445819292
+        },
+        "right_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007201497240968297,
+          "rms_error": 0.0007201494650948616,
+          "reference_norm": 15.999994245597337,
+          "actual_norm": 15.999995299863931
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00026609657610196497,
+          "rms_error": 0.0001375408659158321,
+          "reference_norm": 8.270132171148456,
+          "actual_norm": 8.270298920165674
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006584224969921033,
+          "rms_error": 0.0005172432691223074,
+          "reference_norm": 12.56927329148684,
+          "actual_norm": 12.569466803417173
+        },
+        "parent": {
+          "max_absolute_error": 0.0023849010467529297,
+          "normalized_l2_error": 0.0006774938138425407,
+          "rms_error": 0.0006774884083459083,
+          "reference_norm": 15.99987234134932,
+          "actual_norm": 15.999871887916637
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0007159142752274097,
+          "rms_error": 0.0007159018876187954,
+          "reference_norm": 15.99972314878375,
+          "actual_norm": 15.999936126650317
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.003208160400390625,
+        "max_absolute": 2.841796875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3772,
+      "row": 0,
+      "span": [
+        3,
+        22
+      ],
+      "slot": 0,
+      "width": 19,
+      "height": 13,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005850201575243137,
+          "rms_error": 0.0003192340209794774,
+          "reference_norm": 8.73088605576699,
+          "actual_norm": 8.730663611096054
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 9.036185628164237,
+          "actual_norm": 9.036185628164237
+        },
+        "right_residual": {
+          "max_absolute_error": 0.00115966796875,
+          "normalized_l2_error": 0.0006549409971767506,
+          "rms_error": 0.0003886689695318813,
+          "reference_norm": 9.495059156957682,
+          "actual_norm": 9.494774598037443
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006830011232028479,
+          "rms_error": 0.00040189902601705607,
+          "reference_norm": 13.31467334946809,
+          "actual_norm": 13.31476731955995
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0007610308142086337,
+          "rms_error": 0.0002624440439455522,
+          "reference_norm": 7.803141095100848,
+          "actual_norm": 7.802814298375933
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0005645751953125,
+          "normalized_l2_error": 0.0007692611575504843,
+          "rms_error": 0.00015774326166299188,
+          "reference_norm": 3.2809302300463994,
+          "actual_norm": 3.2811263770641927
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005815919527976083,
+          "rms_error": 0.0005032873332364357,
+          "reference_norm": 13.845785336347738,
+          "actual_norm": 13.845323883284207
+        },
+        "norm": {
+          "max_absolute_error": 0.0023337602615356445,
+          "normalized_l2_error": 0.0005800993801934766,
+          "rms_error": 0.0005800955160291846,
+          "reference_norm": 15.999893420626222,
+          "actual_norm": 15.99989179697551
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 16.127739652221816,
+          "actual_norm": 16.127739652221816
+        },
+        "right_input": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0007159142752274097,
+          "rms_error": 0.0007159018876187954,
+          "reference_norm": 15.99972314878375,
+          "actual_norm": 15.999936126650317
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0002692095022226111,
+          "rms_error": 0.0001406790841261732,
+          "reference_norm": 8.36101745085326,
+          "actual_norm": 8.360983749030757
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005238840820669566,
+          "rms_error": 0.00044289111677789497,
+          "reference_norm": 13.526385150867476,
+          "actual_norm": 13.525927061880202
+        },
+        "parent": {
+          "max_absolute_error": 0.0023337602615356445,
+          "normalized_l2_error": 0.0005800993801934766,
+          "rms_error": 0.0005800955160291846,
+          "reference_norm": 15.999893420626222,
+          "actual_norm": 15.99989179697551
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0006277552217753453,
+          "rms_error": 0.0006277325413329665,
+          "reference_norm": 15.999421929017117,
+          "actual_norm": 15.999552291972554
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0025234222412109375,
+        "max_absolute": 2.630859375,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3852,
+      "row": 0,
+      "span": [
+        2,
+        22
+      ],
+      "slot": 0,
+      "width": 20,
+      "height": 14,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0010986328125,
+          "normalized_l2_error": 0.0005491947173344163,
+          "rms_error": 0.0003131799789368514,
+          "reference_norm": 9.124049275838885,
+          "actual_norm": 9.123839715451613
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.426732365378927,
+          "actual_norm": 8.426732365378927
+        },
+        "right_residual": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0006743587187437361,
+          "rms_error": 0.0003891477477026371,
+          "reference_norm": 9.233014700012031,
+          "actual_norm": 9.234356536463338
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0006326371821765654,
+          "rms_error": 0.0003506176948832831,
+          "reference_norm": 12.54047819588428,
+          "actual_norm": 12.540877512194577
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0006893949772423185,
+          "rms_error": 0.0002341394114044585,
+          "reference_norm": 7.6849560446472704,
+          "actual_norm": 7.684681569823536
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0007203958710292222,
+          "rms_error": 0.00015537539598347894,
+          "reference_norm": 3.45088920649133,
+          "actual_norm": 3.4512395295405915
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005671255764005302,
+          "rms_error": 0.00045928503585573345,
+          "reference_norm": 12.957554516112747,
+          "actual_norm": 12.958518919647423
+        },
+        "norm": {
+          "max_absolute_error": 0.002203226089477539,
+          "normalized_l2_error": 0.000562289134685011,
+          "rms_error": 0.0005622848174748326,
+          "reference_norm": 15.99987715330318,
+          "actual_norm": 15.999876526580676
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.775831027475457,
+          "actual_norm": 15.775831027475457
+        },
+        "right_input": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0006277552217753453,
+          "rms_error": 0.0006277325413329665,
+          "reference_norm": 15.999421929017117,
+          "actual_norm": 15.999552291972554
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00022522228452248347,
+          "rms_error": 0.00011941891359328101,
+          "reference_norm": 8.48363039005474,
+          "actual_norm": 8.483368236917897
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005686540998098011,
+          "rms_error": 0.0004519933360900903,
+          "reference_norm": 12.717561308113863,
+          "actual_norm": 12.71849755772844
+        },
+        "parent": {
+          "max_absolute_error": 0.002203226089477539,
+          "normalized_l2_error": 0.000562289134685011,
+          "rms_error": 0.0005622848174748326,
+          "reference_norm": 15.99987715330318,
+          "actual_norm": 15.999876526580676
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006197682469274312,
+          "rms_error": 0.0006197696352121894,
+          "reference_norm": 16.0000358401003,
+          "actual_norm": 16.000138373413176
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.00042057037353515625,
+        "max_absolute": 3.33984375,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 3964,
+      "row": 0,
+      "span": [
+        0,
+        22
+      ],
+      "slot": 0,
+      "width": 22,
+      "height": 15,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005469887690671654,
+          "rms_error": 0.00030038851061667016,
+          "reference_norm": 8.786681631623338,
+          "actual_norm": 8.786054658839275
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 8.811055176326674,
+          "actual_norm": 8.811055176326674
+        },
+        "right_residual": {
+          "max_absolute_error": 0.001220703125,
+          "normalized_l2_error": 0.0007245505768941015,
+          "rms_error": 0.0004197524133041238,
+          "reference_norm": 9.269247485324382,
+          "actual_norm": 9.269195260028953
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.000596165667159791,
+          "rms_error": 0.0003499087226671308,
+          "reference_norm": 13.280755694530617,
+          "actual_norm": 13.280970015563614
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0006227554253273614,
+          "rms_error": 0.00020888613006194535,
+          "reference_norm": 7.5897429035148845,
+          "actual_norm": 7.58939612033742
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.0003662109375,
+          "normalized_l2_error": 0.0006514788199570191,
+          "rms_error": 0.00013178685357008132,
+          "reference_norm": 3.236620428059985,
+          "actual_norm": 3.236506456428925
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0005810111315502608,
+          "rms_error": 0.0004946309322300858,
+          "reference_norm": 13.621244905523396,
+          "actual_norm": 13.621194033806805
+        },
+        "norm": {
+          "max_absolute_error": 0.0023674964904785156,
+          "normalized_l2_error": 0.0005774301008991462,
+          "rms_error": 0.0005774260626134569,
+          "reference_norm": 15.999888103216424,
+          "actual_norm": 15.999888324632842
+        },
+        "left_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 15.99955212428323,
+          "actual_norm": 15.99955212428323
+        },
+        "right_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006197682469274312,
+          "rms_error": 0.0006197696352121894,
+          "reference_norm": 16.0000358401003,
+          "actual_norm": 16.000138373413176
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00023975558641602828,
+          "rms_error": 0.0001248985713481514,
+          "reference_norm": 8.33505976416667,
+          "actual_norm": 8.33510282425881
+        },
+        "residual": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.00055824397559011,
+          "rms_error": 0.00047166691638408605,
+          "reference_norm": 13.51858863173207,
+          "actual_norm": 13.518611011967863
+        },
+        "parent": {
+          "max_absolute_error": 0.0023674964904785156,
+          "normalized_l2_error": 0.0005774301008991462,
+          "rms_error": 0.0005774260626134569,
+          "reference_norm": 15.999888103216424,
+          "actual_norm": 15.999888324632842
+        },
+        "stored_state": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006089399342518101,
+          "rms_error": 0.0006089549481815662,
+          "reference_norm": 16.000394493549503,
+          "actual_norm": 16.000251769793184
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0034732818603515625,
+        "max_absolute": 3.123046875,
+        "fp16_subnormal_range": 0
+      }
+    },
+    {
+      "candidate_id": 4044,
+      "row": 0,
+      "span": [
+        0,
+        24
+      ],
+      "slot": 0,
+      "width": 24,
+      "height": 16,
+      "dtypes": {
+        "gate": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "left_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.0": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.1": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "mlp.2": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "norm": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "left_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "right_input": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "gate_sigmoid": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "residual": [
+          "torch.float16",
+          "torch.float16"
+        ],
+        "parent": [
+          "torch.float32",
+          "torch.float32"
+        ],
+        "stored_state": [
+          "torch.float16",
+          "torch.float16"
+        ]
+      },
+      "errors": {
+        "gate": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005507965118898875,
+          "rms_error": 0.0003188640596618221,
+          "reference_norm": 9.262631197651967,
+          "actual_norm": 9.26294920641039
+        },
+        "left_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.000663510484128394,
+          "rms_error": 0.00038593454829066753,
+          "reference_norm": 9.306488624309036,
+          "actual_norm": 9.307018162154636
+        },
+        "right_residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.000176820693660098,
+          "rms_error": 9.700935644667352e-05,
+          "reference_norm": 8.778099842377442,
+          "actual_norm": 8.778235639773468
+        },
+        "mlp.0": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005086807717646036,
+          "rms_error": 0.00030508666686190927,
+          "reference_norm": 13.571032393572768,
+          "actual_norm": 13.570643323590962
+        },
+        "mlp.1": {
+          "max_absolute_error": 0.00146484375,
+          "normalized_l2_error": 0.0005441216450125619,
+          "rms_error": 0.00019757154901412595,
+          "reference_norm": 8.21605585341894,
+          "actual_norm": 8.216392951418557
+        },
+        "mlp.2": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.0007158944767812835,
+          "rms_error": 0.00014853715538912558,
+          "reference_norm": 3.319755303758398,
+          "actual_norm": 3.3199944025092925
+        },
+        "norm_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006222229120075987,
+          "rms_error": 0.0004972350792852802,
+          "reference_norm": 12.786030721522716,
+          "actual_norm": 12.786926560395973
+        },
+        "norm": {
+          "max_absolute_error": 0.0025787353515625,
+          "normalized_l2_error": 0.0006250992437463945,
+          "rms_error": 0.0006250941726935615,
+          "reference_norm": 15.999870201658151,
+          "actual_norm": 15.999871626347996
+        },
+        "left_input": {
+          "max_absolute_error": 0.001953125,
+          "normalized_l2_error": 0.0006089399342518101,
+          "rms_error": 0.0006089549481815662,
+          "reference_norm": 16.000394493549503,
+          "actual_norm": 16.000251769793184
+        },
+        "right_input": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 6.825533288433333e-05,
+          "rms_error": 6.825478796081079e-05,
+          "reference_norm": 15.99987226234212,
+          "actual_norm": 15.999960976310536
+        },
+        "gate_sigmoid": {
+          "max_absolute_error": 0.00048828125,
+          "normalized_l2_error": 0.00026750816643641837,
+          "rms_error": 0.00013859483432453117,
+          "reference_norm": 8.289531414060814,
+          "actual_norm": 8.289382187757443
+        },
+        "residual": {
+          "max_absolute_error": 0.0009765625,
+          "normalized_l2_error": 0.0005609392321917812,
+          "rms_error": 0.0004433467683071099,
+          "reference_norm": 12.645840914347962,
+          "actual_norm": 12.646909173620774
+        },
+        "parent": {
+          "max_absolute_error": 0.0025787353515625,
+          "normalized_l2_error": 0.0006250992437463945,
+          "rms_error": 0.0006250941726935615,
+          "reference_norm": 15.999870201658151,
+          "actual_norm": 15.999871626347996
+        },
+        "stored_state": {
+          "max_absolute_error": 0.0029296875,
+          "normalized_l2_error": 0.0006907075871528127,
+          "rms_error": 0.0006907242591453824,
+          "reference_norm": 16.000386200884538,
+          "actual_norm": 16.000174856946117
+        }
+      },
+      "health": {
+        "dtype": "torch.float16",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 256,
+        "minimum_nonzero": 0.0079345703125,
+        "max_absolute": 2.599609375,
+        "fp16_subnormal_range": 0
+      }
+    }
+  ],
+  "gradient": {
+    "max_absolute_gradient_error": 5.3237090469338e-07,
+    "max_relative_gradient_error": 2.0,
+    "max_relative_gradient_error_above_1e_5": 0.038281287997961044,
+    "gradient_norm_reference": 0.02036819989544565,
+    "gradient_norm_lazy": 0.020367870202364313,
+    "normalized_l2_gradient_error": 0.0008794118513951127
+  },
+  "note": "Fixed IEEE FP32 leaves/potentials/coefficients and exploration RNG; isolated root-probe backward, not LM CE"
+}

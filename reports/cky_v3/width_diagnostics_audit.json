@@ -1,0 +1,74 @@
+[
+  {
+    "case": "main_b1_w24",
+    "precision": "bf16",
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "bf16",
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "real_b2",
+    "precision": "bf16",
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "smoke_b2_w16",
+    "precision": "bf16",
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "smoke_b2_w24",
+    "precision": "bf16",
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "smoke_b2_w8",
+    "precision": "bf16",
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "smoke_b8_w24",
+    "precision": "bf16",
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "main_b1_w24",
+    "precision": "fp32",
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "fp32",
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "native_outputs_bitwise_equal": true,
+    "rng_equal": true,
+    "source_probe_only": true
+  }
+]

@@ -1,0 +1,4274 @@
+{
+  "score_first": {
+    "samples": [
+      {
+        "wall_ms": 127.63030000496656,
+        "cuda_envelope_ms": 127.54022216796875,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 137.93359999544919,
+        "cuda_envelope_ms": 137.8488311767578,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 125.72240000008605,
+        "cuda_envelope_ms": 125.63046264648438,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 129.3683000112651,
+        "cuda_envelope_ms": 129.30149841308594,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 134.4223000050988,
+        "cuda_envelope_ms": 134.28428649902344,
+        "scaler_scale": 1.0,
+        "skipped": false
+      }
+    ],
+    "diagnostics": [
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 5.081600000266917,
+          "cuda_envelope_ms": 5.035007953643799,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 8.61689998419024,
+          "cuda_envelope_ms": 8.18995201587677,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 41.921099997125566,
+          "cuda_envelope_ms": 41.87443161010742,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 6.4805000147316605,
+          "cuda_envelope_ms": 6.387712001800537,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 11.407300000428222,
+          "cuda_envelope_ms": 11.363327980041504,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 59.71349999890663,
+          "cuda_envelope_ms": 59.659263610839844,
+          "calls": 1,
+          "wall_ms": 59.742700002971105
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 13.232500001322478,
+          "cuda_envelope_ms": 13.46457576751709,
+          "calls": 1,
+          "wall_ms": 13.513300000340678
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 11.84619999548886,
+          "cuda_envelope_ms": 11.167743921279907,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 49.018900012015365,
+          "cuda_envelope_ms": 48.873470306396484,
+          "calls": 1,
+          "wall_ms": 49.0499000006821
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 7.273900002473965,
+          "cuda_envelope_ms": 7.235583782196045,
+          "calls": 1,
+          "wall_ms": 7.304600003408268
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 4.46179999562446,
+          "cuda_envelope_ms": 8.928256034851074,
+          "calls": 1,
+          "wall_ms": 9.013300004880875
+        }
+      },
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 5.2900000009685755,
+          "cuda_envelope_ms": 5.239808082580566,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 7.381800023722462,
+          "cuda_envelope_ms": 6.827007949352264,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 40.34209999372251,
+          "cuda_envelope_ms": 40.29542541503906,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 6.415799987735227,
+          "cuda_envelope_ms": 6.292479991912842,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 11.627300002146512,
+          "cuda_envelope_ms": 11.611136436462402,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 58.49850000231527,
+          "cuda_envelope_ms": 58.44575881958008,
+          "calls": 1,
+          "wall_ms": 58.52630001027137
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 14.265199992223643,
+          "cuda_envelope_ms": 14.230527877807617,
+          "calls": 1,
+          "wall_ms": 14.296099994680844
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 12.602500020875596,
+          "cuda_envelope_ms": 11.893759965896606,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 48.87589999998454,
+          "cuda_envelope_ms": 48.83456039428711,
+          "calls": 1,
+          "wall_ms": 48.915000006672926
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 7.099199996446259,
+          "cuda_envelope_ms": 7.24070405960083,
+          "calls": 1,
+          "wall_ms": 7.294199996977113
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 4.778400005307049,
+          "cuda_envelope_ms": 7.081984043121338,
+          "calls": 1,
+          "wall_ms": 7.245300002978183
+        }
+      },
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 5.558699995162897,
+          "cuda_envelope_ms": 5.510144233703613,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 8.027600022614934,
+          "cuda_envelope_ms": 7.898111879825592,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 46.13679999602027,
+          "cuda_envelope_ms": 46.10047912597656,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 5.739100000937469,
+          "cuda_envelope_ms": 5.634047985076904,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 10.576699991361238,
+          "cuda_envelope_ms": 10.561535835266113,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 63.44379999791272,
+          "cuda_envelope_ms": 63.39481735229492,
+          "calls": 1,
+          "wall_ms": 63.46699999994598
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 13.204299990320578,
+          "cuda_envelope_ms": 13.17683219909668,
+          "calls": 1,
+          "wall_ms": 13.23219999903813
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 12.273300017113797,
+          "cuda_envelope_ms": 11.572224140167236,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 50.01350000384264,
+          "cuda_envelope_ms": 49.970176696777344,
+          "calls": 1,
+          "wall_ms": 50.048599994624965
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 9.067399994819425,
+          "cuda_envelope_ms": 8.978431701660156,
+          "calls": 1,
+          "wall_ms": 9.092899999814108
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 4.219800001010299,
+          "cuda_envelope_ms": 6.857728004455566,
+          "calls": 1,
+          "wall_ms": 6.906099995831028
+        }
+      }
+    ],
+    "dtypes": [
+      {
+        "module": "semantic_embedding",
+        "width": null,
+        "input": [
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.int64"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "syntax.span_scorer",
+        "width": null,
+        "input": [
+          {
+            "shape": [
+              8,
+              8,
+              192
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": [
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "syntax",
+        "width": null,
+        "input": [
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.int64"
+          },
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.bool"
+          }
+        ],
+        "output": [
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              7,
+              1,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            7,
+            1,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              6,
+              2,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            6,
+            2,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              5,
+              5,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            5,
+            5,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              4,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            4,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              3,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            3,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              2,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            2,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              1,
+              12,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            1,
+            12,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.bool"
+          },
+          null
+        ],
+        "output": {
+          "semantic": {
+            "shape": [
+              8,
+              4,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          "scores": {
+            "shape": [
+              8,
+              4
+            ],
+            "dtype": "torch.float32"
+          },
+          "vector_coeff": {
+            "shape": [
+              8,
+              4,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "log_prior": {
+            "shape": [
+              8,
+              4
+            ],
+            "dtype": "torch.float32"
+          }
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "readers.2.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.query",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.key",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              288
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.value",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.output",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              160
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "semantic": {
+              "shape": [
+                2,
+                4,
+                4,
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            "scores": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "torch.float32"
+            },
+            "vector_coeff": {
+              "shape": [
+                2,
+                4,
+                4,
+                32
+              ],
+              "dtype": "torch.bfloat16"
+            },
+            "log_prior": {
+              "shape": [
+                2,
+                4,
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          },
+          null
+        ],
+        "output": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          null
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "readers.4.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.query",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.key",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              288
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.value",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.output",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              160
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "semantic": {
+              "shape": [
+                2,
+                4,
+                4,
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            "scores": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "torch.float32"
+            },
+            "vector_coeff": {
+              "shape": [
+                2,
+                4,
+                4,
+                32
+              ],
+              "dtype": "torch.bfloat16"
+            },
+            "log_prior": {
+              "shape": [
+                2,
+                4,
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          },
+          null
+        ],
+        "output": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          null
+        ],
+        "weight_dtype": null
+      }
+    ],
+    "cuda_gemm_kernel_names": [
+      "_Z13gemmk1_kernelIifLi256ELi5ELb0ELb0ELb0ELb0E30cublasGemvTensorStridedBatchedIK13__nv_bfloat16ES3_S0_IS1_EfLi0EEv18cublasGemmk1ParamsIT0_T7_T8_T9_T10_N8biasTypeINS9_10value_typeESA_E4typeEE",
+      "_ZN7cutlass7Kernel2I41cutlass_80_simt_sgemm_64x64_8x5_nn_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I41cutlass_80_simt_sgemm_64x64_8x5_nt_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I42cutlass_80_simt_sgemm_128x32_8x5_nn_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I42cutlass_80_simt_sgemm_128x32_8x5_nt_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I42cutlass_80_simt_sgemm_128x64_8x5_nn_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I42cutlass_80_simt_sgemm_128x64_8x5_nt_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I66cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_32x6_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I66cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_32x6_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x128_32x4_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_nn_align2EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_tn_align2EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_tn_align8EEvNT_6ParamsE",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_nn",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_relu_f2f_stages_32x6_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_nn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_nt",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x6_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_relu_f2f_stages_64x5_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_nt",
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_nn",
+      "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_nt",
+      "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+      "ampere_s16816gemm_bf16_64x64_ldg8_stages_64x6_nn",
+      "ampere_sgemm_128x128_nn",
+      "ampere_sgemm_128x128_nt",
+      "ampere_sgemm_128x128_tn",
+      "ampere_sgemm_128x32_nn",
+      "ampere_sgemm_128x32_nt",
+      "ampere_sgemm_128x32_tn",
+      "ampere_sgemm_32x32_sliced1x4_nn",
+      "ampere_sgemm_32x32_sliced1x4_tn",
+      "ampere_sgemm_64x32_sliced1x4_nn",
+      "ampere_sgemm_64x32_sliced1x4_nt",
+      "ampere_sgemm_64x32_sliced1x4_tn",
+      "ampere_sgemm_64x64_tn"
+    ]
+  },
+  "lazy_semantic": {
+    "samples": [
+      {
+        "wall_ms": 120.70979998679832,
+        "cuda_envelope_ms": 120.58930969238281,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 150.61949999653734,
+        "cuda_envelope_ms": 150.54336547851562,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 119.20359999930952,
+        "cuda_envelope_ms": 119.1362533569336,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 134.8022000020137,
+        "cuda_envelope_ms": 134.73587036132812,
+        "scaler_scale": 1.0,
+        "skipped": false
+      },
+      {
+        "wall_ms": 109.26480000489391,
+        "cuda_envelope_ms": 109.19116973876953,
+        "scaler_scale": 1.0,
+        "skipped": false
+      }
+    ],
+    "diagnostics": [
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 6.637700003921054,
+          "cuda_envelope_ms": 6.591839790344238,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 7.538900012150407,
+          "cuda_envelope_ms": 7.15939199924469,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 48.89389999152627,
+          "cuda_envelope_ms": 48.84844970703125,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 7.969099984620698,
+          "cuda_envelope_ms": 7.809887886047363,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 14.973299999837764,
+          "cuda_envelope_ms": 14.933568000793457,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 71.84739998774603,
+          "cuda_envelope_ms": 71.785888671875,
+          "calls": 1,
+          "wall_ms": 71.87399998656474
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 22.748300005332567,
+          "cuda_envelope_ms": 22.78870391845703,
+          "calls": 1,
+          "wall_ms": 22.88629999384284
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 15.05239999096375,
+          "cuda_envelope_ms": 14.622624278068542,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 44.6520999976201,
+          "cuda_envelope_ms": 44.59756851196289,
+          "calls": 1,
+          "wall_ms": 44.6860999945784
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 11.2749999971129,
+          "cuda_envelope_ms": 11.303327560424805,
+          "calls": 1,
+          "wall_ms": 11.354500005836599
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 4.753000001073815,
+          "cuda_envelope_ms": 7.487135887145996,
+          "calls": 1,
+          "wall_ms": 7.7264999999897555
+        }
+      },
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 5.651899991789833,
+          "cuda_envelope_ms": 5.6836161613464355,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 9.690799983218312,
+          "cuda_envelope_ms": 9.201983988285065,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 52.60260000068229,
+          "cuda_envelope_ms": 52.55705642700195,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 6.841700014774688,
+          "cuda_envelope_ms": 6.586176156997681,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 12.629600008949637,
+          "cuda_envelope_ms": 12.591775894165039,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 72.24249999853782,
+          "cuda_envelope_ms": 72.18057250976562,
+          "calls": 1,
+          "wall_ms": 72.2708999965107
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 24.377699999604374,
+          "cuda_envelope_ms": 24.179584503173828,
+          "calls": 1,
+          "wall_ms": 24.428799995803274
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 12.713000003714114,
+          "cuda_envelope_ms": 12.355072021484375,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 37.242499995045364,
+          "cuda_envelope_ms": 37.171424865722656,
+          "calls": 1,
+          "wall_ms": 37.27669999352656
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 8.923800007323734,
+          "cuda_envelope_ms": 8.878975868225098,
+          "calls": 1,
+          "wall_ms": 8.952300006058067
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 4.771799998707138,
+          "cuda_envelope_ms": 7.1360321044921875,
+          "calls": 1,
+          "wall_ms": 7.187299997895025
+        }
+      },
+      {
+        "module/syntax": {
+          "cpu_submit_ms": 6.131200003437698,
+          "cuda_envelope_ms": 6.085375785827637,
+          "calls": 1
+        },
+        "module/composer": {
+          "cpu_submit_ms": 7.157100015319884,
+          "cuda_envelope_ms": 6.803616046905518,
+          "calls": 7
+        },
+        "module/cky": {
+          "cpu_submit_ms": 50.63350001000799,
+          "cuda_envelope_ms": 50.59084701538086,
+          "calls": 1
+        },
+        "module/reader": {
+          "cpu_submit_ms": 7.595000002766028,
+          "cuda_envelope_ms": 7.457696199417114,
+          "calls": 2
+        },
+        "module/decoder": {
+          "cpu_submit_ms": 13.523600006010383,
+          "cuda_envelope_ms": 13.507328033447266,
+          "calls": 1
+        },
+        "phase/forward": {
+          "cpu_submit_ms": 71.68280000041705,
+          "cuda_envelope_ms": 71.62214660644531,
+          "calls": 1,
+          "wall_ms": 71.7094999999972
+        },
+        "phase/decoder_backward": {
+          "cpu_submit_ms": 16.06779999565333,
+          "cuda_envelope_ms": 16.027679443359375,
+          "calls": 1,
+          "wall_ms": 16.10140000411775
+        },
+        "module/composer_backward": {
+          "cpu_submit_ms": 12.589300036779605,
+          "cuda_envelope_ms": 11.963679909706116,
+          "calls": 7
+        },
+        "phase/cky_backward": {
+          "cpu_submit_ms": 38.62009999284055,
+          "cuda_envelope_ms": 38.5794563293457,
+          "calls": 1,
+          "wall_ms": 38.6716999928467
+        },
+        "phase/syntax_embedding_backward": {
+          "cpu_submit_ms": 10.352500001317821,
+          "cuda_envelope_ms": 10.306655883789062,
+          "calls": 1,
+          "wall_ms": 10.430700000142679
+        },
+        "phase/clip_optimizer": {
+          "cpu_submit_ms": 6.445599996368401,
+          "cuda_envelope_ms": 7.870848178863525,
+          "calls": 1,
+          "wall_ms": 7.992099999682978
+        }
+      }
+    ],
+    "dtypes": [
+      {
+        "module": "semantic_embedding",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.int64"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "syntax.span_scorer",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              8,
+              192
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": [
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "syntax",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.int64"
+          },
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.bool"
+          }
+        ],
+        "output": [
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 2,
+        "input": [
+          {
+            "shape": [
+              28,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              28,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            28,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 3,
+        "input": [
+          {
+            "shape": [
+              22,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              22,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            22,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 4,
+        "input": [
+          {
+            "shape": [
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            8,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 5,
+        "input": [
+          {
+            "shape": [
+              20,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              20,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            20,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 6,
+        "input": [
+          {
+            "shape": [
+              23,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              23,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            23,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 7,
+        "input": [
+          {
+            "shape": [
+              27,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              27,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            27,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.gate",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.left_residual",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.right_residual",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.0",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.mlp.1",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            512
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest.composer.mlp.2",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              512
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "forest.composer",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              32,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              32,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            32,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "forest",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              8,
+              8,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8,
+              8,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          {
+            "shape": [
+              8,
+              8
+            ],
+            "dtype": "torch.bool"
+          },
+          null
+        ],
+        "output": {
+          "semantic": {
+            "shape": [
+              8,
+              4,
+              256
+            ],
+            "dtype": "torch.float32"
+          },
+          "scores": {
+            "shape": [
+              8,
+              4
+            ],
+            "dtype": "torch.float32"
+          },
+          "vector_coeff": {
+            "shape": [
+              8,
+              4,
+              32
+            ],
+            "dtype": "torch.bfloat16"
+          },
+          "log_prior": {
+            "shape": [
+              8,
+              4
+            ],
+            "dtype": "torch.float32"
+          }
+        },
+        "weight_dtype": null
+      },
+      {
+        "module": "readers.2.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.query",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.key",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              288
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.value",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2.output",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              160
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.2",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "semantic": {
+              "shape": [
+                2,
+                4,
+                4,
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            "scores": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "torch.float32"
+            },
+            "vector_coeff": {
+              "shape": [
+                2,
+                4,
+                4,
+                32
+              ],
+              "dtype": "torch.bfloat16"
+            },
+            "log_prior": {
+              "shape": [
+                2,
+                4,
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          },
+          null
+        ],
+        "output": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          null
+        ],
+        "weight_dtype": null
+      },
+      {
+        "module": "readers.4.norm",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.query",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.key",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              288
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.value",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              16,
+              256
+            ],
+            "dtype": "torch.float32"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            16,
+            160
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4.output",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              160
+            ],
+            "dtype": "torch.bfloat16"
+          }
+        ],
+        "output": {
+          "shape": [
+            2,
+            128,
+            320
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "weight_dtype": "torch.float32"
+      },
+      {
+        "module": "readers.4",
+        "width": 8,
+        "input": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          {
+            "semantic": {
+              "shape": [
+                2,
+                4,
+                4,
+                256
+              ],
+              "dtype": "torch.float32"
+            },
+            "scores": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "torch.float32"
+            },
+            "vector_coeff": {
+              "shape": [
+                2,
+                4,
+                4,
+                32
+              ],
+              "dtype": "torch.bfloat16"
+            },
+            "log_prior": {
+              "shape": [
+                2,
+                4,
+                4
+              ],
+              "dtype": "torch.float32"
+            }
+          },
+          null
+        ],
+        "output": [
+          {
+            "shape": [
+              2,
+              128,
+              320
+            ],
+            "dtype": "torch.float32"
+          },
+          null
+        ],
+        "weight_dtype": null
+      }
+    ],
+    "cuda_gemm_kernel_names": [
+      "_Z13gemmk1_kernelIifLi256ELi5ELb0ELb0ELb0ELb0E30cublasGemvTensorStridedBatchedIK13__nv_bfloat16ES3_S0_IS1_EfLi0EEv18cublasGemmk1ParamsIT0_T7_T8_T9_T10_N8biasTypeINS9_10value_typeESA_E4typeEE",
+      "_Z16gemmSN_NN_kernelIfLi256ELi4ELi2ELi8ELi4ELi4ELb0E30cublasGemvTensorStridedBatchedIKfES2_S0_IfEEv22cublasGemmSmallNParamsIT7_T8_T9_T_E",
+      "_Z16gemmSN_TN_kernelIfLi128ELi16ELi2ELi4ELi8ELi9ELb0E30cublasGemvTensorStridedBatchedIKfES2_S0_IfEEv22cublasGemmSmallNParamsIT7_T8_T9_T_E",
+      "_ZN7cutlass7Kernel2I42cutlass_80_simt_sgemm_128x32_8x5_nn_align1EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I66cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_32x6_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I66cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_32x6_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_32x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I67cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_64x1_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_128x128_32x4_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_nn_align2EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x1_tn_align2EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_nn_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_nt_align8EEvNT_6ParamsE",
+      "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_32x32_128x2_tn_align8EEvNT_6ParamsE",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_nn",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+      "ampere_bf16_s16816gemm_bf16_128x64_ldg8_relu_f2f_stages_32x6_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_nn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_nt",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x6_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_ldg8_relu_f2f_stages_64x5_tn",
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_nt",
+      "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_nn",
+      "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_nt",
+      "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+      "ampere_s16816gemm_bf16_64x64_ldg8_stages_64x6_nn",
+      "ampere_sgemm_128x128_nn",
+      "ampere_sgemm_128x128_nt",
+      "ampere_sgemm_128x128_tn",
+      "ampere_sgemm_128x32_nn",
+      "ampere_sgemm_128x32_nt",
+      "ampere_sgemm_32x128_nt",
+      "ampere_sgemm_32x32_sliced1x4_nn",
+      "ampere_sgemm_32x32_sliced1x4_tn",
+      "ampere_sgemm_64x32_sliced1x4_tn"
+    ]
+  }
+}

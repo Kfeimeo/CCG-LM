@@ -1,0 +1,3 @@
+case,mode,history_words,batch_size,target_length,history_shape,target_tokens,parameters,median_step_ms,min_step_ms,max_step_ms,median_cuda_envelope_ms,peak_allocated_gib,target_tokens_per_second
+no_memory_b1_w24,no_memory,24,1,128,"[1, 4, 24]",128,125793792,97.2118999925442,96.19240000029095,99.77319999597967,97.07212829589844,2.3673996925354004,1316.7112257842623
+forest_vector4_b1_w24,forest_vector4,24,1,128,"[1, 4, 24]",128,148840709,1340.429400006542,1257.8929000010248,1459.4829999987269,1340.267578125,2.7200779914855957,95.49178792958085

@@ -1,0 +1,14 @@
+........................................................F...             [100%]
+================================== FAILURES ===================================
+___________ test_shared_closure_gradient_and_exact_unbounded[False] ___________
+tests\test_forest_v3.py:66: in test_shared_closure_gradient_and_exact_unbounded
+    if a is not None:torch.testing.assert_close(a,b,atol=3e-6,rtol=.0003)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 3 / 50 (6.0%)
+E   Greatest absolute difference: 7.62939453125e-06 at index (0, 0, 0) (up to 3e-06 allowed)
+E   Greatest relative difference: 0.5 at index (0, 0, 0) (up to 0.0003 allowed)
+=========================== short test summary info ===========================
+FAILED tests/test_forest_v3.py::test_shared_closure_gradient_and_exact_unbounded[False]
+1 failed, 59 passed in 19.37s

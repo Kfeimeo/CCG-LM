@@ -1,0 +1,417 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "mode": "forest_scalar4",
+      "device": "cpu",
+      "precision": "fp32",
+      "config": "tiny",
+      "losses": {
+        "reference": 4.168056488037109,
+        "score_first": 4.168056488037109
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.03739044889627676,
+          "gradient_norm_v2": 0.03739044889627676,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.16588336384042698,
+          "gradient_norm_v2": 0.16588336384042698,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 1.1641532182693481e-10,
+          "max_relative_gradient_error": 1.919820533657912e-06,
+          "max_relative_gradient_error_above_1e_5": 1.919820533657912e-06,
+          "gradient_norm_reference": 0.022169906790384688,
+          "gradient_norm_v2": 0.02216990678716027,
+          "normalized_l2_gradient_error": 9.624790814861267e-09
+        },
+        "composer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.19124753213036794,
+          "gradient_norm_v2": 0.19124753213036794,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "vector_coefficient_head": {
+          "status": "not present in scalar mode"
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.20227645363757574,
+          "gradient_norm_v2": 0.20227645363757574,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 2.158986066708955,
+          "gradient_norm_v2": 2.158986066708955,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "mode": "forest_vector4",
+      "device": "cpu",
+      "precision": "fp32",
+      "config": "tiny",
+      "losses": {
+        "reference": 4.170159816741943,
+        "score_first": 4.170159816741943
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 2.3283064365386963e-10,
+          "max_relative_gradient_error": 0.0014551915228366852,
+          "max_relative_gradient_error_above_1e_5": 8.046672519412823e-06,
+          "gradient_norm_reference": 0.025415196097433004,
+          "gradient_norm_v2": 0.02541519604911463,
+          "normalized_l2_gradient_error": 7.805760643004142e-08
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 9.313225746154785e-10,
+          "max_relative_gradient_error": 1.116638486564625e-05,
+          "max_relative_gradient_error_above_1e_5": 1.116638486564625e-05,
+          "gradient_norm_reference": 0.09144534828690033,
+          "gradient_norm_v2": 0.0914453484943641,
+          "normalized_l2_gradient_error": 4.360822260742067e-08
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 1.1641532182693481e-10,
+          "max_relative_gradient_error": 4.83125802475115e-07,
+          "max_relative_gradient_error_above_1e_5": 4.83125802475115e-07,
+          "gradient_norm_reference": 0.027386445171728037,
+          "gradient_norm_v2": 0.027386445160141933,
+          "normalized_l2_gradient_error": 9.153345522073014e-09
+        },
+        "composer": {
+          "max_absolute_gradient_error": 9.313225746154785e-10,
+          "max_relative_gradient_error": 4.125193299842067e-06,
+          "max_relative_gradient_error_above_1e_5": 1.592344005985069e-06,
+          "gradient_norm_reference": 0.2752242539387876,
+          "gradient_norm_v2": 0.27522425400263084,
+          "normalized_l2_gradient_error": 5.404140755800472e-09
+        },
+        "vector_coefficient_head": {
+          "max_absolute_gradient_error": 4.656612873077393e-10,
+          "max_relative_gradient_error": 3.5031637253268855e-06,
+          "max_relative_gradient_error_above_1e_5": 3.5031637253268855e-06,
+          "gradient_norm_reference": 0.02406208612446098,
+          "gradient_norm_v2": 0.02406208601612786,
+          "normalized_l2_gradient_error": 4.195171199458634e-08
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.2344434537295574,
+          "gradient_norm_v2": 0.2344434537295574,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 2.158546648180444,
+          "gradient_norm_v2": 2.158546648180444,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "mode": "forest_scalar4",
+      "device": "cuda",
+      "precision": "bf16",
+      "config": "tiny",
+      "losses": {
+        "reference": 4.143547058105469,
+        "score_first": 4.143547058105469
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.018419905406292424,
+          "gradient_norm_v2": 0.018419905406292424,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.07524785208102981,
+          "gradient_norm_v2": 0.07524785208102981,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.02077203198890575,
+          "gradient_norm_v2": 0.02077203198890575,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "composer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.2020339265440363,
+          "gradient_norm_v2": 0.2020339265440363,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "vector_coefficient_head": {
+          "status": "not present in scalar mode"
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.27150256153095575,
+          "gradient_norm_v2": 0.27150256153095575,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 2.2814249743310078,
+          "gradient_norm_v2": 2.2814249743310078,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "mode": "forest_vector4",
+      "device": "cuda",
+      "precision": "bf16",
+      "config": "tiny",
+      "losses": {
+        "reference": 4.126874923706055,
+        "score_first": 4.126874923706055
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 6.103515625e-05,
+          "max_relative_gradient_error": 1.837104082107544,
+          "max_relative_gradient_error_above_1e_5": 0.31020408868789673,
+          "gradient_norm_reference": 0.04562605500424561,
+          "gradient_norm_v2": 0.045664363265024675,
+          "normalized_l2_gradient_error": 0.0035141617604347456
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 9.1552734375e-05,
+          "max_relative_gradient_error": 0.8196346759796143,
+          "max_relative_gradient_error_above_1e_5": 0.3272727131843567,
+          "gradient_norm_reference": 0.15636543354209953,
+          "gradient_norm_v2": 0.15647562351777752,
+          "normalized_l2_gradient_error": 0.0031508496853005913
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.02161544698200889,
+          "gradient_norm_v2": 0.02161544698200889,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "composer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.20707361213165124,
+          "gradient_norm_v2": 0.20707361213165124,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "vector_coefficient_head": {
+          "max_absolute_gradient_error": 6.103515625e-05,
+          "max_relative_gradient_error": 0.20081967115402222,
+          "max_relative_gradient_error_above_1e_5": 0.20081967115402222,
+          "gradient_norm_reference": 0.059893940255744654,
+          "gradient_norm_v2": 0.059949700267626464,
+          "normalized_l2_gradient_error": 0.0028585852218877142
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.24348533491507088,
+          "gradient_norm_v2": 0.24348533491507088,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 2.4121342961275047,
+          "gradient_norm_v2": 2.4121342961275047,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "mode": "forest_vector4",
+      "device": "cuda",
+      "precision": "fp32",
+      "config": "main_125m",
+      "losses": {
+        "reference": 10.110764503479004,
+        "score_first": 10.110764503479004
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 8.731149137020111e-11,
+          "max_relative_gradient_error": 0.004001776687800884,
+          "max_relative_gradient_error_above_1e_5": 4.316856120567536e-06,
+          "gradient_norm_reference": 0.062161756454524576,
+          "gradient_norm_v2": 0.062161756547710396,
+          "normalized_l2_gradient_error": 1.2666408784929093e-07
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 2.3283064365386963e-10,
+          "max_relative_gradient_error": 0.0014551915228366852,
+          "max_relative_gradient_error_above_1e_5": 1.1634367183432914e-05,
+          "gradient_norm_reference": 0.09716977007042338,
+          "gradient_norm_v2": 0.09716977007643449,
+          "normalized_l2_gradient_error": 3.5548264110994946e-08
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.004193287640627323,
+          "gradient_norm_v2": 0.004193287640627323,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "composer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.17964837559025723,
+          "gradient_norm_v2": 0.17964837559025723,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "vector_coefficient_head": {
+          "max_absolute_gradient_error": 2.3283064365386963e-10,
+          "max_relative_gradient_error": 0.0010913936421275139,
+          "max_relative_gradient_error_above_1e_5": 1.1634367183432914e-05,
+          "gradient_norm_reference": 0.048051377897097916,
+          "gradient_norm_v2": 0.04805137788460655,
+          "normalized_l2_gradient_error": 2.7114217768148514e-08
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.23780114851716155,
+          "gradient_norm_v2": 0.23780114851716155,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 21.745008957239435,
+          "gradient_norm_v2": 21.745008957239435,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    },
+    {
+      "mode": "forest_vector4",
+      "device": "cuda",
+      "precision": "bf16",
+      "config": "main_125m",
+      "losses": {
+        "reference": 9.97178840637207,
+        "score_first": 9.97178840637207
+      },
+      "groups": {
+        "syntax_encoder": {
+          "max_absolute_gradient_error": 3.814697265625e-06,
+          "max_relative_gradient_error": 2.0,
+          "max_relative_gradient_error_above_1e_5": 0.1497584581375122,
+          "gradient_norm_reference": 0.07916386419436823,
+          "gradient_norm_v2": 0.07915979298879079,
+          "normalized_l2_gradient_error": 0.003550611336447783
+        },
+        "span_scorer": {
+          "max_absolute_gradient_error": 1.52587890625e-05,
+          "max_relative_gradient_error": 1.9929077625274658,
+          "max_relative_gradient_error_above_1e_5": 0.5921658873558044,
+          "gradient_norm_reference": 0.12302331190025657,
+          "gradient_norm_v2": 0.12302128911178155,
+          "normalized_l2_gradient_error": 0.002732536673562529
+        },
+        "semantic_embedding": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.004984792269538938,
+          "gradient_norm_v2": 0.004984792269538938,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "composer": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.21881015206596738,
+          "gradient_norm_v2": 0.21881015206596738,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "vector_coefficient_head": {
+          "max_absolute_gradient_error": 1.52587890625e-05,
+          "max_relative_gradient_error": 1.9248826503753662,
+          "max_relative_gradient_error_above_1e_5": 0.44863012433052063,
+          "gradient_norm_reference": 0.06133011014157006,
+          "gradient_norm_v2": 0.06133180545226088,
+          "normalized_l2_gradient_error": 0.0022091907030405695
+        },
+        "semantic_reader": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 0.29611546535504446,
+          "gradient_norm_v2": 0.29611546535504446,
+          "normalized_l2_gradient_error": 0.0
+        },
+        "decoder": {
+          "max_absolute_gradient_error": 0.0,
+          "max_relative_gradient_error": 0.0,
+          "max_relative_gradient_error_above_1e_5": 0.0,
+          "gradient_norm_reference": 22.27521210075979,
+          "gradient_norm_v2": 22.27521210075979,
+          "normalized_l2_gradient_error": 0.0
+        }
+      },
+      "status": "passed"
+    }
+  ],
+  "metric_definitions": {
+    "relative_denominator": "max(abs(reference), abs(v2), 1e-8)",
+    "significant_threshold": 1e-05,
+    "fp32_atol": 3e-06,
+    "fp32_rtol": 0.0003,
+    "bf16_atol": 0.00015,
+    "bf16_rtol": 0.04
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "arguments": {
+    "config": "configs/main_125m.yaml",
+    "modes": [
+      "forest_vector4"
+    ],
+    "batch_size": 4,
+    "histories": 4,
+    "lengths": [
+      24
+    ],
+    "target_length": 128,
+    "source": "synthetic",
+    "cache_dir": null,
+    "precision": "bf16",
+    "warmup": 2,
+    "repeats": 5,
+    "trace": false,
+    "output_dir": "runs/cuda_profile_main_batch4"
+  },
+  "source_hashes": {
+    "train.py": "e59ec1389777a31a06df9ebe8997a87d40499e15b7cc5568d357abe8dd90a16f",
+    "models\\composer.py": "96ab20fffb28456c3e310946f53b17eaa0532df314dfb85d22916d48b481d08f",
+    "models\\decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+    "models\\forest.py": "0feb261ace4e55d51e95b64f6c9aeb0e6a90095d98b5c0c602f153012f6c806e",
+    "models\\model.py": "b0a560f94a94825c8982cce0596d91a2579abb4655aacf60914cbc4d2920b384",
+    "models\\reader.py": "af1293e7f390dc51b5bf73685e97c9863555ee223231fb7f4d321e0ddc11f742",
+    "models\\syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models\\__init__.py": "036e9d6d3bfc57b8a9dcf4f54569873a4a61c59fa6e47249962693fa0b79710b"
+  },
+  "notes": "Resident inputs; one micro-batch per optimizer update, no accumulation, validation or checkpoint IO. Synthetic histories are all valid; cache mode uses true story-separated inputs. CUDA event envelopes include launch gaps; operator device sums and instrumented diagnostics are not uninstrumented wall-clock throughput."
+}

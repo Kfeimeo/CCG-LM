@@ -1,0 +1,63 @@
+         16947 function calls (16333 primitive calls) in 0.456 seconds
+
+   Ordered by: cumulative time
+   List reduced from 188 to 55 due to restriction <55>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    307/1    0.001    0.000    0.456    0.456 module.py:1774(_wrapped_call_impl)
+    307/1    0.003    0.000    0.456    0.456 module.py:1782(_call_impl)
+        1    0.000    0.000    0.456    0.456 model.py:141(forward)
+        1    0.000    0.000    0.437    0.437 model.py:66(encode_history)
+        1    0.124    0.124    0.425    0.425 forest.py:48(forward)
+     2258    0.135    0.000    0.135    0.000 {built-in method torch.stack}
+     1390    0.036    0.000    0.036    0.000 {method 'flatten' of 'torch._C.TensorBase' objects}
+       23    0.005    0.000    0.035    0.002 composer.py:16(forward)
+      152    0.029    0.000    0.029    0.000 {built-in method torch._C._nn.linear}
+      147    0.001    0.000    0.028    0.000 linear.py:130(forward)
+        1    0.000    0.000    0.019    0.019 decoder.py:61(forward)
+     2332    0.015    0.000    0.015    0.000 {method 'unsqueeze' of 'torch._C.TensorBase' objects}
+      181    0.012    0.000    0.012    0.000 {built-in method torch.cat}
+      205    0.012    0.000    0.012    0.000 {method 'gather' of 'torch._C.TensorBase' objects}
+       28    0.000    0.000    0.012    0.000 container.py:248(forward)
+      100    0.010    0.000    0.010    0.000 {method 'sum' of 'torch._C.TensorBase' objects}
+      115    0.001    0.000    0.010    0.000 forest.py:31(_gather)
+        2    0.002    0.001    0.010    0.005 reader.py:27(forward)
+        1    0.000    0.000    0.009    0.009 syntax.py:41(forward)
+       91    0.009    0.000    0.009    0.000 {method 'masked_fill' of 'torch._C.TensorBase' objects}
+        4    0.001    0.000    0.007    0.002 decoder.py:37(forward)
+        1    0.000    0.000    0.006    0.006 transformer.py:405(forward)
+       96    0.000    0.000    0.006    0.000 functional.py:5374(pad)
+       65    0.006    0.000    0.006    0.000 {method 'topk' of 'torch._C.TensorBase' objects}
+        2    0.000    0.000    0.006    0.003 transformer.py:795(forward)
+       96    0.006    0.000    0.006    0.000 {built-in method torch._C._nn.pad}
+       40    0.000    0.000    0.005    0.000 normalization.py:227(forward)
+      672    0.005    0.000    0.005    0.000 {method 'expand' of 'torch._C.TensorBase' objects}
+       40    0.000    0.000    0.005    0.000 functional.py:2918(layer_norm)
+       40    0.005    0.000    0.005    0.000 {built-in method torch.layer_norm}
+       61    0.004    0.000    0.004    0.000 {built-in method torch.rand_like}
+        4    0.000    0.000    0.004    0.001 decoder.py:18(forward)
+        2    0.000    0.000    0.003    0.002 transformer.py:957(_sa_block)
+        8    0.003    0.000    0.003    0.000 {built-in method torch._C._nn.scaled_dot_product_attention}
+        2    0.000    0.000    0.003    0.002 activation.py:1255(forward)
+       23    0.003    0.000    0.003    0.000 {built-in method torch.tensor}
+        2    0.000    0.000    0.003    0.001 functional.py:6276(multi_head_attention_forward)
+      276    0.001    0.000    0.003    0.000 {method 'extend' of 'list' objects}
+       40    0.002    0.000    0.002    0.000 {method 'scatter_' of 'torch._C.TensorBase' objects}
+        1    0.000    0.000    0.002    0.002 syntax.py:17(forward)
+       30    0.002    0.000    0.002    0.000 {built-in method torch._C._nn.gelu}
+       28    0.000    0.000    0.002    0.000 activation.py:812(forward)
+        2    0.000    0.000    0.002    0.001 transformer.py:976(_ff_block)
+       24    0.002    0.000    0.002    0.000 {method 'clone' of 'torch._C.TensorBase' objects}
+      139    0.002    0.000    0.002    0.000 {method 'reshape' of 'torch._C.TensorBase' objects}
+       24    0.002    0.000    0.002    0.000 {built-in method torch.where}
+       25    0.002    0.000    0.002    0.000 {built-in method torch.sigmoid}
+       15    0.000    0.000    0.001    0.000 dropout.py:69(forward)
+       15    0.000    0.000    0.001    0.000 functional.py:1419(dropout)
+     3340    0.001    0.000    0.001    0.000 forest.py:82(<genexpr>)
+       24    0.001    0.000    0.001    0.000 {method 'any' of 'torch._C.TensorBase' objects}
+        2    0.000    0.000    0.001    0.001 functional.py:5830(_in_projection_packed)
+       15    0.001    0.000    0.001    0.000 {built-in method torch.dropout}
+       21    0.001    0.000    0.001    0.000 {method 'argmax' of 'torch._C.TensorBase' objects}
+      307    0.001    0.000    0.001    0.000 {built-in method torch._C._get_tracing_state}
+
+

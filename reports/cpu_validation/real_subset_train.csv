@@ -1,0 +1,2 @@
+step,target_tokens,train_nll,step_tokens,micro_batches,span_scorer_grad_norm,composer_grad_norm,reader_grad_norm,grad_norm,val_nll,step_seconds,train_seconds,elapsed_seconds,gpu_hours,target_tokens_per_second,peak_gpu_gib,decoder_lr
+1,256,9.767363667488098,256,5,0.04022980108857155,0.12583598494529724,0.12548668682575226,5.114108085632324,9.77248585842885,11.535214199997426,11.535214199997426,19.01205189999746,,22.19291255120838,,1.4999999999999998e-06

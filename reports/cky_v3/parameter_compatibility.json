@@ -1,0 +1,6 @@
+{
+  "main_parameters": 148840709,
+  "state_dict_names_shapes_equal": true,
+  "master_parameters": "FP32",
+  "new_trainable_parameters": 0
+}

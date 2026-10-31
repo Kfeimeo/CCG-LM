@@ -1,0 +1,3162 @@
+{
+  "group": "A",
+  "cases": [
+    {
+      "condition": "native_train",
+      "comparison": "same_impl_repeat",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.2907277352339657,
+          "actual_norm": 3.2907277352339657
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 46.47486682771742,
+          "actual_norm": 46.47486682771742
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 69.22167769255621,
+          "actual_norm": 69.22167769255621
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 86.31160699677201,
+          "actual_norm": 86.31160699677201
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85057775953979,
+          "actual_norm": 110.85057775953979
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85057775953979,
+          "actual_norm": 110.85057775953979
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.558232813707846,
+          "actual_norm": 62.558232813707846
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.63720132504082
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 208.38393294897548,
+          "actual_norm": 208.38393294897548
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.99950873929298
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.868387284379864,
+          "actual_norm": 62.868387284379864
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 35.81207906020005,
+          "actual_norm": 35.81207906020005
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 20.899728697755787,
+          "actual_norm": 20.899728697755787
+        },
+        "readers.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.43494149560524,
+          "actual_norm": 101.43494149560524
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 113.84357390161863,
+          "actual_norm": 113.84357390161863
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 126.20711638989582,
+          "actual_norm": 126.20711638989582
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 137.2884571319194,
+          "actual_norm": 137.2884571319194
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32442063228072
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32442063228072
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32442063228072
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85093242667175,
+          "actual_norm": 110.85093242667175
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85093242667175,
+          "actual_norm": 110.85093242667175
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.666278973457445,
+          "actual_norm": 63.666278973457445
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.63720132504082
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 209.535270838926,
+          "actual_norm": 209.535270838926
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.99950873929298
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.98892662098474,
+          "actual_norm": 64.98892662098474
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 34.83933149216061,
+          "actual_norm": 34.83933149216061
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 19.870774964700704,
+          "actual_norm": 19.870774964700704
+        },
+        "readers.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 147.32804796994546,
+          "actual_norm": 147.32804796994546
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 154.40928895123508,
+          "actual_norm": 154.40928895123508
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 162.5052728074036,
+          "actual_norm": 162.5052728074036
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 172.09853136639816,
+          "actual_norm": 172.09853136639816
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55454805580632
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55454805580632
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55454805580632
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85103842573211,
+          "actual_norm": 110.85103842573211
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85103842573211,
+          "actual_norm": 110.85103842573211
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.8916753847086,
+          "actual_norm": 64.8916753847086
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.63720132504082
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 210.73067470752352,
+          "actual_norm": 210.73067470752352
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.99950873929298
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.37851749583374,
+          "actual_norm": 63.37851749583374
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 36.35430974660038,
+          "actual_norm": 36.35430974660038
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 20.942236335878743,
+          "actual_norm": 20.942236335878743
+        },
+        "readers.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 179.49725076284955,
+          "actual_norm": 179.49725076284955
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 185.68426313354382,
+          "actual_norm": 185.68426313354382
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 192.84132498494853,
+          "actual_norm": 192.84132498494853
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 198.92269617364764,
+          "actual_norm": 198.92269617364764
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.18251871804637
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.18251871804637
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.18251871804637
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85109209330638,
+          "actual_norm": 110.85109209330638
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85109209330638,
+          "actual_norm": 110.85109209330638
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.07383097279924,
+          "actual_norm": 64.07383097279924
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.63720132504082
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 207.51485614197045,
+          "actual_norm": 207.51485614197045
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.99950873929298
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 65.11212298564737,
+          "actual_norm": 65.11212298564737
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 35.949329525474646,
+          "actual_norm": 35.949329525474646
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 20.811222406293663,
+          "actual_norm": 20.811222406293663
+        },
+        "readers.16": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 207.2160974423145,
+          "actual_norm": 207.2160974423145
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85109223320757,
+          "actual_norm": 110.85109223320757
+        },
+        "logits": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 280.9112058513471,
+          "actual_norm": 280.9112058513471
+        },
+        "root": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.99950873929298
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    },
+    {
+      "condition": "native_train",
+      "comparison": "paired_impl",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.2907277352339657,
+          "actual_norm": 3.2907277352339657
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 46.47486682771742,
+          "actual_norm": 46.47486682771742
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 69.22167769255621,
+          "actual_norm": 69.22167769255621
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 86.31160699677201,
+          "actual_norm": 86.31160699677201
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 101.47349995590824,
+          "actual_norm": 101.47349995590824
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85057775953979,
+          "actual_norm": 110.85057775953979
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85057775953979,
+          "actual_norm": 110.85057775953979
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.558232813707846,
+          "actual_norm": 62.558232813707846
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.0017138811261493666,
+          "rms_error": 0.005621111435505356,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.6372009120656
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002751242954814956,
+          "rms_error": 0.005171929217856012,
+          "reference_norm": 208.38393294897548,
+          "actual_norm": 208.38126464215065
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.005962134785816475,
+          "rms_error": 0.005962089020776629,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.999507302662316
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006778926079170191,
+          "rms_error": 0.003844612881149802,
+          "reference_norm": 62.868387284379864,
+          "actual_norm": 62.86936365128631
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.005067310909451345,
+          "rms_error": 0.0016370671161073656,
+          "reference_norm": 35.81207906020005,
+          "actual_norm": 35.827149540155084
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.0059777052217989445,
+          "rms_error": 0.001127027574992448,
+          "reference_norm": 20.899728697755787,
+          "actual_norm": 20.908860367184225
+        },
+        "readers.4": {
+          "max_absolute_error": 0.000732421875,
+          "normalized_l2_error": 0.00014882000389890252,
+          "rms_error": 0.0001361784207167793,
+          "reference_norm": 101.43494149560524,
+          "actual_norm": 101.43547594398453
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.01549530029296875,
+          "normalized_l2_error": 0.0019817732997625794,
+          "rms_error": 0.002035269351311343,
+          "reference_norm": 113.84357390161863,
+          "actual_norm": 113.8412168857739
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.021484375,
+          "normalized_l2_error": 0.002839996382985168,
+          "rms_error": 0.003233411879504353,
+          "reference_norm": 126.20711638989582,
+          "actual_norm": 126.20354435395704
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.0234375,
+          "normalized_l2_error": 0.0033891821744774574,
+          "rms_error": 0.0041974771110181355,
+          "reference_norm": 137.2884571319194,
+          "actual_norm": 137.28446515663006
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.0234375,
+          "normalized_l2_error": 0.0038092706783435805,
+          "rms_error": 0.005062627504795588,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32386434745683
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.0234375,
+          "normalized_l2_error": 0.0038092706783435805,
+          "rms_error": 0.005062627504795588,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32386434745683
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.0234375,
+          "normalized_l2_error": 0.0038092706783435805,
+          "rms_error": 0.005062627504795588,
+          "reference_norm": 147.32442063228072,
+          "actual_norm": 147.32386434745683
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.01846921443939209,
+          "normalized_l2_error": 0.0038006937597905533,
+          "rms_error": 0.0038006828135822967,
+          "reference_norm": 110.85093242667175,
+          "actual_norm": 110.85093269363993
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.01846921443939209,
+          "normalized_l2_error": 0.0038006937597905533,
+          "rms_error": 0.0038006828135822967,
+          "reference_norm": 110.85093242667175,
+          "actual_norm": 110.85093269363993
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.005513224573427729,
+          "rms_error": 0.0031664639632079292,
+          "reference_norm": 63.666278973457445,
+          "actual_norm": 63.66817997064754
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.0017138811261493666,
+          "rms_error": 0.005621111435505356,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.6372009120656
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002748584549222698,
+          "rms_error": 0.005195479520472319,
+          "reference_norm": 209.535270838926,
+          "actual_norm": 209.53130911286505
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.005962134785816475,
+          "rms_error": 0.005962089020776629,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.999507302662316
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006524929379838925,
+          "rms_error": 0.003825379959449787,
+          "reference_norm": 64.98892662098474,
+          "actual_norm": 64.9876035408413
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.005731213083597639,
+          "rms_error": 0.0018012573555788822,
+          "reference_norm": 34.83933149216061,
+          "actual_norm": 34.85339072686279
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.006584124507732622,
+          "rms_error": 0.0011802451884368567,
+          "reference_norm": 19.870774964700704,
+          "actual_norm": 19.87979040674944
+        },
+        "readers.8": {
+          "max_absolute_error": 0.0235595703125,
+          "normalized_l2_error": 0.0038104800994165403,
+          "rms_error": 0.005064359547997105,
+          "reference_norm": 147.32804796994546,
+          "actual_norm": 147.32738508151212
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.0322265625,
+          "normalized_l2_error": 0.0042042939464955915,
+          "rms_error": 0.005856334763531384,
+          "reference_norm": 154.40928895123508,
+          "actual_norm": 154.40566697327824
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.0341796875,
+          "normalized_l2_error": 0.004506740202972457,
+          "rms_error": 0.006606772905381135,
+          "reference_norm": 162.5052728074036,
+          "actual_norm": 162.5009950600287
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.0322265625,
+          "normalized_l2_error": 0.004728223034617212,
+          "rms_error": 0.007340649995969787,
+          "reference_norm": 172.09853136639816,
+          "actual_norm": 172.10524269431977
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.0335693359375,
+          "normalized_l2_error": 0.004957823493411751,
+          "rms_error": 0.00803057920567637,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55572184329512
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.0335693359375,
+          "normalized_l2_error": 0.004957823493411751,
+          "rms_error": 0.00803057920567637,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55572184329512
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.0335693359375,
+          "normalized_l2_error": 0.004957823493411751,
+          "rms_error": 0.00803057920567637,
+          "reference_norm": 179.55454805580632,
+          "actual_norm": 179.55572184329512
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.02046501636505127,
+          "normalized_l2_error": 0.004953553287287947,
+          "rms_error": 0.004953543757506375,
+          "reference_norm": 110.85103842573211,
+          "actual_norm": 110.85104046593551
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.02046501636505127,
+          "normalized_l2_error": 0.004953553287287947,
+          "rms_error": 0.004953543757506375,
+          "reference_norm": 110.85103842573211,
+          "actual_norm": 110.85104046593551
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006312612961662181,
+          "rms_error": 0.0036953667632343376,
+          "reference_norm": 64.8916753847086,
+          "actual_norm": 64.89367947078337
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.0017138811261493666,
+          "rms_error": 0.005621111435505356,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.6372009120656
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002645725162315191,
+          "rms_error": 0.00502958189531903,
+          "reference_norm": 210.73067470752352,
+          "actual_norm": 210.72333449259668
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.005962134785816475,
+          "rms_error": 0.005962089020776629,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.999507302662316
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006695781113228927,
+          "rms_error": 0.0038282714356823316,
+          "reference_norm": 63.37851749583374,
+          "actual_norm": 63.378124000753296
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.01171875,
+          "normalized_l2_error": 0.005632913845397706,
+          "rms_error": 0.0018473467065081917,
+          "reference_norm": 36.35430974660038,
+          "actual_norm": 36.35835681916906
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.005859375,
+          "normalized_l2_error": 0.006569658447769696,
+          "rms_error": 0.0012411527859955336,
+          "reference_norm": 20.942236335878743,
+          "actual_norm": 20.944061355062285
+        },
+        "readers.12": {
+          "max_absolute_error": 0.03350830078125,
+          "normalized_l2_error": 0.004961666618776483,
+          "rms_error": 0.008034239611544692,
+          "reference_norm": 179.49725076284955,
+          "actual_norm": 179.49804389234797
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.03399658203125,
+          "normalized_l2_error": 0.005168720714733837,
+          "rms_error": 0.008657999640733247,
+          "reference_norm": 185.68426313354382,
+          "actual_norm": 185.68367237769291
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.0400390625,
+          "normalized_l2_error": 0.005309135146543701,
+          "rms_error": 0.009235986428898866,
+          "reference_norm": 192.84132498494853,
+          "actual_norm": 192.84205581115089
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.04486083984375,
+          "normalized_l2_error": 0.005475033053795958,
+          "rms_error": 0.009824952990171068,
+          "reference_norm": 198.92269617364764,
+          "actual_norm": 198.92143518546885
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.0438079833984375,
+          "normalized_l2_error": 0.0055883078093143185,
+          "rms_error": 0.010444624392710575,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.1810384473425
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.0438079833984375,
+          "normalized_l2_error": 0.0055883078093143185,
+          "rms_error": 0.010444624392710575,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.1810384473425
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.0438079833984375,
+          "normalized_l2_error": 0.0055883078093143185,
+          "rms_error": 0.010444624392710575,
+          "reference_norm": 207.18251871804637,
+          "actual_norm": 207.1810384473425
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.02380719780921936,
+          "normalized_l2_error": 0.005577728164925605,
+          "rms_error": 0.0055777201347430895,
+          "reference_norm": 110.85109209330638,
+          "actual_norm": 110.85109180669583
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.02380719780921936,
+          "normalized_l2_error": 0.005577728164925605,
+          "rms_error": 0.0055777201347430895,
+          "reference_norm": 110.85109209330638,
+          "actual_norm": 110.85109180669583
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006892330198716031,
+          "rms_error": 0.003983879238626286,
+          "reference_norm": 64.07383097279924,
+          "actual_norm": 64.06869169687101
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.0017138811261493666,
+          "rms_error": 0.005621111435505356,
+          "reference_norm": 222.63720132504082,
+          "actual_norm": 222.6372009120656
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0027698323555093067,
+          "rms_error": 0.005185158977070308,
+          "reference_norm": 207.51485614197045,
+          "actual_norm": 207.50646095343598
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.005962134785816475,
+          "rms_error": 0.005962089020776629,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.999507302662316
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.0065517920889372454,
+          "rms_error": 0.003848410241553252,
+          "reference_norm": 65.11212298564737,
+          "actual_norm": 65.1132593464378
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.009765625,
+          "normalized_l2_error": 0.006083310453244082,
+          "rms_error": 0.0019728323204869693,
+          "reference_norm": 35.949329525474646,
+          "actual_norm": 35.95775452949702
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.0050048828125,
+          "normalized_l2_error": 0.006863365433219836,
+          "rms_error": 0.0012885287474520832,
+          "reference_norm": 20.811222406293663,
+          "actual_norm": 20.819379058548787
+        },
+        "readers.16": {
+          "max_absolute_error": 0.0436859130859375,
+          "normalized_l2_error": 0.005588535065982231,
+          "rms_error": 0.010446742000616033,
+          "reference_norm": 207.2160974423145,
+          "actual_norm": 207.21490267013777
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.0238114595413208,
+          "normalized_l2_error": 0.005577998961968163,
+          "rms_error": 0.005577990938435568,
+          "reference_norm": 110.85109223320757,
+          "actual_norm": 110.8510915639573
+        },
+        "logits": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006467716758368585,
+          "rms_error": 0.0035908732347081926,
+          "reference_norm": 280.9112058513471,
+          "actual_norm": 280.9093982742071
+        },
+        "root": {
+          "max_absolute_error": 0.03752422332763672,
+          "normalized_l2_error": 0.005962134785816475,
+          "rms_error": 0.005962089020776629,
+          "reference_norm": 63.99950873929298,
+          "actual_norm": 63.999507302662316
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    },
+    {
+      "condition": "native_eval",
+      "comparison": "same_impl_repeat",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.1310985054007534,
+          "actual_norm": 3.1310985054007534
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 43.20720213209474,
+          "actual_norm": 43.20720213209474
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 66.74911768265108,
+          "actual_norm": 66.74911768265108
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 83.22900738331995,
+          "actual_norm": 83.22900738331995
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85052963863588,
+          "actual_norm": 110.85052963863588
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85052963863588,
+          "actual_norm": 110.85052963863588
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.77570080317219,
+          "actual_norm": 62.77570080317219
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.59590953728596
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 202.94677495862646,
+          "actual_norm": 202.94677495862646
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.999514507493714
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.02288716076565,
+          "actual_norm": 63.02288716076565
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 36.68369864991683,
+          "actual_norm": 36.68369864991683
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 21.303358538647267,
+          "actual_norm": 21.303358538647267
+        },
+        "readers.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.55639205675189,
+          "actual_norm": 97.55639205675189
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.80950200249556,
+          "actual_norm": 110.80950200249556
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 122.7607118208967,
+          "actual_norm": 122.7607118208967
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 133.06482170378294,
+          "actual_norm": 133.06482170378294
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.97132257610494
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.97132257610494
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.97132257610494
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85091789384653,
+          "actual_norm": 110.85091789384653
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85091789384653,
+          "actual_norm": 110.85091789384653
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 65.00774647606988,
+          "actual_norm": 65.00774647606988
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.59590953728596
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.69982008252384,
+          "actual_norm": 203.69982008252384
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.999514507493714
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 65.08057315313692,
+          "actual_norm": 65.08057315313692
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 35.50209151121395,
+          "actual_norm": 35.50209151121395
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 20.256480912150305,
+          "actual_norm": 20.256480912150305
+        },
+        "readers.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 142.96166531161194,
+          "actual_norm": 142.96166531161194
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 148.7737616404245,
+          "actual_norm": 148.7737616404245
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 157.20762935219668,
+          "actual_norm": 157.20762935219668
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 166.7677314553362,
+          "actual_norm": 166.7677314553362
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.2343318339808
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.2343318339808
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.2343318339808
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85102515238054,
+          "actual_norm": 110.85102515238054
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85102515238054,
+          "actual_norm": 110.85102515238054
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 65.58249996040347,
+          "actual_norm": 65.58249996040347
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.59590953728596
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 205.44833025313656,
+          "actual_norm": 205.44833025313656
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.999514507493714
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.192888502849975,
+          "actual_norm": 63.192888502849975
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 36.4178000339204,
+          "actual_norm": 36.4178000339204
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 21.223275265871894,
+          "actual_norm": 21.223275265871894
+        },
+        "readers.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 174.1843803421972,
+          "actual_norm": 174.1843803421972
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 179.82425182265752,
+          "actual_norm": 179.82425182265752
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 184.95753669292182,
+          "actual_norm": 184.95753669292182
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 189.864905937937,
+          "actual_norm": 189.864905937937
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.70080827314783
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.70080827314783
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.70080827314783
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85107763604057,
+          "actual_norm": 110.85107763604057
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85107763604057,
+          "actual_norm": 110.85107763604057
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.8230191136992,
+          "actual_norm": 63.8230191136992
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.59590953728596
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 201.60105177975606,
+          "actual_norm": 201.60105177975606
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.999514507493714
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 65.3632629111097,
+          "actual_norm": 65.3632629111097
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 35.32186274075985,
+          "actual_norm": 35.32186274075985
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 20.262454416555325,
+          "actual_norm": 20.262454416555325
+        },
+        "readers.16": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 198.71223855201174,
+          "actual_norm": 198.71223855201174
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85107793591268,
+          "actual_norm": 110.85107793591268
+        },
+        "logits": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 280.6718959294098,
+          "actual_norm": 280.6718959294098
+        },
+        "root": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.999514507493714
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    },
+    {
+      "condition": "native_eval",
+      "comparison": "paired_impl",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.1310985054007534,
+          "actual_norm": 3.1310985054007534
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 43.20720213209474,
+          "actual_norm": 43.20720213209474
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 66.74911768265108,
+          "actual_norm": 66.74911768265108
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 83.22900738331995,
+          "actual_norm": 83.22900738331995
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 97.64296518268036,
+          "actual_norm": 97.64296518268036
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85052963863588,
+          "actual_norm": 110.85052963863588
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85052963863588,
+          "actual_norm": 110.85052963863588
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.77570080317219,
+          "actual_norm": 62.77570080317219
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.001715525361279102,
+          "rms_error": 0.005473828143882143,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.5959096538522
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0027035706698853067,
+          "rms_error": 0.004949704581487658,
+          "reference_norm": 202.94677495862646,
+          "actual_norm": 202.94568162083297
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.005805915542015875,
+          "rms_error": 0.005805871499383254,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.99951490199325
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006632175541918844,
+          "rms_error": 0.003770628156718704,
+          "reference_norm": 63.02288716076565,
+          "actual_norm": 63.03077463358732
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.004610361048400507,
+          "rms_error": 0.0015256940521369614,
+          "reference_norm": 36.68369864991683,
+          "actual_norm": 36.68758803968974
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.00439453125,
+          "normalized_l2_error": 0.0056991444433272895,
+          "rms_error": 0.0010952597791624003,
+          "reference_norm": 21.303358538647267,
+          "actual_norm": 21.30522046011568
+        },
+        "readers.4": {
+          "max_absolute_error": 0.000732421875,
+          "normalized_l2_error": 0.0001508566917746971,
+          "rms_error": 0.00013276381045345436,
+          "reference_norm": 97.55639205675189,
+          "actual_norm": 97.55659558961676
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.009033203125,
+          "normalized_l2_error": 0.001918386920008877,
+          "rms_error": 0.0019176644018371954,
+          "reference_norm": 110.80950200249556,
+          "actual_norm": 110.81014166121442
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.01171875,
+          "normalized_l2_error": 0.0026565501511180804,
+          "rms_error": 0.002941960353028985,
+          "reference_norm": 122.7607118208967,
+          "actual_norm": 122.76177670279935
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.0031826794081454956,
+          "rms_error": 0.003820459052558897,
+          "reference_norm": 133.06482170378294,
+          "actual_norm": 133.07120619784635
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.0035487684581167146,
+          "rms_error": 0.004577053594467225,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.9832868411647
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.0035487684581167146,
+          "rms_error": 0.004577053594467225,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.9832868411647
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.0035487684581167146,
+          "rms_error": 0.004577053594467225,
+          "reference_norm": 142.97132257610494,
+          "actual_norm": 142.9832868411647
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.015224933624267578,
+          "normalized_l2_error": 0.003542342439055391,
+          "rms_error": 0.0035423317725049087,
+          "reference_norm": 110.85091789384653,
+          "actual_norm": 110.85091475023006
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.015224933624267578,
+          "normalized_l2_error": 0.003542342439055391,
+          "rms_error": 0.0035423317725049087,
+          "reference_norm": 110.85091789384653,
+          "actual_norm": 110.85091475023006
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.005253407605176069,
+          "rms_error": 0.003080814916777155,
+          "reference_norm": 65.00774647606988,
+          "actual_norm": 65.00540961598219
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.001715525361279102,
+          "rms_error": 0.005473828143882143,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.5959096538522
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0027114561577353527,
+          "rms_error": 0.004982561072605643,
+          "reference_norm": 203.69982008252384,
+          "actual_norm": 203.7010654031104
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.005805915542015875,
+          "rms_error": 0.005805871499383254,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.99951490199325
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.00639688328838748,
+          "rms_error": 0.0037555988270409147,
+          "reference_norm": 65.08057315313692,
+          "actual_norm": 65.08393149452273
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.0052875128868683195,
+          "rms_error": 0.001693420358578826,
+          "reference_norm": 35.50209151121395,
+          "actual_norm": 35.51853274719929
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.00439453125,
+          "normalized_l2_error": 0.0062161328521970535,
+          "rms_error": 0.001135909379051522,
+          "reference_norm": 20.256480912150305,
+          "actual_norm": 20.261409866351755
+        },
+        "readers.8": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.0035489278305080862,
+          "rms_error": 0.004576949966831319,
+          "reference_norm": 142.96166531161194,
+          "actual_norm": 142.97370926000517
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.022216796875,
+          "normalized_l2_error": 0.0038943737146046745,
+          "rms_error": 0.00522664938781944,
+          "reference_norm": 148.7737616404245,
+          "actual_norm": 148.79110894517868
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.025146484375,
+          "normalized_l2_error": 0.004158362677195881,
+          "rms_error": 0.00589732933580008,
+          "reference_norm": 157.20762935219668,
+          "actual_norm": 157.22348357744264
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.026611328125,
+          "normalized_l2_error": 0.0043465802755249675,
+          "rms_error": 0.006539117250579192,
+          "reference_norm": 166.7677314553362,
+          "actual_norm": 166.7820201725516
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.028533935546875,
+          "normalized_l2_error": 0.004560285101239918,
+          "rms_error": 0.007167787602877864,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.24893600143545
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.028533935546875,
+          "normalized_l2_error": 0.004560285101239918,
+          "rms_error": 0.007167787602877864,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.24893600143545
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.028533935546875,
+          "normalized_l2_error": 0.004560285101239918,
+          "rms_error": 0.007167787602877864,
+          "reference_norm": 174.2343318339808,
+          "actual_norm": 174.24893600143545
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.017990976572036743,
+          "normalized_l2_error": 0.004558484386847381,
+          "rms_error": 0.004558475071276333,
+          "reference_norm": 110.85102515238054,
+          "actual_norm": 110.85102583472069
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.017990976572036743,
+          "normalized_l2_error": 0.004558484386847381,
+          "rms_error": 0.004558475071276333,
+          "reference_norm": 110.85102515238054,
+          "actual_norm": 110.85102583472069
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.00599632360227993,
+          "rms_error": 0.003547581885035253,
+          "reference_norm": 65.58249996040347,
+          "actual_norm": 65.58567682239494
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.001715525361279102,
+          "rms_error": 0.005473828143882143,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.5959096538522
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0026773329132948253,
+          "rms_error": 0.004962087195318116,
+          "reference_norm": 205.44833025313656,
+          "actual_norm": 205.43372067842168
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.005805915542015875,
+          "rms_error": 0.005805871499383254,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.99951490199325
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.006632957375696648,
+          "rms_error": 0.003781244952288719,
+          "reference_norm": 63.192888502849975,
+          "actual_norm": 63.19441531001387
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.00512515889449862,
+          "rms_error": 0.0016837609763153648,
+          "reference_norm": 36.4178000339204,
+          "actual_norm": 36.43351325136352
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.00439453125,
+          "normalized_l2_error": 0.006078832138254013,
+          "rms_error": 0.0011638364547519127,
+          "reference_norm": 21.223275265871894,
+          "actual_norm": 21.234325593591752
+        },
+        "readers.12": {
+          "max_absolute_error": 0.028411865234375,
+          "normalized_l2_error": 0.00456343940485788,
+          "rms_error": 0.007170689125165191,
+          "reference_norm": 174.1843803421972,
+          "actual_norm": 174.19876462633525
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.033233642578125,
+          "normalized_l2_error": 0.004784665472609668,
+          "rms_error": 0.007761742657478314,
+          "reference_norm": 179.82425182265752,
+          "actual_norm": 179.83549150785305
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.032470703125,
+          "normalized_l2_error": 0.00496618520077337,
+          "rms_error": 0.008286179610411046,
+          "reference_norm": 184.95753669292182,
+          "actual_norm": 184.9720615162392
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.0362548828125,
+          "normalized_l2_error": 0.005140585839670909,
+          "rms_error": 0.008804743582812337,
+          "reference_norm": 189.864905937937,
+          "actual_norm": 189.8800490121125
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.036376953125,
+          "normalized_l2_error": 0.005202874589630414,
+          "rms_error": 0.009326149868353695,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.72500011990792
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.036376953125,
+          "normalized_l2_error": 0.005202874589630414,
+          "rms_error": 0.009326149868353695,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.72500011990792
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.036376953125,
+          "normalized_l2_error": 0.005202874589630414,
+          "rms_error": 0.009326149868353695,
+          "reference_norm": 198.70080827314783,
+          "actual_norm": 198.72500011990792
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.019907236099243164,
+          "normalized_l2_error": 0.005193428430373451,
+          "rms_error": 0.005193420276133183,
+          "reference_norm": 110.85107763604057,
+          "actual_norm": 110.85107882809483
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.019907236099243164,
+          "normalized_l2_error": 0.005193428430373451,
+          "rms_error": 0.005193420276133183,
+          "reference_norm": 110.85107763604057,
+          "actual_norm": 110.85107882809483
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006659195198133548,
+          "rms_error": 0.0038340563228129202,
+          "reference_norm": 63.8230191136992,
+          "actual_norm": 63.82613104887679
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.001715525361279102,
+          "rms_error": 0.005473828143882143,
+          "reference_norm": 216.59590953728596,
+          "actual_norm": 216.5959096538522
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002687892787146572,
+          "rms_error": 0.004888370719553974,
+          "reference_norm": 201.60105177975606,
+          "actual_norm": 201.6016837065041
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.005805915542015875,
+          "rms_error": 0.005805871499383254,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.99951490199325
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006424409491345774,
+          "rms_error": 0.003788142761138768,
+          "reference_norm": 65.3632629111097,
+          "actual_norm": 65.36652051154235
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.01171875,
+          "normalized_l2_error": 0.005840986156541312,
+          "rms_error": 0.0018611834161278123,
+          "reference_norm": 35.32186274075985,
+          "actual_norm": 35.32947781858658
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.0048828125,
+          "normalized_l2_error": 0.006674946653914774,
+          "rms_error": 0.0012201107362589249,
+          "reference_norm": 20.262454416555325,
+          "actual_norm": 20.267464142063048
+        },
+        "readers.16": {
+          "max_absolute_error": 0.036376953125,
+          "normalized_l2_error": 0.005202902921901789,
+          "rms_error": 0.009326737144325168,
+          "reference_norm": 198.71223855201174,
+          "actual_norm": 198.73589353071227
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.019829273223876953,
+          "normalized_l2_error": 0.005193501054040164,
+          "rms_error": 0.005193492913735202,
+          "reference_norm": 110.85107793591268,
+          "actual_norm": 110.85107809568281
+        },
+        "logits": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.0061719491736823,
+          "rms_error": 0.0034237440191785835,
+          "reference_norm": 280.6718959294098,
+          "actual_norm": 280.690858711626
+        },
+        "root": {
+          "max_absolute_error": 0.030340194702148438,
+          "normalized_l2_error": 0.005805915542015875,
+          "rms_error": 0.005805871499383254,
+          "reference_norm": 63.999514507493714,
+          "actual_norm": 63.99951490199325
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    },
+    {
+      "condition": "math_train",
+      "comparison": "same_impl_repeat",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.302193770535841,
+          "actual_norm": 3.302193770535841
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 45.505481561208704,
+          "actual_norm": 45.505481561208704
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 69.22455386328313,
+          "actual_norm": 69.22455386328313
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 86.10751254359111,
+          "actual_norm": 86.10751254359111
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85056962105706,
+          "actual_norm": 110.85056962105706
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85056962105706,
+          "actual_norm": 110.85056962105706
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.28925183923072,
+          "actual_norm": 62.28925183923072
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.3680556628077
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 204.78009423121782,
+          "actual_norm": 204.78009423121782
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.99951367819079
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.161003024277846,
+          "actual_norm": 63.161003024277846
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 31.908476639729894,
+          "actual_norm": 31.908476639729894
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 18.613268046084592,
+          "actual_norm": 18.613268046084592
+        },
+        "readers.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.6743580521585,
+          "actual_norm": 100.6743580521585
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 112.22462520485242,
+          "actual_norm": 112.22462520485242
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 123.73763084629884,
+          "actual_norm": 123.73763084629884
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 134.2097462038741,
+          "actual_norm": 134.2097462038741
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.38844165074786
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.38844165074786
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.38844165074786
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85091977329478,
+          "actual_norm": 110.85091977329478
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85091977329478,
+          "actual_norm": 110.85091977329478
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.44884079012405,
+          "actual_norm": 64.44884079012405
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.3680556628077
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 206.8174668732813,
+          "actual_norm": 206.8174668732813
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.99951367819079
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.70301771319276,
+          "actual_norm": 64.70301771319276
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 32.594113391874444,
+          "actual_norm": 32.594113391874444
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 18.711743964866862,
+          "actual_norm": 18.711743964866862
+        },
+        "readers.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 144.37848561578807,
+          "actual_norm": 144.37848561578807
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 151.51711757194164,
+          "actual_norm": 151.51711757194164
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 160.47430748843954,
+          "actual_norm": 160.47430748843954
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 170.71810919053655,
+          "actual_norm": 170.71810919053655
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50831983086732
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50831983086732
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50831983086732
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85103419667313,
+          "actual_norm": 110.85103419667313
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85103419667313,
+          "actual_norm": 110.85103419667313
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.6688237715876,
+          "actual_norm": 64.6688237715876
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.3680556628077
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 206.69032049078933,
+          "actual_norm": 206.69032049078933
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.99951367819079
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.71043374314077,
+          "actual_norm": 63.71043374314077
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 31.941942186067518,
+          "actual_norm": 31.941942186067518
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 18.458985245338422,
+          "actual_norm": 18.458985245338422
+        },
+        "readers.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 178.51617791194994,
+          "actual_norm": 178.51617791194994
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 184.1540932159568,
+          "actual_norm": 184.1540932159568
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 190.59503290214897,
+          "actual_norm": 190.59503290214897
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 195.19630092238643,
+          "actual_norm": 195.19630092238643
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.1004681798957
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.1004681798957
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.1004681798957
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85108595452526,
+          "actual_norm": 110.85108595452526
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85108595452526,
+          "actual_norm": 110.85108595452526
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.120353790555,
+          "actual_norm": 64.120353790555
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.3680556628077
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.3812064706073,
+          "actual_norm": 203.3812064706073
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.99951367819079
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 64.57721327792108,
+          "actual_norm": 64.57721327792108
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 30.805712824412048,
+          "actual_norm": 30.805712824412048
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 17.99995466776981,
+          "actual_norm": 17.99995466776981
+        },
+        "readers.16": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 203.14811098377675,
+          "actual_norm": 203.14811098377675
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85108618680744,
+          "actual_norm": 110.85108618680744
+        },
+        "logits": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 280.1931652293781,
+          "actual_norm": 280.1931652293781
+        },
+        "root": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.99951367819079
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    },
+    {
+      "condition": "math_train",
+      "comparison": "paired_impl",
+      "metrics": {
+        "decoder.dropout": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 3.302193770535841,
+          "actual_norm": 3.302193770535841
+        },
+        "decoder.blocks.0": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 45.505481561208704,
+          "actual_norm": 45.505481561208704
+        },
+        "decoder.blocks.1": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 69.22455386328313,
+          "actual_norm": 69.22455386328313
+        },
+        "decoder.blocks.2": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 86.10751254359111,
+          "actual_norm": 86.10751254359111
+        },
+        "decoder.blocks.3": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4.norm_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 100.69629450316866,
+          "actual_norm": 100.69629450316866
+        },
+        "readers.4.norm": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85056962105706,
+          "actual_norm": 110.85056962105706
+        },
+        "readers.4.query_input": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 110.85056962105706,
+          "actual_norm": 110.85056962105706
+        },
+        "readers.4.query": {
+          "max_absolute_error": 0.0,
+          "normalized_l2_error": 0.0,
+          "rms_error": 0.0,
+          "reference_norm": 62.28925183923072,
+          "actual_norm": 62.28925183923072
+        },
+        "readers.4.key_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.0017306198936042165,
+          "rms_error": 0.005567171031079096,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.36805581570925
+        },
+        "readers.4.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002715133278176662,
+          "rms_error": 0.0050157778113166535,
+          "reference_norm": 204.78009423121782,
+          "actual_norm": 204.7708889499692
+        },
+        "readers.4.value_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.00590492145234081,
+          "rms_error": 0.005904876582151998,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.999514199894435
+        },
+        "readers.4.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006759940832150568,
+          "rms_error": 0.003851689871386958,
+          "reference_norm": 63.161003024277846,
+          "actual_norm": 63.16445395409951
+        },
+        "readers.4.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.005236844659100711,
+          "rms_error": 0.0015074230821185467,
+          "reference_norm": 31.908476639729894,
+          "actual_norm": 31.919523975418954
+        },
+        "readers.4.output": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.00614891407795306,
+          "rms_error": 0.0010324771636420018,
+          "reference_norm": 18.613268046084592,
+          "actual_norm": 18.623594659086233
+        },
+        "readers.4": {
+          "max_absolute_error": 0.000732421875,
+          "normalized_l2_error": 0.00013782839851764848,
+          "rms_error": 0.00012517482059314484,
+          "reference_norm": 100.6743580521585,
+          "actual_norm": 100.67425632595221
+        },
+        "decoder.blocks.4": {
+          "max_absolute_error": 0.01593017578125,
+          "normalized_l2_error": 0.0018818540233235253,
+          "rms_error": 0.0019051689471128574,
+          "reference_norm": 112.22462520485242,
+          "actual_norm": 112.22537249434536
+        },
+        "decoder.blocks.5": {
+          "max_absolute_error": 0.018607139587402344,
+          "normalized_l2_error": 0.0028194765126670213,
+          "rms_error": 0.00314723865182366,
+          "reference_norm": 123.73763084629884,
+          "actual_norm": 123.737859138046
+        },
+        "decoder.blocks.6": {
+          "max_absolute_error": 0.02044677734375,
+          "normalized_l2_error": 0.003407059193176281,
+          "rms_error": 0.004124992209556449,
+          "reference_norm": 134.2097462038741,
+          "actual_norm": 134.20766130199127
+        },
+        "decoder.blocks.7": {
+          "max_absolute_error": 0.025390625,
+          "normalized_l2_error": 0.003821031544884838,
+          "rms_error": 0.004977055124600572,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.39020304859443
+        },
+        "readers.8_input": {
+          "max_absolute_error": 0.025390625,
+          "normalized_l2_error": 0.003821031544884838,
+          "rms_error": 0.004977055124600572,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.39020304859443
+        },
+        "readers.8.norm_input": {
+          "max_absolute_error": 0.025390625,
+          "normalized_l2_error": 0.003821031544884838,
+          "rms_error": 0.004977055124600572,
+          "reference_norm": 144.38844165074786,
+          "actual_norm": 144.39020304859443
+        },
+        "readers.8.norm": {
+          "max_absolute_error": 0.019533097743988037,
+          "normalized_l2_error": 0.0038274507381118664,
+          "rms_error": 0.0038274392779486617,
+          "reference_norm": 110.85091977329478,
+          "actual_norm": 110.8509195431553
+        },
+        "readers.8.query_input": {
+          "max_absolute_error": 0.019533097743988037,
+          "normalized_l2_error": 0.0038274507381118664,
+          "rms_error": 0.0038274392779486617,
+          "reference_norm": 110.85091977329478,
+          "actual_norm": 110.8509195431553
+        },
+        "readers.8.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.005536260643515752,
+          "rms_error": 0.0032187780955545415,
+          "reference_norm": 64.44884079012405,
+          "actual_norm": 64.45098785633975
+        },
+        "readers.8.key_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.0017306198936042165,
+          "rms_error": 0.005567171031079096,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.36805581570925
+        },
+        "readers.8.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0026697457129916664,
+          "rms_error": 0.004980999647425738,
+          "reference_norm": 206.8174668732813,
+          "actual_norm": 206.82911241866927
+        },
+        "readers.8.value_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.00590492145234081,
+          "rms_error": 0.005904876582151998,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.999514199894435
+        },
+        "readers.8.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006612713252989512,
+          "rms_error": 0.0038597895489584826,
+          "reference_norm": 64.70301771319276,
+          "actual_norm": 64.70153216209553
+        },
+        "readers.8.output_input": {
+          "max_absolute_error": 0.009765625,
+          "normalized_l2_error": 0.005816269993756284,
+          "rms_error": 0.001710185142825177,
+          "reference_norm": 32.594113391874444,
+          "actual_norm": 32.59005396273762
+        },
+        "readers.8.output": {
+          "max_absolute_error": 0.00439453125,
+          "normalized_l2_error": 0.00673317274988979,
+          "rms_error": 0.0011365627600295055,
+          "reference_norm": 18.711743964866862,
+          "actual_norm": 18.713777083413113
+        },
+        "readers.8": {
+          "max_absolute_error": 0.02545166015625,
+          "normalized_l2_error": 0.003823286548956735,
+          "rms_error": 0.004979648976676625,
+          "reference_norm": 144.37848561578807,
+          "actual_norm": 144.38007974100518
+        },
+        "decoder.blocks.8": {
+          "max_absolute_error": 0.028106689453125,
+          "normalized_l2_error": 0.004180005613210738,
+          "rms_error": 0.005713443847718956,
+          "reference_norm": 151.51711757194164,
+          "actual_norm": 151.5210719791542
+        },
+        "decoder.blocks.9": {
+          "max_absolute_error": 0.033477783203125,
+          "normalized_l2_error": 0.004460285647279054,
+          "rms_error": 0.006456952353460961,
+          "reference_norm": 160.47430748843954,
+          "actual_norm": 160.4734584161085
+        },
+        "decoder.blocks.10": {
+          "max_absolute_error": 0.029571533203125,
+          "normalized_l2_error": 0.004637642470019879,
+          "rms_error": 0.00714226985760671,
+          "reference_norm": 170.71810919053655,
+          "actual_norm": 170.70892957314936
+        },
+        "decoder.blocks.11": {
+          "max_absolute_error": 0.032989501953125,
+          "normalized_l2_error": 0.004809047651502372,
+          "rms_error": 0.007744206792542816,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50155399126922
+        },
+        "readers.12_input": {
+          "max_absolute_error": 0.032989501953125,
+          "normalized_l2_error": 0.004809047651502372,
+          "rms_error": 0.007744206792542816,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50155399126922
+        },
+        "readers.12.norm_input": {
+          "max_absolute_error": 0.032989501953125,
+          "normalized_l2_error": 0.004809047651502372,
+          "rms_error": 0.007744206792542816,
+          "reference_norm": 178.50831983086732,
+          "actual_norm": 178.50155399126922
+        },
+        "readers.12.norm": {
+          "max_absolute_error": 0.021075129508972168,
+          "normalized_l2_error": 0.004811041625989244,
+          "rms_error": 0.00481103218683064,
+          "reference_norm": 110.85103419667313,
+          "actual_norm": 110.85103629114931
+        },
+        "readers.12.query_input": {
+          "max_absolute_error": 0.021075129508972168,
+          "normalized_l2_error": 0.004811041625989244,
+          "rms_error": 0.00481103218683064,
+          "reference_norm": 110.85103419667313,
+          "actual_norm": 110.85103629114931
+        },
+        "readers.12.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006219428947097929,
+          "rms_error": 0.003628314055350975,
+          "reference_norm": 64.6688237715876,
+          "actual_norm": 64.67126019051435
+        },
+        "readers.12.key_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.0017306198936042165,
+          "rms_error": 0.005567171031079096,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.36805581570925
+        },
+        "readers.12.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.002745370555870661,
+          "rms_error": 0.005118945536802606,
+          "reference_norm": 206.69032049078933,
+          "actual_norm": 206.6947501463217
+        },
+        "readers.12.value_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.00590492145234081,
+          "rms_error": 0.005904876582151998,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.999514199894435
+        },
+        "readers.12.value": {
+          "max_absolute_error": 0.01953125,
+          "normalized_l2_error": 0.00660065065765655,
+          "rms_error": 0.0037936451776249642,
+          "reference_norm": 63.71043374314077,
+          "actual_norm": 63.70890906031118
+        },
+        "readers.12.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.005822878527565687,
+          "rms_error": 0.0016778705378403796,
+          "reference_norm": 31.941942186067518,
+          "actual_norm": 31.951665561290778
+        },
+        "readers.12.output": {
+          "max_absolute_error": 0.00390625,
+          "normalized_l2_error": 0.006698672394941725,
+          "rms_error": 0.001115465031045538,
+          "reference_norm": 18.458985245338422,
+          "actual_norm": 18.467437919602997
+        },
+        "readers.12": {
+          "max_absolute_error": 0.033233642578125,
+          "normalized_l2_error": 0.004809928363658566,
+          "rms_error": 0.007745966008170756,
+          "reference_norm": 178.51617791194994,
+          "actual_norm": 178.50907776117262
+        },
+        "decoder.blocks.12": {
+          "max_absolute_error": 0.03499412536621094,
+          "normalized_l2_error": 0.005012055107497503,
+          "rms_error": 0.008326387383494302,
+          "reference_norm": 184.1540932159568,
+          "actual_norm": 184.1506711975704
+        },
+        "decoder.blocks.13": {
+          "max_absolute_error": 0.03890037536621094,
+          "normalized_l2_error": 0.005189103585135023,
+          "rms_error": 0.00892202256188488,
+          "reference_norm": 190.59503290214897,
+          "actual_norm": 190.5867198461377
+        },
+        "decoder.blocks.14": {
+          "max_absolute_error": 0.041290283203125,
+          "normalized_l2_error": 0.005412093512710362,
+          "rms_error": 0.009530074021488913,
+          "reference_norm": 195.19630092238643,
+          "actual_norm": 195.19098508467843
+        },
+        "decoder.blocks.15": {
+          "max_absolute_error": 0.04400634765625,
+          "normalized_l2_error": 0.005515062655651745,
+          "rms_error": 0.010104638336365112,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.09010056267726
+        },
+        "readers.16_input": {
+          "max_absolute_error": 0.04400634765625,
+          "normalized_l2_error": 0.005515062655651745,
+          "rms_error": 0.010104638336365112,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.09010056267726
+        },
+        "readers.16.norm_input": {
+          "max_absolute_error": 0.04400634765625,
+          "normalized_l2_error": 0.005515062655651745,
+          "rms_error": 0.010104638336365112,
+          "reference_norm": 203.1004681798957,
+          "actual_norm": 203.09010056267726
+        },
+        "readers.16.norm": {
+          "max_absolute_error": 0.025046825408935547,
+          "normalized_l2_error": 0.005507916148128608,
+          "rms_error": 0.005507907913433156,
+          "reference_norm": 110.85108595452526,
+          "actual_norm": 110.85108442498324
+        },
+        "readers.16.query_input": {
+          "max_absolute_error": 0.025046825408935547,
+          "normalized_l2_error": 0.005507916148128608,
+          "rms_error": 0.005507907913433156,
+          "reference_norm": 110.85108595452526,
+          "actual_norm": 110.85108442498324
+        },
+        "readers.16.query": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006851203485019183,
+          "rms_error": 0.00396298268783828,
+          "reference_norm": 64.120353790555,
+          "actual_norm": 64.12245274884164
+        },
+        "readers.16.key_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.0017306198936042165,
+          "rms_error": 0.005567171031079096,
+          "reference_norm": 218.3680556628077,
+          "actual_norm": 218.36805581570925
+        },
+        "readers.16.key": {
+          "max_absolute_error": 0.03125,
+          "normalized_l2_error": 0.0027315705668182334,
+          "rms_error": 0.005011672028934196,
+          "reference_norm": 203.3812064706073,
+          "actual_norm": 203.38642589994816
+        },
+        "readers.16.value_input": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.00590492145234081,
+          "rms_error": 0.005904876582151998,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.999514199894435
+        },
+        "readers.16.value": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006644831300023917,
+          "rms_error": 0.0038709954243827996,
+          "reference_norm": 64.57721327792108,
+          "actual_norm": 64.57795042596622
+        },
+        "readers.16.output_input": {
+          "max_absolute_error": 0.0078125,
+          "normalized_l2_error": 0.006232376556010093,
+          "rms_error": 0.0017319858772965933,
+          "reference_norm": 30.805712824412048,
+          "actual_norm": 30.802391005112625
+        },
+        "readers.16.output": {
+          "max_absolute_error": 0.004150390625,
+          "normalized_l2_error": 0.006905174230344225,
+          "rms_error": 0.0011212577325974463,
+          "reference_norm": 17.99995466776981,
+          "actual_norm": 18.00252935321638
+        },
+        "readers.16": {
+          "max_absolute_error": 0.0439300537109375,
+          "normalized_l2_error": 0.005513723767699313,
+          "rms_error": 0.010104554985841594,
+          "reference_norm": 203.14811098377675,
+          "actual_norm": 203.1378867576868
+        },
+        "decoder.norm": {
+          "max_absolute_error": 0.02498948574066162,
+          "normalized_l2_error": 0.005506706025081544,
+          "rms_error": 0.005506697803734278,
+          "reference_norm": 110.85108618680744,
+          "actual_norm": 110.85108594559198
+        },
+        "logits": {
+          "max_absolute_error": 0.015625,
+          "normalized_l2_error": 0.006403134443578949,
+          "rms_error": 0.003545930141061895,
+          "reference_norm": 280.1931652293781,
+          "actual_norm": 280.1924514402161
+        },
+        "root": {
+          "max_absolute_error": 0.030932903289794922,
+          "normalized_l2_error": 0.00590492145234081,
+          "rms_error": 0.005904876582151998,
+          "reference_norm": 63.99951367819079,
+          "actual_norm": 63.999514199894435
+        }
+      },
+      "module_entry_rng_equal": {
+        "decoder.dropout": true,
+        "decoder.blocks.0": true,
+        "decoder.blocks.1": true,
+        "decoder.blocks.2": true,
+        "decoder.blocks.3": true,
+        "readers.4": true,
+        "readers.4.norm": true,
+        "readers.4.query": true,
+        "readers.4.key": true,
+        "readers.4.value": true,
+        "readers.4.output": true,
+        "decoder.blocks.4": true,
+        "decoder.blocks.5": true,
+        "decoder.blocks.6": true,
+        "decoder.blocks.7": true,
+        "readers.8": true,
+        "readers.8.norm": true,
+        "readers.8.query": true,
+        "readers.8.key": true,
+        "readers.8.value": true,
+        "readers.8.output": true,
+        "decoder.blocks.8": true,
+        "decoder.blocks.9": true,
+        "decoder.blocks.10": true,
+        "decoder.blocks.11": true,
+        "readers.12": true,
+        "readers.12.norm": true,
+        "readers.12.query": true,
+        "readers.12.key": true,
+        "readers.12.value": true,
+        "readers.12.output": true,
+        "decoder.blocks.12": true,
+        "decoder.blocks.13": true,
+        "decoder.blocks.14": true,
+        "decoder.blocks.15": true,
+        "readers.16": true,
+        "readers.16.norm": true,
+        "readers.16.query": true,
+        "readers.16.key": true,
+        "readers.16.value": true,
+        "readers.16.output": true,
+        "decoder.norm": true
+      }
+    }
+  ],
+  "note": "Evaluation and math-only SDPA are diagnostic controls; they are not the benchmark/training configuration"
+}

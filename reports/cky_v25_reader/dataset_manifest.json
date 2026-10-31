@@ -1,0 +1,63 @@
+{
+  "spec": {
+    "version": 2,
+    "data": {
+      "max_history": 4,
+      "max_words": 24,
+      "max_target_length": 128,
+      "vocab_size": 16000,
+      "word_vocab_size": 20000,
+      "split_seed": 2026,
+      "dev_fraction": 0.5
+    },
+    "demo": false,
+    "max_train_stories": 32,
+    "max_validation_stories": 8
+  },
+  "fingerprint": "548dab74bb13923efe61434aec559d8f0870d8a744b60ef141341fc96f58b672",
+  "hashes": {
+    "dev/bpe_offsets.npy": "e4529377866fbe9ae74a82152c4281f70d9ee1f85cb7f594ed179e2d9f6b219b",
+    "dev/story_ids.npy": "7e29ef0664acc3682dadd1eb0029172c083dfb0f3e846868ddc77f5f1e564f1b",
+    "dev/story_offsets.npy": "c8f3ed049cef40406e6ceb91c14cd70224e505f837d01abac5a3b2813410d671",
+    "dev/targets.bin": "fbaeaf032e4dd6502d7d5b07c4a8004228175850e2720eb138ddaca1863cbc3d",
+    "dev/word_offsets.npy": "de428e55d2bbac8f0755831f7198321671877aadd5ecb91534a03b661ab68b1d",
+    "dev/words.bin": "174b7337e4d2ea3366abdc0fd6a0bfba2a21b0ee7ead0013abadf143c9e1292a",
+    "test/bpe_offsets.npy": "f453c3d2491ff0a8d794331ca7bea573484c1133fed42a26c329a664901102cf",
+    "test/story_ids.npy": "020d6c5b181ed4e2bb59cf8ec218a409cc8726dc25700dc08b2c52cff1e55830",
+    "test/story_offsets.npy": "f81a02fd22971e01819b7d67d46089d7620b847f6940ee98a8c67438b654a8b7",
+    "test/targets.bin": "9f8e7dc4b4ce15cee9e4dab33172c9507f8aa8d5a139a8a204dbf6b0eb4209a8",
+    "test/word_offsets.npy": "735fcad9613aa522b1a3535275a415fe421aebc88e75576d7201f067e2655c5f",
+    "test/words.bin": "28c6483cc1d4f09c97523eab45c90ef9f2b48787732bbc592a5199e18fc0c25e",
+    "tokenizer.json": "e7b36c59567d0adb087b9badf333f041224da5d42330d5c944d24c6e4ddf16f9",
+    "train/bpe_offsets.npy": "5f91f103d41c00bab64100933052e3e03e5915e9605c857f30a3612830286eb6",
+    "train/story_ids.npy": "d7e613f1090f555b5641f2b446191b4b16b191e7a4ebfee85716049073143863",
+    "train/story_offsets.npy": "0d730e7278b4387674907948d23f443ebf70ddd3a05ec0d8692eaa093baf78e9",
+    "train/targets.bin": "2919f556bf6b8c1665a7b7d791090b46d8a846ee93a377090284e3eb90926bbe",
+    "train/word_offsets.npy": "e41eaa82a646f2efb22bd58291c63984863b27d80be4bf8ed7af6e326573601f",
+    "train/words.bin": "21c97bce367e3c6de1df726d2a32ee8c81e5a427e448e447d1051e81fc5b8433",
+    "word_vocab.json": "1c95813b3b33300fca6a0862bb7b23955f913980b137e1ac070a5c50d00f5698"
+  },
+  "stats": {
+    "train": {
+      "stories": 32,
+      "sentences": 442,
+      "target_tokens": 5653
+    },
+    "dev": {
+      "stories": 4,
+      "sentences": 63,
+      "target_tokens": 1041
+    },
+    "test": {
+      "stories": 4,
+      "sentences": 59,
+      "target_tokens": 805
+    }
+  },
+  "bpe_vocab_size": 1523,
+  "word_vocab_size": 643,
+  "raw_hashes": {
+    "train": "3507f56c8f310580f6c7cd7ae1f3eaa039aaeb4d820843c19f649a490e0ea9e5",
+    "validation": "ecfbf08ab2edaa8ac2a06cca56c7cf8a60e9b9c90bad1246a92dcc13b0dd1346"
+  }
+}

@@ -1,0 +1,9 @@
+torch>=2.5,<3
+datasets>=3.0,<5
+tokenizers>=0.20,<1
+numpy>=1.26
+PyYAML>=6.0
+pytest>=8.0
+pandas>=2.1
+matplotlib>=3.8
+tqdm>=4.66

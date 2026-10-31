@@ -1,0 +1,18 @@
+controls_A
+controls_B
+supplement_score
+supplement_E
+supplement_D
+supplement_compare
+Regression suite
+stability
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\run_precision_study.py", line 30, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\run_precision_study.py", line 27, in main
+    run("train_precision_stability.py",["--output-dir",str(root/"stability_runs"),"--cache-dir",a.cache_dir]+(["--resume"] if a.resume else []),"stability")
+  File "E:\dev\AI\NLP\CCG-LM\run_precision_study.py", line 17, in run
+    if r.returncode:raise RuntimeError(name+" failed; see log")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: stability failed; see log

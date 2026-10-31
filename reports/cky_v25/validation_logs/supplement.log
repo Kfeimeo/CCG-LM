@@ -1,0 +1,21 @@
+Main model gradient equivalence fp32 passed
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 348, in <module>
+    main()
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 338, in main
+    gradients["cases"].append(model_gradient_case("forest_vector4", "cuda", precision, main=True))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 222, in model_gradient_case
+    forward_errors = compare_forests(first["memory"], result["memory"], precision == "bf16")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 78, in compare_forests
+    errors["root_"+key] = assert_tensor(a[key], b[key], f"Root {key}", bf16, exact=key in ("scores", "candidate_mask", "log_prior"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 44, in assert_tensor
+    raise AssertionError(f"{label}: {detail}\n{error}") from None
+AssertionError: Root semantic: first index (batch, candidate, ...): (0, 0, 0, 40); ref=0.20397527515888214; v2=0.2193070948123932
+Tensor-likes are not close!
+
+Mismatched elements: 142 / 4096 (3.5%)
+Greatest absolute difference: 0.02547389268875122 at index (0, 0, 2, 183) (up to 0.004 allowed)
+Greatest relative difference: 96.73639678955078 at index (0, 1, 2, 24) (up to 0.025 allowed)

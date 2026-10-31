@@ -1,0 +1,3 @@
+extends: fp32_ieee.yaml
+precision:
+  reader: fp32_ieee

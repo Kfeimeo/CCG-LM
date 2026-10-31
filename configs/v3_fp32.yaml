@@ -1,0 +1,4 @@
+extends: v3_main_125m.yaml
+precision:
+  outer_autocast: fp32
+  reader: fp32_ieee

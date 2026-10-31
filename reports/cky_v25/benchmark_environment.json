@@ -1,0 +1,35 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "arguments": {
+    "output_dir": "reports/cky_v25",
+    "cache_dir": "cache/tinystories_integration",
+    "warmup": 2,
+    "repeats": 5,
+    "precision": "bf16",
+    "cases": null
+  },
+  "source_hashes": {
+    "models\\composer.py": "96ab20fffb28456c3e310946f53b17eaa0532df314dfb85d22916d48b481d08f",
+    "models\\decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+    "models\\forest.py": "c8c075380c660b54aac52299746a47161c29ab76e31ccfad15d2826cca38330b",
+    "models\\forest_lazy.py": "9cb2a339e72912d607524c3de2e1e951275d9d6d5625776174b30192623fe1d1",
+    "models\\forest_reference.py": "01719d4cc64d4cb53736b7b840913449d6e29597c90be733aa3df7db34faf7b6",
+    "models\\forest_score_first.py": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b",
+    "models\\model.py": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e",
+    "models\\reader.py": "af1293e7f390dc51b5bf73685e97c9863555ee223231fb7f4d321e0ddc11f742",
+    "models\\syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models\\__init__.py": "036e9d6d3bfc57b8a9dcf4f54569873a4a61c59fa6e47249962693fa0b79710b"
+  },
+  "protocol": "Same model/AdamW/RNG snapshot restored before each sample; arm order alternates; synchronized resident-input microbatch update, one optimizer step per batch. Staged diagnostics and profiler counts are separate untimed runs."
+}

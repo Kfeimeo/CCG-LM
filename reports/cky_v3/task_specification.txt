@@ -1,0 +1,1160 @@
+# 编码任务：CKY V3 —— Width-batched GPU Score-only CKY Tensorization
+
+你是一名精通 PyTorch、CUDA、Autograd、CKY 动态规划、GPU Wavefront Parallelism、张量索引优化与神经语言模型训练系统的高级机器学习工程师。
+
+请基于现有 Latent Semantic Forest LM 项目，完成第三阶段 CKY 性能优化：
+
+**V3：Width-batched GPU Score-only CKY Tensorization**
+
+本次任务需要将 V2.5 中仍然使用 Python Cell、逐 Span、逐 Split 组织的标量 CKY 搜索，改造成按 Span Width 分层、在 GPU 上批量计算的结构搜索。
+
+**保持 V2.5 已有的 Lazy Semantic DAG Evaluation，不重写 Composer，不改变模型数学定义与候选搜索策略。**
+
+请直接检查项目、修改代码、运行测试和 Benchmark，并输出可复现的性能与正确性报告。
+
+---
+
+# 一、项目背景
+
+项目已有以下 CKY 实现：
+
+- `reference`：最初的 CKY。
+- `score_first`：V2，先进行标量结构筛选，再 Gather 高维向量。
+- `lazy_semantic`：V2.5，先执行 Score-only CKY，再只对最终根候选需要的 DAG 节点执行 Composer。
+
+已有实验还包含：
+
+- V2.5-P：Composer 精度实验。
+- V2.5-R：Semantic Reader 精度隔离实验。
+
+目前已得到的结论：
+
+1. V2 显著减少高维候选物化。
+2. V2.5 将主模型 Composer Rows 从 43,072 降至 866。
+3. V2.5 的主要速度收益来自减少语义 Autograd Graph。
+4. 当前 CKY 的主要剩余瓶颈是标量搜索阶段的 Python 循环、频繁索引、Stack、GPU Kernel Launch 和反向梯度累积。
+5. FP32 IEEE Composer 能使 V2/V2.5 的根语义结果在 FP32 计算下高度一致。
+6. FP32 Reader 仅有限改善完整 BF16 梯度一致性，因此暂时保留 BF16 Reader。
+7. 不应为了追求逐位 BF16 梯度相同而改变模型架构。
+
+本次 V3 应集中优化剩余的结构搜索。
+
+## 当前参考性能
+
+此前 V2.5 报告中的主配置：
+
+- `main_125m`
+- Batch = 4
+- 历史句数 H = 4
+- 每句历史词数 W = 24
+- K = 4
+- Composer Proposal Budget R = 12
+
+已有诊断：
+
+| 指标 | V2.5 参考 |
+|---|---:|
+| Score-only CKY Search Envelope | 约 226 ms |
+| Score Autograd Nodes | 3032 |
+| CKY Forward CUDA Launches | 约 4093 |
+| V2.5 Composer Rows | 866 |
+| V2.5 Composer Calls | 23 |
+
+这些数字来自不同轮次的诊断，只用于定位优化目标。
+
+请在当前环境重新运行 V2.5 基线。不得将旧报告的绝对耗时与新测量结果直接相除。
+
+---
+
+# 二、V3 核心目标
+
+当前 Score-only CKY 大致采用：
+
+```python
+for width in range(2, max_words + 1):
+    for start in range(num_spans):
+        for split in range(start + 1, end):
+
+            left_cell = chart[(start, split)]
+            right_cell = chart[(split, end)]
+
+            # 取出标量分数和 mask
+            # 展开左右候选配对
+            # 计算候选分数
+            # stack / cat / select
+            # Top-R / Exploration / Top-K
+            # 写入 Python Cell
+```
+
+目标改成：
+
+```python
+for width in range(2, max_words + 1):
+
+    # 当前 Width 的全部 Batch、历史句子和父 Span
+    # 一起进行 GPU 标量候选计算
+
+    left_scores = gather_width_left_scores(...)
+    right_scores = gather_width_right_scores(...)
+
+    candidate_scores = (
+        left_scores + right_scores
+    ) + parent_local_scores
+
+    # GPU batched selection
+    selected = batched_candidate_selection(...)
+
+    # 保存当前 Width 的分数、Mask、Backpointer
+    width_chart = ...
+```
+
+原则：
+
+**可以保留跨 Width 的顺序循环，但尽量消除同一 Width 内逐 Span、逐 Split 的 Python 控制流。**
+
+不允许为了减少循环而改变搜索候选集合或剪枝结果。
+
+---
+
+# 三、阶段 A：源码审查与可行性分析
+
+先阅读：
+
+```text
+models/forest_reference.py
+models/forest_score_first.py
+models/forest_lazy.py
+models/forest.py
+models/model.py
+models/syntax.py
+models/composer.py
+models/precision_policy.py
+
+validate_cky_v25.py
+benchmark_cky_v25.py
+profile_performance.py
+```
+
+同时阅读：
+
+```text
+reports/cky_v2/summary.md
+reports/cky_v25/summary.md
+reports/cky_v25_precision/summary.md
+reports/cky_v25_reader/summary.md
+```
+
+首先输出简短的代码审查报告：
+
+1. 当前 Score-only CKY 的主循环位置。
+2. 每个 Width 的 Span 数量。
+3. 每个 Split 的候选数量如何确定。
+4. 哪些 `stack`、`cat`、`select` 可以被批量 Gather 替代。
+5. 当前 Candidate ID 和 Backpointer 的布局。
+6. Top-R、Top-K、Exploration、Delta 的完整执行顺序。
+7. 哪些 RNG 操作依赖 Python 遍历顺序。
+8. 当前分数的实际 dtype 及加法顺序。
+9. 哪些张量保留 Autograd。
+10. 哪些 Chart 更新可能产生 In-place Autograd 错误。
+
+重点检查当前 Beam 是否存在：
+
+- 叶节点只有 1 个候选；
+- 某些 Span 少于 K 个候选；
+- 部分候选被 Mask；
+- 不同 Split 对应不同的有效候选数；
+- 全不可达 Span。
+
+不能假定每个 Split 永远包含 K² 个有效组合。
+
+如果发现无法严格保持原有随机探索或同分 Top-K 行为，请在实现前说明具体困难和兼容方案。
+
+---
+
+# 四、阶段 B：设计 Tensorized Score Chart
+
+建议将 Batch 与历史句子维度合并：
+
+\[
+B'=B\times H
+\]
+
+对当前 Width \(w\)，父 Span 的起点数量为：
+
+\[
+N_w=n-w+1
+\]
+
+构建逻辑上的 Score Tensor：
+
+\[
+S_w\in\mathbb R^{B'\times N_w\times K}
+\]
+
+其中保存该 Width 每个父 Span 的最多 K 个保留候选分数。
+
+另外保存：
+
+```text
+score
+candidate_mask
+candidate_id
+left_candidate_id
+right_candidate_id
+split_index
+source_metadata
+```
+
+可以使用按 Width 分开的 Tensor 列表：
+
+```python
+scores_by_width[w]
+masks_by_width[w]
+backpointers_by_width[w]
+```
+
+或紧凑的 Packed Chart Layout。
+
+实际张量布局由性能测试确定。
+
+## 4.1 优先采用按 Width 分层保存
+
+不要求将全部 Chart 写成一个巨大的 Dense Tensor。
+
+可以按 Width 保存不同形状：
+
+```text
+width=1: [B', n, K]
+width=2: [B', n-1, K]
+width=3: [B', n-2, K]
+...
+width=n: [B', 1, K]
+```
+
+不同 Width 可以通过预计算的索引表读取依赖。
+
+这种设计需要保证：
+
+- 每一层只依赖已经完成的更短 Width；
+- 不覆盖尚需参与 Backward 的值；
+- 不破坏 Autograd Version Counter；
+- 不错误地重复计算同一 Span；
+- 不使用 detach 切断 Span Score 梯度。
+
+## 4.2 不要直接进行危险的 In-place Chart 更新
+
+禁止使用会静默截断梯度的模式，例如：
+
+```python
+chart = torch.zeros(...)
+
+chart[index] = score.detach()
+```
+
+也不能假设把有梯度 Tensor 写入普通预分配数组后，所有后续梯度一定正确。
+
+允许：
+
+- 函数式张量更新；
+- 可微分 `gather` / `index_select`；
+- 按 Width 保存新的 Score Tensor；
+- 经过验证的可微分 Scatter；
+- 将不可微的 Candidate ID、Mask 与可微 Score 分开管理。
+
+必须使用实际 Backward 测试证明梯度完整。
+
+---
+
+# 五、阶段 C：GPU Wavefront Candidate Scoring
+
+对每个父 Span：
+
+\[
+[i,j),\qquad j=i+w
+\]
+
+合法切分：
+
+\[
+i<k<j
+\]
+
+左右候选分数：
+
+\[
+\ell_L^{(p)},\quad \ell_R^{(q)}
+\]
+
+父候选分数：
+
+\[
+\ell_P
+=
+(\ell_L^{(p)}+\ell_R^{(q)})
++s_{i:j}
+\]
+
+要求维持原 V2.5 的加法顺序。
+
+对当前 Width，在 GPU 上形成逻辑上的候选张量：
+
+\[
+Q_w\in
+\mathbb R^{
+B'\times N_w\times(w-1)\times K\times K
+}
+\]
+
+然后处理有效候选 Mask。
+
+这里的 K×K 是**张量化上界**，不代表所有槽位均有效。
+
+## 5.1 正确处理 Ragged Beam
+
+当前 V2.5 的候选配对排列，可能根据左右 Cell 的实际槽数变化。
+
+例如某个 Split：
+
+```text
+left slots = 2
+right slots = 4
+```
+
+有效配对只有 8 个，而不是 16 个。
+
+另一个 Split 可能是：
+
+```text
+left slots = 1
+right slots = 2
+```
+
+有效配对只有 2 个。
+
+必须保留原实现中的：
+
+```text
+(offset, left_slot, right_slot)
+```
+
+以及对应的候选 Flat Identity。
+
+如果使用固定 K² Dense Tensor，应建立明确的：
+
+```text
+dense_pair_index → legacy_flat_index
+```
+
+映射。
+
+非法 Padding 候选不能改变有效候选的相对顺序。
+
+禁止仅使用固定：
+
+```python
+flat_id = split * K * K + left * K + right
+```
+
+替代原始 Ragged Layout，除非已经证明二者对所有配置等价。
+
+候选身份与 Backpointer 必须经过专门测试。
+
+## 5.2 Mask 与不可达处理
+
+应处理：
+
+- 无效历史句子。
+- Padding 词。
+- 未满 K 的 Beam。
+- 不可达 Span。
+- 负无穷结构势。
+- 无效左右子候选。
+- 没有任何有效 Split 的父 Span。
+
+不能将全 `-inf` 的候选交给不安全的 Softmax 或其他操作而产生 NaN。
+
+不能为不可达 Span 制造伪合法候选。
+
+## 5.3 保持数值加法顺序
+
+已有精度实验发现：当前叶子分数与内部 CKY 分数可能使用不同 dtype，第一次相加前后的 Cast 位置会影响候选选择。
+
+因此，本次 V3：
+
+**必须保留旧 V2.5 的实际 dtype、加法次序和转换时机。**
+
+不要顺便把所有 Score 改为 FP32。
+
+如果新的批量化路径使 FP32 与 BF16 运算顺序发生变化，需要单独报告。
+
+调整 Score Precision 应作为后续独立实验，而非 V3 的隐含改动。
+
+---
+
+# 六、阶段 D：GPU Batched Top-R / Top-K
+
+这是 V3 最关键、也最容易引入搜索变化的部分。
+
+现有搜索顺序需要原样保留：
+
+```text
+候选 Score
+    ↓
+Top-R / Proposal Budget
+    ↓
+预算内随机探索
+    ↓
+Top-K
+    ↓
+Beam Exploration Replacement
+    ↓
+Delta Pruning
+    ↓
+写入保留候选
+```
+
+以实际源码的最终执行次序为准。
+
+## 6.1 批量选择
+
+尽量将同 Width 所有父 Span 的候选组织为：
+
+```text
+[B', N_w, candidate_capacity]
+```
+
+使用 GPU Tensor 批量执行 Top-R 和 Top-K。
+
+不允许将每个父 Span 的分数：
+
+```python
+scores.cpu().tolist()
+```
+
+再交给 Python 排序。
+
+## 6.2 严格保留同分处理
+
+`torch.topk` 对完全同分的候选，可能因为 Tensor Shape、Stride 或 Kernel 选择不同而返回不同索引。
+
+本次必须专门验证：
+
+- 完全同分。
+- 近似同分。
+- 所有候选相同。
+- 不足 R 个候选。
+- 不足 K 个候选。
+- 含无效槽位。
+
+如果新的 Batched Top-K 与原单 Span Top-K 在同分场景下不同，不允许简单称为无关差异。
+
+可以探索以下兼容方案：
+
+1. 保留与旧实现一致的候选排列。
+2. 对相同形状验证原生 Top-K 是否保持相同选择。
+3. 如果确有必要，对少量特殊场景使用 Legacy Selection Fallback。
+
+不要擅自新增基于 Candidate ID 的排序规则，因为这可能改变原模型的同分候选行为。
+
+如严格等价不可实现，应将相关测试标记为明确的 No-Go，而不是放宽测试。
+
+## 6.3 保持随机探索分布与 RNG
+
+当前 V2.5 的随机探索已在历史实验中验证与 V2 一致。
+
+Tensorized CKY 可能改变随机数生成次序。
+
+必须检查：
+
+- Python RNG。
+- NumPy RNG。
+- PyTorch CPU RNG。
+- PyTorch CUDA RNG。
+- 探索采样操作的调用顺序。
+- 不同有效候选数量对应的采样次数。
+
+优先实现与旧 V2.5 相同的随机行为。
+
+如果无法完全向量化且保持相同 RNG：
+
+- 可以先仅将 Score Pairing Tensorized；
+- 暂时保留 Legacy Exploration 的兼容路径；
+- 不能以替换探索分布换取加速；
+- 必须报告该路径残留的 Python 开销。
+
+可设计仅用于验证的 Exploration RNG Replay，但不得把重放旧实现的随机结果作为正式训练时不可缺少的运行条件。
+
+不要为了追求性能而改变训练算法。
+
+---
+
+# 七、阶段 E：可微 Score 与 Autograd
+
+这是 V3 的硬性验收条件。
+
+当前 V2.5 使用可微累计结构分数：
+
+\[
+\ell_P=\ell_L+\ell_R+s_{i:j}
+\]
+
+在根候选归一化后：
+
+\[
+\log\pi_k
+=
+\ell_k-\operatorname{logsumexp}_r(\ell_r)
+\]
+
+并通过 Semantic Reader 的 Log-Prior 路径反向传播到 Span Scorer。
+
+V3 必须保持这一梯度路径。
+
+## 7.1 第一阶段采用原有可微 Score Graph
+
+首先实现：
+
+```text
+Width-batched Scoring
+    ↓
+可微 Tensor Score
+    ↓
+离散 Candidate Selection
+    ↓
+保留根 Score
+    ↓
+Log-Prior
+    ↓
+LM Loss
+```
+
+Top-K 的离散索引不可微是原模型已有性质，不需要改变。
+
+但是被选中候选的分数必须继续具有 `grad_fn`。
+
+## 7.2 可选的第二阶段：Score Graph Reconstruction
+
+如果 V3 第一阶段通过正确性测试，但 Autograd Graph 仍然很大，可以单独实验：
+
+```text
+No-grad Score-only Search
+    ↓
+选定根候选 Backpointer
+    ↓
+按已选树重建可微累计 Score
+    ↓
+Log-Prior
+```
+
+此方案必须保持原搜索过程的前向 Score 精度和排序完全一致。
+
+重建结构分数时，需要保留原始 Span Logit 的可微引用。
+
+必须验证：
+
+- 与现有 V2.5 相同的根分数；
+- 相同的 Log-Prior；
+- 相同的 FP32 梯度；
+- 非零 Span Scorer 梯度；
+- 不发生意外的梯度重复或遗漏。
+
+**这一优化是可选的 V3-B，不得与基础 Width Tensorization 同时实施。**
+
+若严格一致性失败，保留基础 V3-A。
+
+---
+
+# 八、阶段 F：结构索引缓存
+
+CKY 的合法区间与切分索引仅依赖：
+
+- 最大句长；
+- Span Width；
+- Chart Layout；
+- K 上界；
+- Device；
+- Index Dtype。
+
+因此可以预计算并缓存：
+
+```text
+left_cell_indices_by_width
+right_cell_indices_by_width
+parent_cell_indices_by_width
+split_indices_by_width
+structural_valid_masks
+```
+
+建议使用 GPU Long Tensor 缓存。
+
+缓存要求：
+
+1. 不包含任何可训练参数。
+2. 不缓存 Syntax Encoder 输出。
+3. 不缓存 Composer 输出。
+4. 不跨 Optimizer Step 复用语义图。
+5. 不错误地缓存动态可达性 Mask。
+6. 缓存 Key 能区分设备、句长、布局和 K。
+7. 不在每次 Forward 重建相同的 Python 索引表。
+
+需要区分：
+
+**静态几何索引可缓存，动态候选有效性不能简单缓存。**
+
+允许按历史长度 Bucket 复用结构索引。
+
+本次不要求重新设计 DataLoader，但 Benchmark 应包含固定句长与动态 Padding 两种情况。
+
+---
+
+# 九、阶段 G：保留现有 Lazy DAG Evaluation
+
+本次不要重写：
+
+```text
+Lazy Root Closure
+DAG Memoization
+Width-batched Composer
+Root Semantic Assembly
+```
+
+V3 结构搜索完成后，输出必须兼容现有 Lazy Semantic Evaluation 所需的：
+
+```text
+Candidate ID
+Left Candidate ID
+Right Candidate ID
+Root Candidate IDs
+Root Scores
+Masks
+Span Metadata
+```
+
+要求：
+
+- 相同树结构对应相同语义。
+- 不合并不同推导。
+- 共享子树继续正确复用。
+- Composer Rows 不得因为 V3 无意增加。
+- Composer 梯度不被截断。
+- Root Semantic 与原 Lazy 版本一致或在已验证数值容差内。
+
+如果新的 Packed Chart 需要转换成旧 DAG 输入格式，允许增加单独的轻量 Adapter。
+
+但必须 Benchmark Adapter 的时间与显存成本。
+
+不要为了兼容性重新生成大量 Python Cell，从而抵消全部 Tensorization 收益。
+
+---
+
+# 十、实现文件与配置
+
+建议新增：
+
+```text
+models/forest_tensorized.py
+models/cky_index_cache.py
+
+validate_cky_v3.py
+benchmark_cky_v3.py
+
+tests/test_forest_v3.py
+tests/test_cky_tensorized.py
+
+reports/cky_v3/
+```
+
+保留现有三种实现。
+
+增加可选择的新实现：
+
+```yaml
+model:
+  forest_implementation: lazy_tensorized
+```
+
+开发与性能基线精度：
+
+```yaml
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: bf16
+  matmul_precision: ieee
+  score_dtype: existing
+```
+
+严格数值正确性测试：
+
+```yaml
+precision:
+  outer_autocast: disabled
+  composer: fp32_ieee
+  reader: fp32_ieee
+  matmul_precision: ieee
+```
+
+严格保持旧实现的 Score 实际计算路径。
+
+不得自动将正式训练默认值从 `score_first` 改成 `lazy_tensorized`。
+
+新旧实现应共享相同模型参数名称与 State Dict。
+
+Checkpoint 必须能够明确记录实际使用的 CKY 实现。
+
+---
+
+# 十一、正确性测试
+
+以当前 `lazy_semantic` 为主要 Reference。
+
+另保留 `score_first` 作为交叉检查。
+
+## 11.1 测试矩阵
+
+覆盖：
+
+- Batch = 1、2、4。
+- 历史词长 = 1、4、8、16、24。
+- K = 1、2、4。
+- R = 4、12。
+- Scalar / Vector。
+- CPU FP32。
+- CUDA FP32 IEEE。
+- CUDA BF16 Outer AMP。
+- Eval / Train Exploration。
+- 动态 Padding。
+- 无历史句子。
+- 无效历史 Mask。
+- 不足 K 的候选。
+- 不可达 Span。
+- 全 `-inf` 分数。
+- 同分 Top-K。
+- Delta=0。
+- 不同有效叶子长度。
+
+## 11.2 结构完全一致
+
+比较每个 Span：
+
+```text
+selected_candidate_ids
+retained_candidate_ids
+split_indices
+left_candidate_ids
+right_candidate_ids
+candidate_scores
+candidate_masks
+backpointers
+```
+
+要求：
+
+- Candidate 身份一致。
+- Backpointer 一致。
+- 有效性 Mask 一致。
+- 候选数量一致。
+- 根候选顺序一致。
+
+对确定性的、相同设备与精度的搜索，优先要求索引逐项一致。
+
+如果浮点分数存在差异，应记录第一处不同的 Width / Span / Split / Candidate。
+
+不允许只报告最终 Loss 相近，而忽略中间树结构变化。
+
+## 11.3 FP32 Forward 等价
+
+比较：
+
+- Root Scores。
+- Root Log Prior。
+- Root Vector Coefficients。
+- Root Semantics。
+- Reader Output。
+- LM Logits。
+- CE Loss。
+
+必须输出：
+
+```text
+max_absolute_error
+relative_l2_error
+rms_error
+```
+
+保持原数学路径，应达到此前 V2.5 全 FP32 实验所展示的严格数值一致性水平。
+
+具体容差使用原 Validator，并说明任何新加的容差。
+
+## 11.4 Backward 等价
+
+比较：
+
+- Syntax Encoder。
+- Span Scorer。
+- Semantic Embedding。
+- Composer。
+- Vector Coefficient Head。
+- Semantic Reader。
+- Decoder。
+
+逐模块：
+
+```text
+grad_norm_reference
+grad_norm_v3
+max_absolute_gradient_error
+normalized_l2_gradient_error
+significant_gradient_relative_error
+```
+
+重点验证：
+
+1. Span Scorer 梯度未消失。
+2. Root Log-Prior 路径有效。
+3. Composer 梯度没有改变拓扑。
+4. DAG 共享梯度正确累计。
+5. 无 In-place Autograd 错误。
+6. 不出现 NaN / Inf。
+
+旧实验已经发现某些公共 Span Score Bias 存在中性方向，AdamW 可能放大其浮点残差。
+
+本次不修改或冻结这些参数。
+
+BF16 差异继续按先前 V2.5-P/R 的方法报告，不强制要求不同批量计算路径逐位相同。
+
+## 11.5 训练与 Checkpoint
+
+至少执行：
+
+- CPU FP32：8 个相同训练 Step。
+- CUDA BF16：20 个相同训练 Step。
+- 从旧 Lazy Checkpoint 显式切换到 V3 的恢复测试。
+- V3 Checkpoint 保存和恢复后的重放测试。
+
+应验证：
+
+- 训练不会崩溃；
+- 学习率及 Token 计数连续；
+- RNG/Optimizer 恢复正确；
+- 结构选择在固定权重时一致；
+- 不出现梯度缺失。
+
+训练轨迹因为数值舍入而分叉，不自动判定模型错误，但应完整记录。
+
+---
+
+# 十二、性能 Benchmark
+
+必须与同设备、同轮次重新测得的 `lazy_semantic` 配对比较。
+
+测试环境优先使用已有 RTX 3070 Laptop 8GB。
+
+如果可用，再在 RTX PRO 6000 Blackwell 上独立运行相同 Benchmark。
+
+不能直接用 RTX 3070 的耗时推测 Blackwell 加速倍率。
+
+## 12.1 指定形状
+
+| Case | Batch | 历史词长 |
+|---|---:|---:|
+| smoke_b2_w8 | 2 | 8 |
+| smoke_b2_w16 | 2 | 16 |
+| smoke_b2_w24 | 2 | 24 |
+| smoke_b8_w24 | 8 | 24 |
+| main_b1_w24 | 1 | 24 |
+| main_b4_w24 | 4 | 24 |
+| real_b2 | 真实缓存 | 动态长度 |
+
+主配置：
+
+- H=4。
+- K=4。
+- R=12。
+- BF16 外层 Autocast。
+- FP32 IEEE Composer。
+- BF16 Reader。
+
+此外增加全 FP32 IEEE 主模型对照。
+
+## 12.2 计时方式
+
+使用已有的成对快照 Benchmark：
+
+- 相同模型权重。
+- 相同 Optimizer State。
+- 相同 RNG。
+- 相同输入。
+- 相同 K/R。
+- 相同 Precision Policy。
+- Warmup ≥ 2。
+- 有效采样 ≥ 8。
+- 两种实现交替测量。
+- 正确 CUDA 同步。
+- Profiler 与普通计时分开。
+- 记录 median/min/max。
+
+包括完整：
+
+```text
+Forward
+CE Loss
+Backward
+Gradient Clipping
+AdamW Update
+```
+
+同时区分：
+
+- 输入驻 GPU 的 Microbatch Benchmark。
+- 真正包含数据读取和梯度累积的训练吞吐。
+
+不能将前者直接称为端到端预训练吞吐。
+
+## 12.3 必须报告的指标
+
+| Metric | Lazy V2.5 | V3 | Speedup |
+|---|---|---|---|
+| Score-only CKY Forward | | | |
+| Score-only CKY Backward | | | |
+| Forest Total Forward | | | |
+| Forest Total Backward | | | |
+| Full Microbatch Update | | | |
+| CE Target Tokens/s | | | |
+| Peak Allocated VRAM | | | |
+| CKY CUDA Launches | | | |
+| Full Update CUDA Launches | | | |
+| `torch.stack` Calls | | | |
+| `aten::cat` Calls | | | |
+| `aten::select` Calls | | | |
+| Score Autograd Nodes | | | |
+| Python CPU Self Time | | | |
+| Candidate Selection Time | | | |
+| Index Gather Time | | | |
+| Chart Write/Assembly Time | | | |
+| Lazy DAG Adapter Time | | | |
+| Composer Rows | | | |
+
+额外记录：
+
+```text
+index_cache_hit_rate
+index_cache_build_time
+per_width_candidate_count
+per_width_valid_candidate_count
+per_width_kernel_count
+per_width_elapsed_ms
+```
+
+这些数据用于定位剩余瓶颈。
+
+## 12.4 性能目标
+
+本次没有强制加速倍率。
+
+但希望验证：
+
+1. Width-batched Candidate Scoring 显著减少 Python 循环。
+2. 标量 `stack/select/cat` 明显减少。
+3. Score Autograd Graph 复杂度下降。
+4. CUDA Kernel Launch 数下降。
+5. 完整训练更新实际加速。
+6. 峰值显存没有不可接受的增长。
+7. Lazy Composer 的计算量保持不变。
+
+不能只报告 CKY Forward 变快。
+
+如果 Backward 或完整更新没有改善，必须分析原因。
+
+---
+
+# 十三、分阶段实施，避免一次重写过多
+
+请将 V3 分成以下子阶段。
+
+## V3-A：Width-batched Score Pairing
+
+首先只改：
+
+- Span / Split Score Gather。
+- 当前 Width 的候选标量配对。
+- 有效性 Mask。
+- 固定结构索引缓存。
+
+Top-R、Top-K 与探索选择可以暂时复用旧逻辑。
+
+目标是证明：
+
+**仅靠批量结构评分，就能保持搜索结果并减少部分 CPU/GPU 调度。**
+
+完成结构一致性和梯度测试后，单独 Benchmark。
+
+## V3-B：Batched Candidate Selection
+
+在 V3-A 正确的基础上，进一步 GPU 化：
+
+- Top-R。
+- Top-K。
+- Delta。
+- Candidate ID 解码。
+- Backpointer 输出。
+
+训练探索如果必须保留特殊的 Legacy 路径，可以单独记录其成本。
+
+完成严格一致性测试。
+
+## V3-C：Autograd 与 Chart 整理
+
+如果结构搜索 Backward 仍然过慢，优化：
+
+- 不必要的 Score Tensor 复制。
+- 重复 SelectBackward。
+- 不必要的 Scatter/Stack。
+- 函数式 Chart 更新。
+- 对已经选定的根树进行可微 Score Reconstruction（可选）。
+
+必须单独测试此阶段的数学与梯度等价性。
+
+不允许同时改变多个核心机制后才进行一次总测试。
+
+---
+
+# 十四、禁止事项
+
+本次禁止：
+
+- 重写 Composer 数学公式。
+- 重写 Semantic Reader。
+- 修改 Decoder。
+- 修改 Syntax Encoder。
+- 修改 K/R。
+- 修改 Delta。
+- 改变随机探索分布。
+- 更换 Beam Search 近似策略。
+- 合并不同的语义候选。
+- 关闭梯度以获得加速。
+- 修改训练 Loss。
+- 修改数据。
+- 将 Score 精度全部强制改为 FP32。
+- 自动把正式训练默认实现改为 V3。
+- 使用 Triton。
+- 编写 C++/CUDA Extension。
+- 使用 CUDA Graph。
+- 把整个模型交给 `torch.compile`。
+
+本次先验证 PyTorch 原生张量化能改善多少性能。
+
+如果之后仍存在大量细碎 Kernel，再独立评估 Triton 或 Compile。
+
+---
+
+# 十五、最终交付
+
+建议输出：
+
+```text
+models/forest_tensorized.py
+models/cky_index_cache.py
+
+validate_cky_v3.py
+benchmark_cky_v3.py
+
+tests/test_forest_v3.py
+tests/test_cky_tensorized.py
+
+reports/cky_v3/
+    feasibility.json
+    correctness.json
+    gradient_comparison.json
+    benchmark.csv
+    operator_counts.csv
+    width_profile.csv
+    memory_profile.json
+    summary.md
+```
+
+`summary.md` 必须包含：
+
+### 1. 原有瓶颈
+
+指出具体 Python 循环和反向图节点来源。
+
+### 2. Tensorized Chart Layout
+
+说明按 Width 的存储方式、候选身份与 Ragged Beam Mapping。
+
+### 3. GPU Candidate Scoring
+
+说明标量配对与 Mask 如何批量处理。
+
+### 4. Candidate Selection
+
+说明 Top-R/Top-K/探索/Delta 如何保持兼容。
+
+### 5. Autograd 正确性
+
+说明为什么所有可训练 Span 分数仍可接收梯度。
+
+### 6. Forward / Backward 验证
+
+展示固定权重数值、搜索身份和完整梯度比较。
+
+### 7. GPU 性能
+
+对比 Score Search、Forest Forward/Backward、完整 Update、Kernel Launch、显存。
+
+### 8. 分阶段收益
+
+分别报告 V3-A、V3-B、V3-C 的独立增益，不能只报告最终版本。
+
+### 9. 剩余瓶颈
+
+明确剩下的 CPU/GPU 调度和 Autograd 开销。
+
+### 10. 最终建议
+
+回答：
+
+1. V3 是否保持搜索行为？
+2. FP32 数学/梯度是否通过？
+3. BF16 数值差异是否合理？
+4. CKY Forward 与 Backward 分别加速多少？
+5. 完整 Update 加速多少？
+6. GPU Kernel Launch 减少多少？
+7. 是否值得继续使用 PyTorch Tensorization？
+8. 下一步是否需要 torch.compile 或 Triton？
+9. 是否建议在 Blackwell 上试运行 V3？
+10. 是否达到可以进行正式早期预训练实验的工程条件？
+
+---
+
+# 十六、实施和失败回退原则
+
+按以下顺序：
+
+**A. 源码审查与 V2.5 基线重新测量。**
+
+**B. 实现 V3-A，完成结构与梯度测试，再 Benchmark。**
+
+**C. 实现 V3-B，验证 Top-K、探索和 Backpointer 一致性。**
+
+**D. 根据性能决定是否实施 V3-C。**
+
+**E. 完整 Forward/Backward/训练恢复测试。**
+
+**F. 同轮次成对 GPU Benchmark。**
+
+**G. 生成最终报告与复现命令。**
+
+如果某一阶段不能在保持搜索行为和梯度的前提下完成：
+
+- 保留上一阶段的可运行实现；
+- 报告失败原因；
+- 不得为性能修改数学定义；
+- 不得删除失败测试；
+- 不得通过放宽容差掩盖问题；
+- 保留当前 `lazy_semantic` 作为性能和正确性基线。
+
+**本次 V3 最终成功的标准是：在保持原结构搜索和可微训练路径的条件下，显著降低 Score-only CKY 的 CPU 调度与 GPU Kernel 开销，并在完整训练更新中获得可复现的实际加速。**
+
+不要只给优化建议，请直接实现、测试、Benchmark 并交付报告。

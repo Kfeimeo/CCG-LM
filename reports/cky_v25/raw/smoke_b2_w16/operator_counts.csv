@@ -1,0 +1,3 @@
+case,implementation,cky_forward_stack,cky_forward_cat,cky_forward_cudaLaunchKernel,full_step_stack,full_step_cat,full_step_cudaLaunchKernel,device_idle_gaps_over_50us,device_idle_gap_total_ms,device_idle_gap_max_ms,forest_autograd_nodes,score_autograd_nodes,full_autograd_nodes,composer_calls,composer_rows
+smoke_b2_w16,score_first,514,613,2256,519,621,9798,4794,580.3121229999972,4.668778000000049,2808,1462,3208,15,8352
+smoke_b2_w16,lazy_semantic,498,603,2315,503,611,6612,3113,373.2246870000018,3.392579999999958,1973,1462,2373,15,242

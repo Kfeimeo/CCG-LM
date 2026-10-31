@@ -1,0 +1,157 @@
+{
+  "results": [
+    {
+      "scaled": true,
+      "zero_where_E_nonzero": 49,
+      "error": {
+        "mlp.0.weight": {
+          "max_absolute_error": 1.0762232705019414e-07,
+          "normalized_l2_error": 0.001233556922242116,
+          "rms_error": 8.388706701445074e-09,
+          "reference_norm": 0.003481815677652911,
+          "actual_norm": 0.003481112187321535
+        },
+        "mlp.0.bias": {
+          "max_absolute_error": 6.972550181671977e-08,
+          "normalized_l2_error": 0.0009774244002773874,
+          "rms_error": 1.1714803765366242e-08,
+          "reference_norm": 0.0002711982121308804,
+          "actual_norm": 0.0002711290858389682
+        },
+        "mlp.2.weight": {
+          "max_absolute_error": 1.6266494640149176e-07,
+          "normalized_l2_error": 0.0011353921941687584,
+          "rms_error": 1.2319986553079493e-08,
+          "reference_norm": 0.003928432477554581,
+          "actual_norm": 0.003927528446419278
+        },
+        "mlp.2.bias": {
+          "max_absolute_error": 1.6426201909780502e-07,
+          "normalized_l2_error": 0.0008080594440786083,
+          "rms_error": 4.5218174187404985e-08,
+          "reference_norm": 0.0008953435199602696,
+          "actual_norm": 0.0008951820019995685
+        },
+        "gate.weight": {
+          "max_absolute_error": 4.2246028897352517e-08,
+          "normalized_l2_error": 0.001328117703914819,
+          "rms_error": 3.262336308272925e-09,
+          "reference_norm": 0.0008892976135150425,
+          "actual_norm": 0.0008891050183086719
+        },
+        "gate.bias": {
+          "max_absolute_error": 1.4636498235631734e-08,
+          "normalized_l2_error": 0.0011082453034097278,
+          "rms_error": 3.313732550471947e-09,
+          "reference_norm": 4.784114188837605e-05,
+          "actual_norm": 4.782460946406427e-05
+        },
+        "left_residual.weight": {
+          "max_absolute_error": 5.153706297278404e-07,
+          "normalized_l2_error": 0.001112228800714384,
+          "rms_error": 5.720329063105812e-08,
+          "reference_norm": 0.01316639381406507,
+          "actual_norm": 0.01316412460472085
+        },
+        "right_residual.weight": {
+          "max_absolute_error": 5.87191607337445e-07,
+          "normalized_l2_error": 0.0010957709020947223,
+          "rms_error": 5.6261234875829995e-08,
+          "reference_norm": 0.013144057850668718,
+          "actual_norm": 0.01314115867704776
+        },
+        "norm.weight": {
+          "max_absolute_error": 9.200884960591793e-07,
+          "normalized_l2_error": 0.0007442856753864586,
+          "rms_error": 2.852630422653885e-07,
+          "reference_norm": 0.00613233443445801,
+          "actual_norm": 0.006132678761748519
+        },
+        "norm.bias": {
+          "max_absolute_error": 8.991628419607878e-08,
+          "normalized_l2_error": 0.0003169991260162274,
+          "rms_error": 2.8338539973481925e-08,
+          "reference_norm": 0.0014303403459620268,
+          "actual_norm": 0.0014299934680617316
+        }
+      }
+    },
+    {
+      "scaled": false,
+      "zero_where_E_nonzero": 3045,
+      "error": {
+        "mlp.0.weight": {
+          "max_absolute_error": 1.7017282516462728e-06,
+          "normalized_l2_error": 0.046839286041504787,
+          "rms_error": 3.1852687591678614e-07,
+          "reference_norm": 0.003481815677652911,
+          "actual_norm": 0.0034831995843972474
+        },
+        "mlp.0.bias": {
+          "max_absolute_error": 1.091453668777831e-06,
+          "normalized_l2_error": 0.02691983615173677,
+          "rms_error": 3.226444907901938e-07,
+          "reference_norm": 0.0002711982121308804,
+          "actual_norm": 0.00027108928317941527
+        },
+        "mlp.2.weight": {
+          "max_absolute_error": 1.1580996215343475e-06,
+          "normalized_l2_error": 0.021190809862146796,
+          "rms_error": 2.299386008564683e-07,
+          "reference_norm": 0.003928432477554581,
+          "actual_norm": 0.003929447166643131
+        },
+        "mlp.2.bias": {
+          "max_absolute_error": 1.71031933859922e-06,
+          "normalized_l2_error": 0.010322841685696247,
+          "rms_error": 5.776555881789925e-07,
+          "reference_norm": 0.0008953435199602696,
+          "actual_norm": 0.0008953204346860104
+        },
+        "gate.weight": {
+          "max_absolute_error": 1.258326847164426e-06,
+          "normalized_l2_error": 0.10317840317723055,
+          "rms_error": 2.5344338827991726e-07,
+          "reference_norm": 0.0008892976135150425,
+          "actual_norm": 0.0008934597478098061
+        },
+        "gate.bias": {
+          "max_absolute_error": 8.400584192713723e-07,
+          "normalized_l2_error": 0.08569191127364338,
+          "rms_error": 2.562249303705315e-07,
+          "reference_norm": 4.784114188837605e-05,
+          "actual_norm": 4.7679133493068306e-05
+        },
+        "left_residual.weight": {
+          "max_absolute_error": 5.253787094261497e-06,
+          "normalized_l2_error": 0.021919847767264713,
+          "rms_error": 1.1273646408131479e-06,
+          "reference_norm": 0.01316639381406507,
+          "actual_norm": 0.013169257245821705
+        },
+        "right_residual.weight": {
+          "max_absolute_error": 5.0572934924275614e-06,
+          "normalized_l2_error": 0.021827339467223244,
+          "rms_error": 1.120702393294416e-06,
+          "reference_norm": 0.013144057850668718,
+          "actual_norm": 0.013143055491022895
+        },
+        "norm.weight": {
+          "max_absolute_error": 3.2625976018607616e-06,
+          "normalized_l2_error": 0.002602344593350092,
+          "rms_error": 9.974029600078998e-07,
+          "reference_norm": 0.00613233443445801,
+          "actual_norm": 0.006134320614045279
+        },
+        "norm.bias": {
+          "max_absolute_error": 2.4372020561713725e-06,
+          "normalized_l2_error": 0.009092510157882627,
+          "rms_error": 8.128365078055675e-07,
+          "reference_norm": 0.0014303403459620268,
+          "actual_norm": 0.0014294109171504616
+        }
+      }
+    }
+  ],
+  "note": "Zero-gradient mismatch is an underflow indicator, not proof: analytic derivatives also depend on arithmetic precision"
+}

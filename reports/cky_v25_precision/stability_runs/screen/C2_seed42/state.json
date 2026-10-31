@@ -1,0 +1,9 @@
+{
+  "step": 100,
+  "attempt": 100,
+  "target_tokens": 1600,
+  "train_seconds": 19.860456100068404,
+  "cuda_envelope_ms": 19848.032318115234,
+  "skipped_steps": 0,
+  "clipped_steps": 100
+}

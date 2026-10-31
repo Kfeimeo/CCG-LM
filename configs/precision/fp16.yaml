@@ -1,0 +1,8 @@
+extends: ../smoke.yaml
+precision:
+  outer_autocast: bf16
+  composer: fp16
+  matmul_precision: ieee
+  score_dtype: existing
+  scaler_init_scale: 1024.0
+  scaler_growth_interval: 2000

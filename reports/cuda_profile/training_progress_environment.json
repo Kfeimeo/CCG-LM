@@ -1,0 +1,12 @@
+{
+  "torch": "2.12.1+cu132",
+  "cuda_build": "13.2",
+  "cuda_available": true,
+  "bf16_supported": true,
+  "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+  "memory_gib": 7.99951171875,
+  "capability": [
+    8,
+    6
+  ]
+}

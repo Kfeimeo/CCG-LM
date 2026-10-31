@@ -1,0 +1,150 @@
+{
+  "status": "completed",
+  "experiment": "CKY V3 native PyTorch tensorization",
+  "stages": {
+    "A": "implemented/validated/independently benchmarked",
+    "B": "cached pointer/root/Cell assembly; existing native batched selection preserved",
+    "C": "not implemented; original differentiable score graph retained based on measured A backward improvement"
+  },
+  "tests": {
+    "passed": 413,
+    "skipped": 1,
+    "seconds": 76.41
+  },
+  "correctness": {
+    "matrix_pairs": 1080,
+    "edge_pairs": 36,
+    "full_LM_gradient_pairs": 10,
+    "strict_FP32_failures": 0,
+    "strict_BF16_failures": 0,
+    "nonfinite_gradients": 0,
+    "fixed_weight_forward_bitwise_equal": true,
+    "all_four_RNG_sources_equal": true
+  },
+  "performance": {
+    "final_cases": 9,
+    "final_rows": 18,
+    "warmup_per_arm": 2,
+    "samples_per_arm": 8,
+    "final_valid_update_samples": 144,
+    "stage_A_valid_samples": 32,
+    "stage_B_increment_valid_samples": 32,
+    "prechange_valid_samples": 16,
+    "width_diagnostic_rows": 1074,
+    "isolated_memory_audits": 18,
+    "paired_ratios": {
+      "bf16/main_b1_w24": {
+        "median": 1.8362450637810954,
+        "minimum": 1.7726743764665627,
+        "maximum": 1.9191105252582792
+      },
+      "fp32/main_b1_w24": {
+        "median": 1.8368598198057802,
+        "minimum": 1.689909239482071,
+        "maximum": 2.152532388250812
+      },
+      "bf16/main_b4_w24": {
+        "median": 1.8314177561757559,
+        "minimum": 1.6918543986008419,
+        "maximum": 1.9060538934953215
+      },
+      "fp32/main_b4_w24": {
+        "median": 1.9143403429440022,
+        "minimum": 1.6905014438830643,
+        "maximum": 1.9482411876334758
+      },
+      "bf16/real_b2": {
+        "median": 1.9642415742810315,
+        "minimum": 1.9007710094219035,
+        "maximum": 2.1803844826429395
+      },
+      "bf16/smoke_b2_w16": {
+        "median": 1.7049675726457092,
+        "minimum": 1.3395972985633202,
+        "maximum": 1.9402033383807453
+      },
+      "bf16/smoke_b2_w24": {
+        "median": 2.209741594317536,
+        "minimum": 2.1161498011120865,
+        "maximum": 2.3427498382771614
+      },
+      "bf16/smoke_b2_w8": {
+        "median": 1.2244006869404256,
+        "minimum": 1.1463489218628071,
+        "maximum": 1.3460569034168237
+      },
+      "bf16/smoke_b8_w24": {
+        "median": 2.1027955664473272,
+        "minimum": 2.0358534924843337,
+        "maximum": 2.317297787590833
+      }
+    }
+  },
+  "training": {
+    "cpu_steps_per_arm_per_mode": 8,
+    "gpu_real_steps_per_arm": 20,
+    "gpu_real_accumulation_steps_per_arm": 20,
+    "real_source_step": 500,
+    "real_end_step": 520,
+    "real_source_tokens": 8000,
+    "real_end_tokens": 8320,
+    "v3_checkpoint_replay_parameters_optimizer_RNG_scheduler_sampler_bitwise": true,
+    "accumulation_microbatches_observed": [
+      2,
+      3
+    ],
+    "microbatch4_CE_per_second": [
+      54.73095672694587,
+      78.04756599131684
+    ],
+    "microbatch1_CE_per_second": [
+      26.881048855573358,
+      33.80743328264317
+    ]
+  },
+  "main_parameter_count": 148840709,
+  "new_trainable_parameters": 0,
+  "default_forest": "score_first",
+  "precision": {
+    "outer": "bf16",
+    "composer": "fp32_ieee",
+    "reader": "bf16",
+    "score_dtype": "existing"
+  },
+  "unbounded_exact_fallback": "k=None and R=None -> legacy score search; original strict failure/test retained",
+  "neural_sources_unchanged": true,
+  "lazy_DAG_body_byte_identical": true,
+  "no_Triton_compile_extensions_CUDA_Graph": true,
+  "blackwell_measured": false,
+  "source_sha256": {
+    "models/forest.py": "71262edb49c5058114f4bbaccdd4a92888ae7b4f63c6fcb643a603ec8cf1b71e",
+    "models/forest_lazy.py": "4ce5d9d5927d447553ae64219585c67dffe89e3d93a796f2f6c4bba0f5cf9aa8",
+    "models/forest_tensorized.py": "e20bb47b9df90f008c7c255dd05811629ad3f4fa5b626350c13beb4cee983666",
+    "models/cky_index_cache.py": "32867cd074a49a8219cf785904c3433ed63a37d71af0924d83c44d030fbe03d5",
+    "train.py": "0434084e2f571e606aa93c94dfddd6fcd1b2c5fe5fc3f7650834e17c152396fc",
+    "profile_performance.py": "009a10e6325381cc72372961922ef2ec6d98cd5aaacb9f1792913241c17f3567",
+    "v3_study.py": "9d223912368359b6bb10c379a2eb3b2541f50f9e2c6d261fb4b75f31d2d76ce3",
+    "validate_cky_v3.py": "1e2bae590b62e7710608688155bf0d1c25b0fd14234de947f980059d1a3af963",
+    "benchmark_cky_v3.py": "f082a8ec503244f44703400584c6dc286704faf49d389ec071351342da086d13",
+    "profile_cky_v3_widths.py": "f1ba2e92a5afe7d6a1898e232a3dbaa4290ca5b827753bac068a76c268f81890",
+    "train_cky_v3_validation.py": "8e80f019fd703ec7c5d4d9a78f0bd7812cbd6cd158c92948537f824fa7ebca1a",
+    "summarize_cky_v3.py": "20d057c6389162d7873d04b81b10af8b2e2f5cbde13094576f369cb1977dd13b",
+    "tests/test_cky_tensorized.py": "ee2d77f7b004f0733ae4f24bd5608899a65f369fbd96fa6b6fd3acae38fcc5c6",
+    "tests/test_forest_v3.py": "d759c52b26cbd6cbdaddeeeabaff55b10be06adce2ea46a5af5a1469032f3181",
+    "configs/v3.yaml": "883908d50d30cc05ecb1158d073a195b4394861f12bdff3b60796c257cd09843",
+    "configs/v3_main_125m.yaml": "846307197527ae5dcfb6de10b7ab8c280ebace1ec372b03d2e4597c8f3971380",
+    "configs/v3_fp32.yaml": "d683930b053f1a5350dc55c0495ea4db0f04032d411a2f1b99904933d6ca81fe"
+  },
+  "limitations": [
+    "One device/seed and fixed limited inputs; not a pretrained quality equivalence claim",
+    "Training search_equal statistics include scores, not a pure tree-identity mismatch metric",
+    "Formal VRAM measurements share both warm caches; separate active-cache-only memory audit supplied",
+    "Component CUDA envelopes include CPU submission gaps and diagnostic overhead; do not add them to reconstruct update time",
+    "GPU checkpoint replay uses deterministic algorithms in both arms; ordinary performance runs use the normal shared settings",
+    "Large trusted checkpoints remain local and are excluded from the source archive"
+  ],
+  "integrity_exclusions": [
+    "__pycache__",
+    "*.pyc"
+  ]
+}

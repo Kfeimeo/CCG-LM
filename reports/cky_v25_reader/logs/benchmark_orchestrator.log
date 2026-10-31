@@ -1,0 +1,5 @@
+Reader benchmark smoke_b2_w16
+Reader benchmark smoke_b2_w24
+Reader benchmark main_b1_w24
+Reader benchmark main_b4_w24
+Reader benchmark real_b2

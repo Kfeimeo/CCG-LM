@@ -1,0 +1,21 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+  "arguments": {
+    "output_dir": "reports/cky_v25_precision",
+    "cache_dir": "cache/tinystories_integration",
+    "resume": true,
+    "post_benchmark": true
+  }
+}

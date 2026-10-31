@@ -1,0 +1,941 @@
+{
+  "score_first": {
+    "audit": {
+      "before_selection_semantic": 0,
+      "before_selection_coeff": 0,
+      "after_selection_semantic": 66981888,
+      "after_selection_coeff": 9751040,
+      "possible_pair_rows": 348288,
+      "selected_pair_rows": 43072,
+      "composer_calls": 23,
+      "composer_input_candidate_rows": 43072,
+      "total_materialized_semantic": 66981888,
+      "total_materialized_coeff": 9751040
+    },
+    "shapes": [
+      [
+        16,
+        23,
+        1,
+        256
+      ],
+      [
+        16,
+        22,
+        2,
+        256
+      ],
+      [
+        16,
+        21,
+        5,
+        256
+      ],
+      [
+        16,
+        20,
+        12,
+        256
+      ],
+      [
+        16,
+        19,
+        12,
+        256
+      ],
+      [
+        16,
+        18,
+        12,
+        256
+      ],
+      [
+        16,
+        17,
+        12,
+        256
+      ],
+      [
+        16,
+        16,
+        12,
+        256
+      ],
+      [
+        16,
+        15,
+        12,
+        256
+      ],
+      [
+        16,
+        14,
+        12,
+        256
+      ],
+      [
+        16,
+        13,
+        12,
+        256
+      ],
+      [
+        16,
+        12,
+        12,
+        256
+      ],
+      [
+        16,
+        11,
+        12,
+        256
+      ],
+      [
+        16,
+        10,
+        12,
+        256
+      ],
+      [
+        16,
+        9,
+        12,
+        256
+      ],
+      [
+        16,
+        8,
+        12,
+        256
+      ],
+      [
+        16,
+        7,
+        12,
+        256
+      ],
+      [
+        16,
+        6,
+        12,
+        256
+      ],
+      [
+        16,
+        5,
+        12,
+        256
+      ],
+      [
+        16,
+        4,
+        12,
+        256
+      ],
+      [
+        16,
+        3,
+        12,
+        256
+      ],
+      [
+        16,
+        2,
+        12,
+        256
+      ],
+      [
+        16,
+        1,
+        12,
+        256
+      ]
+    ],
+    "forest_autograd_nodes": 5442,
+    "score_autograd_nodes": 3032,
+    "full_autograd_nodes": 6628
+  },
+  "lazy_semantic": {
+    "audit": {
+      "v2_composer_candidate_rows": 43072,
+      "v25_required_node_occurrences": 1472,
+      "v25_unique_dag_nodes": 866,
+      "v25_unique_leaf_nodes": 384,
+      "v25_actual_composer_rows": 866,
+      "v25_composer_calls": 23,
+      "v25_unused_candidates_skipped": 42206,
+      "sharing_ratio": 0.4116847826086957,
+      "per_width_active_rows": [
+        {
+          "width": 2,
+          "rows": 75
+        },
+        {
+          "width": 3,
+          "rows": 20
+        },
+        {
+          "width": 4,
+          "rows": 16
+        },
+        {
+          "width": 5,
+          "rows": 22
+        },
+        {
+          "width": 6,
+          "rows": 24
+        },
+        {
+          "width": 7,
+          "rows": 26
+        },
+        {
+          "width": 8,
+          "rows": 27
+        },
+        {
+          "width": 9,
+          "rows": 30
+        },
+        {
+          "width": 10,
+          "rows": 31
+        },
+        {
+          "width": 11,
+          "rows": 34
+        },
+        {
+          "width": 12,
+          "rows": 36
+        },
+        {
+          "width": 13,
+          "rows": 40
+        },
+        {
+          "width": 14,
+          "rows": 42
+        },
+        {
+          "width": 15,
+          "rows": 42
+        },
+        {
+          "width": 16,
+          "rows": 42
+        },
+        {
+          "width": 17,
+          "rows": 38
+        },
+        {
+          "width": 18,
+          "rows": 44
+        },
+        {
+          "width": 19,
+          "rows": 48
+        },
+        {
+          "width": 20,
+          "rows": 46
+        },
+        {
+          "width": 21,
+          "rows": 51
+        },
+        {
+          "width": 22,
+          "rows": 62
+        },
+        {
+          "width": 23,
+          "rows": 6
+        },
+        {
+          "width": 24,
+          "rows": 64
+        }
+      ],
+      "topology_bytes": 390912,
+      "index_bytes": 21360,
+      "score_search_host_ms": 242.94250000093598,
+      "topology_d2h_blocking_ms": 2.253200000268407,
+      "dag_cpu_ms": 5.521900005987845,
+      "index_h2d_host_ms": 0.5111000064061955,
+      "semantic_host_ms": 46.84650000126567
+    },
+    "shapes": [
+      [
+        75,
+        256
+      ],
+      [
+        20,
+        256
+      ],
+      [
+        16,
+        256
+      ],
+      [
+        22,
+        256
+      ],
+      [
+        24,
+        256
+      ],
+      [
+        26,
+        256
+      ],
+      [
+        27,
+        256
+      ],
+      [
+        30,
+        256
+      ],
+      [
+        31,
+        256
+      ],
+      [
+        34,
+        256
+      ],
+      [
+        36,
+        256
+      ],
+      [
+        40,
+        256
+      ],
+      [
+        42,
+        256
+      ],
+      [
+        42,
+        256
+      ],
+      [
+        42,
+        256
+      ],
+      [
+        38,
+        256
+      ],
+      [
+        44,
+        256
+      ],
+      [
+        48,
+        256
+      ],
+      [
+        46,
+        256
+      ],
+      [
+        51,
+        256
+      ],
+      [
+        62,
+        256
+      ],
+      [
+        6,
+        256
+      ],
+      [
+        64,
+        256
+      ]
+    ],
+    "forest_autograd_nodes": 3791,
+    "score_autograd_nodes": 3032,
+    "full_autograd_nodes": 4977,
+    "phase_samples": [
+      {
+        "v2_composer_candidate_rows": 43072,
+        "v25_required_node_occurrences": 1472,
+        "v25_unique_dag_nodes": 866,
+        "v25_unique_leaf_nodes": 384,
+        "v25_actual_composer_rows": 866,
+        "v25_composer_calls": 23,
+        "v25_unused_candidates_skipped": 42206,
+        "sharing_ratio": 0.4116847826086957,
+        "per_width_active_rows": [
+          {
+            "width": 2,
+            "rows": 75
+          },
+          {
+            "width": 3,
+            "rows": 20
+          },
+          {
+            "width": 4,
+            "rows": 16
+          },
+          {
+            "width": 5,
+            "rows": 22
+          },
+          {
+            "width": 6,
+            "rows": 24
+          },
+          {
+            "width": 7,
+            "rows": 26
+          },
+          {
+            "width": 8,
+            "rows": 27
+          },
+          {
+            "width": 9,
+            "rows": 30
+          },
+          {
+            "width": 10,
+            "rows": 31
+          },
+          {
+            "width": 11,
+            "rows": 34
+          },
+          {
+            "width": 12,
+            "rows": 36
+          },
+          {
+            "width": 13,
+            "rows": 40
+          },
+          {
+            "width": 14,
+            "rows": 42
+          },
+          {
+            "width": 15,
+            "rows": 42
+          },
+          {
+            "width": 16,
+            "rows": 42
+          },
+          {
+            "width": 17,
+            "rows": 38
+          },
+          {
+            "width": 18,
+            "rows": 44
+          },
+          {
+            "width": 19,
+            "rows": 48
+          },
+          {
+            "width": 20,
+            "rows": 46
+          },
+          {
+            "width": 21,
+            "rows": 51
+          },
+          {
+            "width": 22,
+            "rows": 62
+          },
+          {
+            "width": 23,
+            "rows": 6
+          },
+          {
+            "width": 24,
+            "rows": 64
+          }
+        ],
+        "topology_bytes": 390912,
+        "index_bytes": 21360,
+        "score_search_host_ms": 223.56020000006538,
+        "topology_d2h_blocking_ms": 2.0373000006657094,
+        "dag_cpu_ms": 6.4627000101609156,
+        "index_h2d_host_ms": 0.6064999906811863,
+        "semantic_host_ms": 43.83809999853838,
+        "score_search_cuda_ms": 223.55667114257812,
+        "index_h2d_cuda_ms": 0.6542720198631287,
+        "semantic_cuda_ms": 43.83356857299805
+      },
+      {
+        "v2_composer_candidate_rows": 43072,
+        "v25_required_node_occurrences": 1472,
+        "v25_unique_dag_nodes": 866,
+        "v25_unique_leaf_nodes": 384,
+        "v25_actual_composer_rows": 866,
+        "v25_composer_calls": 23,
+        "v25_unused_candidates_skipped": 42206,
+        "sharing_ratio": 0.4116847826086957,
+        "per_width_active_rows": [
+          {
+            "width": 2,
+            "rows": 75
+          },
+          {
+            "width": 3,
+            "rows": 20
+          },
+          {
+            "width": 4,
+            "rows": 16
+          },
+          {
+            "width": 5,
+            "rows": 22
+          },
+          {
+            "width": 6,
+            "rows": 24
+          },
+          {
+            "width": 7,
+            "rows": 26
+          },
+          {
+            "width": 8,
+            "rows": 27
+          },
+          {
+            "width": 9,
+            "rows": 30
+          },
+          {
+            "width": 10,
+            "rows": 31
+          },
+          {
+            "width": 11,
+            "rows": 34
+          },
+          {
+            "width": 12,
+            "rows": 36
+          },
+          {
+            "width": 13,
+            "rows": 40
+          },
+          {
+            "width": 14,
+            "rows": 42
+          },
+          {
+            "width": 15,
+            "rows": 42
+          },
+          {
+            "width": 16,
+            "rows": 42
+          },
+          {
+            "width": 17,
+            "rows": 38
+          },
+          {
+            "width": 18,
+            "rows": 44
+          },
+          {
+            "width": 19,
+            "rows": 48
+          },
+          {
+            "width": 20,
+            "rows": 46
+          },
+          {
+            "width": 21,
+            "rows": 51
+          },
+          {
+            "width": 22,
+            "rows": 62
+          },
+          {
+            "width": 23,
+            "rows": 6
+          },
+          {
+            "width": 24,
+            "rows": 64
+          }
+        ],
+        "topology_bytes": 390912,
+        "index_bytes": 21360,
+        "score_search_host_ms": 227.59700000460725,
+        "topology_d2h_blocking_ms": 2.2093000006861985,
+        "dag_cpu_ms": 5.060900002717972,
+        "index_h2d_host_ms": 0.4420999903231859,
+        "semantic_host_ms": 36.702500001410954,
+        "score_search_cuda_ms": 227.58546447753906,
+        "index_h2d_cuda_ms": 0.5136640071868896,
+        "semantic_cuda_ms": 36.696990966796875
+      },
+      {
+        "v2_composer_candidate_rows": 43072,
+        "v25_required_node_occurrences": 1472,
+        "v25_unique_dag_nodes": 866,
+        "v25_unique_leaf_nodes": 384,
+        "v25_actual_composer_rows": 866,
+        "v25_composer_calls": 23,
+        "v25_unused_candidates_skipped": 42206,
+        "sharing_ratio": 0.4116847826086957,
+        "per_width_active_rows": [
+          {
+            "width": 2,
+            "rows": 75
+          },
+          {
+            "width": 3,
+            "rows": 20
+          },
+          {
+            "width": 4,
+            "rows": 16
+          },
+          {
+            "width": 5,
+            "rows": 22
+          },
+          {
+            "width": 6,
+            "rows": 24
+          },
+          {
+            "width": 7,
+            "rows": 26
+          },
+          {
+            "width": 8,
+            "rows": 27
+          },
+          {
+            "width": 9,
+            "rows": 30
+          },
+          {
+            "width": 10,
+            "rows": 31
+          },
+          {
+            "width": 11,
+            "rows": 34
+          },
+          {
+            "width": 12,
+            "rows": 36
+          },
+          {
+            "width": 13,
+            "rows": 40
+          },
+          {
+            "width": 14,
+            "rows": 42
+          },
+          {
+            "width": 15,
+            "rows": 42
+          },
+          {
+            "width": 16,
+            "rows": 42
+          },
+          {
+            "width": 17,
+            "rows": 38
+          },
+          {
+            "width": 18,
+            "rows": 44
+          },
+          {
+            "width": 19,
+            "rows": 48
+          },
+          {
+            "width": 20,
+            "rows": 46
+          },
+          {
+            "width": 21,
+            "rows": 51
+          },
+          {
+            "width": 22,
+            "rows": 62
+          },
+          {
+            "width": 23,
+            "rows": 6
+          },
+          {
+            "width": 24,
+            "rows": 64
+          }
+        ],
+        "topology_bytes": 390912,
+        "index_bytes": 21360,
+        "score_search_host_ms": 214.7287999978289,
+        "topology_d2h_blocking_ms": 1.7346999957226217,
+        "dag_cpu_ms": 4.455599992070347,
+        "index_h2d_host_ms": 0.5271999980323017,
+        "semantic_host_ms": 55.67820000578649,
+        "score_search_cuda_ms": 214.72525024414062,
+        "index_h2d_cuda_ms": 0.583296000957489,
+        "semantic_cuda_ms": 55.67264175415039
+      },
+      {
+        "v2_composer_candidate_rows": 43072,
+        "v25_required_node_occurrences": 1472,
+        "v25_unique_dag_nodes": 866,
+        "v25_unique_leaf_nodes": 384,
+        "v25_actual_composer_rows": 866,
+        "v25_composer_calls": 23,
+        "v25_unused_candidates_skipped": 42206,
+        "sharing_ratio": 0.4116847826086957,
+        "per_width_active_rows": [
+          {
+            "width": 2,
+            "rows": 75
+          },
+          {
+            "width": 3,
+            "rows": 20
+          },
+          {
+            "width": 4,
+            "rows": 16
+          },
+          {
+            "width": 5,
+            "rows": 22
+          },
+          {
+            "width": 6,
+            "rows": 24
+          },
+          {
+            "width": 7,
+            "rows": 26
+          },
+          {
+            "width": 8,
+            "rows": 27
+          },
+          {
+            "width": 9,
+            "rows": 30
+          },
+          {
+            "width": 10,
+            "rows": 31
+          },
+          {
+            "width": 11,
+            "rows": 34
+          },
+          {
+            "width": 12,
+            "rows": 36
+          },
+          {
+            "width": 13,
+            "rows": 40
+          },
+          {
+            "width": 14,
+            "rows": 42
+          },
+          {
+            "width": 15,
+            "rows": 42
+          },
+          {
+            "width": 16,
+            "rows": 42
+          },
+          {
+            "width": 17,
+            "rows": 38
+          },
+          {
+            "width": 18,
+            "rows": 44
+          },
+          {
+            "width": 19,
+            "rows": 48
+          },
+          {
+            "width": 20,
+            "rows": 46
+          },
+          {
+            "width": 21,
+            "rows": 51
+          },
+          {
+            "width": 22,
+            "rows": 62
+          },
+          {
+            "width": 23,
+            "rows": 6
+          },
+          {
+            "width": 24,
+            "rows": 64
+          }
+        ],
+        "topology_bytes": 390912,
+        "index_bytes": 21360,
+        "score_search_host_ms": 226.3888000015868,
+        "topology_d2h_blocking_ms": 1.9953000009991229,
+        "dag_cpu_ms": 5.8929999941028655,
+        "index_h2d_host_ms": 0.5094999942230061,
+        "semantic_host_ms": 35.01439999672584,
+        "score_search_cuda_ms": 226.37884521484375,
+        "index_h2d_cuda_ms": 0.5737280249595642,
+        "semantic_cuda_ms": 35.01411056518555
+      },
+      {
+        "v2_composer_candidate_rows": 43072,
+        "v25_required_node_occurrences": 1472,
+        "v25_unique_dag_nodes": 866,
+        "v25_unique_leaf_nodes": 384,
+        "v25_actual_composer_rows": 866,
+        "v25_composer_calls": 23,
+        "v25_unused_candidates_skipped": 42206,
+        "sharing_ratio": 0.4116847826086957,
+        "per_width_active_rows": [
+          {
+            "width": 2,
+            "rows": 75
+          },
+          {
+            "width": 3,
+            "rows": 20
+          },
+          {
+            "width": 4,
+            "rows": 16
+          },
+          {
+            "width": 5,
+            "rows": 22
+          },
+          {
+            "width": 6,
+            "rows": 24
+          },
+          {
+            "width": 7,
+            "rows": 26
+          },
+          {
+            "width": 8,
+            "rows": 27
+          },
+          {
+            "width": 9,
+            "rows": 30
+          },
+          {
+            "width": 10,
+            "rows": 31
+          },
+          {
+            "width": 11,
+            "rows": 34
+          },
+          {
+            "width": 12,
+            "rows": 36
+          },
+          {
+            "width": 13,
+            "rows": 40
+          },
+          {
+            "width": 14,
+            "rows": 42
+          },
+          {
+            "width": 15,
+            "rows": 42
+          },
+          {
+            "width": 16,
+            "rows": 42
+          },
+          {
+            "width": 17,
+            "rows": 38
+          },
+          {
+            "width": 18,
+            "rows": 44
+          },
+          {
+            "width": 19,
+            "rows": 48
+          },
+          {
+            "width": 20,
+            "rows": 46
+          },
+          {
+            "width": 21,
+            "rows": 51
+          },
+          {
+            "width": 22,
+            "rows": 62
+          },
+          {
+            "width": 23,
+            "rows": 6
+          },
+          {
+            "width": 24,
+            "rows": 64
+          }
+        ],
+        "topology_bytes": 390912,
+        "index_bytes": 21360,
+        "score_search_host_ms": 247.75550000777002,
+        "topology_d2h_blocking_ms": 1.9613000040408224,
+        "dag_cpu_ms": 5.55900001199916,
+        "index_h2d_host_ms": 0.6594000005861744,
+        "semantic_host_ms": 41.11930000362918,
+        "score_search_cuda_ms": 247.7499237060547,
+        "index_h2d_cuda_ms": 0.7103360295295715,
+        "semantic_cuda_ms": 41.11849594116211
+      }
+    ]
+  }
+}

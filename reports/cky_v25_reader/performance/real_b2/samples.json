@@ -1,0 +1,302 @@
+{
+  "samples": {
+    "B1": [
+      {
+        "repeat": 0,
+        "wall_ms": 685.4230999888387,
+        "cuda_envelope_ms": 685.2925415039062,
+        "skipped": false
+      },
+      {
+        "repeat": 1,
+        "wall_ms": 704.3336999922758,
+        "cuda_envelope_ms": 704.1177368164062,
+        "skipped": false
+      },
+      {
+        "repeat": 2,
+        "wall_ms": 694.9823999893852,
+        "cuda_envelope_ms": 694.8731079101562,
+        "skipped": false
+      },
+      {
+        "repeat": 3,
+        "wall_ms": 732.9071999993175,
+        "cuda_envelope_ms": 732.7958984375,
+        "skipped": false
+      },
+      {
+        "repeat": 4,
+        "wall_ms": 738.2844000094337,
+        "cuda_envelope_ms": 738.1790771484375,
+        "skipped": false
+      },
+      {
+        "repeat": 5,
+        "wall_ms": 734.7659999941243,
+        "cuda_envelope_ms": 734.655517578125,
+        "skipped": false
+      },
+      {
+        "repeat": 6,
+        "wall_ms": 687.3999000090407,
+        "cuda_envelope_ms": 687.2596435546875,
+        "skipped": false
+      },
+      {
+        "repeat": 7,
+        "wall_ms": 779.695700010052,
+        "cuda_envelope_ms": 779.6080932617188,
+        "skipped": false
+      }
+    ],
+    "B2": [
+      {
+        "repeat": 0,
+        "wall_ms": 510.4353000060655,
+        "cuda_envelope_ms": 510.3380432128906,
+        "skipped": false
+      },
+      {
+        "repeat": 1,
+        "wall_ms": 492.0286999986274,
+        "cuda_envelope_ms": 491.92755126953125,
+        "skipped": false
+      },
+      {
+        "repeat": 2,
+        "wall_ms": 483.1033000082243,
+        "cuda_envelope_ms": 483.00030517578125,
+        "skipped": false
+      },
+      {
+        "repeat": 3,
+        "wall_ms": 501.1525000008987,
+        "cuda_envelope_ms": 501.03704833984375,
+        "skipped": false
+      },
+      {
+        "repeat": 4,
+        "wall_ms": 486.75729999376927,
+        "cuda_envelope_ms": 486.65191650390625,
+        "skipped": false
+      },
+      {
+        "repeat": 5,
+        "wall_ms": 494.058700001915,
+        "cuda_envelope_ms": 493.9765625,
+        "skipped": false
+      },
+      {
+        "repeat": 6,
+        "wall_ms": 489.6615000034217,
+        "cuda_envelope_ms": 489.5672302246094,
+        "skipped": false
+      },
+      {
+        "repeat": 7,
+        "wall_ms": 505.8701999951154,
+        "cuda_envelope_ms": 505.74847412109375,
+        "skipped": false
+      }
+    ],
+    "B1-R": [
+      {
+        "repeat": 0,
+        "wall_ms": 705.0920000037877,
+        "cuda_envelope_ms": 704.9676513671875,
+        "skipped": false
+      },
+      {
+        "repeat": 1,
+        "wall_ms": 696.9300000055227,
+        "cuda_envelope_ms": 696.827880859375,
+        "skipped": false
+      },
+      {
+        "repeat": 2,
+        "wall_ms": 738.456099992618,
+        "cuda_envelope_ms": 738.3582763671875,
+        "skipped": false
+      },
+      {
+        "repeat": 3,
+        "wall_ms": 696.7948999954388,
+        "cuda_envelope_ms": 696.627197265625,
+        "skipped": false
+      },
+      {
+        "repeat": 4,
+        "wall_ms": 725.7397000066703,
+        "cuda_envelope_ms": 725.6453247070312,
+        "skipped": false
+      },
+      {
+        "repeat": 5,
+        "wall_ms": 695.407699997304,
+        "cuda_envelope_ms": 695.2949829101562,
+        "skipped": false
+      },
+      {
+        "repeat": 6,
+        "wall_ms": 699.3386999965878,
+        "cuda_envelope_ms": 699.2506713867188,
+        "skipped": false
+      },
+      {
+        "repeat": 7,
+        "wall_ms": 708.5422999953153,
+        "cuda_envelope_ms": 708.4462280273438,
+        "skipped": false
+      }
+    ],
+    "B2-R": [
+      {
+        "repeat": 0,
+        "wall_ms": 505.89460000628605,
+        "cuda_envelope_ms": 505.8037414550781,
+        "skipped": false
+      },
+      {
+        "repeat": 1,
+        "wall_ms": 520.167800001218,
+        "cuda_envelope_ms": 519.9718627929688,
+        "skipped": false
+      },
+      {
+        "repeat": 2,
+        "wall_ms": 492.7246000006562,
+        "cuda_envelope_ms": 492.6300048828125,
+        "skipped": false
+      },
+      {
+        "repeat": 3,
+        "wall_ms": 479.5047999941744,
+        "cuda_envelope_ms": 479.42144775390625,
+        "skipped": false
+      },
+      {
+        "repeat": 4,
+        "wall_ms": 486.14540000562556,
+        "cuda_envelope_ms": 486.0467224121094,
+        "skipped": false
+      },
+      {
+        "repeat": 5,
+        "wall_ms": 545.5767999956151,
+        "cuda_envelope_ms": 545.4776611328125,
+        "skipped": false
+      },
+      {
+        "repeat": 6,
+        "wall_ms": 516.3417000003392,
+        "cuda_envelope_ms": 516.2445068359375,
+        "skipped": false
+      },
+      {
+        "repeat": 7,
+        "wall_ms": 498.6903000099119,
+        "cuda_envelope_ms": 498.5896911621094,
+        "skipped": false
+      }
+    ]
+  },
+  "orders": [
+    [
+      "B1",
+      "B2",
+      "B1-R",
+      "B2-R"
+    ],
+    [
+      "B2",
+      "B1-R",
+      "B2-R",
+      "B1"
+    ],
+    [
+      "B1-R",
+      "B2-R",
+      "B1",
+      "B2"
+    ],
+    [
+      "B2-R",
+      "B1",
+      "B2",
+      "B1-R"
+    ],
+    [
+      "B2-R",
+      "B1-R",
+      "B2",
+      "B1"
+    ],
+    [
+      "B1",
+      "B2-R",
+      "B1-R",
+      "B2"
+    ],
+    [
+      "B2",
+      "B1",
+      "B2-R",
+      "B1-R"
+    ],
+    [
+      "B1-R",
+      "B2",
+      "B1",
+      "B2-R"
+    ]
+  ],
+  "paired": {
+    "B_speedup": {
+      "median": 1.4505113764866562,
+      "minimum": 1.3428207257231108,
+      "maximum": 1.5412959688425618,
+      "samples": [
+        1.3428207257231108,
+        1.4314890574355532,
+        1.4385792851705914,
+        1.4624434678027212,
+        1.51674027286059,
+        1.4872038484319299,
+        1.4038267252055496,
+        1.5412959688425618
+      ]
+    },
+    "R_speedup": {
+      "median": 1.4072795148577484,
+      "minimum": 1.2746284299532038,
+      "maximum": 1.4987197716363958,
+      "samples": [
+        1.3937527698359036,
+        1.3398176511577435,
+        1.4987197716363958,
+        1.4531552134700305,
+        1.4928449389797214,
+        1.2746284299532038,
+        1.3544106547972563,
+        1.4208062598795934
+      ]
+    },
+    "R_over_B_lazy_cost": {
+      "median": 1.0093292608722568,
+      "minimum": 0.9568041663831159,
+      "maximum": 1.104275261205805,
+      "samples": [
+        0.9911042594434094,
+        1.0571899566075496,
+        1.0199156163749412,
+        0.9568041663831159,
+        0.9987429053695722,
+        1.104275261205805,
+        1.0544870282771488,
+        0.9858068334816464
+      ]
+    }
+  },
+  "protocol": "All four arms in the same round; restore same model/AdamW/RNG; IEEE global unchanged"
+}

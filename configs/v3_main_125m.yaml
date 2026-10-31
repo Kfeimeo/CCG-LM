@@ -1,0 +1,9 @@
+extends: main_125m.yaml
+model:
+  forest_implementation: lazy_tensorized
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: bf16
+  matmul_precision: ieee
+  score_dtype: existing

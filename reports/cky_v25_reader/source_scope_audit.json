@@ -1,0 +1,124 @@
+{
+  "previous_source_archive_sha256": "1ccf8d79c266bca54bbd869b331c1400ae96dc346f91deeab6f60a1229753247",
+  "changed_existing_source_files": [
+    {
+      "path": "models/precision_policy.py",
+      "before_sha256": "eabedb81dd2244b1ac3fcd1731ee56d1dbb2a26edb7edc27b54fd84cb9e5a317",
+      "after_sha256": "da7be7cc6735b3ff672b69a3f8dcbad4d723d45eb1b6a115ba966e538d141b93"
+    },
+    {
+      "path": "models/reader.py",
+      "before_sha256": "af1293e7f390dc51b5bf73685e97c9863555ee223231fb7f4d321e0ddc11f742",
+      "after_sha256": "2b8312350f8df64f23b080d058cf5d1fa5f33c65a62c92060fde455b023081e3"
+    },
+    {
+      "path": "profile_performance.py",
+      "before_sha256": "8c4d0aa35853bd210a9daab32559374e62f488d5f59eb9dcd3871369f300ec7e",
+      "after_sha256": "39aae220fdb6877476dacb949a46fa0ccec00bff2fd8df3ae90d822694310c6c"
+    },
+    {
+      "path": "train.py",
+      "before_sha256": "aed333ecb8faca9872b62d08c5b1444c2f6dfdc31f5c6c63304f15fa2dd4177f",
+      "after_sha256": "53d3d36cfad662a054f3eae7b58cdacd8e0764e8675471b293fbe272c1bbe27f"
+    }
+  ],
+  "protected_existing_model_data_configs_identical": [
+    {
+      "path": "configs/main_125m.yaml",
+      "sha256": "8f6b7138c9af99264ac9ca8f38bab2c37db39c3475bdc4845ce54fc8eb0eee7a"
+    },
+    {
+      "path": "configs/precision/bf16.yaml",
+      "sha256": "7eca0b5849bdb84a79f4fcce58c045c7bbe9437f586c8c30ff7b983d4e74434e"
+    },
+    {
+      "path": "configs/precision/fp16.yaml",
+      "sha256": "f0147dea0c9d03c7a994a2c79c8c2a2bedc0567b46f9fed0c58b02c2565fa84a"
+    },
+    {
+      "path": "configs/precision/fp32_ieee.yaml",
+      "sha256": "9360c04e2ab2e37593666a2be47bf7de1475f6fa72e7340da3f9f4894500adc3"
+    },
+    {
+      "path": "configs/precision/fp32_tf32.yaml",
+      "sha256": "829dafbbfe7bdec084b6e7e0e054cad0fae746a8efe772b350e859a1613880cb"
+    },
+    {
+      "path": "configs/precision/main_fp32_ieee.yaml",
+      "sha256": "730510c635aa424dcce8d18d222b8b2e79e196b5cd2cc4db2c32efe2f5cd365d"
+    },
+    {
+      "path": "configs/precision/stability_smoke.yaml",
+      "sha256": "68d07fc1cf2e350cee312f31c175574caab77f46668aac46cb67ffeb3d7c7bf2"
+    },
+    {
+      "path": "configs/scale_245m.yaml",
+      "sha256": "be3965385103c34eb0a46cad503c4bdf62805344fdb2516273459fb1c3a5bbe9"
+    },
+    {
+      "path": "configs/smoke.yaml",
+      "sha256": "5141d2feb48002171630cc75bbc7346febbad5e0560fdc3400250a1033fe1c8f"
+    },
+    {
+      "path": "data/__init__.py",
+      "sha256": "a9590a5cbb34324d535b726f44df5e4db872ff4f0ac755feeb058d4860a45a10"
+    },
+    {
+      "path": "data/dataset.py",
+      "sha256": "0c71022998b1448e4d361c926411f17e190ef1f62111facd7b3a573ee00018c4"
+    },
+    {
+      "path": "data/prepare.py",
+      "sha256": "56fe8e3e83364dbb54979293f6f468292036944fa8d121634a6ee2850f9e08b8"
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "036e9d6d3bfc57b8a9dcf4f54569873a4a61c59fa6e47249962693fa0b79710b"
+    },
+    {
+      "path": "models/composer.py",
+      "sha256": "79987221a240c96b46a06389811521d022feee22db54b9e6c2a5f517d911eed3"
+    },
+    {
+      "path": "models/decoder.py",
+      "sha256": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3"
+    },
+    {
+      "path": "models/forest.py",
+      "sha256": "c8c075380c660b54aac52299746a47161c29ab76e31ccfad15d2826cca38330b"
+    },
+    {
+      "path": "models/forest_lazy.py",
+      "sha256": "8a6650ad5b33cb8680f7e0e625ec7dd92c351f28f835bd30c3be27238045d489"
+    },
+    {
+      "path": "models/forest_reference.py",
+      "sha256": "43f3f9d5442cfbd1ff84eced6e4d64626983c79201c58ebfdd2de1d855e701fb"
+    },
+    {
+      "path": "models/forest_score_first.py",
+      "sha256": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b"
+    },
+    {
+      "path": "models/model.py",
+      "sha256": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e"
+    },
+    {
+      "path": "models/syntax.py",
+      "sha256": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84"
+    }
+  ],
+  "checkpoint_compatibility_note": "train.py only normalizes the serialized old precision policy before equality; no optimizer, learning rate, data, or training objective changes",
+  "default_forest_implementation": "score_first",
+  "new_reader_config": "configs/precision/fp32_reader.yaml",
+  "new_source_files": [
+    "reader_precision_study.py",
+    "validate_reader_precision.py",
+    "benchmark_reader_precision.py",
+    "audit_reader_search.py",
+    "audit_reader_profiler.py",
+    "summarize_reader_precision.py",
+    "tests/test_reader_precision.py",
+    "configs/precision/fp32_reader.yaml"
+  ]
+}

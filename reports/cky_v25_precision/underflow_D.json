@@ -1,0 +1,240 @@
+{
+  "group": "D",
+  "results": [
+    {
+      "scaling": true,
+      "scale": 1024.0,
+      "loss": 0.0021332171745598316,
+      "parameter_gradients": {
+        "mlp.0.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 22,
+          "elements": 262144,
+          "minimum_nonzero": 3.4924596548080444e-10,
+          "max_absolute": 5.620718002319336e-05,
+          "fp16_subnormal_range": 262122
+        },
+        "mlp.0.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 512,
+          "minimum_nonzero": 4.470348358154297e-08,
+          "max_absolute": 4.744529724121094e-05,
+          "fp16_subnormal_range": 512
+        },
+        "mlp.2.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 14,
+          "elements": 131072,
+          "minimum_nonzero": 2.3283064365386963e-10,
+          "max_absolute": 8.171796798706055e-05,
+          "fp16_subnormal_range": 131049
+        },
+        "mlp.2.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 3.1711533665657043e-07,
+          "max_absolute": 0.00016963481903076172,
+          "fp16_subnormal_range": 181
+        },
+        "gate.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 8,
+          "elements": 131072,
+          "minimum_nonzero": 5.820766091346741e-11,
+          "max_absolute": 2.002716064453125e-05,
+          "fp16_subnormal_range": 131064
+        },
+        "gate.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 1.1175870895385742e-08,
+          "max_absolute": 1.1838972568511963e-05,
+          "fp16_subnormal_range": 256
+        },
+        "left_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 2,
+          "elements": 65536,
+          "minimum_nonzero": 3.725290298461914e-09,
+          "max_absolute": 0.0002677440643310547,
+          "fp16_subnormal_range": 51566
+        },
+        "right_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 3,
+          "elements": 65536,
+          "minimum_nonzero": 7.450580596923828e-09,
+          "max_absolute": 0.0003066062927246094,
+          "fp16_subnormal_range": 51395
+        },
+        "norm.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 2.3406209948007017e-06,
+          "max_absolute": 0.0011631352826952934,
+          "fp16_subnormal_range": 26
+        },
+        "norm.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 6.367918103933334e-08,
+          "max_absolute": 0.0002656504511833191,
+          "fp16_subnormal_range": 120
+        }
+      },
+      "leaf_gradient": {
+        "dtype": "torch.float32",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 1,
+        "elements": 24576,
+        "minimum_nonzero": 5.820766091346741e-11,
+        "max_absolute": 3.7863850593566895e-05,
+        "fp16_subnormal_range": 24575
+      }
+    },
+    {
+      "scaling": false,
+      "scale": 1.0,
+      "loss": 0.0021332171745598316,
+      "parameter_gradients": {
+        "mlp.0.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 1076,
+          "elements": 262144,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 5.5909156799316406e-05,
+          "fp16_subnormal_range": 261068
+        },
+        "mlp.0.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 1,
+          "elements": 512,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 4.738569259643555e-05,
+          "fp16_subnormal_range": 511
+        },
+        "mlp.2.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 391,
+          "elements": 131072,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 8.153915405273438e-05,
+          "fp16_subnormal_range": 130673
+        },
+        "mlp.2.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 0.00016808509826660156,
+          "fp16_subnormal_range": 180
+        },
+        "gate.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 1497,
+          "elements": 131072,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 2.002716064453125e-05,
+          "fp16_subnormal_range": 129575
+        },
+        "gate.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 1,
+          "elements": 256,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 1.1920928955078125e-05,
+          "fp16_subnormal_range": 255
+        },
+        "left_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 47,
+          "elements": 65536,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 0.00026607513427734375,
+          "fp16_subnormal_range": 51450
+        },
+        "right_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 32,
+          "elements": 65536,
+          "minimum_nonzero": 5.960464477539063e-08,
+          "max_absolute": 0.0003075599670410156,
+          "fp16_subnormal_range": 51394
+        },
+        "norm.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 3.111852493020706e-06,
+          "max_absolute": 0.0011621088488027453,
+          "fp16_subnormal_range": 26
+        },
+        "norm.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 6.556510925292969e-07,
+          "max_absolute": 0.00026416778564453125,
+          "fp16_subnormal_range": 120
+        }
+      },
+      "leaf_gradient": {
+        "dtype": "torch.float32",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 3719,
+        "elements": 24576,
+        "minimum_nonzero": 5.960464477539063e-08,
+        "max_absolute": 3.784894943237305e-05,
+        "fp16_subnormal_range": 20857
+      }
+    }
+  ],
+  "note": "Isolated identical root-probe; scaling-on/off are diagnostics, not additional training arms"
+}

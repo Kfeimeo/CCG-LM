@@ -1,0 +1,9 @@
+{
+  "difference_a_minus_b": -0.006302668253580729,
+  "ci_low": -0.009213915189107259,
+  "ci_high": -0.0033694512049357098,
+  "confidence": 0.95,
+  "stories": 12,
+  "iterations": 2000,
+  "seed": 2026
+}

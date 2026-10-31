@@ -1,0 +1,11 @@
+precision,cky,root_error,gradient_error,update_ms,peak_gib,val_nll_500
+BF16,score_first,Reference,Reference,"955.3 [900.9,983.4]",2.944,未入选/未运行
+BF16,lazy_semantic,0.00596,0.00871,"690.2 [649.0,724.0]",2.734,未入选/未运行
+FP32 IEEE,score_first,Reference,Reference,"928.4 [906.8,980.5]",3.106,7.91951 ± 0.24052 (n=3)
+FP32 IEEE,lazy_semantic,2.95e-07,0.00868,"655.6 [640.8,678.6]",2.734,7.90471 ± 0.18003 (n=3)
+FP32 TF32,score_first,Reference,Reference,"941.6 [884.2,967.6]",3.106,未入选/未运行
+FP32 TF32,lazy_semantic,0.000463,0.00868,"639.8 [616.2,666.3]",2.734,8.00605 ± 0.21999 (n=3)
+FP16 + scaler,score_first,Reference,Reference,"1079.8 [1061.4,1160.2]",2.879,未入选/未运行
+FP16 + scaler,lazy_semantic,0.000723,0.00865,"686.4 [680.2,740.0]",2.734,未入选/未运行
+All FP32 IEEE,score_first,Reference,Reference,"906.5 [873.3,935.0]",3.140,未入选/未运行
+All FP32 IEEE,lazy_semantic,2.82e-07,6.22e-07,"636.6 [601.7,641.0]",2.754,未入选/未运行

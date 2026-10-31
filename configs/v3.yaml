@@ -1,0 +1,5 @@
+extends: precision/fp32_ieee.yaml
+model:
+  forest_implementation: lazy_tensorized
+precision:
+  reader: bf16

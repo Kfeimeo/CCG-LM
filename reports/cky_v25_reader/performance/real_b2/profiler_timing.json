@@ -1,0 +1,96 @@
+{
+  "case": "real_b2",
+  "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+  "weight_matches_formal_benchmark": true,
+  "scope": "Supplementary separate profiler replay, one sample/arm after two warmups; not the formal no-profiler round; no speedup claims",
+  "records": [
+    {
+      "arm": "B1",
+      "profiled_update_wall_ms": 1004.7195999941323,
+      "profiled_update_cuda_envelope_ms": 1003.8649291992188,
+      "cky_forward_stack": 802,
+      "cky_forward_cat": 929,
+      "cky_forward_cudaLaunchKernel": 3037,
+      "full_step_stack": 807,
+      "full_step_cat": 937,
+      "full_step_cudaLaunchKernel": 15295,
+      "device_idle_gaps_over_50us": 4271,
+      "device_idle_gap_total_ms": 706.1826790000084,
+      "device_idle_gap_max_ms": 49.999007999999975,
+      "backend": {
+        "generic_fp32": "ieee",
+        "matmul_fp32": "ieee",
+        "cudnn_fp32": "ieee",
+        "fp16_reduced_reduction": true,
+        "bf16_reduced_reduction": true,
+        "fp16_accumulation": false
+      }
+    },
+    {
+      "arm": "B2",
+      "profiled_update_wall_ms": 682.3442000022624,
+      "profiled_update_cuda_envelope_ms": 681.4615478515625,
+      "cky_forward_stack": 782,
+      "cky_forward_cat": 912,
+      "cky_forward_cudaLaunchKernel": 3144,
+      "full_step_stack": 787,
+      "full_step_cat": 920,
+      "full_step_cudaLaunchKernel": 9683,
+      "device_idle_gaps_over_50us": 2925,
+      "device_idle_gap_total_ms": 400.3526630000008,
+      "device_idle_gap_max_ms": 1.8405,
+      "backend": {
+        "generic_fp32": "ieee",
+        "matmul_fp32": "ieee",
+        "cudnn_fp32": "ieee",
+        "fp16_reduced_reduction": true,
+        "bf16_reduced_reduction": true,
+        "fp16_accumulation": false
+      }
+    },
+    {
+      "arm": "B1-R",
+      "profiled_update_wall_ms": 1159.5919000101276,
+      "profiled_update_cuda_envelope_ms": 1158.7774658203125,
+      "cky_forward_stack": 802,
+      "cky_forward_cat": 929,
+      "cky_forward_cudaLaunchKernel": 3037,
+      "full_step_stack": 807,
+      "full_step_cat": 937,
+      "full_step_cudaLaunchKernel": 15257,
+      "device_idle_gaps_over_50us": 5241,
+      "device_idle_gap_total_ms": 805.2822579999926,
+      "device_idle_gap_max_ms": 5.791363999999943,
+      "backend": {
+        "generic_fp32": "ieee",
+        "matmul_fp32": "ieee",
+        "cudnn_fp32": "ieee",
+        "fp16_reduced_reduction": true,
+        "bf16_reduced_reduction": true,
+        "fp16_accumulation": false
+      }
+    },
+    {
+      "arm": "B2-R",
+      "profiled_update_wall_ms": 785.4454000043916,
+      "profiled_update_cuda_envelope_ms": 784.6190185546875,
+      "cky_forward_stack": 782,
+      "cky_forward_cat": 912,
+      "cky_forward_cudaLaunchKernel": 3144,
+      "full_step_stack": 787,
+      "full_step_cat": 920,
+      "full_step_cudaLaunchKernel": 9645,
+      "device_idle_gaps_over_50us": 3582,
+      "device_idle_gap_total_ms": 465.6057840000013,
+      "device_idle_gap_max_ms": 2.102523999999976,
+      "backend": {
+        "generic_fp32": "ieee",
+        "matmul_fp32": "ieee",
+        "cudnn_fp32": "ieee",
+        "fp16_reduced_reduction": true,
+        "bf16_reduced_reduction": true,
+        "fp16_accumulation": false
+      }
+    }
+  ]
+}

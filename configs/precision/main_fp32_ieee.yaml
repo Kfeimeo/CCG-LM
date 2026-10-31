@@ -1,0 +1,6 @@
+extends: ../main_125m.yaml
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  matmul_precision: ieee
+  score_dtype: existing

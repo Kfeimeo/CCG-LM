@@ -1,0 +1,32 @@
+{
+  "case": "B",
+  "recommend_reader": "bf16",
+  "experimental_reader": "fp32_ieee",
+  "reason": "Reader forward consistency improves strongly, full-model gradient only improves modestly; no independent training benefit established",
+  "global_gradient_observations": {
+    "1": {
+      "B_over_R": 1.103642133647724,
+      "relative_reduction": 0.09390918531278725,
+      "gradient_error_B": 0.008682439405972811,
+      "gradient_error_R": 0.007867078594830264
+    },
+    "4": {
+      "B_over_R": 1.0714690676065992,
+      "relative_reduction": 0.06670194200402224,
+      "gradient_error_B": 0.007036497263180051,
+      "gradient_error_R": 0.006567149230819954
+    }
+  },
+  "partial_fp32_tested": false,
+  "partial_fp32_reason": "Condition of clear full-gradient improvement not met; no R-KV/R-Attn results claimed",
+  "training_run": false,
+  "v3_implemented": false,
+  "default_forest_implementation": "score_first",
+  "optional_research_baseline": {
+    "forest_implementation": "lazy_semantic",
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "reader": "bf16",
+    "matmul_precision": "ieee"
+  }
+}

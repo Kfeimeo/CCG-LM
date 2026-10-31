@@ -1,0 +1,235 @@
+{
+  "status": "completed",
+  "recommendation": "B2",
+  "default": "score_first",
+  "v3_implemented": false,
+  "tests": {
+    "passed": 282,
+    "skipped": 1
+  },
+  "forward_matrix": 1440,
+  "forward_edges": 50,
+  "full_model_gradient_pairs": 22,
+  "precision_backward_edge_tests": 20,
+  "performance_pairs": 35,
+  "effective_performance_samples": 350,
+  "screening": {
+    "arms": [
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "C2",
+      "D2"
+    ],
+    "steps": 100,
+    "seed": 42
+  },
+  "extension": {
+    "arms": [
+      "B1",
+      "B2",
+      "C2"
+    ],
+    "steps": 500,
+    "seeds": [
+      13,
+      42,
+      2026
+    ],
+    "runs": 9
+  },
+  "actual_update_counts": [
+    {
+      "run": "A1_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 24.853643200010993,
+      "cuda_envelope_ms": 24837.541900634766,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "A2_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 20.7694164999848,
+      "cuda_envelope_ms": 20758.727249145508,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "B1_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 24.075636800014763,
+      "cuda_envelope_ms": 24061.410903930664,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "B2_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 21.12205140008882,
+      "cuda_envelope_ms": 21110.01885986328,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "C2_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 19.860456100068404,
+      "cuda_envelope_ms": 19848.032318115234,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "D2_seed42",
+      "stage": "screen",
+      "step": 100,
+      "attempt": 100,
+      "target_tokens": 1600,
+      "train_seconds": 19.716146800041315,
+      "cuda_envelope_ms": 19708.48942565918,
+      "skipped_steps": 0,
+      "clipped_steps": 100
+    },
+    {
+      "run": "B1_seed13",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 108.45409909995215,
+      "cuda_envelope_ms": 108401.45584106445,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "B1_seed2026",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 107.01209889994061,
+      "cuda_envelope_ms": 106965.4821472168,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "B1_seed42",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 110.1373036999139,
+      "cuda_envelope_ms": 110086.68569946289,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "B2_seed13",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 88.0544661002059,
+      "cuda_envelope_ms": 88002.71932220459,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "B2_seed2026",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 87.22084099995845,
+      "cuda_envelope_ms": 87176.65348052979,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "B2_seed42",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 90.44436740022502,
+      "cuda_envelope_ms": 90396.98845672607,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "C2_seed13",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 91.61946440009342,
+      "cuda_envelope_ms": 91574.23659515381,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "C2_seed2026",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 88.9344296001509,
+      "cuda_envelope_ms": 88891.40175628662,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    },
+    {
+      "run": "C2_seed42",
+      "stage": "long",
+      "step": 500,
+      "attempt": 500,
+      "target_tokens": 8000,
+      "train_seconds": 92.20914880000055,
+      "cuda_envelope_ms": 92161.98790740967,
+      "skipped_steps": 0,
+      "clipped_steps": 500
+    }
+  ],
+  "all_run_skips": 0,
+  "fixed_validation": {
+    "stories": 4,
+    "examples": 63,
+    "ce_tokens": 1041
+  },
+  "blackwell": "not measured; independent output entry provided",
+  "strict_gradient_status": "Original tolerances retained; mixed-precision mismatches recorded, not converted to pass",
+  "source_hashes": {
+    "models\\composer.py": "79987221a240c96b46a06389811521d022feee22db54b9e6c2a5f517d911eed3",
+    "models\\decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+    "models\\forest.py": "c8c075380c660b54aac52299746a47161c29ab76e31ccfad15d2826cca38330b",
+    "models\\forest_lazy.py": "8a6650ad5b33cb8680f7e0e625ec7dd92c351f28f835bd30c3be27238045d489",
+    "models\\forest_reference.py": "43f3f9d5442cfbd1ff84eced6e4d64626983c79201c58ebfdd2de1d855e701fb",
+    "models\\forest_score_first.py": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b",
+    "models\\model.py": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e",
+    "models\\precision_policy.py": "eabedb81dd2244b1ac3fcd1731ee56d1dbb2a26edb7edc27b54fd84cb9e5a317",
+    "models\\reader.py": "af1293e7f390dc51b5bf73685e97c9863555ee223231fb7f4d321e0ddc11f742",
+    "models\\syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models\\__init__.py": "036e9d6d3bfc57b8a9dcf4f54569873a4a61c59fa6e47249962693fa0b79710b",
+    "train.py": "aed333ecb8faca9872b62d08c5b1444c2f6dfdc31f5c6c63304f15fa2dd4177f",
+    "evaluate.py": "89ad23b47a9b63af6f990a5edaf4a820ad209c7d700eb85394b72e93c16d91ac",
+    "validate_precision_v25.py": "dea35eca1f5c256b71b5e7afc81ff6757919a17733d1765e53d68a45a79b0006",
+    "benchmark_precision_v25.py": "dec0b6a28e07de96350384a10f88618257ebdc252650d6946160427ab8815764",
+    "train_precision_stability.py": "a298e0e02cabb245c5323f38f2ec99f794f7f655e7d1451d77426c05ffaecab4"
+  }
+}

@@ -1,0 +1,5 @@
+case,precision,implementation,full_cudaLaunchKernel,full_stack,full_cat,full_select,full_gather,full_index_select,cky_cudaLaunchKernel,cky_stack,cky_cat,cky_select,cky_gather,cky_index_select,score_cudaLaunchKernel,score_stack,score_cat,score_select,score_gather,score_index_select,score_autograd_nodes,forest_autograd_nodes,isolated_score_autograd_nodes
+main_b4_w24,bf16,lazy_tensorized_a,6654,20,186,1318,338,238,2528,3,164,1196,332,232,1942,3,89,1196,235,115,916,1553,657
+main_b4_w24,bf16,lazy_tensorized,6332,17,185,75,364,239,2284,0,163,0,358,233,1698,0,88,0,261,116,892,1529,633
+smoke_b2_w24,bf16,lazy_tensorized_a,5631,8,172,1272,288,238,2491,3,164,1196,282,232,1942,3,89,1196,235,115,846,1483,657
+smoke_b2_w24,bf16,lazy_tensorized,5309,5,171,29,314,239,2247,0,163,0,308,233,1698,0,88,0,261,116,822,1459,633

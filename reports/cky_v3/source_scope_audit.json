@@ -1,0 +1,31 @@
+{
+  "protected_sources_unchanged": {
+    "models/forest_reference.py": "43f3f9d5442cfbd1ff84eced6e4d64626983c79201c58ebfdd2de1d855e701fb",
+    "models/forest_score_first.py": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b",
+    "models/syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models/composer.py": "79987221a240c96b46a06389811521d022feee22db54b9e6c2a5f517d911eed3",
+    "models/reader.py": "2b8312350f8df64f23b080d058cf5d1fa5f33c65a62c92060fde455b023081e3",
+    "models/decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+    "models/model.py": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e",
+    "models/precision_policy.py": "da7be7cc6735b3ff672b69a3f8dcbad4d723d45eb1b6a115ba966e538d141b93"
+  },
+  "legacy_dag_tail_byte_identical": true,
+  "shared_tail_sha256": "17e44dc6c2566b515f18c00001f4318ba5ebe3c9dde70eb43300099a66647b38",
+  "default_forest_implementation": "score_first",
+  "new_modes": [
+    "lazy_tensorized_a",
+    "lazy_tensorized"
+  ],
+  "checkpoint_metadata": "Additive forest_implementation actual runtime field; existing explicit config switch/resume path retained",
+  "compatibility_fallback": {
+    "scope": "k=None AND R=None exact Catalan enumeration only",
+    "cause": "New extra strict FP32 cancellation-sensitive score gradient probe differed by 7.62939453125e-6; retained original search instead of relaxing tolerance",
+    "raw_log": "logs/v3_b_unbounded_strict_failure.log"
+  },
+  "stage_c": {
+    "implemented": false,
+    "reason": "A isolated score backward already fell from 173.1ms to32.0ms in mainB4; retain original differentiable score graph. No no-grad search/reconstruction"
+  },
+  "source_code_review": "code_review.md",
+  "frozen_legacy": "baseline/forest_lazy.py"
+}

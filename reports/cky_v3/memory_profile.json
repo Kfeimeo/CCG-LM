@@ -1,0 +1,164 @@
+[
+  {
+    "case": "main_b1_w24",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 2.7237792015075684,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b1_w24",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 2.722907066345215,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 2.737142562866211,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 2.74086332321167,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "real_b2",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 0.40522193908691406,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "real_b2",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 0.4097456932067871,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w16",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 0.4117856025695801,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w16",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 0.4155445098876953,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w24",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 0.4130220413208008,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w24",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 0.41897106170654297,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w8",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 0.4112663269042969,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b2_w8",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 0.41475534439086914,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b8_w24",
+    "precision": "bf16",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 0.646456241607666,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "smoke_b8_w24",
+    "precision": "bf16",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 0.6587724685668945,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "8ac03e2f2ea7f302bde73bd5309fb51701ab7ebbfa33b83bc05cc13a648b0eb9",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b1_w24",
+    "precision": "fp32",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 2.7221932411193848,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b1_w24",
+    "precision": "fp32",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 2.7238845825195312,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "fp32",
+    "implementation": "lazy_semantic",
+    "peak_allocated_gib": 2.7502079010009766,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  },
+  {
+    "case": "main_b4_w24",
+    "precision": "fp32",
+    "implementation": "lazy_tensorized",
+    "peak_allocated_gib": 2.7603983879089355,
+    "inactive_implementation_cache_cleared": true,
+    "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+    "scope": "Separate full-update memory audit after warmup2, only active implementation static cache resident"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "status": "feasible_with_existing_selection_shape_and_RNG_preserved",
+  "search_loop": "models/forest_lazy.py LazyForestMixin.forward: width loop, offset loop stacks ScoreCell views; selection already width-batched",
+  "spans_per_width": "n-width+1; n=24 -> 23,22,...,1 for internal widths",
+  "actual_slots": "k1=1; E_w=sum(k_o*k_(w-o)); proposal=min(E_w,R), retained=min(proposal,K), independent of dynamic validity. Masks never shrink physical slots",
+  "tensorization": "Replace per-offset score/mask stack+pair+cat with cached compact ragged left/right gather indices; keep [B*H,N_w,E_w] and original arithmetic",
+  "candidate_identity": "span base + row*actual retained slots + slot; bases in width/start order, including invalid slots. Flat enumeration is offset ascending, left slot then right slot",
+  "selection_order": [
+    "score=(left+right) then float then +parent",
+    "finite/child mask -> -inf",
+    "top-R deterministic budget-explore",
+    "proposal exploration rand_like(full priority), scatter deterministic choices",
+    "score.gather -> top-K",
+    "eligible excluding first K-1; optional Delta eligibility",
+    "random priorities and Bernoulli beam replacement",
+    "Delta retained mask",
+    "masked retained scores zero"
+  ],
+  "RNG": "Only torch.rand_like: full proposal priorities, expanded-score random priorities, retained-first-score Bernoulli, per width in that order. No Python/NumPy RNG draws; no per-Span draws",
+  "dtype": "Scorer/leaf is BF16 under AMP, all width>=2 retained scores FP32. Width2 must add BF16 leaves before .float(); width>=3 has at least one FP32 internal child and uses FP32 promoted addition",
+  "autograd": "Retained gather score and local logits remain differentiable; detached priority only for discrete selection. Functional immutable width outputs, no detached score search/reconstruction in V3-A",
+  "inplace_risks": "Never overwrite live packed score bank; cat returns new tensor. In-place scatter only into fresh detached selection/noise/mask buffers as legacy",
+  "selection_compatibility": "No new sort/tie-break. Existing width-batched topk preserved with same compact candidate length, row order, last-dimension stride and RNG shapes. V3-B should optimize pointers/assembly, not unnecessarily replace already batched selection",
+  "stages": {
+    "A": "Cached ragged pairing plus width tensor score bank; retain legacy Cell/root/pointer adapter initially",
+    "B": "Cache Candidate ID decode/layout; remove normal per-Span Cell creation/root assembly while keeping native selection unchanged",
+    "C": "Conditional on remaining score backward overhead; no simultaneous score reconstruction"
+  },
+  "precision": {
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "reader": "bf16",
+    "matmul_precision": "ieee",
+    "score_dtype": "existing"
+  },
+  "fp32_outer_config_name": "Existing PrecisionPolicy uses fp32 rather than disabled; both disable autocast",
+  "default_unchanged": "score_first",
+  "source_sha256": {
+    "models\\forest_reference.py": "43f3f9d5442cfbd1ff84eced6e4d64626983c79201c58ebfdd2de1d855e701fb",
+    "models\\forest_score_first.py": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b",
+    "models\\forest_lazy.py": "8a6650ad5b33cb8680f7e0e625ec7dd92c351f28f835bd30c3be27238045d489",
+    "models\\forest.py": "c8c075380c660b54aac52299746a47161c29ab76e31ccfad15d2826cca38330b",
+    "models\\model.py": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e",
+    "models\\syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models\\composer.py": "79987221a240c96b46a06389811521d022feee22db54b9e6c2a5f517d911eed3",
+    "models\\precision_policy.py": "da7be7cc6735b3ff672b69a3f8dcbad4d723d45eb1b6a115ba966e538d141b93",
+    "models\\reader.py": "2b8312350f8df64f23b080d058cf5d1fa5f33c65a62c92060fde455b023081e3",
+    "models\\decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3"
+  }
+}

@@ -1,0 +1,13 @@
+fp32 {'candidate_mask': 0, 'scores': 0, 'selected_flat': 0, 'retained_flat': 0, 'root_semantic': 1.1026859283447266e-06, 'root_scores': 0.0, 'root_vector_coeff': 0.0, 'root_candidate_mask': 0.0, 'root_log_prior': 0.0, 'root_semantic_reference_norm': 63.9995002746582, 'root_semantic_normalized_l2': 2.8150740654554353e-07, 'root_vector_coeff_reference_norm': 206.66151428222656, 'root_vector_coeff_normalized_l2': 0.0, 'root_log_prior_reference_norm': 5.550045967102051, 'root_log_prior_normalized_l2': 0.0} {'syntax_encoder': 1.7921969309657095e-06, 'span_scorer': 2.3433341444357877e-06, 'semantic_embedding': 5.837126271325906e-07, 'composer': 5.964751458468279e-07, 'vector_coefficient_head': 8.473918919539622e-07, 'semantic_reader': 5.575407160857312e-07, 'decoder': 6.215823352848954e-07}
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 232, in model_gradient_case
+    assert_tensor(first["logits"], result["logits"], "Full model logits", precision == "bf16")
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 46, in assert_tensor
+    raise AssertionError(f"{label}: {detail}\n{error}") from None
+AssertionError: Full model logits: first index (batch, candidate, ...): (0, 0, 48); ref=-0.004486083984375; v2=-0.00958251953125
+Tensor-likes are not close!
+
+Mismatched elements: 5586 / 256000 (2.2%)
+Greatest absolute difference: 0.015625 at index (0, 4, 2674) (up to 0.004 allowed)
+Greatest relative difference: 648.0 at index (0, 15, 10280) (up to 0.025 allowed)

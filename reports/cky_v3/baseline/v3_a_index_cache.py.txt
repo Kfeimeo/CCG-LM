@@ -1,0 +1,86 @@
+"""Shape-only ragged CKY geometry. Never stores scores, masks or neural graphs."""
+from __future__ import annotations
+from collections import OrderedDict
+from dataclasses import dataclass
+import time
+import torch
+
+@dataclass(frozen=True)
+class WidthIndex:
+    width: int
+    spans: int
+    candidates: int
+    budget: int
+    keep: int
+    metadata: tuple
+    left: torch.Tensor
+    right: torch.Tensor
+    parent: torch.Tensor
+    decode: torch.Tensor
+    ends: torch.Tensor
+    bases: tuple
+
+@dataclass(frozen=True)
+class ChartIndex:
+    widths: tuple
+    slots: tuple
+    layouts: tuple
+    size: int
+    bank_size: int
+    root_slots: int
+    root_gather: torch.Tensor
+    id_bank: torch.Tensor
+    device_bytes: int
+
+class CKYIndexCache:
+    """Per-forest bounded cache, cleared when the module moves device/dtype."""
+    layout_version='compact-ragged-width-v1'
+    def __init__(self,max_entries=8):
+        self.entries=OrderedDict();self.max_entries=max_entries
+        self.hits=self.misses=0;self.build_host_ms=0.
+    def clear(self):self.entries.clear()
+    def get(self,words,batch,k,r,device):
+        device=torch.device(device)
+        key=(self.layout_version,words,batch,k,r,device.type,device.index,torch.long)
+        if key in self.entries:
+            self.hits+=1;self.entries.move_to_end(key);return self.entries[key],True,0.
+        start=time.perf_counter();value=self._build(words,batch,k,r,device)
+        elapsed=(time.perf_counter()-start)*1000;self.misses+=1;self.build_host_ms+=elapsed
+        self.entries[key]=value
+        while len(self.entries)>self.max_entries:self.entries.popitem(last=False)
+        return value,False,elapsed
+    @staticmethod
+    def _build(words,batch,k,r,device):
+        slots=[0,1];budgets=[0,0];counts=[0,0]
+        for width in range(2,words+1):
+            e=sum(slots[o]*slots[width-o] for o in range(1,width))
+            budget=min(e,r) if r is not None else e
+            slots.append(min(budget,k) if k is not None else budget);budgets.append(budget);counts.append(e)
+        bank_bases={};candidate_bases={};layouts=[];bank=cid=0
+        for width in range(1,words+1):
+            bank_bases[width]=bank
+            for i in range(words-width+1):
+                candidate_bases[i,i+width]=cid;layouts.append((cid,i,i+width,slots[width]));cid+=batch*slots[width]
+            bank+=(words-width+1)*slots[width]
+        tensors=[]
+        def tensor(data):
+            t=torch.tensor(data,device=device,dtype=torch.long);tensors.append(t);return t
+        widths=[None]
+        for width in range(2,words+1):
+            meta=tuple((o,l,rr) for o in range(1,width) for l in range(slots[o]) for rr in range(slots[width-o]))
+            left=[];right=[];decode=[];spans=words-width+1
+            for i in range(spans):
+                left.append([bank_bases[o]+i*slots[o]+l for o,l,rr in meta])
+                right.append([bank_bases[width-o]+(i+o)*slots[width-o]+rr for o,l,rr in meta])
+                decode.append([(candidate_bases[i,i+o]+l,candidate_bases[i+o,i+width]+rr,slots[o],slots[width-o]) for o,l,rr in meta])
+            widths.append(WidthIndex(width,spans,counts[width],budgets[width],slots[width],meta,
+                tensor(left),tensor(right),tensor([i*words+i+width-1 for i in range(spans)]),tensor(decode),
+                tensor([i+width for i in range(spans)]),tuple(candidate_bases[i,i+width] for i in range(spans))))
+        # WidthIndex list uses width-1 indexing; width1 itself needs no pair plan.
+        root_slots=max(slots);root=tensor([[bank_bases[w]+j if j<slots[w] else bank for j in range(root_slots)] for w in range(1,words+1)])
+        ids=[]
+        for row in range(batch):
+            ids.append([candidate_bases[i,i+w]+row*slots[w]+j for w in range(1,words+1) for i in range(words-w+1) for j in range(slots[w])]+[-1])
+        id_bank=tensor(ids)
+        return ChartIndex(tuple(widths),tuple(slots),tuple(layouts),cid,bank,root_slots,root,id_bank,
+                          sum(t.numel()*t.element_size() for t in tensors))

@@ -1,0 +1,2 @@
+lazy_tensorized bf16 smoke_b2_w24
+lazy_tensorized bf16 main_b4_w24

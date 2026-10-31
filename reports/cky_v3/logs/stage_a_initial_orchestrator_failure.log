@@ -1,0 +1,9 @@
+lazy_tensorized_a bf16 smoke_b2_w24
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 166, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 159, in main
+    if r.returncode:raise RuntimeError('Case failed; raw log retained: '+case[0])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Case failed; raw log retained: smoke_b2_w24

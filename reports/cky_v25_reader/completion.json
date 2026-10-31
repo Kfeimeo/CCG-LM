@@ -1,0 +1,174 @@
+{
+  "status": "completed",
+  "experiment": "CKY V2.5-R Semantic Reader FP32 isolation",
+  "tests": {
+    "passed": 288,
+    "skipped": 1,
+    "seconds": 58.57
+  },
+  "numerical": {
+    "batches": [
+      1,
+      4
+    ],
+    "families": [
+      "B",
+      "R",
+      "E"
+    ],
+    "complete_forward_backward_pairs": 6,
+    "complete_forward_backward_runs": 12,
+    "strict_failed_parameters": {
+      "b1_B": 27,
+      "b1_R": 24,
+      "b1_E": 0,
+      "b4_B": 7,
+      "b4_R": 6,
+      "b4_E": 0
+    },
+    "nonfinite_gradients": 0,
+    "root_invariance_B_R_bitwise": true,
+    "gradient_improvement_B_over_R": {
+      "1": 1.103642133647724,
+      "4": 1.0714690676065992
+    },
+    "structure_entries_checked": {
+      "b1_B": 22852,
+      "b1_R": 22852,
+      "b1_E": 22852,
+      "b4_B": 91408,
+      "b4_R": 91408,
+      "b4_E": 91408
+    },
+    "cached_no_grad_controls_identical": 6,
+    "reader_entry_exit_rng_equal": true,
+    "replay_input_hashes_verified": true
+  },
+  "performance": {
+    "cases": 5,
+    "arms_per_case": 4,
+    "rows": 20,
+    "warmup_per_arm": 2,
+    "valid_samples_per_arm": 8,
+    "valid_samples_total": 160,
+    "staged_diagnostic_runs": 60,
+    "profiled_timing_replays": 20,
+    "all_five_shape_four_arm_rounds_completed": true,
+    "paired_ratios": {
+      "main_b1_w24": {
+        "B_speedup": {
+          "median": 1.4229511387674503,
+          "minimum": 1.342889700509141,
+          "maximum": 1.4743214591277696
+        },
+        "R_speedup": {
+          "median": 1.4263221547657412,
+          "minimum": 1.352088988895943,
+          "maximum": 1.4535632867381463
+        },
+        "R_over_B_lazy_cost": {
+          "median": 0.9909081131137709,
+          "minimum": 0.9731239667763197,
+          "maximum": 1.0472526497477814
+        }
+      },
+      "main_b4_w24": {
+        "B_speedup": {
+          "median": 1.3949051284344478,
+          "minimum": 1.3373332267706373,
+          "maximum": 1.4709256869232676
+        },
+        "R_speedup": {
+          "median": 1.3941189602324546,
+          "minimum": 1.3634208123476466,
+          "maximum": 1.517073587831986
+        },
+        "R_over_B_lazy_cost": {
+          "median": 0.9912601810632964,
+          "minimum": 0.9516058825601307,
+          "maximum": 1.0308615319204888
+        }
+      },
+      "real_b2": {
+        "B_speedup": {
+          "median": 1.4505113764866562,
+          "minimum": 1.3428207257231108,
+          "maximum": 1.5412959688425618
+        },
+        "R_speedup": {
+          "median": 1.4072795148577484,
+          "minimum": 1.2746284299532038,
+          "maximum": 1.4987197716363958
+        },
+        "R_over_B_lazy_cost": {
+          "median": 1.0093292608722568,
+          "minimum": 0.9568041663831159,
+          "maximum": 1.104275261205805
+        }
+      },
+      "smoke_b2_w16": {
+        "B_speedup": {
+          "median": 1.3809520679465965,
+          "minimum": 0.9924597055324539,
+          "maximum": 2.609865872670775
+        },
+        "R_speedup": {
+          "median": 1.3452927819493454,
+          "minimum": 1.16322705737104,
+          "maximum": 5.178753199989354
+        },
+        "R_over_B_lazy_cost": {
+          "median": 1.0505372908280983,
+          "minimum": 0.6789658282009811,
+          "maximum": 1.2272810909006706
+        }
+      },
+      "smoke_b2_w24": {
+        "B_speedup": {
+          "median": 1.4870312598250055,
+          "minimum": 1.3531259279537076,
+          "maximum": 1.5870501204464902
+        },
+        "R_speedup": {
+          "median": 1.5238340131202786,
+          "minimum": 1.362630780302701,
+          "maximum": 1.5430745711583806
+        },
+        "R_over_B_lazy_cost": {
+          "median": 0.980210559338487,
+          "minimum": 0.9015114788318591,
+          "maximum": 1.0947465972296107
+        }
+      }
+    },
+    "output_finite_audit": true,
+    "nonfinite_gradient_steps": 0
+  },
+  "recommendation": "retain BF16 Reader; keep optional FP32 IEEE Reader config",
+  "default_forest": "score_first",
+  "optional_partial_reader_run": false,
+  "training_run": false,
+  "v3_implemented": false,
+  "source_sha256": {
+    "models/reader.py": "2b8312350f8df64f23b080d058cf5d1fa5f33c65a62c92060fde455b023081e3",
+    "models/precision_policy.py": "da7be7cc6735b3ff672b69a3f8dcbad4d723d45eb1b6a115ba966e538d141b93",
+    "train.py": "53d3d36cfad662a054f3eae7b58cdacd8e0764e8675471b293fbe272c1bbe27f",
+    "profile_performance.py": "39aae220fdb6877476dacb949a46fa0ccec00bff2fd8df3ae90d822694310c6c",
+    "reader_precision_study.py": "a5f0f4fd29b625179104af48264f70c0086a7de4677cfd455a29e6c1634ee006",
+    "validate_reader_precision.py": "bf6424c8cd95fe56628867b04215d92926c68d9c7527e099cc6018b510132f90",
+    "benchmark_reader_precision.py": "e76bd90cbe70a2c807cc676bec7025d0678b35d428eaff972a4b05f4e42b80a2",
+    "audit_reader_search.py": "2e021e416485e054e64567df9c330a2586deb2ccb72a22f869276fb0b633946a",
+    "audit_reader_profiler.py": "bb8ea76a2fd8f0a6884872cf918303f779024b41865abd8837ae9b546de34311",
+    "summarize_reader_precision.py": "f057800afdf1ab9aa01031bda6c153594ac12558d3cc55d3b98d68bba653c4dd",
+    "tests/test_reader_precision.py": "1045d1523065520a9daa9b31045e8405abd5f7867b272521443ebbd25e74a164",
+    "configs/precision/fp32_reader.yaml": "41ab88bd0e29665056d9a5b9c5e792363d61f630cc5bafb1439762683323fbdc"
+  },
+  "scope_limitations": [
+    "One initial seed and fixed main-model inputs; not a pretraining equivalence result",
+    "Strict BF16 gradient failures retained without changing tolerances",
+    "Cached-input no-grad forward control makes no backward claim",
+    "Reader backward hooks are diagnostic envelopes, not an exhaustive partition of nested-memory autograd kernels",
+    "Small and negative reader cost differences include measurement noise; all outliers retained",
+    "Profiler replay times are separate samples and are not speedup denominators"
+  ]
+}

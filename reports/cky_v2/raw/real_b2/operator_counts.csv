@@ -1,0 +1,3 @@
+case,implementation,cky_forward_stack,cky_forward_cat,cky_forward_cudaLaunchKernel,full_step_stack,full_step_cat,full_step_cudaLaunchKernel,before_selection_semantic,before_selection_coeff,after_selection_semantic,after_selection_coeff,possible_pair_rows,selected_pair_rows,composer_calls,composer_input_candidate_rows,total_materialized_semantic,total_materialized_coeff
+real_b2,reference,1562,1708,4214,1567,1716,18357,53047296,4898304,53428224,3339264,90176,14176,19,14176,106475520,8237568
+real_b2,score_first,802,929,3111,807,937,15488,0,0,19666944,2912000,90176,14176,19,14176,19666944,2912000

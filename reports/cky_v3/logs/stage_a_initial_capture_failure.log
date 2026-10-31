@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 166, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 152, in main
+    if a.worker:return run(next(c for c in CASES if c[0]==a.case),a)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 93, in run
+    with policy.outer_context('cuda'):out=model(**batch)
+                                          ^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\model.py", line 151, in forward
+    memory = self.encode_history(history_ids, word_mask, history_mask, return_trees)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\model.py", line 85, in encode_history
+    mem = self.forest(leaves, scores, coeff, mask, return_trees)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1884, in _call_impl
+    return inner()
+           ^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1821, in inner
+    args_result = hook(self, args)
+                  ^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 89, in capture_input
+    def capture_input(m,i):captured['input']=tuple(x.detach() for x in i)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\benchmark_cky_v3.py", line 89, in <genexpr>
+    def capture_input(m,i):captured['input']=tuple(x.detach() for x in i)
+                                                   ^^^^^^^^
+AttributeError: 'bool' object has no attribute 'detach'

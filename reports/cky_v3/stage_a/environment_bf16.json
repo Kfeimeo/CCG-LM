@@ -1,0 +1,39 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "arguments": {
+    "output_dir": "reports/cky_v3/stage_a",
+    "cache_dir": "cache/tinystories_integration",
+    "implementation": "lazy_tensorized_a",
+    "precision": "bf16",
+    "warmup": 2,
+    "repeats": 8,
+    "worker": false,
+    "case": null,
+    "cases": [
+      "smoke_b2_w24",
+      "main_b4_w24"
+    ],
+    "resume": false
+  },
+  "precision_policy": {
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "matmul_precision": "ieee",
+    "score_dtype": "existing",
+    "reader": "bf16",
+    "scaler_init_scale": 1024.0,
+    "scaler_growth_interval": 2000
+  },
+  "protocol": "Same physical model, common zero-grad AdamW setup, alternating arms, identical snapshot/RNG restore; input resident; timings exclude diagnostic/profiler/setup"
+}

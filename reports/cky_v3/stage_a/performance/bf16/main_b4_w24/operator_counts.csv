@@ -1,0 +1,3 @@
+case,precision,implementation,full_cudaLaunchKernel,full_stack,full_cat,full_select,full_gather,full_index_select,cky_cudaLaunchKernel,cky_stack,cky_cat,cky_select,cky_gather,cky_index_select,score_cudaLaunchKernel,score_stack,score_cat,score_select,score_gather,score_index_select,score_autograd_nodes,forest_autograd_nodes,isolated_score_autograd_nodes
+main_b4_w24,bf16,lazy_semantic,14908,1147,1313,7599,239,123,4157,1130,1291,1772,233,117,3571,1130,1216,1772,136,0,3031,3668,2772
+main_b4_w24,bf16,lazy_tensorized_a,6654,20,186,1318,338,238,2528,3,164,1196,332,232,1942,3,89,1196,235,115,916,1553,657

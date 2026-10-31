@@ -1,0 +1,440 @@
+{
+  "policy": {
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "matmul_precision": "ieee",
+    "score_dtype": "existing",
+    "scaler_init_scale": 1024.0,
+    "scaler_growth_interval": 2000
+  },
+  "original_local_score_dtype": "torch.bfloat16",
+  "existing_leaf_dtype": "torch.bfloat16",
+  "fp32_leaf_dtype": "torch.float32",
+  "existing_internal_dtype": "torch.float32",
+  "root_score": {
+    "max_absolute_error": 0.00225830078125,
+    "normalized_l2_error": 9.613848001696584e-05,
+    "rms_error": 0.0014032279762678534,
+    "reference_norm": 58.383613971022704,
+    "actual_norm": 58.3862983396081
+  },
+  "log_prior": {
+    "max_absolute_error": 0.0007458925247192383,
+    "normalized_l2_error": 0.00024917889240978156,
+    "rms_error": 0.0003456752244607983,
+    "reference_norm": 5.549028990663075,
+    "actual_norm": 5.549012524375525
+  },
+  "changed_ids": 148,
+  "id_entries": 14732,
+  "changed_masks": 0,
+  "span_scorer_gradient": {
+    "max_absolute_gradient_error": 2.384185791015625e-06,
+    "max_relative_gradient_error": 2.0,
+    "max_relative_gradient_error_above_1e_5": 0.15418502688407898,
+    "gradient_norm_reference": 0.0018218377594378158,
+    "gradient_norm_lazy": 0.0018272542953182208,
+    "normalized_l2_gradient_error": 0.013307105944088965
+  },
+  "margins": [
+    [
+      {
+        "width": 2,
+        "status": "no_k_plus_one"
+      },
+      {
+        "width": 3,
+        "status": "no_k_plus_one"
+      },
+      {
+        "width": 4,
+        "count": 84,
+        "minimum": 0.0068359375,
+        "median": 0.267608642578125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 5,
+        "count": 80,
+        "minimum": 0.00177001953125,
+        "median": 0.1474609375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 6,
+        "count": 76,
+        "minimum": 0.0028076171875,
+        "median": 0.0781707763671875,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 7,
+        "count": 72,
+        "minimum": 0.0029296875,
+        "median": 0.0517578125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 8,
+        "count": 68,
+        "minimum": 0.000732421875,
+        "median": 0.07080078125,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 9,
+        "count": 64,
+        "minimum": 0.0029296875,
+        "median": 0.06298828125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 10,
+        "count": 60,
+        "minimum": 0.00048828125,
+        "median": 0.0484619140625,
+        "below_1e_5": 0,
+        "below_1e_3": 3,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 11,
+        "count": 56,
+        "minimum": 0.0001220703125,
+        "median": 0.0606231689453125,
+        "below_1e_5": 0,
+        "below_1e_3": 3,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 12,
+        "count": 52,
+        "minimum": 0.0029296875,
+        "median": 0.181884765625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 13,
+        "count": 48,
+        "minimum": 0.0001220703125,
+        "median": 0.0458984375,
+        "below_1e_5": 0,
+        "below_1e_3": 3,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 14,
+        "count": 44,
+        "minimum": 0.000244140625,
+        "median": 0.033203125,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 15,
+        "count": 40,
+        "minimum": 0.0008544921875,
+        "median": 0.22314453125,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 16,
+        "count": 36,
+        "minimum": 0.0003662109375,
+        "median": 0.234771728515625,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 17,
+        "count": 32,
+        "minimum": 0.001708984375,
+        "median": 0.18212890625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 18,
+        "count": 28,
+        "minimum": 0.005859375,
+        "median": 0.112701416015625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 19,
+        "count": 24,
+        "minimum": 0.00244140625,
+        "median": 0.06256103515625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 20,
+        "count": 20,
+        "minimum": 0.005859375,
+        "median": 0.2581787109375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 21,
+        "count": 16,
+        "minimum": 0.0009765625,
+        "median": 0.13427734375,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 22,
+        "count": 12,
+        "minimum": 0.006591796875,
+        "median": 0.0478515625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 23,
+        "count": 8,
+        "minimum": 0.00390625,
+        "median": 0.0406494140625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 24,
+        "count": 4,
+        "minimum": 0.0694580078125,
+        "median": 0.102294921875,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      }
+    ],
+    [
+      {
+        "width": 2,
+        "status": "no_k_plus_one"
+      },
+      {
+        "width": 3,
+        "status": "no_k_plus_one"
+      },
+      {
+        "width": 4,
+        "count": 84,
+        "minimum": 0.0048828125,
+        "median": 0.26953125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 5,
+        "count": 80,
+        "minimum": 0.00225830078125,
+        "median": 0.1455078125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 6,
+        "count": 76,
+        "minimum": 0.001953125,
+        "median": 0.078125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 7,
+        "count": 72,
+        "minimum": 0.00091552734375,
+        "median": 0.0498046875,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 8,
+        "count": 68,
+        "minimum": 0.000732421875,
+        "median": 0.0712890625,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 9,
+        "count": 64,
+        "minimum": 0.00042724609375,
+        "median": 0.0625,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 10,
+        "count": 60,
+        "minimum": 0.0,
+        "median": 0.0484619140625,
+        "below_1e_5": 1,
+        "below_1e_3": 3,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 11,
+        "count": 56,
+        "minimum": 0.0,
+        "median": 0.0606689453125,
+        "below_1e_5": 1,
+        "below_1e_3": 4,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 12,
+        "count": 52,
+        "minimum": 0.001953125,
+        "median": 0.181884765625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 13,
+        "count": 48,
+        "minimum": 0.0,
+        "median": 0.0458984375,
+        "below_1e_5": 1,
+        "below_1e_3": 3,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 14,
+        "count": 44,
+        "minimum": 0.00048828125,
+        "median": 0.033203125,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 15,
+        "count": 40,
+        "minimum": 0.0020751953125,
+        "median": 0.22412109375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 16,
+        "count": 36,
+        "minimum": 0.0006103515625,
+        "median": 0.2357177734375,
+        "below_1e_5": 0,
+        "below_1e_3": 1,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 17,
+        "count": 32,
+        "minimum": 0.001708984375,
+        "median": 0.18212890625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 18,
+        "count": 28,
+        "minimum": 0.0048828125,
+        "median": 0.1136474609375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 19,
+        "count": 24,
+        "minimum": 0.0029296875,
+        "median": 0.0625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 20,
+        "count": 20,
+        "minimum": 0.005859375,
+        "median": 0.2591552734375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 21,
+        "count": 16,
+        "minimum": 0.001953125,
+        "median": 0.13427734375,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 22,
+        "count": 12,
+        "minimum": 0.005859375,
+        "median": 0.048828125,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 23,
+        "count": 8,
+        "minimum": 0.0048828125,
+        "median": 0.0396728515625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      },
+      {
+        "width": 24,
+        "count": 4,
+        "minimum": 0.0704345703125,
+        "median": 0.1015625,
+        "below_1e_5": 0,
+        "below_1e_3": 0,
+        "note": "pre-exploration Top-K margin in selected Top-R pool"
+      }
+    ]
+  ],
+  "note": "Same BF16 local potentials; only cast before CKY. Does not recover scalar-head quantization. Scores and Composer were not changed together."
+}

@@ -1,0 +1,6 @@
+A native_train same_impl_repeat 0.0
+A native_train paired_impl 0.006467716758368585
+A native_eval same_impl_repeat 0.0
+A native_eval paired_impl 0.0061719491736823
+A math_train same_impl_repeat 0.0
+A math_train paired_impl 0.006403134443578949

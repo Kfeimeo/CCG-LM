@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "from_implementation": "legacy/reference checkpoint",
+  "to_implementation": "score_first",
+  "checkpoint": "runs/cuda_tqdm_smoke/tokens_256.pt",
+  "initial_target_tokens": 256,
+  "final_target_tokens": 384,
+  "logged_target_tokens": [
+    128,
+    256,
+    384
+  ],
+  "device": "CUDA BF16"
+}

@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "config": "main_125m",
+      "precision": "fp32",
+      "cpu_rng_identical": true,
+      "cuda_rng_identical": true,
+      "errors": {
+        "candidate_mask": 0,
+        "scores": 0,
+        "selected_flat": 0,
+        "retained_flat": 0,
+        "root_semantic": 1.1026859283447266e-06,
+        "root_scores": 0.0,
+        "root_vector_coeff": 0.0,
+        "root_candidate_mask": 0.0,
+        "root_log_prior": 0.0,
+        "root_semantic_reference_norm": 63.9995002746582,
+        "root_semantic_normalized_l2": 2.8150740654554353e-07,
+        "root_vector_coeff_reference_norm": 206.66151428222656,
+        "root_vector_coeff_normalized_l2": 0.0,
+        "root_log_prior_reference_norm": 5.550045967102051,
+        "root_log_prior_normalized_l2": 0.0,
+        "logits_max_absolute": 1.2516975402832031e-06
+      },
+      "status": "passed"
+    },
+    {
+      "config": "main_125m",
+      "precision": "bf16",
+      "cpu_rng_identical": true,
+      "cuda_rng_identical": true,
+      "errors": {
+        "candidate_mask": 0,
+        "scores": 0,
+        "selected_flat": 0,
+        "retained_flat": 0,
+        "root_semantic": 0.03752422332763672,
+        "root_scores": 0.0,
+        "root_vector_coeff": 0.0,
+        "root_candidate_mask": 0.0,
+        "root_log_prior": 0.0,
+        "root_semantic_reference_norm": 63.999507904052734,
+        "root_semantic_normalized_l2": 0.005962135012621678,
+        "root_vector_coeff_reference_norm": 213.24020385742188,
+        "root_vector_coeff_normalized_l2": 0.0,
+        "root_log_prior_reference_norm": 5.5490288734436035,
+        "root_log_prior_normalized_l2": 0.0,
+        "logits_max_absolute": 0.015625
+      },
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

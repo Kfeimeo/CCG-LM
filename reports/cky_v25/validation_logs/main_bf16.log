@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "E:\dev\AI\NLP\CCG-LM\validate_cky_v25.py", line 263, in model_gradient_case
+    torch.testing.assert_close(gradient, b[name], atol=atol, rtol=rtol, msg=f"Gradient {name}")
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\testing\_comparison.py", line 1631, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Gradient decoder.embedding.weight

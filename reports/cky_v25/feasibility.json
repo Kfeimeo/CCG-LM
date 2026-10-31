@@ -1,0 +1,38 @@
+{
+  "decision": "Go",
+  "score_graph": "Plan A: preserve differentiable V2 scalar graph",
+  "search_dependencies": [
+    "scores",
+    "masks",
+    "shape-only enumeration",
+    "RNG"
+  ],
+  "semantic_search_dependencies": false,
+  "composer_deterministic": true,
+  "composer_audit": "ordered Linear/GELU + sigmoid gate + residual + per-vector LayerNorm; no Dropout, BatchNorm or stateful buffers",
+  "parameters_and_architecture": {
+    "models\\composer.py": {
+      "sha256": "96ab20fffb28456c3e310946f53b17eaa0532df314dfb85d22916d48b481d08f",
+      "identical_to_v2": true
+    },
+    "models\\decoder.py": {
+      "sha256": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+      "identical_to_v2": true
+    },
+    "models\\syntax.py": {
+      "sha256": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+      "identical_to_v2": true
+    },
+    "models\\reader.py": {
+      "sha256": "af1293e7f390dc51b5bf73685e97c9863555ee223231fb7f4d321e0ddc11f742",
+      "identical_to_v2": true
+    },
+    "models\\model.py": {
+      "sha256": "8f7bb321615ee3e1d4582f5c267c9a5da92530b403b6bbcdb74024dcbc64628e",
+      "identical_to_v2": true
+    }
+  },
+  "default_implementation": "score_first",
+  "transfer": "One bulk integer topology/mask D2H; no scores detached or transferred. One packed long H2D plus root emission mask.",
+  "limitations": "DAG construction is CPU work and D2H is a synchronization barrier. Profiling and timing report both costs."
+}

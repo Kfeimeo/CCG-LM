@@ -1,0 +1,1 @@
+Initial archive verification rejected an ephemeral baseline/__pycache__/forest_lazy.cpython-312.pyc entry in artifact_hashes.json. The source archive correctly excluded bytecode. Fixed the manifest to exclude __pycache__ and *.pyc; experiment outputs were unchanged.

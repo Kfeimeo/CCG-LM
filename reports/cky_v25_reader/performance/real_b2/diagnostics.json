@@ -1,0 +1,754 @@
+{
+  "B1": [
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 7.546100008767098,
+        "cuda_envelope_ms": 7.480319976806641,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 28.751799996825866,
+        "cuda_envelope_ms": 27.159552335739136,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 229.93400000268593,
+        "cuda_envelope_ms": 229.86341857910156,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 8.872899998095818,
+        "cuda_envelope_ms": 8.720384120941162,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 16.443400003481656,
+        "cuda_envelope_ms": 16.37593650817871,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 255.55000000167638,
+        "cuda_envelope_ms": 255.48800659179688,
+        "calls": 1,
+        "wall_ms": 255.5794999934733
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 11.687200007145293,
+        "cuda_envelope_ms": 11.515903949737549,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 25.834400003077462,
+        "cuda_envelope_ms": 25.791488647460938,
+        "calls": 1,
+        "wall_ms": 25.963300009607337
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 418.88460000336636,
+        "cuda_envelope_ms": 418.79962158203125,
+        "calls": 1,
+        "wall_ms": 418.9215000078548
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 11.034299997845665,
+        "cuda_envelope_ms": 10.988544464111328,
+        "calls": 1,
+        "wall_ms": 11.080299998866394
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.620799995493144,
+        "cuda_envelope_ms": 8.167424201965332,
+        "calls": 1,
+        "wall_ms": 8.244799988460727
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.35779999033548,
+        "cuda_envelope_ms": 8.30361557006836,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 29.213199988589622,
+        "cuda_envelope_ms": 27.52614414691925,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 241.83510000875685,
+        "cuda_envelope_ms": 241.76844787597656,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 10.331700003007427,
+        "cuda_envelope_ms": 10.150911808013916,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 19.249399992986582,
+        "cuda_envelope_ms": 19.189760208129883,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 271.4823999995133,
+        "cuda_envelope_ms": 271.3958435058594,
+        "calls": 1,
+        "wall_ms": 271.52559999376535
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 11.070399996242486,
+        "cuda_envelope_ms": 10.876927852630615,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 25.289600001997314,
+        "cuda_envelope_ms": 25.220096588134766,
+        "calls": 1,
+        "wall_ms": 25.327100011054426
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 434.99310000333935,
+        "cuda_envelope_ms": 434.9173889160156,
+        "calls": 1,
+        "wall_ms": 435.0395000074059
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 11.84179999108892,
+        "cuda_envelope_ms": 11.763711929321289,
+        "calls": 1,
+        "wall_ms": 11.878599994815886
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 8.743500002310611,
+        "cuda_envelope_ms": 8.690688133239746,
+        "calls": 1,
+        "wall_ms": 8.790000007138588
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.041900000534952,
+        "cuda_envelope_ms": 7.985151767730713,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 30.624899969552644,
+        "cuda_envelope_ms": 28.926015853881836,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 243.45850000099745,
+        "cuda_envelope_ms": 243.37306213378906,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 8.757000003242865,
+        "cuda_envelope_ms": 8.60262393951416,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 17.08050000888761,
+        "cuda_envelope_ms": 17.01273536682129,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 270.36710000538733,
+        "cuda_envelope_ms": 270.29095458984375,
+        "calls": 1,
+        "wall_ms": 270.39410000725184
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 9.102700001676567,
+        "cuda_envelope_ms": 8.931327819824219,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 22.45279999624472,
+        "cuda_envelope_ms": 22.404096603393555,
+        "calls": 1,
+        "wall_ms": 22.492899995995685
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 453.1696999911219,
+        "cuda_envelope_ms": 453.1046447753906,
+        "calls": 1,
+        "wall_ms": 453.2077999901958
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 10.084099994855933,
+        "cuda_envelope_ms": 10.018815994262695,
+        "calls": 1,
+        "wall_ms": 10.117199999513105
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 6.832300001406111,
+        "cuda_envelope_ms": 7.804927825927734,
+        "calls": 1,
+        "wall_ms": 7.867399996030144
+      }
+    }
+  ],
+  "B2": [
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 9.158999993815087,
+        "cuda_envelope_ms": 9.082271575927734,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 23.23440002510324,
+        "cuda_envelope_ms": 22.032863676548004,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 244.1143999894848,
+        "cuda_envelope_ms": 244.04296875,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 10.688399997889064,
+        "cuda_envelope_ms": 10.505216121673584,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 18.99329999287147,
+        "cuda_envelope_ms": 18.917343139648438,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 274.14549999230076,
+        "cuda_envelope_ms": 274.06787109375,
+        "calls": 1,
+        "wall_ms": 274.1727999964496
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 10.884999996051192,
+        "cuda_envelope_ms": 10.720640182495117,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 26.855000003706664,
+        "cuda_envelope_ms": 26.812959671020508,
+        "calls": 1,
+        "wall_ms": 26.897700008703396
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 278.1176999997115,
+        "cuda_envelope_ms": 278.0454406738281,
+        "calls": 1,
+        "wall_ms": 278.1779000069946
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 12.881999995443039,
+        "cuda_envelope_ms": 12.813504219055176,
+        "calls": 1,
+        "wall_ms": 12.912299993331544
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.978599998750724,
+        "cuda_envelope_ms": 8.35580825805664,
+        "calls": 1,
+        "wall_ms": 8.414099997025914
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 9.169899989501573,
+        "cuda_envelope_ms": 9.110400199890137,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 24.0246999746887,
+        "cuda_envelope_ms": 22.753439903259277,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 249.8941000085324,
+        "cuda_envelope_ms": 249.83786010742188,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 9.826199995586649,
+        "cuda_envelope_ms": 9.642208099365234,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 18.60689999011811,
+        "cuda_envelope_ms": 18.537248611450195,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 279.4228999991901,
+        "cuda_envelope_ms": 279.3425598144531,
+        "calls": 1,
+        "wall_ms": 279.4620000058785
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 10.528800019528717,
+        "cuda_envelope_ms": 10.323999881744385,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 26.824900007341057,
+        "cuda_envelope_ms": 26.765056610107422,
+        "calls": 1,
+        "wall_ms": 26.87030000379309
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 297.2779999981867,
+        "cuda_envelope_ms": 297.2076416015625,
+        "calls": 1,
+        "wall_ms": 297.31389999506064
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 13.425499986624345,
+        "cuda_envelope_ms": 13.371199607849121,
+        "calls": 1,
+        "wall_ms": 13.469099998474121
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.514099997933954,
+        "cuda_envelope_ms": 7.651968002319336,
+        "calls": 1,
+        "wall_ms": 7.732400001259521
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.486400009132922,
+        "cuda_envelope_ms": 8.411040306091309,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 23.827600001823157,
+        "cuda_envelope_ms": 22.592127799987793,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 247.2572999977274,
+        "cuda_envelope_ms": 247.1871337890625,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 10.085900008562021,
+        "cuda_envelope_ms": 9.932192325592041,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 18.90689998981543,
+        "cuda_envelope_ms": 18.814815521240234,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 276.5691000095103,
+        "cuda_envelope_ms": 276.467529296875,
+        "calls": 1,
+        "wall_ms": 276.61080000689253
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 11.795700003858656,
+        "cuda_envelope_ms": 11.654816150665283,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 26.307799998903647,
+        "cuda_envelope_ms": 26.266143798828125,
+        "calls": 1,
+        "wall_ms": 26.339400006690994
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 271.8112000002293,
+        "cuda_envelope_ms": 271.756103515625,
+        "calls": 1,
+        "wall_ms": 271.88380000006873
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 12.718300000415184,
+        "cuda_envelope_ms": 12.656512260437012,
+        "calls": 1,
+        "wall_ms": 12.757599994074553
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.398300003842451,
+        "cuda_envelope_ms": 8.012255668640137,
+        "calls": 1,
+        "wall_ms": 8.075200006715022
+      }
+    }
+  ],
+  "B1-R": [
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.90310000977479,
+        "cuda_envelope_ms": 8.853599548339844,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 31.206599975121208,
+        "cuda_envelope_ms": 29.46729612350464,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 251.89090000640135,
+        "cuda_envelope_ms": 251.83938598632812,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 8.95559998753015,
+        "cuda_envelope_ms": 8.807680130004883,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 18.51419999729842,
+        "cuda_envelope_ms": 18.436384201049805,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 281.2566000065999,
+        "cuda_envelope_ms": 281.1798095703125,
+        "calls": 1,
+        "wall_ms": 281.29520000948105
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 10.853300002054311,
+        "cuda_envelope_ms": 10.670752048492432,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 26.391199993668124,
+        "cuda_envelope_ms": 26.333152770996094,
+        "calls": 1,
+        "wall_ms": 26.495599988265894
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 513.4529000060866,
+        "cuda_envelope_ms": 513.3707885742188,
+        "calls": 1,
+        "wall_ms": 513.4981000010157
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 13.05080000020098,
+        "cuda_envelope_ms": 12.980352401733398,
+        "calls": 1,
+        "wall_ms": 13.101299991831183
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.38719999208115,
+        "cuda_envelope_ms": 7.836063861846924,
+        "calls": 1,
+        "wall_ms": 7.924499994260259
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 9.57189999462571,
+        "cuda_envelope_ms": 9.490592002868652,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 30.93359999184031,
+        "cuda_envelope_ms": 29.217664122581482,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 1054.066899989266,
+        "cuda_envelope_ms": 1053.9652099609375,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 10.095200006617233,
+        "cuda_envelope_ms": 9.932255744934082,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 19.23960000567604,
+        "cuda_envelope_ms": 19.146976470947266,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 1085.659799995483,
+        "cuda_envelope_ms": 1085.55517578125,
+        "calls": 1,
+        "wall_ms": 1085.7610999955796
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 9.712300015962683,
+        "cuda_envelope_ms": 9.552863597869873,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 24.681800001417287,
+        "cuda_envelope_ms": 24.624479293823242,
+        "calls": 1,
+        "wall_ms": 24.723599999560975
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 505.9685000014724,
+        "cuda_envelope_ms": 505.8853454589844,
+        "calls": 1,
+        "wall_ms": 506.0059999959776
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 12.301700000534765,
+        "cuda_envelope_ms": 12.241984367370605,
+        "calls": 1,
+        "wall_ms": 12.33370001136791
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.988400000613183,
+        "cuda_envelope_ms": 8.492927551269531,
+        "calls": 1,
+        "wall_ms": 8.563800001866184
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.714999989024363,
+        "cuda_envelope_ms": 8.667136192321777,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 31.685500012827106,
+        "cuda_envelope_ms": 29.9792320728302,
+        "calls": 19
+      },
+      "module/cky": {
+        "cpu_submit_ms": 279.90069999941625,
+        "cuda_envelope_ms": 279.8321533203125,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 9.709200006909668,
+        "cuda_envelope_ms": 9.533215999603271,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 21.6565000009723,
+        "cuda_envelope_ms": 21.601791381835938,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 312.24280000606086,
+        "cuda_envelope_ms": 312.1684265136719,
+        "calls": 1,
+        "wall_ms": 312.2850999934599
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 9.558199992170557,
+        "cuda_envelope_ms": 9.374592304229736,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 25.234799992176704,
+        "cuda_envelope_ms": 25.18956756591797,
+        "calls": 1,
+        "wall_ms": 25.27489999192767
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 515.2211000095122,
+        "cuda_envelope_ms": 515.1597290039062,
+        "calls": 1,
+        "wall_ms": 515.2634999976726
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 13.632799993501976,
+        "cuda_envelope_ms": 13.58579158782959,
+        "calls": 1,
+        "wall_ms": 13.673699999344535
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 8.075100005953573,
+        "cuda_envelope_ms": 8.241056442260742,
+        "calls": 1,
+        "wall_ms": 8.31409999227617
+      }
+    }
+  ],
+  "B2-R": [
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.894700004020706,
+        "cuda_envelope_ms": 8.810912132263184,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 23.006499992334284,
+        "cuda_envelope_ms": 21.844544231891632,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 237.1363999991445,
+        "cuda_envelope_ms": 237.056640625,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 9.104399985517375,
+        "cuda_envelope_ms": 8.914047718048096,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 17.684100006590597,
+        "cuda_envelope_ms": 17.61574363708496,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 265.54560000658967,
+        "cuda_envelope_ms": 265.45465087890625,
+        "calls": 1,
+        "wall_ms": 265.5727000092156
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 9.572900002240203,
+        "cuda_envelope_ms": 9.381183624267578,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 24.880700002540834,
+        "cuda_envelope_ms": 24.83647918701172,
+        "calls": 1,
+        "wall_ms": 24.91069999814499
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 267.2439000016311,
+        "cuda_envelope_ms": 267.17724609375,
+        "calls": 1,
+        "wall_ms": 267.28699999512173
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 12.937199993757531,
+        "cuda_envelope_ms": 12.826496124267578,
+        "calls": 1,
+        "wall_ms": 12.986200003069825
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 9.76289999380242,
+        "cuda_envelope_ms": 9.704480171203613,
+        "calls": 1,
+        "wall_ms": 9.80239998898469
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 8.499799994751811,
+        "cuda_envelope_ms": 8.437631607055664,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 25.30380002281163,
+        "cuda_envelope_ms": 24.115967869758606,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 247.98530001135077,
+        "cuda_envelope_ms": 247.90103149414062,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 9.01119998889044,
+        "cuda_envelope_ms": 8.778400421142578,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 19.986300001619384,
+        "cuda_envelope_ms": 19.907743453979492,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 278.5329000034835,
+        "cuda_envelope_ms": 278.4356689453125,
+        "calls": 1,
+        "wall_ms": 278.5728000017116
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 12.023100003716536,
+        "cuda_envelope_ms": 11.809696197509766,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 27.639599997201003,
+        "cuda_envelope_ms": 27.577856063842773,
+        "calls": 1,
+        "wall_ms": 27.689700000337325
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 288.28309998789337,
+        "cuda_envelope_ms": 288.2127990722656,
+        "calls": 1,
+        "wall_ms": 288.3211000007577
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 13.37739999871701,
+        "cuda_envelope_ms": 13.32652759552002,
+        "calls": 1,
+        "wall_ms": 13.429300001007505
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 8.646999995107763,
+        "cuda_envelope_ms": 8.979776382446289,
+        "calls": 1,
+        "wall_ms": 9.078300005057827
+      }
+    },
+    {
+      "module/syntax": {
+        "cpu_submit_ms": 13.78850000037346,
+        "cuda_envelope_ms": 13.694815635681152,
+        "calls": 1
+      },
+      "module/composer": {
+        "cpu_submit_ms": 24.136100022587925,
+        "cuda_envelope_ms": 22.760095834732056,
+        "calls": 18
+      },
+      "module/cky": {
+        "cpu_submit_ms": 236.4460999961011,
+        "cuda_envelope_ms": 236.36572265625,
+        "calls": 1
+      },
+      "module/reader": {
+        "cpu_submit_ms": 9.077599985175766,
+        "cuda_envelope_ms": 8.869855880737305,
+        "calls": 2
+      },
+      "module/decoder": {
+        "cpu_submit_ms": 17.838100000517443,
+        "cuda_envelope_ms": 17.77587127685547,
+        "calls": 1
+      },
+      "phase/forward": {
+        "cpu_submit_ms": 270.61289999983273,
+        "cuda_envelope_ms": 270.4837341308594,
+        "calls": 1,
+        "wall_ms": 270.6515000027139
+      },
+      "module/reader_backward": {
+        "cpu_submit_ms": 9.415799999260344,
+        "cuda_envelope_ms": 9.262688159942627,
+        "calls": 2
+      },
+      "phase/decoder_backward": {
+        "cpu_submit_ms": 23.734100002911873,
+        "cuda_envelope_ms": 23.672224044799805,
+        "calls": 1,
+        "wall_ms": 23.781000010785647
+      },
+      "phase/cky_backward": {
+        "cpu_submit_ms": 271.2599000078626,
+        "cuda_envelope_ms": 271.1912841796875,
+        "calls": 1,
+        "wall_ms": 271.3117999956012
+      },
+      "phase/syntax_embedding_backward": {
+        "cpu_submit_ms": 13.46929999999702,
+        "cuda_envelope_ms": 13.380607604980469,
+        "calls": 1,
+        "wall_ms": 13.498199987225235
+      },
+      "phase/clip_optimizer": {
+        "cpu_submit_ms": 7.907599996542558,
+        "cuda_envelope_ms": 7.993504047393799,
+        "calls": 1,
+        "wall_ms": 8.047800001804717
+      }
+    }
+  ]
+}

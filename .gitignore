@@ -1,0 +1,12 @@
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.pytest_tmp/
+.pytest_cache_*/
+.pytest_tmp_*/
+cache/
+runs/
+*.tmp
+*.pt
+*.png

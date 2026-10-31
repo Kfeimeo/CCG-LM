@@ -1,0 +1,7 @@
+lazy_tensorized bf16 smoke_b2_w8
+lazy_tensorized bf16 smoke_b2_w16
+lazy_tensorized bf16 smoke_b2_w24
+lazy_tensorized bf16 smoke_b8_w24
+lazy_tensorized bf16 main_b1_w24
+lazy_tensorized bf16 main_b4_w24
+lazy_tensorized bf16 real_b2

@@ -1,0 +1,2 @@
+case,mode,history_words,batch_size,target_length,history_shape,target_tokens,parameters,median_step_ms,min_step_ms,max_step_ms,median_cuda_envelope_ms,peak_allocated_gib,target_tokens_per_second
+forest_vector4_b4_w24,forest_vector4,24,4,128,"[4, 4, 24]",512,148840709,1318.4257999964757,1277.5037999963388,1370.4999999899883,1318.264892578125,3.4533042907714844,388.34191503334404

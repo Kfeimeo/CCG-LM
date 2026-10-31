@@ -1,0 +1,17 @@
+Stability screen A1 42 100
+Stability screen A2 42 100
+Stability screen B1 42 100
+Stability screen B2 42 100
+Stability screen C2 42 100
+Stability screen D2 42 100
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 176, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 155, in main
+    for arm in ["A1","A2","B1","B2","C2","D2"]:run(arm,42,100,"screen")
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 153, in run
+    if result.returncode:raise RuntimeError(f"Stability {stage}/{arm}/{seed} failed; see log")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Stability screen/D2/42 failed; see log

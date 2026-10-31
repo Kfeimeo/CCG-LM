@@ -1,0 +1,14 @@
+{
+  "recommendation": "explicit experimental lazy_tensorized for controlled early pretraining trials",
+  "default_unchanged": "score_first",
+  "scope": "bounded K/R tested; exact unbounded mode uses legacy fallback",
+  "precision": {
+    "outer": "bf16",
+    "composer": "fp32_ieee",
+    "reader": "bf16",
+    "score_dtype": "existing"
+  },
+  "main_B4_BF16_paired_update_speedup": 1.8314177561757559,
+  "strict_tests_passed": true,
+  "quality_equivalence_claim": false
+}

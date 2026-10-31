@@ -1,0 +1,23 @@
+matrix 60 cpu fp32
+matrix 120 cpu fp32
+matrix 180 cpu fp32
+matrix 240 cpu fp32
+matrix 300 cpu fp32
+matrix 360 cpu fp32
+matrix 420 cuda fp32
+matrix 480 cuda fp32
+matrix 540 cuda fp32
+matrix 600 cuda fp32
+matrix 660 cuda fp32
+matrix 720 cuda fp32
+matrix 780 cuda bf16
+matrix 840 cuda bf16
+matrix 900 cuda bf16
+matrix 960 cuda bf16
+matrix 1020 cuda bf16
+matrix 1080 cuda bf16
+main fp32 1 strict failures 0
+main fp32 4 strict failures 0
+main bf16 1 strict failures 0
+main bf16 4 strict failures 0
+V3 validation completed

@@ -1,0 +1,5 @@
+category,examples,mean_margin,accuracy
+compositional_generalization,8,0.0,0.5
+context_switch,16,0.0,0.5
+cross_sentence_reference,6,0.001880645751953125,0.5
+pp_attachment,16,0.0,0.5

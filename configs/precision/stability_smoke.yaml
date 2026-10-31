@@ -1,0 +1,16 @@
+extends: ../smoke.yaml
+data:
+  cache_dir: cache/tinystories_integration
+train:
+  effective_tokens: 16
+  micro_batch_size: 4
+study:
+  model_scale: smoke
+  complete_example_filter:
+    nonempty_history: true
+    max_history_sentence_words: 12
+    max_target_tokens: 24
+  validation: full_cached_dev
+  screening_steps: 100
+  extension_steps: 500
+  seeds: [13, 42, 2026]

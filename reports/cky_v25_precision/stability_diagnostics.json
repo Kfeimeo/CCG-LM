@@ -1,0 +1,83 @@
+[
+  {
+    "stage": "long",
+    "arm": "B1",
+    "successful_rows": 1500,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "long",
+    "arm": "B2",
+    "successful_rows": 1500,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "long",
+    "arm": "C2",
+    "successful_rows": 1500,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "A1",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "A2",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "B1",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "B2",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "C2",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1.0,
+    "scale_max": 1.0
+  },
+  {
+    "stage": "screen",
+    "arm": "D2",
+    "successful_rows": 100,
+    "skipped": 0,
+    "nonfinite_gradient_events": 0,
+    "scale_min": 1024.0,
+    "scale_max": 1024.0
+  }
+]

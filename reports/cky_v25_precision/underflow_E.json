@@ -1,0 +1,123 @@
+{
+  "group": "E",
+  "results": [
+    {
+      "scaling": false,
+      "scale": 1.0,
+      "loss": 0.002134546637535095,
+      "parameter_gradients": {
+        "mlp.0.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 262144,
+          "minimum_nonzero": 5.5706550483591855e-12,
+          "max_absolute": 5.6213328207377344e-05,
+          "fp16_subnormal_range": 262144
+        },
+        "mlp.0.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 512,
+          "minimum_nonzero": 4.451806034921901e-08,
+          "max_absolute": 4.751502274302766e-05,
+          "fp16_subnormal_range": 512
+        },
+        "mlp.2.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 131072,
+          "minimum_nonzero": 3.410605131648481e-12,
+          "max_absolute": 8.180302393157035e-05,
+          "fp16_subnormal_range": 131063
+        },
+        "mlp.2.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 3.166659325870569e-07,
+          "max_absolute": 0.00016961945220828056,
+          "fp16_subnormal_range": 181
+        },
+        "gate.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 131072,
+          "minimum_nonzero": 7.30437932361383e-12,
+          "max_absolute": 2.0025270714540966e-05,
+          "fp16_subnormal_range": 131072
+        },
+        "gate.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 1.1107545105915051e-08,
+          "max_absolute": 1.1853609066747595e-05,
+          "fp16_subnormal_range": 256
+        },
+        "left_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 65536,
+          "minimum_nonzero": 1.089574652723968e-09,
+          "max_absolute": 0.00026788204559125006,
+          "fp16_subnormal_range": 51571
+        },
+        "right_residual.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 65536,
+          "minimum_nonzero": 7.06236846781394e-10,
+          "max_absolute": 0.0003067375218961388,
+          "fp16_subnormal_range": 51401
+        },
+        "norm.weight": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 2.5565095711499453e-06,
+          "max_absolute": 0.0011629285290837288,
+          "fp16_subnormal_range": 25
+        },
+        "norm.bias": {
+          "dtype": "torch.float32",
+          "nan": 0,
+          "inf": 0,
+          "zeros": 0,
+          "elements": 256,
+          "minimum_nonzero": 4.968296707374975e-08,
+          "max_absolute": 0.0002657159056980163,
+          "fp16_subnormal_range": 120
+        }
+      },
+      "leaf_gradient": {
+        "dtype": "torch.float32",
+        "nan": 0,
+        "inf": 0,
+        "zeros": 0,
+        "elements": 24576,
+        "minimum_nonzero": 3.2640556923979602e-12,
+        "max_absolute": 3.787353489315137e-05,
+        "fp16_subnormal_range": 24576
+      }
+    }
+  ],
+  "note": "Isolated identical root-probe; scaling-on/off are diagnostics, not additional training arms"
+}

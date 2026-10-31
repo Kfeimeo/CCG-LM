@@ -1,0 +1,1 @@
+Initial report-generator write failed with UnicodeEncodeError (console stdin surrogate U+DCA4). No experiment data changed. Replaced with ASCII generator and native UTF-8 Markdown template patch. Initial patch attempt also rejected duplicate delete/add target; corrected to a single add-file patch.

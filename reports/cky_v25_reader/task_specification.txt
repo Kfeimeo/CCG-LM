@@ -1,0 +1,494 @@
+# 编码任务：CKY V2.5-R —— Semantic Reader FP32 精度隔离实验
+
+你是一名熟悉 PyTorch AMP、Autograd、Transformer Cross-Attention、GPU 数值精度分析和性能 Profiling 的机器学习系统工程师。
+
+请在现有 Latent Semantic Forest LM 项目上完成一项小型、严格控制变量的实验：
+
+**验证 Semantic Reader 使用 BF16 是否放大了 V2 (`score_first`) 与 V2.5 (`lazy_semantic`) 之间极小的根语义数值差异，并测试将 Reader 改为 FP32 IEEE 是否能够降低完整模型的梯度误差。**
+
+这是一次数值定位实验，不是新的模型训练项目。
+
+## 1. 实验背景
+
+项目已有三种 CKY 实现：
+
+- `reference`
+- `score_first`（V2）
+- `lazy_semantic`（V2.5）
+
+已有 V2.5-P 精度研究，包含：
+
+- BF16 Composer
+- FP32 IEEE Composer
+- FP32 TF32 Composer
+- FP16 Composer
+- All FP32 IEEE
+
+上一轮的重要发现：
+
+1. 在 FP32 IEEE Composer 下，V2 与 V2.5 的 Root Semantic Relative L2 Error 约为 `2.95e-7`。
+2. 两者的根语义最大绝对差约 `1.19e-6`。
+3. Reader Key Projection 出现最高约 `4.88e-4` 的绝对差异。
+4. Reader Value Projection 出现最高约 `3.91e-3` 的绝对差异。
+5. FP32 IEEE Composer 没有使外层 BF16 Transformer 的全部梯度严格一致。
+6. All FP32 IEEE 的 Forward/Backward 一致性明显更好。
+
+我们怀疑 Reader 的 BF16 投影和后续 BF16 运算可能对极小的输入扰动敏感。
+
+**这是待验证的假说，不是已经确认的根因。**
+
+## 2. 严格限制实验范围
+
+不允许修改：
+
+- CKY 搜索算法。
+- Top-K、Top-R、Delta、随机探索。
+- Candidate Backpointer。
+- Lazy DAG Evaluation。
+- Composer 数学公式。
+- Span Scorer。
+- Decoder 模型结构。
+- Attention 数学公式。
+- 模型参数数量。
+- Optimizer、学习率、训练目标。
+- 数据处理方式。
+
+只允许：
+
+- 给 Semantic Reader 增加可配置的计算精度。
+- 必要的可微分 Dtype Cast。
+- 数值诊断 Hook。
+- 独立测试与 Benchmark。
+- 实验报告。
+
+不允许为了降低误差而使用 `detach()`、冻结参数、关闭 Dropout 或减少候选数。
+
+## 3. 实验矩阵
+
+主实验只需四个配置，加两个已存在的高精度正控制。
+
+| ID | CKY | Composer | Reader | Decoder / Syntax |
+|---|---|---|---|---|
+| B1 | score_first | FP32 IEEE | BF16 AMP | BF16 AMP |
+| B2 | lazy_semantic | FP32 IEEE | BF16 AMP | BF16 AMP |
+| B1-R | score_first | FP32 IEEE | FP32 IEEE | BF16 AMP |
+| B2-R | lazy_semantic | FP32 IEEE | FP32 IEEE | BF16 AMP |
+| E1 | score_first | FP32 IEEE | FP32 IEEE | All FP32 IEEE |
+| E2 | lazy_semantic | FP32 IEEE | FP32 IEEE | All FP32 IEEE |
+
+B1/B2 是当前已有的精度对照。
+
+B1-R/B2-R 是本次唯一新增的主要实验。
+
+E1/E2 作为高精度正控制，尽量复用之前的验证代码。
+
+**必须同时将 B1 和 B2 的 Reader 改成 FP32，不能只修改 Lazy 一侧。**
+
+所有配对在相同初始模型权重、相同输入、相同 RNG、相同参数与计算策略下进行。
+
+## 4. 实现 Reader Precision Policy
+
+增加配置，例如：
+
+```yaml
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: fp32_ieee
+```
+
+原有 Reader 模式保持：
+
+```yaml
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: bf16
+```
+
+### FP32 Reader 的严格定义
+
+当 `reader: fp32_ieee` 时：
+
+1. Reader 内禁用 BF16 Autocast。
+2. Reader 输入 Query 转换为 FP32。
+3. Semantic Candidate、Vector Coefficient 和 Log Prior 保持 FP32。
+4. Q/K/V Linear 投影使用 FP32。
+5. Attention Logits 使用 FP32。
+6. Attention Softmax 使用 FP32。
+7. Attention Value Aggregation 使用 FP32。
+8. Output Projection 使用 FP32。
+9. Reader 内部的 LayerNorm、门控和残差运算按照原数学公式在 FP32 下执行。
+10. 在返回 Decoder 时，依据现有接口将结果转换成所需 dtype，不能无意改变 Decoder 后续的精度策略。
+
+如果 Reader 使用 PyTorch SDPA，需要确认其实际输入 dtype、输出 dtype 和后端路径。
+
+不要因为 SDPA 名称相同就假设内部数值路径相同。
+
+FP32 模式应使用 IEEE 计算设置，不允许在本实验中暗中启用 TF32。
+
+使用 `torch.autocast("cuda", enabled=False)` 等兼容现有 PyTorch 版本的机制，保证所有 dtype 转换保留 Autograd。
+
+禁止增加额外可训练参数。
+
+## 5. 阶段 A：单步 Forward 数值诊断
+
+使用主模型 `main_125m`，优先测试：
+
+- Batch=1，历史句长=24。
+- Batch=4，历史句长=24。
+- K=4。
+- R=12。
+- `forest_vector4`。
+- BF16 Outer Autocast。
+- FP32 IEEE Composer。
+
+所有测试使用同一模型权重和相同输入。
+
+对比 B1 vs B2、B1-R vs B2-R，以及 E1 vs E2。
+
+### 记录以下指标
+
+**CKY 与根候选：**
+
+- Selected Candidate ID。
+- Backpointer。
+- Root Semantic Relative L2 Error。
+- Root Semantic Max Absolute Error。
+- Root Score Error。
+- Root Log Prior Error。
+
+**Reader 内部：**
+
+- Reader Query。
+- Reader Key Input。
+- Reader Key Projection。
+- Reader Value Input。
+- Reader Value Projection。
+- Attention Logits。
+- Attention Probabilities。
+- Attention Weighted Values。
+- Output Projection。
+- Reader Residual Output。
+
+**完整 LM：**
+
+- Reader 之后第一个 Decoder Block 的输出误差。
+- 最终 LM Logits 的误差。
+- Cross-Entropy Loss 差异。
+
+每个位置报告：
+
+```text
+max_absolute_error
+normalized_l2_error
+rms_error
+actual_dtype
+tensor_shape
+```
+
+特别检查：
+
+**B1-R/B2-R 是否显著缩小原先 Reader Value Projection 的误差。**
+
+但是不要假设 FP32 Reader 一定消除 Decoder 后续 BF16 运算中的差异。
+
+## 6. 阶段 B：固定输入的误差隔离
+
+为了进一步区分误差来源，增加一个只用于诊断的 Controlled Input 实验。
+
+### 实验 B1：正常输入
+
+V2 和 V2.5 分别使用自己实际计算的根候选语义。
+
+检查完整数值差异。
+
+### 实验 B2：相同 Reader 输入
+
+在无梯度的诊断模式中，将两条路径的 Reader Candidate Semantic、Vector Coefficient、Log Prior 和有效 Mask 替换为完全相同、预先缓存的参考输入。
+
+其他 Reader 参数、Query 和 Decoder 输入保持相同。
+
+目标是判断：
+
+- 当 Reader 输入完全相同时，Reader 输出能否完全一致？
+- 如果一致，正常模式的差异是否来自根候选的微小数值差异？
+- 如果仍不一致，是否存在隐藏状态、执行顺序或随机性问题？
+
+这一控制只用于 Forward 诊断。
+
+**不得将替换后的无梯度输入用于宣称完整模型 Backward 等价。**
+
+同时记录两种实现进入 Reader 前的 RNG State，确保随机性不构成额外混杂因素。
+
+## 7. 阶段 C：完整 Backward 梯度比较
+
+使用相同初始权重、相同随机种子、相同输入执行完整 LM Forward + Backward。
+
+比较模块：
+
+- Syntax Encoder。
+- Span Scorer。
+- Semantic Embedding。
+- Composer。
+- Vector Coefficient Head。
+- Semantic Reader。
+- Decoder。
+
+逐模块报告：
+
+```text
+gradient_norm_v2
+gradient_norm_lazy
+max_absolute_gradient_error
+normalized_l2_gradient_error
+significant_gradient_relative_error
+```
+
+其中：
+
+\[
+E_g=
+\frac{\|g_{\mathrm{lazy}}-g_{\mathrm{V2}}\|_2}
+{\max(\|g_{\mathrm{V2}}\|_2,\epsilon)}
+\]
+
+必须同时输出：
+
+- 全模型 Gradient Relative L2 Error。
+- 每模块 Gradient Relative L2 Error。
+- 未通过原有严格梯度容差的参数数目。
+- 非有限梯度数量。
+- 相同参数的梯度范数变化。
+
+不要修改原有严格容差标准。
+
+### 核心比较
+
+计算：
+
+```text
+grad_error_B = error(B1, B2)
+grad_error_R = error(B1-R, B2-R)
+```
+
+以及：
+
+```text
+improvement_ratio = grad_error_B / grad_error_R
+```
+
+仅当分母有效且非零时才计算该比值；如果接近零，应同时报告绝对误差。
+
+如果 FP32 Reader 的梯度误差降低，应进一步检查下降发生在 Reader、Composer 还是上游 Syntax。
+
+如果没有降低，也必须明确说明。
+
+## 8. 阶段 D：可选的精度边界细分
+
+只有在 B1-R/B2-R 明显优于 B1/B2 时才运行这一步。
+
+再测试两个更小范围的 FP32 Reader 方案：
+
+### R-KV
+
+仅将 Reader 的 Key / Value Projection 以及相关输入转换为 FP32，其他模块遵循现有 BF16 路径。
+
+### R-Attn
+
+Reader Q/K/V Projection、Attention Logits、Softmax 和 Value Aggregation 使用 FP32；输出投影仍遵循现有模式。
+
+目标是找到**最小必要 FP32 区域**，避免整个 Reader 都切到 FP32 后增加不必要的计算。
+
+必须保证每个方案具有明确、可验证的 dtype 边界。
+
+如果实现这些局部策略需要大范围重构 Reader，则可以不做，优先保持任务简单。
+
+## 9. 阶段 E：性能 Benchmark
+
+使用现有成对快照式 Benchmark 协议。
+
+测试：
+
+| Case | Batch | 历史句长 |
+|---|---:|---:|
+| smoke | 2 | 16 |
+| smoke | 2 | 24 |
+| main_125m | 1 | 24 |
+| main_125m | 4 | 24 |
+| real TinyStories | 现有真实 Batch | 动态长度 |
+
+固定：
+
+- 相同权重与 Optimizer State。
+- 相同 RNG State。
+- 相同 Precision Policy（配对时）。
+- 相同 K/R。
+- 相同 BF16 Outer Autocast。
+- 相同数据与 Shape。
+- 输入驻 GPU。
+- 相同计时和同步方式。
+
+Warmup 至少 2 次，每侧至少 5 个有效计时样本。
+
+记录：
+
+- Reader Forward Time。
+- Reader Backward Time。
+- Forest Forward / Backward Time。
+- Full Microbatch Update Time。
+- CE Tokens/s。
+- Peak Allocated VRAM。
+- CUDA Kernel Launches。
+- 实际 Q/K/V / Attention Dtypes。
+- NaN / Inf Count。
+
+Profiler 与无 Profiler 的时间单独报告。
+
+重点比较：
+
+1. B1 vs B2。
+2. B1-R vs B2-R。
+3. B2 vs B2-R。
+
+第三项用于判断提高 Reader 精度给 V2.5 自身带来的额外开销。
+
+不能跨设备、跨测量轮次直接计算加速比。
+
+## 10. 不需要重新进行大规模训练
+
+本次主要是数值隔离实验。
+
+默认不执行 500 Step 或完整训练。
+
+如果 Forward 和 Backward 测试发现明显改善，可以增加可选的 20–50 Step 短程训练 Sanity Check。
+
+但不能用几十步训练的 Loss 直接证明预训练效果等价。
+
+这次不需要再运行 3 Seeds × 500 Steps。
+
+## 11. 结果决策标准
+
+需要明确回答以下问题：
+
+1. FP32 Reader 是否降低 V2/V2.5 的根语义输入误差？按设计它不应改变根语义本身，必须验证。
+2. FP32 Reader 是否缩小 Q/K/V Projection 的数值差异？
+3. FP32 Reader 是否降低完整 LM Logits 误差？
+4. FP32 Reader 是否降低完整 Backward 梯度差异？
+5. BF16 Decoder 是否仍然放大剩余数值误差？
+6. 哪个 Reader 子模块最敏感？
+7. FP32 Reader 的完整更新成本是多少？
+8. 是否有必要在正式训练中使用 FP32 Reader？
+
+### 决策逻辑
+
+**情况 A：FP32 Reader 显著改善梯度一致性，计算开销较小。**
+
+建议采用：
+
+```yaml
+forest_implementation: lazy_semantic
+
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: fp32_ieee
+```
+
+**情况 B：Reader 输出更一致，但完整梯度差异改善很小。**
+
+说明 BF16 Decoder 或其 Backward 可能仍是主要敏感区域。
+
+保留 BF16 Reader，除非 FP32 Reader 还有其他明确的训练稳定性收益。
+
+**情况 C：FP32 Reader 基本没有改善数值误差。**
+
+不继续扩大精度实验，直接保留已有 V2.5-P 结果并进入 V3。
+
+**情况 D：FP32 Reader 带来明显计算开销。**
+
+即使数值更一致，也应评估其是否值得用于正式训练。
+
+本轮不要求固定的“改善至少多少倍”才算成功，但必须如实报告误差和成本。
+
+## 12. 代码交付
+
+尽量复用现有精度策略与测试框架。
+
+建议增加：
+
+```text
+configs/precision/
+    fp32_reader.yaml
+
+validate_reader_precision.py
+benchmark_reader_precision.py
+
+tests/test_reader_precision.py
+
+reports/cky_v25_reader/
+    dtype_trace.json
+    forward_comparison.json
+    gradient_comparison.json
+    benchmark.csv
+    summary.md
+```
+
+如有必要，可以在：
+
+```text
+models/precision_policy.py
+models/reader.py
+```
+
+增加少量代码，但不能改变 Reader 的数学公式或可训练参数数量。
+
+必须保留默认 `score_first` 实现，不要自动修改正式训练配置。
+
+## 13. 最终报告
+
+`summary.md` 请按照以下顺序组织：
+
+1. 实验目标和范围。
+2. 实际 Precision Policy / Dtype 验证。
+3. Forward 数值对照。
+4. Reader 内部误差传播。
+5. 完整 Backward 梯度对照。
+6. Benchmark 与显存成本。
+7. 是否需要局部 FP32 KV / Attention。
+8. 最终推荐精度配置。
+9. 是否可以开始 V3 Score-only CKY Width-batched Tensorization。
+
+报告必须区分：
+
+- 实际测试结果；
+- 对差异来源的推断；
+- 尚未证实的假说。
+
+不得虚构 Benchmark、梯度或训练结果。
+
+## 14. 实施顺序
+
+**A. 阅读源码与旧报告**
+
+确认现有 Reader 精度、Autocast 和 Forward 路径。
+
+**B. 实现 FP32 Reader Policy**
+
+确保计算精度真正生效。
+
+**C. 执行固定权重 Forward/Backward 对照**
+
+定位并量化差异。
+
+**D. 执行同设备成对性能测试**
+
+测量真实额外成本。
+
+**E. 输出完整报告**
+
+保留所有测试失败记录与原始数据。
+
+不要自动进入 V3。
+
+本次任务的重点是：**用尽可能小的代码改动，判断 FP32 Semantic Reader 是否值得用于正式训练，而不是为了追求逐元素一致性而无限扩大 FP32 计算范围。**

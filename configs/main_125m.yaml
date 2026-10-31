@@ -1,0 +1,22 @@
+extends: smoke.yaml
+name: main_125m
+data:
+  cache_dir: cache/tinystories
+model:
+  hidden_size: 768
+  layers: 16
+  heads: 12
+  ffn_size: 3072
+  cross_layers: [4, 8, 12, 16]
+  syntax_hidden: 384
+  syntax_layers: 3
+  syntax_heads: 6
+  reader_heads: 12
+  reader_width: 768
+train:
+  budget_tokens: 25000000
+  micro_batch_size: 4
+  checkpoint_tokens: [5000000, 10000000, 25000000, 50000000, 100000000]
+  eval_every_steps: 250
+  eval_batches: 100
+  output_dir: runs/main_125m

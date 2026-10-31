@@ -1,0 +1,12 @@
+D2 seed42:   0%|          | 0/100 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 176, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 140, in main
+    if args.worker:return worker(args)
+                          ^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_precision_stability.py", line 90, in worker
+    row=dict(arm=args.arm,seed=args.seed,step=state["step"],attempt=state["attempt"],target_tokens=state["target_tokens"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'scaler_scale'
+D2 seed42:   0%|          | 0/100 [00:00<?, ?it/s]

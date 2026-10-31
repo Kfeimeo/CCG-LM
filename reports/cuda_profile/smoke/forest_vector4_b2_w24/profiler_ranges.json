@@ -1,0 +1,146 @@
+[
+  {
+    "operator": "phase/forward",
+    "calls": 1,
+    "self_cpu_ms": 2.1840000000001165,
+    "cpu_total_ms": 751.7297,
+    "self_device_ms": 0.0,
+    "device_total_ms": 25.827592000000543
+  },
+  {
+    "operator": "module/syntax",
+    "calls": 1,
+    "self_cpu_ms": 2.6555000000000035,
+    "cpu_total_ms": 12.788600000000002,
+    "self_device_ms": 0.0,
+    "device_total_ms": 0.46526100000000226
+  },
+  {
+    "operator": "phase/forward",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 745.338251,
+    "device_total_ms": 745.338251
+  },
+  {
+    "operator": "module/syntax",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 9.573359,
+    "device_total_ms": 9.573359
+  },
+  {
+    "operator": "module/cky",
+    "calls": 1,
+    "self_cpu_ms": 157.31549999999814,
+    "cpu_total_ms": 683.6701999999999,
+    "self_device_ms": 0.0,
+    "device_total_ms": 24.084822000000464
+  },
+  {
+    "operator": "module/cky",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 680.6864370000001,
+    "device_total_ms": 680.6864370000001
+  },
+  {
+    "operator": "module/composer",
+    "calls": 23,
+    "self_cpu_ms": 9.551500000000612,
+    "cpu_total_ms": 52.65069999999998,
+    "self_device_ms": 0.0,
+    "device_total_ms": 3.5488110000000086
+  },
+  {
+    "operator": "module/composer",
+    "calls": 23,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 47.951597999999734,
+    "device_total_ms": 47.951597999999734
+  },
+  {
+    "operator": "module/decoder",
+    "calls": 1,
+    "self_cpu_ms": 3.70379999999993,
+    "cpu_total_ms": 49.281300000000044,
+    "self_device_ms": 0.0,
+    "device_total_ms": 1.0691520000001182
+  },
+  {
+    "operator": "module/decoder",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 48.985642999999925,
+    "device_total_ms": 48.985642999999925
+  },
+  {
+    "operator": "module/reader",
+    "calls": 2,
+    "self_cpu_ms": 5.974000000001047,
+    "cpu_total_ms": 28.114900000000024,
+    "self_device_ms": 0.0,
+    "device_total_ms": 0.3300910000002477
+  },
+  {
+    "operator": "module/reader",
+    "calls": 2,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 27.319941000000107,
+    "device_total_ms": 27.319941000000107
+  },
+  {
+    "operator": "phase/decoder_backward",
+    "calls": 1,
+    "self_cpu_ms": 104.27330000000016,
+    "cpu_total_ms": 105.34220000000008,
+    "self_device_ms": 0.0,
+    "device_total_ms": 0.0011520000000018627
+  },
+  {
+    "operator": "phase/decoder_backward",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 0.0011520000000018627,
+    "device_total_ms": 0.0011520000000018627
+  },
+  {
+    "operator": "phase/cky_backward",
+    "calls": 1,
+    "self_cpu_ms": 1733.5372999999997,
+    "cpu_total_ms": 1737.8019,
+    "self_device_ms": 0.0,
+    "device_total_ms": 0.0
+  },
+  {
+    "operator": "phase/syntax_embedding_backward",
+    "calls": 1,
+    "self_cpu_ms": 20.969700000000188,
+    "cpu_total_ms": 20.969700000000188,
+    "self_device_ms": 0.0,
+    "device_total_ms": 0.0
+  },
+  {
+    "operator": "phase/clip_optimizer",
+    "calls": 1,
+    "self_cpu_ms": 2.1587000000039116,
+    "cpu_total_ms": 12.637899999999906,
+    "self_device_ms": 0.0,
+    "device_total_ms": 6.009672000000719
+  },
+  {
+    "operator": "phase/clip_optimizer",
+    "calls": 1,
+    "self_cpu_ms": 0.0,
+    "cpu_total_ms": 0.0,
+    "self_device_ms": 3.66336699999962,
+    "device_total_ms": 3.66336699999962
+  }
+]

@@ -1,0 +1,12 @@
+.........................F..............                                 [100%]
+================================== FAILURES ===================================
+__________________ test_search_and_roots[partial_inf-1-1-4] ___________________
+tests\test_forest_lazy.py:13: in test_search_and_roots
+    forest_case(2,words,k,r,True,policy=policy)
+validate_cky_v25.py:95: in forest_case
+    scores[:, 0, 1] = -torch.inf
+    ^^^^^^^^^^^^^^^
+E   IndexError: index 1 is out of bounds for dimension 2 with size 1
+=========================== short test summary info ===========================
+FAILED tests/test_forest_lazy.py::test_search_and_roots[partial_inf-1-1-4] - ...
+1 failed, 39 passed in 11.20s

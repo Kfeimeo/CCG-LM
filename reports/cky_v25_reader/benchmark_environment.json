@@ -1,0 +1,35 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "backend": {
+    "generic_fp32": "none",
+    "matmul_fp32": "none",
+    "cudnn_fp32": "none",
+    "fp16_reduced_reduction": true,
+    "bf16_reduced_reduction": true,
+    "fp16_accumulation": false
+  },
+  "arguments": {
+    "output_dir": "reports/cky_v25_reader",
+    "cache_dir": "cache/tinystories_integration",
+    "warmup": 2,
+    "repeats": 8,
+    "worker": false,
+    "case": null,
+    "cases": null,
+    "resume": false
+  },
+  "protocol": "Balanced rotated/reversed four-arm order; direct same-round B2 versus B2-R; setup common zero-gradient AdamW state initialization",
+  "backend_scope": "coordinator startup before worker backend configuration",
+  "worker_backend_policy": "Each worker configures B IEEE before model construction; all four arms retain that same process policy"
+}

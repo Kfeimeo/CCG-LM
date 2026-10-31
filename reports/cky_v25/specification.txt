@@ -1,0 +1,831 @@
+# 编码任务：CKY V2.5 —— Score-only CKY + Lazy Semantic Evaluation
+
+你是一名精通 PyTorch、CUDA、Autograd、CKY 动态规划、Lazy Evaluation、DAG Memoization 和神经网络性能优化的研究工程师。
+
+请基于我现有的 Latent Semantic Forest LM 项目，实现 **CKY V2.5：先完成纯结构搜索，再仅对最终保留的根候选执行神经语义组合**。
+
+这是一项独立的性能优化实验。不要同时实现 V3 Tensorized CKY、Triton、CUDA Graph、C++ 扩展或 `torch.compile`。
+
+**最重要的原则：保持现有数学定义、候选搜索结果及有效梯度路径。若无法保持等价，必须报告原因，不得擅自修改算法。**
+
+---
+
+## 1. 已有实现与性能基线
+
+项目目前包含：
+
+- `models/forest_reference.py`：Reference CKY。
+- `models/forest_score_first.py`：V2 Score-first Top-R + Delayed Gather。
+- `models/forest.py`：实现选择接口。
+- `models/composer.py`：非对称神经语义组合器。
+- `models/syntax.py`：Span Scorer 和 Vector Coefficient Head。
+- `models/reader.py`：带权语义候选读取器。
+- `benchmark_cky_v2.py`、`validate_cky_v2.py`、`profile_performance.py`。
+- `reports/cky_v2/summary.md`：V2 正确性及性能报告。
+
+V2 已通过大量 Forward、Backward 与搜索一致性测试。
+
+RTX 3070 Laptop 8GB 上，main_125m、Batch=4、4 个历史句子、每句 24 词、K=4、R=12 的已报告 V2 基准：
+
+| 指标 | V2 |
+|---|---:|
+| CKY Forward | 307.33 ms |
+| CKY Backward | 693.49 ms |
+| 完整 Microbatch Update | 1194.92 ms |
+| Composer Candidate Rows | 43,072 |
+| Composer Calls | 23 |
+| CUDA Launches（CKY Forward） | 4,081 |
+| Peak Allocated VRAM | 2.944 GiB |
+
+这些是之前的参考数据，不允许作为本轮新测量结果。V2.5 必须与同一环境中重新测量的 V2 成对比较。
+
+目前 V2 已经完成标量候选先筛选、高维语义延迟 Gather，但仍然为大量**最终没有进入根候选推导的中间 Chart 状态**执行 Composer。
+
+本次目标就是消除这些不必要的神经语义计算。
+
+---
+
+## 2. 核心思想
+
+当前流程大致为：
+
+```text
+Syntax Encoder
+    ↓
+Span Scores
+    ↓
+CKY 各 Span 的候选展开
+    ↓
+Top-R 结构选择
+    ↓
+立即计算 Composer
+    ↓
+Top-K / 探索 / Delta 剪枝
+    ↓
+保存各 Span 的语义向量
+    ↓
+根节点 K 个候选
+    ↓
+Semantic Reader
+```
+
+目标流程：
+
+```text
+Syntax Encoder
+    ↓
+Span Scores
+    ↓
+Score-only CKY
+    ↓
+仅保存候选分数和 Backpointer
+    ↓
+完成全部 Top-R / Top-K / 探索 / Delta
+    ↓
+获得根节点最终 K 个候选
+    ↓
+回溯实际使用的子树 DAG
+    ↓
+Lazy Batched Semantic Evaluation
+    ↓
+得到与 V2 相同的根语义向量及向量系数
+    ↓
+Semantic Reader
+```
+
+### 核心要求
+
+在 CKY 搜索阶段，**不运行 Composer，也不建立中间语义向量的 Autograd 计算图**。
+
+直到最终根候选确定后，才按照其 Backpointer 结构计算需要的语义值。
+
+这不是改成新的 K-best 算法，而是把现有已经选定的神经计算延迟执行。
+
+---
+
+## 3. 阶段 A：严格审查延迟求值的可行性
+
+这是必须先完成的 Go / No-Go 检查。
+
+详细阅读：
+
+- `models/forest_reference.py`
+- `models/forest_score_first.py`
+- `models/composer.py`
+- `models/syntax.py`
+- `models/reader.py`
+- 当前候选 State、Backpointer、探索和剪枝相关代码。
+
+逐项检查以下判断是否依赖语义表示：
+
+1. Top-R 初筛。
+2. Top-K 排序。
+3. Beam Exploration Replacement。
+4. Delta Threshold Pruning。
+5. Candidate Mask。
+6. Candidate Deduplication（如果存在）。
+7. Root Candidate Ranking。
+8. Candidate Validity。
+9. 其他辅助损失或正则化。
+10. 任何可能读取 Composer 输出的隐藏逻辑。
+
+另外检查 Vector Coefficient 是否参与搜索或仅在最终 Reader 中使用。
+
+### 判定规则
+
+只有当所有搜索和剪枝决策都可以不依赖语义向量而正确执行时，才允许采用 Score-only CKY。
+
+若某个搜索步骤依赖语义输出：
+
+- 指出具体代码位置和依赖；
+- 说明是否能安全推迟到根候选确定后；
+- 如果不能，停止严格等价实现；
+- 不得为了速度偷偷移除相关判断。
+
+### 必须检查随机性
+
+检查 Composer 是否包含：
+
+- Dropout；
+- 随机门控；
+- 随机采样；
+- 依赖执行顺序的状态修改；
+- 有状态的归一化层。
+
+如果 Composer 含有 Dropout，跳过未使用的中间节点可能改变随机数消耗和实际 Dropout Mask。
+
+必须区分：
+
+- 确定性模型输出的数学等价；
+- 相同随机种子下的随机训练行为一致；
+- 训练分布等价，但逐位不一致。
+
+不允许在存在 Dropout 差异时声称训练逐位完全等价。
+
+首先输出审查结果和具体修改计划，然后实施。
+
+---
+
+## 4. 阶段 B：构建 Score-only Candidate Chart
+
+为每个 Span 保存轻量候选记录。
+
+建议逻辑数据结构：
+
+```python
+CandidateRef(
+    node_id,
+    span_start,
+    span_end,
+    log_score,
+    left_node_id,
+    right_node_id,
+    source_metadata,
+)
+```
+
+实际字段根据源码调整。
+
+### 4.1 不保存中间语义向量
+
+在 Score-only Chart 中不要保存：
+
+- 内部节点的 Composer 输出；
+- 中间语义向量的完整副本；
+- 中间节点的 256 维语义 Autograd Graph；
+- 没有进入最终根候选的高维计算结果。
+
+允许保存：
+
+- 可微分结构分数；
+- Candidate ID；
+- Split 位置；
+- 左右 Candidate ID；
+- 原有 Mask；
+- 原有搜索元数据；
+- 用于诊断的 Backpointer。
+
+### 4.2 保持相同候选身份
+
+必须保留 V2 原有的：
+
+- Split 枚举顺序；
+- 子候选排列；
+- Flat Index 布局；
+- 同分候选行为；
+- Top-R 预算；
+- 探索顺序与随机采样；
+- Top-K 筛选；
+- Delta 剪枝；
+- 根候选排序。
+
+尤其注意：同一个 Span 的不同候选可能共享 Split，但具有不同的左右子树。不能仅用 `(start,end)` 标识一个语义候选。
+
+必须为不同推导保留不同的 Candidate ID。
+
+### 4.3 保持结构分数梯度
+
+原始结构分数：
+
+\[
+\ell_P=\ell_L+\ell_R+s_{i:j}
+\]
+
+候选筛选可以利用离散 Top-K 索引，但最终参与 Semantic Reader 的根分数必须保持可微分。
+
+允许两种实现：
+
+**方案 A：保留被选中候选的可微分分数。**
+
+按原有 V2 的 Autograd 路径保存最终分数。
+
+**方案 B：搜索阶段不构造完整分数计算图，根候选确定后重新计算可微分分数。**
+
+利用最终 Backpointer，沿每棵保留推导重新累加对应的原始 Span Logit。
+
+对固定的离散候选选择，重建后的分数应具有与原计算相同的数学梯度。
+
+方案 B 可能明显减少标量搜索阶段的 Autograd 节点，但必须单独通过梯度等价测试。
+
+如果分数还有其他位置相关项，必须完整重建，不能只累加父 Span 分数。
+
+注意 BF16 的加法次序可能改变舍入结果；候选排序阶段尽量维持旧实现的运算顺序，并把任何数值差异明确报告。
+
+**建议先实现 A 保证正确性，再将 B 作为可选的内部性能优化。**
+
+---
+
+## 5. 阶段 C：回溯根节点实际使用的子树
+
+Score-only CKY 完成后，对于每个历史句子的 K 个根候选：
+
+1. 根据 Backpointer 从根向下遍历。
+2. 找出所有实际被引用的内部候选节点。
+3. 找出其左右依赖。
+4. 构造用于语义求值的共享 DAG。
+5. 不执行未被任何根候选引用的节点。
+
+### 重要：Memoization Key
+
+必须以 Candidate ID 或等价的完整推导身份作为缓存 Key。
+
+不允许只使用：
+
+```python
+cache[(span_start, span_end)]
+```
+
+因为同一个 Span 可以存在多个语义不同的候选。
+
+应使用：
+
+```python
+cache[candidate_id]
+```
+
+如果 Composer 依赖其他上下文状态，也必须把这些影响结果的状态纳入身份或保证它们一致。
+
+不同根候选引用同一个子树时，只计算一次语义表示，并让 Autograd 正确累计来自多个上层引用的梯度。
+
+不能用 `detach()` 实现缓存。
+
+### DAG 正确性
+
+必须验证：
+
+- 所有依赖都存在；
+- 不会出现环；
+- 叶节点正确指向独立 Semantic Embedding；
+- 每个根候选对应一棵合法完整二叉树；
+- 不同根候选不会错误共享语义不同的节点。
+
+---
+
+## 6. 阶段 D：Lazy Batched Semantic Evaluation
+
+目标不是简单地用 Python 深度优先遍历每棵树、每个节点运行一次 Composer。
+
+那样虽然减少了组合数量，却可能引入大量很小的 GPU Kernel。
+
+请采用**拓扑分层批量计算**。
+
+### 推荐方式：按 Span Width 分层
+
+对于所有最终需要的节点：
+
+```text
+width = 2
+    → 批量计算这个宽度内所有需要的节点
+
+width = 3
+    → 批量计算这个宽度内所有需要的节点
+
+...
+
+width = max_sentence_length
+    → 计算最终根节点
+```
+
+由于每个内部节点只依赖更短的连续子 Span，这个顺序是合法的。
+
+相同宽度的所有有效节点尽可能一次性送入 Composer。
+
+### 计算步骤
+
+对当前 Width：
+
+1. 收集所有需要执行的 Candidate ID。
+2. 根据 Backpointer 找到 Left / Right Candidate ID。
+3. 从叶子向量表和已经计算的 DAG 节点读取左右表示。
+4. 构建 `[N_active, semantic_dim]` 的左右语义 Batch。
+5. 执行一次批量 Composer。
+6. 将输出注册到对应 Candidate ID。
+7. 后续节点复用已经计算的结果。
+
+不应为 Padding 节点执行 Composer。
+
+不应为了固定 Shape 强行对大量不存在的 DAG 节点执行 Composer。
+
+### GPU 实现要求
+
+优先使用现成 PyTorch 张量操作。
+
+可以使用：
+
+- GPU Long Index；
+- `index_select`；
+- `gather`；
+- 批量 Stack；
+- 按 Width 的 Packed Tensor；
+- 必要的 Index Mapping。
+
+不要出现每个 Candidate 单独调用 Composer 的实现。
+
+允许在 Python 侧构建 DAG 的离散拓扑，但应尽量避免每个节点单独发起 CUDA Kernel。
+
+不得使用 `.item()`、`.cpu()`、`.tolist()` 对逐候选 GPU 分数进行同步决策。
+
+如果构建离散 Backpointer 必须将少量索引复制至 CPU，应集中、批量执行，并单独报告同步成本。优先将索引保留在 GPU。
+
+### Vector Coefficient 的延迟计算
+
+原模型：
+
+\[
+u_P=(u_L+u_R)+u_{\mathrm{span}}
+\]
+
+必须保持这一数学定义。
+
+如果 Vector Coefficient 仅用于最终根候选，则允许在 DAG 求值时才对所需节点计算或累加它。
+
+注意：
+
+- 不能丢失 Vector Coefficient Head 的梯度；
+- 不能把重复的局部 Span 系数漏算；
+- 不能把不同根候选的向量系数混合；
+- 不能重新归一化中间系数而改变原有数值意义。
+
+保持原有括号顺序以减少浮点差异。
+
+---
+
+## 7. 理论计算量验算
+
+对于一个有 n 个词的完整二叉树，内部节点数为：
+
+\[
+n-1
+\]
+
+如果每句最终有 K 个根候选，则不做子树共享的情况下，最多需要：
+
+\[
+K(n-1)
+\]
+
+次内部神经组合。
+
+对于当前基准：
+
+- Batch = 4；
+- 每个目标有 4 个历史句子；
+- 每句 24 词；
+- 根候选 K = 4。
+
+不共享子树时最多：
+
+\[
+4\times4\times4\times23=1472
+\]
+
+个内部节点实例。
+
+现有 V2 的 Composer Candidate Rows 为 43,072。
+
+请记录以下指标：
+
+```text
+v2_composer_candidate_rows
+v25_required_node_occurrences
+v25_unique_dag_nodes
+v25_actual_composer_rows
+v25_composer_calls
+v25_unused_candidates_skipped
+```
+
+注意：
+
+1. 1,472 是所有历史句子确实为 24 词且各自保留 4 棵完整树时的内部节点实例上界。
+2. DAG 共享可能进一步减少实际计算数量。
+3. 这不是 29 倍训练速度提升的保证。
+4. Python 拓扑构建、Gather、Composer Batch Size 以及 GPU Kernel 启动都会影响实际性能。
+5. 报告必须区分理论上界、实际求值节点数和真实加速比。
+
+---
+
+## 8. 严格的 Forward 等价性测试
+
+保留 V2 作为 Reference。
+
+建议新增：
+
+```text
+models/forest_lazy.py
+tests/test_forest_lazy.py
+validate_cky_v25.py
+benchmark_cky_v25.py
+```
+
+并在 `models/forest.py` 的现有实现选择机制中增加：
+
+```yaml
+model:
+  forest_implementation: lazy_semantic
+```
+
+保留：
+
+```yaml
+model:
+  forest_implementation: score_first
+```
+
+两者必须使用相同的模型参数和 State Dict。
+
+### 测试矩阵
+
+覆盖：
+
+- Batch = 1、2、4；
+- 句长 = 1、4、8、16、24；
+- K = 1、2、4；
+- R = 4、12；
+- Scalar / Vector 两种模式；
+- CPU FP32；
+- CUDA FP32 / BF16；
+- Eval / Train 两种运行状态；
+- 完全合法 Span；
+- 部分不可达 Span；
+- 全 `-inf` 候选；
+- 不足 K 个有效候选；
+- 同分候选；
+- 固定随机种子探索；
+- Delta=0；
+- 动态 Padding。
+
+比较：
+
+1. 各 Span 的候选数量。
+2. Candidate ID 和 Backpointer。
+3. Top-R、Top-K 与探索候选的身份。
+4. 最终根候选数量与顺序。
+5. 根候选语法分数。
+6. 根候选向量系数。
+7. 根候选语义向量。
+8. Semantic Reader 输出。
+9. LM Logits。
+10. LM Loss。
+
+对于保留下来的根候选，必须在确定性模式下验证输出数值与 V2 一致。
+
+对于 BF16，使用合理容差，并报告最大绝对误差、归一化误差。
+
+不要要求不同设备之间的 Top-K 同分顺序一致，但要求同一设备、相同配置下 V2 与 V2.5 搜索结果一致。
+
+### 特别注意训练 Dropout
+
+如果 Composer 存在 Dropout，不能把因跳过无关节点改变随机数流所产生的输出差异误称为搜索算法错误。
+
+请先建立 Composer Dropout=0 的确定性等价基准，再测正常训练配置。
+
+如需严格随机语义等价，可以研究 Stateless Per-node RNG，但这应作为可选实现，不要因此改变 V2.5 的主要优化目标。
+
+---
+
+## 9. Backward 与训练等价性测试
+
+必须验证梯度能够传回：
+
+- Syntax Encoder；
+- Span Scorer；
+- Semantic Embedding；
+- Composer；
+- Vector Coefficient Head；
+- Semantic Reader；
+- Decoder。
+
+报告每个模块：
+
+```text
+gradient_norm_reference
+gradient_norm_lazy
+max_absolute_gradient_error
+max_relative_gradient_error
+normalized_l2_gradient_error
+```
+
+尤其注意：
+
+**仅仅得到相同的根语义向量，不代表梯度等价。**
+
+需要确保复用的子树 DAG 能正确累计来自多个根候选的梯度。
+
+对于根结构分数，必须验证通过 Attention Log-Prior 的梯度仍回到 Span Scorer。
+
+同时检查：
+
+- 是否错误地 `detach()`；
+- 是否重新创建无梯度的 Tensor；
+- 是否破坏了 `grad_fn`；
+- 是否发生 In-place Autograd 错误；
+- 是否重复或漏计共享节点的梯度；
+- BF16 梯度累积次序造成的合理误差。
+
+### 连续训练测试
+
+使用相同初始化、相同数据顺序和相同优化器状态，分别训练 V2 与 V2.5：
+
+- CPU FP32：8–10 Step；
+- CUDA BF16：20–50 Step，视可用显存和时间决定。
+
+比较：
+
+- Loss 轨迹；
+- 根候选身份；
+- Span Scorer 梯度；
+- Composer 梯度；
+- 模型参数变化；
+- 中性 Scalar Bias 的数值漂移。
+
+现有 V2 报告指出公共 `span_scorer.scalar.bias` 存在不可辨识方向，其数值漂移可能受到 AdamW Epsilon 影响。
+
+本次不要擅自删除、冻结或修改这个参数。可以继续记录该方向与其他参数方向的误差。
+
+---
+
+## 10. 性能 Benchmark
+
+必须在相同 GPU、相同 PyTorch、相同模型权重和输入条件下比较 V2 与 V2.5。
+
+建议使用现有快照式成对 Benchmark 协议：
+
+- 相同模型权重；
+- 相同 Optimizer State；
+- 相同 RNG State；
+- 相同训练模式；
+- 相同 BF16 设置；
+- 相同 Micro-batch；
+- 相同 K/R；
+- 相同数据；
+- 交替测量两种实现。
+
+至少预热 2 次、同步计时 5 次。
+
+分别测试：
+
+| 配置 | Batch | 历史句长 |
+|---|---:|---:|
+| smoke | 2 | 8 |
+| smoke | 2 | 16 |
+| smoke | 2 | 24 |
+| smoke | 8 | 24 |
+| main_125m | 1 | 24 |
+| main_125m | 4 | 24 |
+| real TinyStories | 实际缓存 Batch | 动态长度 |
+
+### 必须报告
+
+| 指标 | V2 | V2.5 | Ratio |
+|---|---:|---:|---:|
+| Score-only CKY Forward | | | |
+| Lazy Composer Forward | | | |
+| CKY + Composer Total Forward | | | |
+| CKY + Composer Backward | | | |
+| Full Microbatch Update | | | |
+| CE Tokens/s | | | |
+| Peak Allocated VRAM | | | |
+| Composer Candidate Rows | | | |
+| Composer Calls | | | |
+| `torch.stack` Calls | | | |
+| CUDA Kernel Launches | | | |
+| Autograd Nodes | | | |
+
+此外记录：
+
+- DAG 构造 CPU 时间；
+- GPU 索引构建时间；
+- 子树共享比例；
+- 实际有效 Composer Batch Size 分布；
+- GPU 等待 CPU 的空档；
+- 总训练 Step 的时间分布；
+- 测量波动范围。
+
+**不能只报告 Composer Rows 的减少，必须证明完整训练 Step 实际加速。**
+
+如果 Lazy Evaluation 引入太多小批次 GPU 调用，导致速度下降，应明确报告。
+
+不要虚构加速倍率。
+
+---
+
+## 11. 本次需要特别验证的性能假说
+
+### 假说 A：减少无用 Composer 计算
+
+大量中间候选永远不会出现在最终根候选中，因此其 Composer 计算可以推迟并直接跳过。
+
+### 假说 B：减少 Autograd Graph
+
+若只对最终使用的子树建立语义计算图，应该减少：
+
+- 中间语义激活；
+- 不必要的梯度累积；
+- 无用的 `SelectBackward`、`StackBackward` 等节点；
+- 中间高维 Tensor 的生命周期。
+
+### 假说 C：共享子树减少重复计算
+
+不同根候选可能引用相同的内部 Candidate。
+
+使用基于 Candidate ID 的 Memoization 可以复用结果，同时保留正确梯度。
+
+### 假说 D：小批量问题可能抵消收益
+
+如果实际 DAG 分层后每层只有很少候选，则 Composer 可能变成 GPU 利用率较低的小批次操作。
+
+需要测量并说明这一问题。
+
+必要时允许将不同历史句子、不同 Batch 样本的相同计算层合并成一个 Composer Batch。
+
+但不要在本次引入新的树搜索策略来优化 Batch Size。
+
+---
+
+## 12. 不能做的事情
+
+本次禁止：
+
+- 修改 Decoder 架构。
+- 修改 Syntax Encoder。
+- 修改 Composer 的函数定义。
+- 修改 Reader 的 Attention 公式。
+- 修改 K 或 R。
+- 修改 Delta 剪枝策略。
+- 修改训练目标。
+- 修改训练数据。
+- 更换随机探索策略。
+- 将 K-best 语法搜索改成新的近似算法。
+- 把多个语义候选提前平均。
+- 用一个 Span 向量替代不同候选。
+- 对多个非等价子树强制合并。
+- 使用 `detach()` 换取速度。
+- 在训练阶段关闭 Composer 梯度。
+- 为了加速跳过有效根候选。
+- 写 C++、CUDA Extension 或 Triton。
+- 实现 V3 的整个 Width-batched Tensorized CKY。
+- 使用 `torch.compile` 或 CUDA Graph 作为本轮主要优化方式。
+
+允许为了延迟执行 Composer 而使用按 Width 分层的批量 DAG 求值。
+
+这属于 Lazy Semantic Evaluation，不等于重写整个 CKY Chart。
+
+---
+
+## 13. 失败处理与回退机制
+
+本任务的首要目标是验证延迟求值是否正确及有利，而不是保证成功。
+
+如果发现以下情况，应停止对应优化：
+
+1. 搜索判断确实依赖 Composer 输出；
+2. 现有辅助损失必须使用所有中间语义状态；
+3. 延迟求值无法保持候选身份；
+4. 共享 DAG 导致错误的梯度；
+5. 随机计算差异无法界定；
+6. 总训练 Step 明显变慢且无法通过简单 Batch 调整解决。
+
+遇到这些情况：
+
+- 保留 V2 为默认路径；
+- 完整记录原因；
+- 不得修改数学定义来掩盖问题；
+- 提出是否应直接进入 V3 的建议。
+
+---
+
+## 14. 最终交付
+
+请提供：
+
+```text
+models/forest_lazy.py
+tests/test_forest_lazy.py
+validate_cky_v25.py
+benchmark_cky_v25.py
+reports/cky_v25/
+```
+
+报告目录至少包含：
+
+```text
+benchmark.csv
+correctness.json
+gradient_comparison.json
+composer_workload.json
+operator_counts.csv
+summary.md
+```
+
+其中 `summary.md` 按以下结构编写：
+
+### 第一部分：可行性审查
+
+说明为什么现有搜索可以或不能与语义计算分离。
+
+必须引用实际函数和代码位置。
+
+### 第二部分：Score-only CKY
+
+说明候选的分数、身份和 Backpointer 如何保存。
+
+### 第三部分：Lazy DAG Evaluation
+
+说明根节点回溯、共享子树、按 Width 批量执行和语义结果恢复。
+
+### 第四部分：正确性
+
+比较 V2/V2.5 的搜索结果、Forward、Backward、训练轨迹及边界案例。
+
+### 第五部分：性能
+
+报告 Composer 工作量、完整 Forward/Backward、GPU Kernel 数量、显存及完整 Microbatch Update。
+
+### 第六部分：结论
+
+明确回答：
+
+1. 是否严格保持搜索行为？
+2. 确定性 Forward 是否等价？
+3. Backward 梯度误差是多少？
+4. Composer 工作量减少多少？
+5. 端到端训练是否实际加速？
+6. DAG Memoization 提供多少额外收益？
+7. 主要剩余瓶颈是什么？
+8. 下一步应继续 V3，还是先改进 Lazy Evaluation 的批量执行？
+
+必须提供真实测试结果，不允许编造性能数据。
+
+---
+
+## 15. 实施顺序
+
+严格按照以下阶段执行。
+
+**阶段 A：源码审查**
+
+确认搜索与语义输出是否完全解耦。先提出 Go / No-Go 结论。
+
+**阶段 B：Score-only Chart**
+
+实现只保存分数、索引和 Backpointer 的搜索路径，与 V2 比较候选身份。
+
+**阶段 C：Lazy DAG Composer**
+
+回溯根候选，构建共享 DAG，按照拓扑层批量执行语义组合。
+
+**阶段 D：正确性测试**
+
+完成 Forward、Backward、随机性、Mask、探索、梯度与连续训练测试。
+
+**阶段 E：Benchmark**
+
+在同一运行环境对 V2/V2.5 做成对测速，报告完整更新的真实加速。
+
+**阶段 F：交付**
+
+保留 V2 Reference、输出完整报告及可复现命令。
+
+不要只输出架构设计，请直接修改代码、运行测试、生成报告。
+
+**本次优化成功的标准不是 Composer 行数减少，而是在保留模型有效语义与梯度的前提下，使完整训练过程实际更快。**

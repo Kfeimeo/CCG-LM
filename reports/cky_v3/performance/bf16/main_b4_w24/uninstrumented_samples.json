@@ -1,0 +1,130 @@
+{
+  "samples": {
+    "lazy_semantic": [
+      {
+        "wall_ms": 546.0065999941435,
+        "cuda_envelope_ms": 545.8892822265625
+      },
+      {
+        "wall_ms": 567.8962000092724,
+        "cuda_envelope_ms": 567.673828125
+      },
+      {
+        "wall_ms": 517.5089999975171,
+        "cuda_envelope_ms": 517.4149169921875
+      },
+      {
+        "wall_ms": 545.4592000023695,
+        "cuda_envelope_ms": 545.35986328125
+      },
+      {
+        "wall_ms": 593.4657000034349,
+        "cuda_envelope_ms": 593.3536987304688
+      },
+      {
+        "wall_ms": 526.2101999978768,
+        "cuda_envelope_ms": 526.1168823242188
+      },
+      {
+        "wall_ms": 545.8212000085041,
+        "cuda_envelope_ms": 545.7295532226562
+      },
+      {
+        "wall_ms": 519.8314000008395,
+        "cuda_envelope_ms": 519.7322387695312
+      }
+    ],
+    "lazy_tensorized": [
+      {
+        "wall_ms": 303.27040000702254,
+        "cuda_envelope_ms": 303.1521301269531
+      },
+      {
+        "wall_ms": 300.40740000549704,
+        "cuda_envelope_ms": 300.2347412109375
+      },
+      {
+        "wall_ms": 289.6255000086967,
+        "cuda_envelope_ms": 289.5431823730469
+      },
+      {
+        "wall_ms": 292.8734000015538,
+        "cuda_envelope_ms": 292.7083435058594
+      },
+      {
+        "wall_ms": 311.3583000085782,
+        "cuda_envelope_ms": 311.1782531738281
+      },
+      {
+        "wall_ms": 293.82439999608323,
+        "cuda_envelope_ms": 293.7026672363281
+      },
+      {
+        "wall_ms": 291.4444999914849,
+        "cuda_envelope_ms": 291.3536071777344
+      },
+      {
+        "wall_ms": 307.2554000100354,
+        "cuda_envelope_ms": 307.1651916503906
+      }
+    ]
+  },
+  "peaks": {
+    "lazy_semantic": [
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004
+    ],
+    "lazy_tensorized": [
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754,
+      2.743821144104004,
+      2.742295265197754
+    ]
+  },
+  "orders": [
+    [
+      "lazy_semantic",
+      "lazy_tensorized"
+    ],
+    [
+      "lazy_tensorized",
+      "lazy_semantic"
+    ],
+    [
+      "lazy_semantic",
+      "lazy_tensorized"
+    ],
+    [
+      "lazy_tensorized",
+      "lazy_semantic"
+    ],
+    [
+      "lazy_semantic",
+      "lazy_tensorized"
+    ],
+    [
+      "lazy_tensorized",
+      "lazy_semantic"
+    ],
+    [
+      "lazy_semantic",
+      "lazy_tensorized"
+    ],
+    [
+      "lazy_tensorized",
+      "lazy_semantic"
+    ]
+  ],
+  "weight_sha256": "e52e6311b062477b19efc7615f6c1a97b8fd5969ecc61bdd374e37a20e02fa4e",
+  "input_sha256": "fd9cff31cf1a3f8f21e4c3cc84e1cbbbaea2d104264c091cd2f4956aa3d485cf"
+}

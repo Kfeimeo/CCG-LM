@@ -1,0 +1,8 @@
+extends: ../smoke.yaml
+precision:
+  outer_autocast: bf16
+  composer: fp32_tf32
+  matmul_precision: tf32
+  score_dtype: existing
+  scaler_init_scale: 1024.0
+  scaler_growth_interval: 2000

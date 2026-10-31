@@ -1,0 +1,649 @@
+# 编码任务：CKY V2.5-P —— 混合精度数值稳定性与性能对照实验
+
+你是一名熟悉 PyTorch AMP、CUDA Tensor Cores、递归神经网络数值误差、Autograd、GPU Profiling 和语言模型训练的高级机器学习系统工程师。
+
+请在现有 Latent Semantic Forest LM 项目中，实现一套可复现的 **Mixed Precision Numerical Stability Study**。
+
+本次不修改 CKY 搜索算法，不重新设计 Composer，也不进行 V3 GPU 张量化。
+
+研究目标是确定：
+
+**在保持 BF16 Transformer 训练的前提下，使用 FP32、TF32 或 FP16 执行 Lazy Semantic Composer，能否改善 V2.5 的数值稳定性，同时保留或提高完整训练速度？**
+
+## 一、已有实验背景
+
+项目中已经实现：
+
+- `reference`：最初的 CKY。
+- `score_first`：V2，标量筛选后延迟 Gather。
+- `lazy_semantic`：V2.5，Score-only CKY + Lazy DAG Composer。
+
+当前默认实现仍为 `score_first`，因为 V2.5 的主模型 BF16 严格数值测试未完全通过。
+
+上一轮 V2.5 报告：
+
+| 指标 | V2 | V2.5 |
+|---|---:|---:|
+| main_125m B4 完整更新 | 1177.7 ms | 834.7 ms |
+| Composer Rows | 43072 | 866 |
+| Forest Backward | 702.2 ms | 364.0 ms |
+| 主模型 FP32 梯度 | 高度一致 | 高度一致 |
+| 主模型 BF16 梯度相对 L2 差异 | 参考 | 约 0.85%–1.38% |
+| 20 步 CUDA BF16 训练 | — | 搜索身份开始发生分歧 |
+
+V2.5 已验证结构选择、Backpointer、DAG Memoization 和确定性 FP32 数学路径基本正确。
+
+当前主要怀疑：
+
+1. V2 与 V2.5 的 Composer 输入 Batch Shape 不同。
+2. CUDA GEMM 可能选择不同的计算算法。
+3. BF16 的尾数精度较低。
+4. 树形递归组合放大数值误差。
+5. 微小梯度差异通过 AdamW 和硬 Top-K 造成训练轨迹分叉。
+
+这些只是待验证的假说，不得当作已经确定的根因。
+
+## 二、实验范围与限制
+
+必须保留：
+
+- 相同模型权重。
+- 相同训练数据。
+- 相同 Decoder。
+- 相同 Syntax Encoder。
+- 相同 Span Scorer。
+- 相同 Composer 数学公式。
+- 相同 Semantic Reader。
+- 相同 K=4、R=12。
+- 相同 CKY Top-K / Exploration / Delta 策略。
+- 相同 Optimizer 和 Learning Rate。
+- 相同根候选与 Backpointer 语义。
+- 相同训练目标。
+
+本次只允许修改：
+
+1. 精度策略与计算上下文。
+2. FP32/BF16/FP16 的必要 dtype 转换。
+3. 数值诊断 Hook。
+4. Benchmark 与测试脚本。
+5. 精度实验配置。
+6. 必要的 FP16 GradScaler 支持。
+
+禁止：
+
+- 删除 Composer 运算。
+- 修改候选预算。
+- 提前平均多个语义候选。
+- 使用 detach 截断梯度。
+- 更换结构搜索算法。
+- 修改模型参数数量。
+- 同时进行 V3。
+- 使用 Triton、C++ Extension 或 CUDA Graph 作为优化手段。
+- 为通过测试而放宽所有梯度容差。
+- 将训练轨迹逐位一致性作为唯一验收标准。
+
+## 三、阶段 A：审查现有精度实现
+
+先检查实际源码：
+
+- `models/composer.py`
+- `models/forest_lazy.py`
+- `models/forest_score_first.py`
+- `models/syntax.py`
+- `models/reader.py`
+- `models/model.py`
+- `train.py`
+- AMP 相关配置与上下文管理
+- `validate_cky_v25.py`
+- `benchmark_cky_v25.py`
+- 上一轮 `reports/cky_v25/summary.md`
+
+明确记录：
+
+1. 模型参数实际保存为 FP32、BF16 还是 FP16？
+2. 外层是否使用 `torch.autocast("cuda", dtype=torch.bfloat16)`？
+3. 叶子 Semantic Embedding 输出 dtype 是什么？
+4. 内部 Composer 输入 dtype 是什么？
+5. Composer 的 Linear、Gate、LayerNorm 输出 dtype 是什么？
+6. 根语义输入 Reader 之前是否发生 dtype 转换？
+7. 当前 Span Scores 与累计 CKY Scores 使用什么 dtype？
+8. TF32 是否已经启用？
+9. 是否启用了 Reduced-Precision GEMM Reduction？
+10. 当前 CUDA / PyTorch 版本提供哪些精度控制 API？
+
+建立可选的 dtype tracing，记录每个模块的实际 dtype。
+
+不允许只根据配置名推断算子真正使用的精度。
+
+## 四、阶段 B：实现可配置的 Composer Precision Policy
+
+新增独立配置：
+
+```yaml
+precision:
+  outer_autocast: bf16
+  composer: bf16
+  matmul_precision: ieee
+  score_dtype: existing
+```
+
+其中 Composer 模式支持：
+
+### 模式 1：BF16
+
+`composer: bf16`
+
+保留当前 BF16 Autocast 行为。
+
+这是 V2 和 V2.5 的原始基线。
+
+### 模式 2：FP32 IEEE
+
+`composer: fp32_ieee`
+
+要求：
+
+- Composer 内关闭 BF16 Autocast。
+- 输入转换为 FP32。
+- Composer 参数保持 FP32。
+- Linear 运算以严格 FP32 模式执行。
+- GELU、Sigmoid、Residual 和 LayerNorm 处于 FP32 计算路径。
+- 所有内部树节点的语义状态持续保存为 FP32。
+- 不允许每次 Composer 后立即转回 BF16。
+- 仅在进入 Reader 时执行必要的 dtype 转换。
+
+FP32 输入必须从尽可能早的真实 FP32 源头取得。
+
+如果叶子向量在进入 Composer 之前已经被转换为 BF16，之后 `.float()` 不会恢复丢失的信息。必须检查并处理这一问题。
+
+### 模式 3：FP32 + TF32 GEMM
+
+`composer: fp32_tf32`
+
+要求：
+
+- Composer 输入、中间语义状态和输出仍为 FP32。
+- 仅允许 FP32 矩阵乘法使用 TF32 内部计算。
+- 非矩阵运算不应被错误地转换为 BF16 或 FP16。
+- 记录实际后端配置。
+- 不得声称 TF32 与 IEEE FP32 逐位一致。
+
+优先使用当前 PyTorch 支持的：
+
+```python
+torch.backends.cuda.matmul.fp32_precision = "tf32"
+```
+
+以及 IEEE 对照：
+
+```python
+torch.backends.cuda.matmul.fp32_precision = "ieee"
+```
+
+注意这些配置可能影响同一进程中的其他 FP32 GEMM。
+
+为保证可比性，**精度 Benchmark 最好采用独立子进程，每个进程启动时设置一次精度策略**。
+
+不要在不同模型的单个 CKY 节点之间反复修改全局 TF32 设置。
+
+不要同时混用已弃用的 `allow_tf32` 与新版 `fp32_precision` API。
+
+### 模式 4：FP16
+
+`composer: fp16`
+
+要求：
+
+- 外层 Decoder / Syntax 仍为 BF16。
+- Composer 使用 FP16 计算。
+- 内部树语义状态按明确策略保持 FP16。
+- 训练参数的 Master Weights 保持 FP32。
+- 正确处理 Reader 接口处的 dtype 转换。
+- 监测 Inf、NaN、下溢及梯度范围。
+- 必要时使用 GradScaler。
+- 记录 GradScaler Scale 与 Skipped Steps。
+
+FP16 不是默认替代 BF16，而是探索性实验。
+
+必须检查 FP16 输出与后续 BF16 Reader 的 dtype 交界是否安全。
+
+若 GradScaler 改变了优化器更新行为，应报告这种差异，不能声称它与其他模式拥有完全相同的更新规则。
+
+如果出现数值溢出或严重下溢，不得通过静默裁剪中间状态来制造稳定结果。
+
+## 五、重要：把 CKY Score Precision 作为独立变量
+
+除了 Composer Precision，还要观察 Score-only CKY 的数值稳定性。
+
+但是**不能同时更改 Score 与 Composer，然后将改善全部归因于 Composer**。
+
+因此本轮主实验：
+
+- 固定 Score-only CKY 的现有计算精度。
+- 只改变 Composer Precision。
+
+完成主实验后增加补充矩阵：
+
+```yaml
+precision:
+  score_dtype: fp32
+```
+
+检查是否能改善：
+
+- 累计结构分数误差。
+- Top-K 排序稳定性。
+- Root Log-Softmax。
+- Span Scorer 的梯度稳定性。
+
+若当前 Score 本来就已是 FP32，则记录这一事实，不要制造无意义的重复实验。
+
+Score FP32 补充实验中，应保持父 Span 势的加法顺序、Mask、Top-R 和探索行为不变。
+
+## 六、阶段 C：建立数值对照矩阵
+
+主实验矩阵：
+
+| ID | CKY Implementation | Outer AMP | Composer | FP32 GEMM |
+|---|---|---|---|---|
+| A1 | score_first | BF16 | BF16 | IEEE |
+| A2 | lazy_semantic | BF16 | BF16 | IEEE |
+| B1 | score_first | BF16 | FP32 | IEEE |
+| B2 | lazy_semantic | BF16 | FP32 | IEEE |
+| C1 | score_first | BF16 | FP32 | TF32 |
+| C2 | lazy_semantic | BF16 | FP32 | TF32 |
+| D1 | score_first | BF16 | FP16 | 不适用 |
+| D2 | lazy_semantic | BF16 | FP16 | 不适用 |
+
+另外增加两个高精度正控制：
+
+- E1：`score_first`，全部相关模型计算使用 FP32，IEEE。
+- E2：`lazy_semantic`，全部相关模型计算使用 FP32，IEEE。
+
+如果 FP16 模式需要 GradScaler，应对 D1/D2 使用完全相同的 GradScaler 设置，并单独报告 Skipped Steps。
+
+每组对照必须：
+
+- 相同参数初始化。
+- 相同随机种子。
+- 相同输入。
+- 相同候选预算。
+- 相同训练/验证状态。
+- 相同模型参数。
+- 相同 Optimizer State。
+- 相同 Precision Policy。
+- 除 CKY 实现外，不得存在其他差异。
+
+主比较只能是：
+
+- A1 vs A2。
+- B1 vs B2。
+- C1 vs C2。
+- D1 vs D2。
+- E1 vs E2。
+
+跨精度比较应使用相同样本和相同初始权重，并以 E1/E2 为参考观察数值偏差，不能把改变精度造成的差异误称为 Lazy Evaluation 的误差。
+
+## 七、阶段 D：逐层定位数值误差
+
+新增一个诊断模式，使用相同结构候选进行单次完整 Forward / Backward。
+
+特别关注根候选对应的共享 DAG。
+
+对于每个 Composer Width：
+
+记录：
+
+1. 活跃节点数。
+2. 输入左向量 dtype。
+3. 输入右向量 dtype。
+4. Linear 输出误差。
+5. GELU 输出误差。
+6. Gate 输出误差。
+7. Residual 输出误差。
+8. LayerNorm 输出误差。
+9. 最终 Parent Semantic 误差。
+10. 相对 L2 误差。
+11. 最大绝对误差。
+12. RMS 误差。
+
+比较时必须通过 Candidate ID 和树结构身份对齐 V2 与 V2.5 的相同节点，而不能通过 Tensor Row Index 直接对齐。
+
+因为 V2.5 对内部节点重新打包，原始 Row 顺序可能不同。
+
+由于记录所有节点可能消耗大量显存，诊断应支持：
+
+- 仅选择一个样本。
+- 仅选择一棵根候选树。
+- 仅保存 CPU 端统计量。
+- 可选导出单个 Width 的张量。
+- 不在正式 Benchmark 中开启详细 Hook。
+
+尝试找出误差第一次显著出现的位置。
+
+判断误差是：
+
+- 叶子输入已经不同；
+- 第一次 Linear 就出现；
+- 多层组合累计放大；
+- LayerNorm 引起；
+- Root Reader 转换引起；
+- 或者结构候选本身发生变化。
+
+同时记录结构搜索的 Top-K Margin，即第 K 名与第 K+1 名候选的分数差值（如果存在足够候选），用于分析微小参数差异是否容易触发候选切换。
+
+不要把 Top-K Margin 当作正式的语义正确性指标。
+
+## 八、阶段 E：Forward 与 Backward 验证
+
+使用现有 V2.5 Validator，不删除原测试。
+
+测试：
+
+- Batch = 1、2、4。
+- 历史句长 = 4、8、16、24。
+- K = 1、2、4。
+- R = 4、12。
+- Scalar / Vector 模式。
+- Eval / Train 模式。
+- CUDA BF16 外层。
+- FP32 IEEE Composer。
+- FP32 TF32 Composer。
+- FP16 Composer。
+- 部分/全部不可达 Span。
+- 不足 K 个候选。
+- 同分候选。
+- 动态 Padding。
+
+必须比较：
+
+### Forward
+
+- Selected Candidate ID。
+- Root Candidate ID。
+- Backpointer。
+- Root Log Score。
+- Root Log Prior。
+- Root Semantic。
+- Root Vector Coefficient。
+- Reader Output。
+- LM Logits。
+- Cross-Entropy Loss。
+
+### Backward
+
+比较以下模块：
+
+- Syntax Encoder。
+- Span Scorer。
+- Semantic Embedding。
+- Composer。
+- Vector Coefficient Head。
+- Semantic Reader。
+- Decoder。
+
+每个模块报告：
+
+```text
+grad_norm_reference
+grad_norm_lazy
+max_absolute_error
+normalized_l2_error
+significant_gradient_relative_error
+```
+
+零附近梯度需单独处理，不能只依赖逐元素相对误差。
+
+不能只判断 `.grad is not None`。
+
+必须保留 V2 的严格数值测试，同时增加更适合混合精度实验的诊断指标；不要以放宽容差替代原因分析。
+
+特别要求：
+
+- FP32 IEEE 应作为数学一致性的重要参考。
+- TF32 允许与 IEEE FP32 存在计算误差。
+- FP16 不保证比 BF16 更接近 IEEE。
+- 不能要求两个不同精度模式的输出逐位一致。
+- 同精度下的 V2/V2.5 差异是主要研究对象。
+
+## 九、阶段 F：性能 Benchmark
+
+继续使用项目现有成对快照式 Benchmark。
+
+测试环境包括当前 RTX 3070 Laptop；如果能获得 Colab 的 RTX PRO 6000 Blackwell，也要提供相同测试入口。
+
+不同 GPU 的测量结果必须分开报告。
+
+测试形状：
+
+| Case | Batch | 历史词长 |
+|---|---:|---:|
+| smoke_b2_w8 | 2 | 8 |
+| smoke_b2_w16 | 2 | 16 |
+| smoke_b2_w24 | 2 | 24 |
+| smoke_b8_w24 | 8 | 24 |
+| main_b1_w24 | 1 | 24 |
+| main_b4_w24 | 4 | 24 |
+| real_b2 | 真实 TinyStories Batch | 动态长度 |
+
+至少：
+
+- 每侧 Warmup ≥ 2 次。
+- 每侧有效采样 ≥ 5 次。
+- 交替测量 Reference 和 Lazy。
+- 用 CUDA Synchronize 正确计时。
+- 恢复相同 Model / Optimizer / RNG Snapshot。
+- Profiler 与非 Profiler 时间分开。
+- 对涉及 GradScaler 的实验保存并恢复其状态。
+- 记录时间中位数、最小值、最大值。
+
+必须报告：
+
+| Metric | 内容 |
+|---|---|
+| Composer Forward | 实测耗时 |
+| Composer Backward | 实测耗时 |
+| Forest Forward | 实测耗时 |
+| Forest Backward | 实测耗时 |
+| Full Microbatch Update | 实测耗时 |
+| CE Token/s | 非 Padding 目标 Token 吞吐 |
+| Peak Allocated VRAM | 实测显存 |
+| Composer Rows | 实际执行行数 |
+| Composer Calls | 实际调用数 |
+| CUDA Launches | 完整 Update |
+| NaN/Inf Count | 数值稳定性 |
+| GradScaler Skipped Steps | FP16 模式适用 |
+| Actual Dtypes | 检查精度模式是否真正生效 |
+
+请注意，FP32 + TF32 的性能测试不得在错误的 Autocast 上下文中进行。
+
+如果 Composer 实际仍使用 BF16 GEMM，则该 TF32 实验无效，必须明确报错或标记。
+
+不要宣称 TF32 一定比 IEEE FP32 快，也不要宣称 FP16 一定比 BF16 精确。
+
+## 十、阶段 G：短程训练稳定性实验
+
+单步梯度一致性不能直接代表训练质量。
+
+因此选择以下候选进入短程训练：
+
+- A2：Lazy + BF16 Composer。
+- B2：Lazy + FP32 IEEE Composer。
+- C2：Lazy + FP32 TF32 Composer。
+- D2：Lazy + FP16 Composer（如果数值正常）。
+- B1：V2 + FP32 IEEE，作为额外参考。
+
+同时可加入 A1 作为原始 V2 BF16 基线。
+
+首先运行：
+
+- 100 个 Optimizer Step。
+- 1 个随机种子。
+- 相同训练数据顺序。
+- 相同 Effective Target Token Batch。
+- 相同学习率与 Warmup。
+- 同样的候选 K/R。
+
+然后将表现较有希望的 2–3 种方案扩展到：
+
+- 500 个 Optimizer Step。
+- 3 个随机种子：13、42、2026。
+
+记录：
+
+1. Training Loss。
+2. Validation NLL。
+3. Validation Perplexity。
+4. 根候选数量。
+5. Candidate Entropy。
+6. 候选选择分歧率（相同输入的成对比较）。
+7. Span Scorer Gradient Norm。
+8. Composer Gradient Norm。
+9. NaN/Inf。
+10. Gradient Clipping 次数与比例。
+11. GradScaler Scale / Skipped Steps。
+12. 平均训练 Step Time。
+13. 累计 GPU 时间。
+
+如果相同初始权重在 20 步以后出现搜索结构分叉，不自动判定失败。
+
+必须区分：
+
+- 固定权重时的数值等价性。
+- 训练轨迹是否一致。
+- 不同训练轨迹最终的验证性能是否相当。
+
+在 FP16 训练出现频繁 Skipped Steps 时，应独立报告其有效参数更新数量，不能把跳过的更新当成正常训练 Step。
+
+所有实验必须使用同一固定验证集，并按照真正参与 CE 的 Target Token 数汇总 NLL。
+
+## 十一、评估和决策矩阵
+
+最终至少生成下面这张表：
+
+| Precision | CKY | Root Relative L2 Error | Grad Relative L2 Error | Full Update ms | Peak VRAM | 500-step Val NLL |
+|---|---|---:|---:|---:|---:|---:|
+| BF16 | V2 | Reference | Reference | | | |
+| BF16 | V2.5 | | | | | |
+| FP32 IEEE | V2 | Reference | Reference | | | |
+| FP32 IEEE | V2.5 | | | | | |
+| FP32 TF32 | V2 | Reference | Reference | | | |
+| FP32 TF32 | V2.5 | | | | | |
+| FP16 | V2 | Reference | Reference | | | |
+| FP16 | V2.5 | | | | | |
+
+同时提供：
+
+- Root Semantic Error vs. Tree Depth。
+- Gradient Error by Module。
+- Full Update Time by Precision。
+- Training Loss vs. Optimizer Step。
+- Validation NLL vs. Target Tokens。
+- NaN/Inf / GradScaler 诊断统计。
+
+### 判断标准
+
+优先选择满足以下条件的方案：
+
+1. 固定权重、确定性 FP32 对照一致。
+2. 结构搜索算法没有改变。
+3. 无持续 NaN/Inf 或频繁梯度溢出。
+4. 梯度差异具有合理的数值解释。
+5. 短程验证性能不出现可重复的实质性退化。
+6. 保留 V2.5 相对于 V2 的显著端到端加速。
+
+不能因为 FP16 的某项误差低于 BF16，就立刻认为 FP16 更适合训练；必须同时考虑范围、溢出和梯度稳定性。
+
+不能因为 TF32 更快，就忽略它对递归组合的数值误差。
+
+不要预设 FP32 IEEE 一定是最佳最终方案。
+
+## 十二、建议的代码结构
+
+请尽量复用现有项目。
+
+可增加：
+
+```text
+configs/precision/
+    bf16.yaml
+    fp32_ieee.yaml
+    fp32_tf32.yaml
+    fp16.yaml
+
+models/precision_policy.py
+
+validate_precision_v25.py
+benchmark_precision_v25.py
+train_precision_stability.py
+
+tests/test_precision_policy.py
+tests/test_precision_v25.py
+
+reports/cky_v25_precision/
+    feasibility.json
+    numerical_comparison.json
+    gradient_comparison.json
+    benchmark.csv
+    stability.csv
+    dtype_trace.json
+    summary.md
+```
+
+不要复制整个模型项目创建另一套独立实现。
+
+尽量通过统一的配置机制切换 CKY 实现和 Composer Precision。
+
+Checkpoint 必须保存 Precision Policy 和 GradScaler State（如适用），以确保恢复训练时策略一致。
+
+允许使用新模型文件实现接口适配，但不得修改核心 Composer 公式。
+
+## 十三、最终报告必须回答的问题
+
+1. BF16 的主要差异发生在树形组合的哪一层？
+2. FP32 IEEE Composer 能否显著缩小 V2/V2.5 差异？
+3. TF32 与 FP32 IEEE 的误差相差多少？
+4. TF32 是否在完整训练中提供可测量的速度收益？
+5. FP16 是否比 BF16 更准确？
+6. FP16 是否出现数值溢出、下溢或梯度跳步？
+7. FP32 树中间状态的额外显存成本是多少？
+8. 哪种精度策略在 V2.5 上具有最佳的稳定性与速度平衡？
+9. 短程训练的验证 Loss 是否支持这一选择？
+10. 是否建议将 V2.5 设为默认实现？
+11. 是否可以开始 V3 Score-only CKY Width-batched Tensorization？
+
+不得虚构数据。
+
+若某个配置无法运行，应保留失败日志，明确解释原因，不得用其他配置的数字填充。
+
+## 十四、实施顺序
+
+按以下顺序完成：
+
+**阶段 A：审查精度路径。**
+
+确认当前 BF16、FP32 和 TF32 的真实配置与 dtype。
+
+**阶段 B：实现 Precision Policy。**
+
+实现四种 Composer Precision，保持 V2 与 V2.5 都可切换。
+
+**阶段 C：单步数值实验。**
+
+完成 Root Semantic、Forward、Gradient、逐层误差对照。
+
+**阶段 D：性能 Benchmark。**
+
+在同一设备、同样输入和权重下比较各精度模式的完整 Step。
+
+**阶段 E：短程训练。**
+
+先进行 100 Step 筛选，再选表现较好的配置进行 500 Step、多个种子的验证。
+
+**阶段 F：最终报告。**
+
+输出完整数据、复现命令、精度配置、失败案例和建议。
+
+本次只实施 V2.5-P，不进入 V3。
+
+**实验成功的标准不是让所有 BF16 数值检查都强行通过，而是找到能够支持可靠预训练、保留 Lazy Semantic Evaluation 性能优势的计算精度策略。**

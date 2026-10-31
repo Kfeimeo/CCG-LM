@@ -1,0 +1,52 @@
+{
+  "qualification": "FP32 validated; main BF16 strict mismatch; default V2 retained",
+  "full_pytest": {
+    "passed": 247,
+    "skipped": 1,
+    "seconds": 53.51,
+    "log": "validation_logs/release_tests.log"
+  },
+  "forward_matrix_cases": 1080,
+  "edge_cases": 48,
+  "gradient_cases": 8,
+  "cpu_training_steps": 8,
+  "cuda_bf16_training_steps": 20,
+  "full_model_rng": "full_model_rng.json",
+  "benchmarks": {
+    "bf16_cases": 7,
+    "fp32_cases": 1,
+    "warmup_per_arm": 2,
+    "repeats_per_arm": 5,
+    "alternating_order": true,
+    "snapshot": [
+      "model",
+      "AdamW",
+      "RNG"
+    ]
+  },
+  "forward_tolerances": {
+    "matrix": {
+      "fp32_atol": 3e-06,
+      "fp32_rtol": 3e-05,
+      "bf16_atol": 0.004,
+      "bf16_rtol": 0.025,
+      "search_scores_masks_identities": "exact"
+    },
+    "main_bf16_diagnostic": {
+      "atol": 0.04,
+      "rtol": 0.04,
+      "normalized_l2_max": 0.02
+    }
+  },
+  "strict_bf16_original_gradient_tolerances": {
+    "atol": 0.00015,
+    "rtol": 0.04,
+    "status": "strict_tolerance_mismatch"
+  },
+  "source_sha256": {
+    "models\\forest.py": "c8c075380c660b54aac52299746a47161c29ab76e31ccfad15d2826cca38330b",
+    "models\\forest_lazy.py": "9cb2a339e72912d607524c3de2e1e951275d9d6d5625776174b30192623fe1d1",
+    "validate_cky_v25.py": "f7a715489afa0358568f436689c191b685bfbac198df4d639f156722bc2202c7",
+    "benchmark_cky_v25.py": "a14fef18288e08e2236ef9ae90ee4e41a1eb2a4d2d326ee23ef70fbfe403f8fe"
+  }
+}
