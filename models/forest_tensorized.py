@@ -8,7 +8,8 @@ from torch.nn import functional as F
 from models.cky_index_cache import CKYIndexCache
 from models.forest_lazy import ScoreCell
 
-TENSORIZED_IMPLEMENTATIONS=('lazy_tensorized_a','lazy_tensorized')
+SCORE_RECONSTRUCT='lazy_tensorized_score_reconstruct'
+TENSORIZED_IMPLEMENTATIONS=('lazy_tensorized_a','lazy_tensorized',SCORE_RECONSTRUCT)
 
 class TensorizedForestMixin:
     def _apply(self,fn,recurse=True):
@@ -24,6 +25,9 @@ class TensorizedForestMixin:
         return_spans=return_spans or self.capture_spans
         search=self._search_scores(leaves,span_scores,word_mask,return_spans)
         result=self._finish_lazy(leaves,span_coeff,search,return_trees,return_spans,return_audit)
+        return self._record_tensorized_audit(search,result,return_audit)
+
+    def _record_tensorized_audit(self,search,result,return_audit):
         if 'v3' not in search:
             self.last_workload['search_compatibility_fallback']='exact_unbounded'
             if return_audit or self.collect_audit:result['materialization_audit']=self.last_workload.copy()
@@ -62,7 +66,13 @@ class TensorizedForestMixin:
             with ctx:yield
             if active:b.record();stage_events.append((width,name,a,b))
         mark('search_start');start=time.perf_counter()
-        fast=self.implementation=='lazy_tensorized'
+        fast=self.implementation!='lazy_tensorized_a'
+        backend=getattr(self,'search_backend','eager')
+        if backend!='eager':
+            if not fast:raise ValueError('search_backend requires the full-decode (lazy_tensorized) layout')
+            if getattr(self,'precision_observer',None) is not None:raise ValueError('precision_observer is an eager-only diagnostic')
+            from models.cky_compile import get_width_step,mark_rows_dynamic,begin_step
+            step_fn=get_width_step(backend);begin_step(backend)
         plan,hit,build_ms=self._geometry_cache.get(w,n,self.k,self.max_compositions,leaves.device,full_decode=fast)
         lengths=word_mask.sum(-1);chart={};debug_spans={};bands=[]
         leaf_score=span_scores.diagonal(dim1=1,dim2=2)
@@ -76,8 +86,29 @@ class TensorizedForestMixin:
                 if return_spans:debug_spans[i,i+1]=dict(scores=leaf_score[:,i:i+1],candidate_mask=leaf_mask[:,i:i+1],selected_flat=None,retained_flat=None,metadata=(),candidate_base=i*n)
         blank=torch.full((n*w,),-1,device=leaves.device,dtype=torch.long)
         bands.append((blank,blank,leaf_mask.transpose(0,1).reshape(-1)))
+        span_flat=span_scores.flatten(1)
         for width in range(2,w+1):
             p=plan.widths[width-1]
+            if backend!='eager':
+                # Same arithmetic as the inline loop below, as one pure function (plain or compiled).
+                with region(width,'elapsed_ms'):
+                    bank=torch.cat([x.reshape(n,-1) for x in scores_by_width],1)
+                    mask_bank=torch.cat([x.reshape(n,-1) for x in masks_by_width],1)
+                    budget=p.budget;keep=p.keep;e=p.candidates
+                    explore=min(budget-1,max(1,round(budget*self.exploration))) if self.training and self.exploration>0 and budget<e else 0
+                    swap=bool(self.training and self.exploration>0 and keep>1 and budget>keep)
+                    if backend!='function':mark_rows_dynamic(bank,mask_bank,span_flat,p.left_ids,p.right_ids)  # per-row candidate-id planes are row-indexed too
+                    retained_score,retained_mask,lp,rp,chosen,retained_flat,valid=step_fn(bank,mask_bank,span_flat,p.left,p.right,p.parent,p.left_ids,p.right_ids,p.spans,e,budget,keep,explore,swap,self.delta,self.exploration)
+                    scores_by_width.append(retained_score);masks_by_width.append(retained_mask)
+                    if return_spans:
+                        for i in range(p.spans):
+                            debug_spans[i,i+width]=dict(scores=retained_score[:,i],candidate_mask=retained_mask[:,i],selected_flat=chosen[:,i],retained_flat=retained_flat[:,i],metadata=p.metadata,left_id=lp[:,i],right_id=rp[:,i],candidate_base=p.bases[i])
+                    bands.append((lp.permute(1,0,2).reshape(-1),rp.permute(1,0,2).reshape(-1),retained_mask.permute(1,0,2).reshape(-1)))
+                    total_candidates=total_candidates+retained_mask.sum()
+                    total_spans=total_spans+(lengths[:,None]>=p.ends).sum()
+                    v2_rows+=n*p.spans*budget
+                if self.collect_timing:width_rows[width]=dict(width=width,candidates=n*p.spans*e,valid_candidates=valid.sum(),spans=p.spans,slots=keep,legacy_capacity=e)
+                continue
             with region(width,'elapsed_ms'):
                 with region(width,'gather_ms'):
                     # Width2 retains the original BF16 leaf addition. All later

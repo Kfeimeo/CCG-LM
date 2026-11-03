@@ -1,0 +1,89 @@
+{
+ "description": "Run-to-run determinism of the training trajectory (seed 42, mb 8, 4096-token updates, same data order). Three fresh 3-update runs plus the first 3 updates of the Stage E runs. Update 1 (forward on identical weights + first gradient norm) is identical everywhere; from update 2 every run differs in the 5th-6th significant digit, including two plain V3 eager runs -> eager CUDA backward (index_select/scatter atomics) is not bitwise reproducible, so trajectory-level bitwise identity between arms is not testable; per-micro-batch identity (benchmark/validate) is the correct test.",
+ "runs": {
+  "v3_run1": {
+   "train_nll": [
+    9.82033599447459,
+    9.745971988886597,
+    9.644514836370943
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.646892547607422,
+    8.484169960021973
+   ]
+  },
+  "v3_run2": {
+   "train_nll": [
+    9.82033599447459,
+    9.746007300913334,
+    9.644519358873367
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.647237777709961,
+    8.48410701751709
+   ]
+  },
+  "v3c_run1": {
+   "train_nll": [
+    9.82033599447459,
+    9.745997212827206,
+    9.644618734717367
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.647209167480469,
+    8.483800888061523
+   ]
+  },
+  "stage_e_v3": {
+   "train_nll": [
+    9.82033599447459,
+    9.746016681194304,
+    9.644549578428268
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.646878242492676,
+    8.484304428100586
+   ]
+  },
+  "stage_e_v3_compile_ro": {
+   "train_nll": [
+    9.82033599447459,
+    9.74593724310398,
+    9.644504100084305
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.646882057189941,
+    8.483888626098633
+   ]
+  },
+  "stage_e_v3c_compile_ro": {
+   "train_nll": [
+    9.82033599447459,
+    9.745964787900448,
+    9.64449743181467
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.64685344696045,
+    8.483672142028809
+   ]
+  },
+  "stage_e_v3_compile_ro_static_attempt": {
+   "train_nll": [
+    9.82033599447459,
+    9.746000774204733,
+    9.644429564476011
+   ],
+   "grad_norm": [
+    8.624692916870117,
+    8.647183418273926,
+    8.48375129699707
+   ]
+  }
+ }
+}

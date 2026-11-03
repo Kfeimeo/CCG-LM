@@ -1,0 +1,4 @@
+{"free_device_memory_gib": 6.9609375, "allocator_cap_gib": 6.7109375}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1096: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return self._apply(lambda t: t.cuda(device))
+{"arm": "v3", "implementation": "lazy_tensorized", "backend": "eager", "mode": "dag", "micro_batch_size": 8, "steps": 30, "total_wall_ms": 9113.409799989313, "median_step_ms": 282.0934999908786, "first_step_ms": 930.7251000136603, "last_quarter_median_ms": 278.0112999898847, "unique_shapes": 9, "compiled_frames": 0, "cache_misses": 9, "cache_hit_rate": 0.7, "cache_build_ms": 267.731600033585, "ce_tokens": 3014, "ce_tokens_per_second": 330.72143864347396}

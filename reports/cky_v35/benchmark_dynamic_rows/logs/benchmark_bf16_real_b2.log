@@ -1,0 +1,20 @@
+{"free_device_memory_gib": 6.9609375, "allocator_cap_gib": 6.7109375}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1096: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return self._apply(lambda t: t.cuda(device))
+E:\anaconda3\envs\py312\Lib\site-packages\torch\profiler\profiler.py:272: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+USDT:2026-11-02 07:35:51 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 07:35:51 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "real_b2", "arm": "v3", "step_median_ms": 171.51830000511836, "ce_tokens_per_second": 169.0781683303449, "score_backward_median_ms": 19.386500003747642, "score_autograd_nodes": 676, "full_cuda_launches": 4229}
+USDT:2026-11-02 07:36:33 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 07:36:33 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "real_b2", "arm": "v3_compile_default", "step_median_ms": 153.0777500156546, "ce_tokens_per_second": 189.4462127711852, "score_backward_median_ms": 25.70289999130182, "score_autograd_nodes": 448, "full_cuda_launches": 3189, "compile_first_call_ms": 97414.0149000159, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 07:37:16 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 07:37:16 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "real_b2", "arm": "v3_compile_ro", "step_median_ms": 140.66665001155343, "ce_tokens_per_second": 206.16116185050353, "score_backward_median_ms": 151.59580000909045, "score_autograd_nodes": 448, "full_cuda_launches": 3083, "compile_first_call_ms": 59251.958799985005, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 07:37:40 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 07:37:40 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "real_b2", "arm": "v3c_compile_default", "step_median_ms": 153.26570000615902, "ce_tokens_per_second": 189.2138945558897, "score_backward_median_ms": 9.441400005016476, "score_autograd_nodes": 312, "full_cuda_launches": 3398, "compile_first_call_ms": 44876.03300000774, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 07:38:05 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 07:38:05 113728:116976 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "real_b2", "arm": "v3c_compile_ro", "step_median_ms": 137.90864999464247, "ce_tokens_per_second": 210.28412649334615, "score_backward_median_ms": 9.749399992870167, "score_autograd_nodes": 312, "full_cuda_launches": 3294, "compile_first_call_ms": 41206.10510002007, "search_identity": true, "grad_strict_failures": 0}

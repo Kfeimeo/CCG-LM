@@ -1,0 +1,71 @@
+matrix 60 cpu fp32
+matrix 120 cpu fp32
+matrix 180 cpu fp32
+matrix 240 cpu fp32
+matrix 300 cpu fp32
+matrix 360 cpu fp32
+matrix 420 cuda fp32
+matrix 480 cuda fp32
+matrix 540 cuda fp32
+matrix 600 cuda fp32
+matrix 660 cuda fp32
+matrix 720 cuda fp32
+matrix 780 cuda bf16
+matrix 840 cuda bf16
+matrix 900 cuda bf16
+matrix 960 cuda bf16
+matrix 1020 cuda bf16
+matrix 1080 cuda bf16
+matrix passed 1080
+lm pair cpu fp32 forest_scalar4 strict failures 0
+lm pair cpu fp32 forest_vector4 strict failures 0
+lm pair cuda fp32 forest_scalar4 strict failures 0
+lm pair cuda fp32 forest_vector4 strict failures 0
+lm pair cuda bf16 forest_scalar4 strict failures 0
+lm pair cuda bf16 forest_vector4 strict failures 0
+main fp32 1 strict failures 0
+main fp32 4 strict failures 0
+main bf16 1 strict failures 0
+main bf16 4 strict failures 0
+tree vs dag failures 3
+v3_function fp32 2 8 normal passed
+v3_function fp32 2 24 explore passed
+v3_function fp32 4 24 normal passed
+v3_function fp32 2 8 ties passed
+v3_function fp32 2 8 near_ties passed
+v3_function bf16 2 8 normal passed
+v3_function bf16 2 24 explore passed
+v3_function bf16 4 24 normal passed
+v3_function bf16 2 8 ties passed
+v3_function bf16 2 8 near_ties passed
+v3_compile_default fp32 2 8 normal passed
+v3_compile_default fp32 2 24 explore passed
+v3_compile_default fp32 4 24 normal passed
+v3_compile_default fp32 2 8 ties passed
+v3_compile_default fp32 2 8 near_ties passed
+v3_compile_default bf16 2 8 normal passed
+v3_compile_default bf16 2 24 explore passed
+v3_compile_default bf16 4 24 normal passed
+v3_compile_default bf16 2 8 ties passed
+v3_compile_default bf16 2 8 near_ties passed
+v3_compile_ro fp32 2 8 normal passed
+v3_compile_ro fp32 2 24 explore passed
+v3_compile_ro fp32 4 24 normal passed
+v3_compile_ro fp32 2 8 ties passed
+v3_compile_ro fp32 2 8 near_ties passed
+v3_compile_ro bf16 2 8 normal passed
+v3_compile_ro bf16 2 24 explore passed
+v3_compile_ro bf16 4 24 normal passed
+v3_compile_ro bf16 2 8 ties passed
+v3_compile_ro bf16 2 8 near_ties passed
+v3c_compile_default fp32 2 8 normal passed
+v3c_compile_default fp32 2 24 explore passed
+v3c_compile_default fp32 4 24 normal passed
+v3c_compile_default fp32 2 8 ties passed
+v3c_compile_default fp32 2 8 near_ties passed
+v3c_compile_default bf16 2 8 normal passed
+v3c_compile_default bf16 2 24 explore passed
+v3c_compile_default bf16 4 24 normal passed
+v3c_compile_default bf16 2 8 ties passed
+v3c_compile_default bf16 2 8 near_ties passed
+V3.5 validation completed

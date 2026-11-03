@@ -1,0 +1,6 @@
+variant,mode,parameters,receptive_field,decoder,readers,semantic_embedding,pooling,seq_cnn,syntax,composer
+no_memory,no_memory,10093440,0.0,10093440,0.0,0.0,0.0,0.0,0.0,0.0
+pooling4,pooling4,15781794,0.0,10093440,369954.0,5120000.0,198400.0,0.0,0.0,0.0
+cnn_k1,seq_cnn4,15914402,1.0,10093440,369954.0,5120000.0,198400.0,132608.0,0.0,0.0
+cnn_k3,seq_cnn4,16176546,5.0,10093440,369954.0,5120000.0,198400.0,394752.0,0.0,0.0
+forest_scalar4,forest_scalar4,22385795,0.0,10093440,369954.0,5120000.0,0.0,0.0,6145505.0,656896.0

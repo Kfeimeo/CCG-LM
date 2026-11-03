@@ -1,0 +1,23 @@
+{"free_device_memory_gib": 6.9609375, "allocator_cap_gib": 6.7109375}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1096: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return self._apply(lambda t: t.cuda(device))
+E:\anaconda3\envs\py312\Lib\site-packages\torch\profiler\profiler.py:272: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+USDT:2026-11-02 04:08:36 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:08:37 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3", "step_median_ms": 297.4429500027327, "ce_tokens_per_second": 3442.6769906316226, "score_backward_median_ms": 27.6912999979686, "score_autograd_nodes": 892, "full_cuda_launches": 6301}
+USDT:2026-11-02 04:08:45 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:08:45 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3c", "step_median_ms": 299.1413999843644, "ce_tokens_per_second": 3423.1303325234244, "score_backward_median_ms": 15.438000002177432, "score_autograd_nodes": 412, "full_cuda_launches": 6272, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 04:09:00 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:09:00 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3_compile_default", "step_median_ms": 278.7324999953853, "ce_tokens_per_second": 3673.7732414302363, "score_backward_median_ms": 36.56750000664033, "score_autograd_nodes": 616, "full_cuda_launches": 5045, "compile_first_call_ms": 9891.087299998617, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 04:09:15 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:09:15 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3_compile_ro", "step_median_ms": 249.78879999252968, "ce_tokens_per_second": 4099.463226656377, "score_backward_median_ms": 19.316299993079156, "score_autograd_nodes": 616, "full_cuda_launches": 4880, "compile_first_call_ms": 6108.667399996193, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 04:09:27 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:09:27 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3c_compile_default", "step_median_ms": 274.7175499825971, "ce_tokens_per_second": 3727.464809091624, "score_backward_median_ms": 14.960799977416173, "score_autograd_nodes": 412, "full_cuda_launches": 5336, "compile_first_call_ms": 4659.983200021088, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 04:09:41 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 04:09:41 120136:119532 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "main_b8_w24", "arm": "v3c_compile_ro", "step_median_ms": 261.76319998921826, "ce_tokens_per_second": 3911.932617121801, "score_backward_median_ms": 14.492299989797175, "score_autograd_nodes": 412, "full_cuda_launches": 5196, "compile_first_call_ms": 4434.800499991979, "search_identity": true, "grad_strict_failures": 0}

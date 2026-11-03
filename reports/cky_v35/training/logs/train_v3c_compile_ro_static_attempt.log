@@ -1,0 +1,80 @@
+E:\dev\AI\NLP\CCG-LM\utils.py:121: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return {key: value.to(device, non_blocking=True) if isinstance(value, torch.Tensor) else value for key, value in batch.items()}
+{"step": 0, "target_tokens": 0, "val_nll": 9.81971293567008, "val_perplexity": 18392.770074945227, "val_target_tokens": 5279, "root_candidate_count": 3.9815384615384617, "candidate_entropy": 1.3747128956134502, "nonfinite_logits": 0, "train_seconds": 0.0, "elapsed_seconds": 0.0}
+{"step": 1, "target_tokens": 4096, "train_nll": 9.82033599447459, "step_tokens": 4096, "micro_batches": 42, "span_scorer_grad_norm": 0.007594334427267313, "composer_grad_norm": 0.0320335254073143, "reader_grad_norm": 0.04582267999649048, "grad_norm": 8.624692916870117, "step_seconds": 383.09305210001185, "tokens_per_second": 10.69191930667195, "train_seconds": 383.09305210001185, "elapsed_seconds": 434.3711374999839, "peak_gpu_gib": 2.774454116821289, "cache_misses": 34, "cache_build_ms": 455.2132000681013, "compiled_frames": 0}
+{"step": 2, "target_tokens": 8192, "train_nll": 9.746038049459457, "step_tokens": 4096, "micro_batches": 45, "span_scorer_grad_norm": 0.008807405829429626, "composer_grad_norm": 0.03385491296648979, "reader_grad_norm": 0.0476200170814991, "grad_norm": 8.647117614746094, "step_seconds": 73.63673939998262, "tokens_per_second": 55.62440750874647, "train_seconds": 456.72979149999446, "elapsed_seconds": 508.02266329998383, "peak_gpu_gib": 3.1189169883728027, "cache_misses": 45, "cache_build_ms": 540.9986001031939, "compiled_frames": 0}
+{"step": 3, "target_tokens": 12288, "train_nll": 9.644394539296627, "step_tokens": 4096, "micro_batches": 45, "span_scorer_grad_norm": 0.008095928467810154, "composer_grad_norm": 0.03160306438803673, "reader_grad_norm": 0.04600643739104271, "grad_norm": 8.483649253845215, "step_seconds": 55.82764840000891, "tokens_per_second": 73.3686644053477, "train_seconds": 512.5574399000034, "elapsed_seconds": 563.8530272000062, "peak_gpu_gib": 3.222087860107422, "cache_misses": 53, "cache_build_ms": 592.4479000968859, "compiled_frames": 0}
+{"step": 4, "target_tokens": 16384, "train_nll": 9.473732016980648, "step_tokens": 4096, "micro_batches": 44, "span_scorer_grad_norm": 0.008540080860257149, "composer_grad_norm": 0.029668059200048447, "reader_grad_norm": 0.043446704745292664, "grad_norm": 7.853816986083984, "step_seconds": 27.175431700015906, "tokens_per_second": 150.7243765329992, "train_seconds": 539.7328716000193, "elapsed_seconds": 591.0314224000031, "peak_gpu_gib": 3.1254892349243164, "cache_misses": 62, "cache_build_ms": 642.6131000043824, "compiled_frames": 0}
+{"step": 5, "target_tokens": 20480, "train_nll": 9.245162919163704, "step_tokens": 4096, "micro_batches": 45, "span_scorer_grad_norm": 0.008135019801557064, "composer_grad_norm": 0.027781400829553604, "reader_grad_norm": 0.04077081009745598, "grad_norm": 7.2591872215271, "step_seconds": 52.1071902999829, "tokens_per_second": 78.60719367939791, "train_seconds": 591.8400619000022, "elapsed_seconds": 643.1412939000002, "peak_gpu_gib": 3.1069083213806152, "cache_misses": 77, "cache_build_ms": 743.1404999806546, "compiled_frames": 0}
+W1102 06:30:51.519000 108436 site-packages\torch\_dynamo\convert_frame.py:1853] [0/512] torch._dynamo hit config.recompile_limit (512)
+W1102 06:30:51.519000 108436 site-packages\torch\_dynamo\convert_frame.py:1853] [0/512]    function: 'width_step' (E:\dev\AI\NLP\CCG-LM\models\cky_compile.py:23)
+W1102 06:30:51.519000 108436 site-packages\torch\_dynamo\convert_frame.py:1853] [0/512]    last reason: 0/511: tensor 'bank' size mismatch at index 1. expected 243, actual 255
+W1102 06:30:51.519000 108436 site-packages\torch\_dynamo\convert_frame.py:1853] [0/512] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1102 06:30:51.519000 108436 site-packages\torch\_dynamo\convert_frame.py:1853] [0/512] To diagnose recompilation issues, see https://docs.pytorch.org/docs/main/user_guide/torch_compiler/compile/programming_model.recompilation.html
+Traceback (most recent call last):
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\convert_frame.py", line 1883, in _compile
+    raise_unimplemented_cache_limit_exceeded()
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\convert_frame.py", line 1867, in raise_unimplemented_cache_limit_exceeded
+    unimplemented(
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\exc.py", line 657, in unimplemented
+    raise Unsupported(msg, gb_type, skip_frame)
+torch._dynamo.exc.Unsupported: Dynamo recompile limit exceeded
+  Explanation: Dynamo attempted to recompile the code object too many times, exceeding the recompile_limit cache size limit (currently set to 512). Excessive recompilations can degrade performance due to the compilation overhead of each recompilation.
+  Hint: To monitor recompilations, enable TORCH_LOGS=recompiles. If recompilations are expected, consider increasing torch._dynamo.config.recompile_limit to an appropriate value.
+  Hint: See https://docs.pytorch.org/docs/main/user_guide/torch_compiler/compile/programming_model.recompilation.html for tips on dealing with recompilations.
+
+  Developer debug context: Limit type: recompile_limit
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0039.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dev\AI\NLP\CCG-LM\train_cky_v35_validation.py", line 109, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_cky_v35_validation.py", line 92, in main
+    if a.worker:return worker(a)
+                       ^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train_cky_v35_validation.py", line 65, in worker
+    metrics=train_update(model,sampler,optimizer,schedule,a.effective_tokens,a.micro_batch_size,device,policy.outer_autocast,cfg['train']['grad_clip'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\train.py", line 75, in train_update
+    result = model(**batch)
+             ^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\model.py", line 154, in forward
+    memory = self.encode_history(history_ids, word_mask, history_mask, return_trees)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\model.py", line 88, in encode_history
+    mem = self.forest(leaves, scores, coeff, mask, return_trees)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\forest_score_reconstruct.py", line 44, in forward
+    search=self._search_scores(leaves,span_scores,word_mask,return_spans)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\AI\NLP\CCG-LM\models\forest_tensorized.py", line 100, in _search_scores
+    retained_score,retained_mask,lp,rp,chosen,retained_flat,valid=step_fn(bank,mask_bank,span_flat,p.left,p.right,p.parent,p.left_ids,p.right_ids,p.spans,e,budget,keep,explore,swap,self.delta,self.exploration)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\eval_frame.py", line 1047, in compile_wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\convert_frame.py", line 2474, in __call__
+    result = self._torchdynamo_orig_backend(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\convert_frame.py", line 736, in __call__
+    result = _compile(
+             ^^^^^^^^^
+  File "E:\anaconda3\envs\py312\Lib\site-packages\torch\_dynamo\convert_frame.py", line 1890, in _compile
+    raise FailOnRecompileLimitHit(
+torch._dynamo.exc.FailOnRecompileLimitHit: Hard failure due to fullgraph=True

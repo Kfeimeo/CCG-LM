@@ -1,0 +1,28 @@
+{
+  "samples_ms": [
+    332.9537000390701,
+    352.81680000480264,
+    345.3903999761678,
+    308.6559000075795,
+    318.09670000802726,
+    327.94460002332926,
+    264.4274999620393,
+    292.62239998206496,
+    258.88030003989115,
+    310.8707999926992
+  ],
+  "median_step_ms": 314.4837500003632,
+  "target_tokens": 64,
+  "peak_allocated_gib": 0.41048765182495117,
+  "precision_policy": {
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "matmul_precision": "ieee",
+    "score_dtype": "existing",
+    "reader": "bf16",
+    "scaler_init_scale": 1024.0,
+    "scaler_growth_interval": 2000
+  },
+  "parameters": 22385795,
+  "target_tokens_per_second": 203.50813038806007
+}

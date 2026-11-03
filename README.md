@@ -2,9 +2,18 @@
 
 一个从零训练的小型语言模型研究项目：完成的历史句子先经过潜在连续二叉树组合，得到多个带权语义候选；GPT Decoder 通过 Semantic Cross-Attention 预测下一句。无 CCG 范畴、人工句法标签或 Lambda Term。
 
-顶层训练入口是 [Train.ipynb](Train.ipynb)：选择 py312 CUDA 内核，修改参数区并顺序运行，可直接显示 tqdm、保存检查点、恢复训练、查看曲线和评估开发集。默认 V3 smoke + 已有真实 TinyStories 小缓存，先训练512个CE Token；`EXTRA_TOKENS`可追加训练，或在顶部指定`RESUME_CHECKPOINT`和更大的累计预算。默认新建唯一输出目录，主模型使用`configs/v3_main_125m.yaml`。Notebook内提供Jupyter内核注册命令。
+本地独立训练入口是 `Train.ipynb`，由 [build_train_notebook.py](build_train_notebook.py) 生成。Notebook已取消Git跟踪并被忽略，可单独上传Colab或放到源码仓库外；内置Git clone、依赖安装、Colab Secrets/隐藏输入HF认证、路径配置、可选Google Drive、tqdm训练和检查点恢复。配置路径相对源码目录，数据/结果路径相对独立的存储根目录。默认V3 smoke和真实TinyStories小缓存，训练512个CE Token；`EXTRA_TOKENS`可追加训练，主模型使用 `configs/v3_main_125m.yaml`。Colab克隆所选远端分支，使用新增功能前需先推送相应代码。
+
+```bash
+python build_train_notebook.py                     # 本地顶层文件，Git忽略
+python build_train_notebook.py --output ../CCG-LM_Train.ipynb  # 也可生成在仓库外
+```
+
+Colab先选择GPU运行时，在Secrets中添加名为 `HF_TOKEN` 的条目并授权Notebook；也可将 `PROMPT_FOR_HF_TOKEN=True` 后隐藏输入。本机复用环境变量或被忽略的 `.hf_token` 文件。Token不写入Notebook、配置或检查点。`USE_GOOGLE_DRIVE=True` 可持久化缓存和训练结果，源码仍克隆到运行时本地。
 
 Colab完整实验入口保留为 `colab_experiment.ipynb`。源码使用 Python 3.11+、PyTorch 2.x 和原生 SDPA，不需要编译自定义 CUDA 扩展。Blackwell 上请使用支持实际 GPU 架构的 CUDA 版 PyTorch；Notebook 会运行真实 CUDA/SDPA 运算检查，不能只依据 `nvidia-smi` 判断可运行性。
+
+局部组合消融新增 `seq_cnn4`：小核序列CNN编码历史，再复用4槽Pooling与Semantic Reader。`local_cnn_ablation.py` 可生成参数表、运行kernel=1/3对照、测CUDA吞吐或顺序训练各组；默认只生成计划。公式、实验边界和命令见 [CNN消融说明](reports/local_cnn/README.md)。Notebook中同时选择CNN配置和 `MODE="seq_cnn4"` 即可训练。
 
 ## 快速开始
 

@@ -1,0 +1,5 @@
+compile tests exit 0
+validate exit 0
+benchmark exit 0
+training exit 0
+pytest full exit 0

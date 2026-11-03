@@ -6,9 +6,10 @@ from models.forest_reference import (
 from models.forest_score_first import SemanticForest as ScoreFirstSemanticForest
 from models.forest_lazy import LazyForestMixin
 from models.forest_tensorized import TensorizedForestMixin,TENSORIZED_IMPLEMENTATIONS
+from models.forest_score_reconstruct import ScoreReconstructForestMixin
 
 
-class SemanticForest(TensorizedForestMixin, LazyForestMixin, ScoreFirstSemanticForest):
+class SemanticForest(ScoreReconstructForestMixin, TensorizedForestMixin, LazyForestMixin, ScoreFirstSemanticForest):
     def __init__(self, composer, k=4, max_compositions=12, delta=8.0, exploration=0.1,
                  implementation="score_first"):
         super().__init__(composer,k,max_compositions,delta,exploration,

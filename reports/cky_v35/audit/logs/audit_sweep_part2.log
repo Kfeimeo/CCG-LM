@@ -1,0 +1,24 @@
+{"free_device_memory_gib_at_start": 6.9609375, "total_device_memory_gib": 7.99951171875, "allocator_cap_fraction": 0.8389183910150766, "allocator_cap_gib": 6.7109375, "alloc_conf": "expandable_segments:True"}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1369: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return t.to(
+{"mbs": 16, "update": 0, "wall_ms": 342714.8, "micro_batches": 23, "tokens": 4096}
+{"mbs": 16, "update": 1, "wall_ms": 608753.6, "micro_batches": 22, "tokens": 4096}
+{"mbs": 16, "update": 2, "wall_ms": 539495.7, "micro_batches": 22, "tokens": 4096}
+{"mbs": 16, "update": 3, "wall_ms": 104754.9, "micro_batches": 21, "tokens": 4096}
+{"mbs": 16, "update": 4, "wall_ms": 47697.6, "micro_batches": 22, "tokens": 4096}
+{"mbs": 16, "update": 5, "wall_ms": 53762.2, "micro_batches": 22, "tokens": 4096}
+{"mbs": 16, "update": 6, "wall_ms": 252161.7, "micro_batches": 22, "tokens": 4096}
+{"mbs": 32, "update": 0, "wall_ms": 162751.8, "micro_batches": 12, "tokens": 4096}
+{"mbs": 32, "update": 1, "wall_ms": 47655.5, "micro_batches": 11, "tokens": 4096}
+{"mbs": 32, "update": 2, "wall_ms": 55017.3, "micro_batches": 11, "tokens": 4096}
+{"mbs": 32, "update": 3, "wall_ms": 159737.8, "micro_batches": 11, "tokens": 4096}
+{"mbs": 32, "update": 4, "wall_ms": 698816.5, "micro_batches": 11, "tokens": 4096}
+{"mbs": 32, "update": 5, "wall_ms": 103184.5, "micro_batches": 11, "tokens": 4096}
+{"mbs": 32, "update": 6, "wall_ms": 321147.7, "micro_batches": 11, "tokens": 4096}
+{"mbs": 64, "update": 0, "wall_ms": 688696.5, "micro_batches": 6, "tokens": 4096}
+{"mbs": 64, "update": 1, "wall_ms": 8520.5, "micro_batches": 6, "tokens": 4096}
+{"mbs": 64, "update": 2, "wall_ms": 13070.4, "micro_batches": 6, "tokens": 4096}
+{"mbs": 64, "update": 3, "wall_ms": 7256.4, "micro_batches": 6, "tokens": 4096}
+OOM at micro-batch 64
+OOM at micro-batch 128
+audit complete

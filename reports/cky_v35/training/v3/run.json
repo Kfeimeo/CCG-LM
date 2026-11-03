@@ -1,0 +1,121 @@
+{
+  "config": {
+    "name": "v35_baseline",
+    "seed": 42,
+    "seeds": [
+      13,
+      42,
+      2026
+    ],
+    "data": {
+      "cache_dir": "cache/tinystories",
+      "max_history": 4,
+      "max_words": 24,
+      "max_target_length": 128,
+      "vocab_size": 16000,
+      "word_vocab_size": 20000,
+      "split_seed": 2026,
+      "dev_fraction": 0.5
+    },
+    "model": {
+      "mode": "forest_vector4",
+      "forest_implementation": "lazy_tensorized",
+      "vocab_size": 16000,
+      "word_vocab_size": 20000,
+      "max_target_length": 128,
+      "max_history": 4,
+      "max_words": 24,
+      "hidden_size": 768,
+      "layers": 16,
+      "heads": 12,
+      "ffn_size": 3072,
+      "dropout": 0.1,
+      "cross_layers": [
+        4,
+        8,
+        12,
+        16
+      ],
+      "syntax_embedding": 256,
+      "semantic_size": 256,
+      "syntax_hidden": 384,
+      "syntax_layers": 3,
+      "syntax_heads": 6,
+      "composer_hidden": 512,
+      "coefficient_size": 32,
+      "reader_heads": 12,
+      "reader_width": 768,
+      "candidates": 4,
+      "max_compositions": 12,
+      "prune_delta": 8.0,
+      "exploration": 0.1,
+      "prior_beta": 1.0,
+      "adapter_gate": -2.0,
+      "search_backend": "eager",
+      "reconstruction_mode": "dag"
+    },
+    "train": {
+      "budget_tokens": 409600,
+      "effective_tokens": 4096,
+      "micro_batch_size": 8,
+      "decoder_lr": 0.0003,
+      "auxiliary_lr": 0.0005,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "weight_decay": 0.1,
+      "grad_clip": 1.0,
+      "precision": "bf16",
+      "warmup_steps": 200,
+      "schedule_tokens": 500000000,
+      "min_lr_ratio": 0.1,
+      "checkpoint_tokens": [
+        5000000,
+        10000000,
+        25000000,
+        50000000,
+        100000000
+      ],
+      "eval_every_steps": 250,
+      "save_every_steps": 100,
+      "eval_batches": 100,
+      "eval_batch_size": 8,
+      "device": "auto",
+      "deterministic": false,
+      "progress": true,
+      "output_dir": "reports\\cky_v35\\training\\v3",
+      "drive_dir": null
+    },
+    "precision": {
+      "outer_autocast": "bf16",
+      "composer": "fp32_ieee",
+      "reader": "bf16",
+      "matmul_precision": "ieee",
+      "score_dtype": "existing"
+    }
+  },
+  "arm": "v3",
+  "init_weight_sha256": "632de5d50b4024d271f9f74faabe013181035ee1cea70f74339be7c352a797f5",
+  "data_fingerprint": "2bf7443a753a0952c4037ab5cdd3276a128d58309470bda0c2654e451bf28a30",
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "backend": {
+    "generic_fp32": "ieee",
+    "matmul_fp32": "ieee",
+    "cudnn_fp32": "ieee",
+    "fp16_reduced_reduction": true,
+    "bf16_reduced_reduction": true,
+    "fp16_accumulation": false
+  }
+}

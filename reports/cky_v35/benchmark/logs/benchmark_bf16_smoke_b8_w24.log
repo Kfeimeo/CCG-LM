@@ -1,0 +1,23 @@
+{"free_device_memory_gib": 6.9609375, "allocator_cap_gib": 6.7109375}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1096: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return self._apply(lambda t: t.cuda(device))
+E:\anaconda3\envs\py312\Lib\site-packages\torch\profiler\profiler.py:272: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+USDT:2026-11-02 03:45:40 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:45:40 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3", "step_median_ms": 216.7121499805944, "ce_tokens_per_second": 4725.161926046577, "score_backward_median_ms": 24.88509999238886, "score_autograd_nodes": 822, "full_cuda_launches": 5341}
+USDT:2026-11-02 03:45:45 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:45:46 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3c", "step_median_ms": 216.61169998697005, "ce_tokens_per_second": 4727.353139565394, "score_backward_median_ms": 14.362100017024204, "score_autograd_nodes": 342, "full_cuda_launches": 5312, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 03:46:44 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:46:44 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3_compile_default", "step_median_ms": 205.6752499920549, "ce_tokens_per_second": 4978.722525143674, "score_backward_median_ms": 33.777100004954264, "score_autograd_nodes": 546, "full_cuda_launches": 4085, "compile_first_call_ms": 201845.40620000917, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 03:47:15 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:47:16 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3_compile_ro", "step_median_ms": 178.9957000000868, "ce_tokens_per_second": 5720.807818285598, "score_backward_median_ms": 38.27030002139509, "score_autograd_nodes": 546, "full_cuda_launches": 3920, "compile_first_call_ms": 49883.04370001424, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 03:47:28 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:47:29 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3c_compile_default", "step_median_ms": 191.00700001581572, "ce_tokens_per_second": 5361.060065417555, "score_backward_median_ms": 15.101099997991696, "score_autograd_nodes": 342, "full_cuda_launches": 4376, "compile_first_call_ms": 59949.73609998124, "search_identity": true, "grad_strict_failures": 0}
+USDT:2026-11-02 03:47:42 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 03:47:42 118712:120288 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"case": "smoke_b8_w24", "arm": "v3c_compile_ro", "step_median_ms": 174.83639999409206, "ce_tokens_per_second": 5856.903940109738, "score_backward_median_ms": 14.349200006108731, "score_autograd_nodes": 342, "full_cuda_launches": 4236, "compile_first_call_ms": 33538.96320000058, "search_identity": true, "grad_strict_failures": 0}

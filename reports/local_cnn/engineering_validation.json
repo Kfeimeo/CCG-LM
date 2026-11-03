@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-03",
+  "status": "engineering_checks_passed",
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "python": "E:\\anaconda3\\envs\\py312\\python.exe",
+  "tests": {
+    "command": "python -m pytest tests/test_seq_cnn.py tests/test_model.py tests/test_resume_evaluation.py tests/test_data_decoder.py tests/test_precision_policy.py tests/test_reader_precision.py -q",
+    "passed": 53
+  },
+  "training": {
+    "mode": "seq_cnn4",
+    "config": "configs/ablations/seq_cnn.yaml",
+    "seed": 42,
+    "cache": "cache/tinystories_integration",
+    "source_train_stories": 32,
+    "effective_tokens": 128,
+    "token_counts": [
+      128,
+      256,
+      384
+    ],
+    "steps": [
+      1,
+      2,
+      3
+    ],
+    "micro_batches": [
+      6,
+      5,
+      6
+    ],
+    "lr_used": [
+      1.4999999999999998e-06,
+      2.9999999999999997e-06,
+      4.499999999999999e-06
+    ],
+    "optimizer_steps_checked": true,
+    "scheduler_tokens_checked": true,
+    "data_fingerprint": "548dab74bb13923efe61434aec559d8f0870d8a744b60ef141341fc96f58b672",
+    "run": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\local_cnn_engineering_validation\\cnn_k3_seed42",
+    "resume_checkpoint": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\local_cnn_engineering_validation\\cnn_k3_seed42\\tokens_256.pt",
+    "final_checkpoint": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\local_cnn_engineering_validation\\cnn_k3_seed42\\tokens_384.pt"
+  },
+  "evaluation": {
+    "checkpoint_tokens": 256,
+    "split": "dev",
+    "target_tokens": 1041,
+    "nll": 9.759423687409942,
+    "scope": "Full dev of the existing tiny cache, engineering only; no architecture-quality comparison."
+  },
+  "benchmark": {
+    "case": "smoke B2 H4 W24 T32, identical resident synthetic inputs, warmup3 repeats10, sequential arms",
+    "cnn_k3_median_ms": 59.38140000216663,
+    "forest_scalar4_median_ms": 314.4837500003632,
+    "speed_ratio": 5.295997568074999,
+    "formal_quality_claim": false
+  },
+  "notebook": {
+    "change": "CNN configuration documentation only; code cells unchanged.",
+    "schema_checked": true,
+    "code_ast_checked": true,
+    "cleared_outputs_checked": true
+  },
+  "source_hashes": {
+    "models/seq_cnn.py": "4f30f866fc3187713bcf730220bd339d64d638bcbc016d508be59ea2711a2444",
+    "models/model.py": "6529a41bda3f3c5ffcc147a8ae38016e5f3653aa2fda49c59eebc5d4682e9414",
+    "train.py": "8ab367c9d37ac00c6330193ec7fefe102cf2d2890e9ba0a153fdd8560204b870",
+    "local_cnn_ablation.py": "e5d2591fa239587fd066389bc9847aec2882461ba4e9d41da38fd2b5f6ca8a11",
+    "tests/test_seq_cnn.py": "fb1eccf6d3fc51ecc59026ce9001e874507cd91b81424d070a7a46e52eafa0a0",
+    "Train.ipynb": "055ecea7c3b834747cbd2a47609803e86b4e222184b003fd79dda7c336a60af9",
+    "configs\\ablations\\seq_cnn.yaml": "83ec8e319726e3cf991a554349c9362edca6a42c0ee4e7b64aa2e3cb04277202",
+    "configs\\ablations\\seq_cnn_k1.yaml": "13d16c829c980b8e5344d3bcf0d059f7328d5b0216ead15eec4ee823e0acc023",
+    "configs\\ablations\\seq_cnn_main.yaml": "a05133cdc6850f83fc0e1e18c974e3ed5b959b62877705a244d6a384722a6b2f"
+  }
+}

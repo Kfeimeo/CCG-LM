@@ -1,0 +1,8 @@
+# V3 with torch.compile(width_step, mode="default"); rows dim symbolic (mark_dynamic), every other shape static; eager everywhere else.
+extends: baseline.yaml
+name: v35_compile_default
+model:
+  forest_implementation: lazy_tensorized
+  search_backend: compile_default
+train:
+  output_dir: runs/cky_v35/compile_default

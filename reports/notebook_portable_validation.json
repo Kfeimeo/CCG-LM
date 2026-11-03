@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-03",
+  "status": "passed",
+  "python": "E:\\anaconda3\\envs\\py312\\python.exe",
+  "project": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\fresh cloned source",
+  "storage": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data",
+  "cache": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data\\cache\\tinystories_integration",
+  "run": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data\\runs\\notebook_smoke_20261103T063355Z_8c9cfe",
+  "actual_clone": true,
+  "clone_source": "Local Git transport; no network used during verification.",
+  "dependencies_installed": false,
+  "live_colab_tested": false,
+  "live_drive_mount_tested": false,
+  "target_tokens": [
+    256,
+    512,
+    768
+  ],
+  "steps": [
+    1,
+    2,
+    3
+  ],
+  "dev_target_tokens": 116,
+  "dev_nll": 9.741789192988955,
+  "model": "forest_vector4",
+  "implementation": "lazy_tensorized",
+  "separate_storage": true,
+  "plots_generated": true,
+  "tests_passed": 7,
+  "external_notebook": "E:\\dev\\AI\\NLP\\CCG-LM_Train.ipynb",
+  "local_notebook": "Train.ipynb",
+  "generator": "build_train_notebook.py",
+  "notebook_untracked": true,
+  "git_ignored": true,
+  "all_outputs_cleared": true,
+  "external_and_local_cells_identical": true,
+  "token_storage": "Colab Secrets / environment / ignored local token file / hidden input; no plaintext credential embedded.",
+  "notebook_sha256": "8ff3afd54bfbe3d8a6d3d2f590305c37af0ead78785f212c4d8fe70f8bd25b92",
+  "generator_sha256": "cea4e1c0d8b139574f3f2a730cf97d9a61717f64d64f53bfb6cea640bdab816d"
+}

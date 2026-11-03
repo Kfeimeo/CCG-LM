@@ -1,0 +1,206 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "gpu_properties": {
+    "name": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "total_memory_gib": 7.99951171875,
+    "multiprocessors": 40,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:16:45) [MSC v.1942 64 bit (AMD64)]",
+  "arguments": {
+    "config": "configs/v3_main_125m.yaml",
+    "cache_dir": "cache/tinystories",
+    "output_dir": "reports/cky_v35/audit/part2",
+    "phases": [
+      "sweep"
+    ],
+    "micro_batches": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "decompose_micro_batches": [
+      4,
+      16,
+      32
+    ],
+    "effective_tokens": 4096,
+    "warmup": 2,
+    "repeats": 5,
+    "decompose_batches": 3,
+    "decompose_repeats": 5,
+    "stream_updates": 100,
+    "memory_margin_gib": 0.25
+  },
+  "config": {
+    "name": "main_125m",
+    "seed": 42,
+    "seeds": [
+      13,
+      42,
+      2026
+    ],
+    "data": {
+      "cache_dir": "cache/tinystories",
+      "max_history": 4,
+      "max_words": 24,
+      "max_target_length": 128,
+      "vocab_size": 16000,
+      "word_vocab_size": 20000,
+      "split_seed": 2026,
+      "dev_fraction": 0.5
+    },
+    "model": {
+      "mode": "forest_vector4",
+      "forest_implementation": "lazy_tensorized",
+      "vocab_size": 16000,
+      "word_vocab_size": 20000,
+      "max_target_length": 128,
+      "max_history": 4,
+      "max_words": 24,
+      "hidden_size": 768,
+      "layers": 16,
+      "heads": 12,
+      "ffn_size": 3072,
+      "dropout": 0.1,
+      "cross_layers": [
+        4,
+        8,
+        12,
+        16
+      ],
+      "syntax_embedding": 256,
+      "semantic_size": 256,
+      "syntax_hidden": 384,
+      "syntax_layers": 3,
+      "syntax_heads": 6,
+      "composer_hidden": 512,
+      "coefficient_size": 32,
+      "reader_heads": 12,
+      "reader_width": 768,
+      "candidates": 4,
+      "max_compositions": 12,
+      "prune_delta": 8.0,
+      "exploration": 0.1,
+      "prior_beta": 1.0,
+      "adapter_gate": -2.0
+    },
+    "train": {
+      "budget_tokens": 25000000,
+      "effective_tokens": 4096,
+      "micro_batch_size": 4,
+      "decoder_lr": 0.0003,
+      "auxiliary_lr": 0.0005,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "weight_decay": 0.1,
+      "grad_clip": 1.0,
+      "precision": "bf16",
+      "warmup_steps": 200,
+      "schedule_tokens": 500000000,
+      "min_lr_ratio": 0.1,
+      "checkpoint_tokens": [
+        5000000,
+        10000000,
+        25000000,
+        50000000,
+        100000000
+      ],
+      "eval_every_steps": 250,
+      "save_every_steps": 100,
+      "eval_batches": 100,
+      "eval_batch_size": 8,
+      "device": "auto",
+      "deterministic": false,
+      "progress": true,
+      "output_dir": "runs/main_125m",
+      "drive_dir": null
+    },
+    "precision": {
+      "outer_autocast": "bf16",
+      "composer": "fp32_ieee",
+      "reader": "bf16",
+      "matmul_precision": "ieee",
+      "score_dtype": "existing"
+    }
+  },
+  "precision_policy": {
+    "outer_autocast": "bf16",
+    "composer": "fp32_ieee",
+    "matmul_precision": "ieee",
+    "score_dtype": "existing",
+    "reader": "bf16",
+    "scaler_init_scale": 1024.0,
+    "scaler_growth_interval": 2000
+  },
+  "data_fingerprint": "2bf7443a753a0952c4037ab5cdd3276a128d58309470bda0c2654e451bf28a30",
+  "dataset_stats": {
+    "train": {
+      "stories": 2119489,
+      "sentences": 40738414,
+      "target_tokens": 483451773
+    },
+    "dev": {
+      "stories": 10995,
+      "sentences": 203273,
+      "target_tokens": 2448698
+    },
+    "test": {
+      "stories": 10995,
+      "sentences": 198982,
+      "target_tokens": 2408694
+    }
+  },
+  "memory_state": {
+    "free_device_memory_gib_at_start": 6.9609375,
+    "total_device_memory_gib": 7.99951171875,
+    "allocator_cap_fraction": 0.8389183910150766,
+    "allocator_cap_gib": 6.7109375,
+    "alloc_conf": "expandable_segments:True"
+  },
+  "weights": "seed-42 initialization of configs/v3_main_125m.yaml (no intact trained main checkpoint exists locally: runs/main_vector_seed42/*.pt are truncated archives)",
+  "source_hashes": {
+    "train.py": "abc5cd120027a49cf56782334eefa8db00e4ef8d9e3ecd88d70ea1c2192f5399",
+    "models\\cky_compile.py": "c701c94c62806273484a7d7630f3c13d99d0ce4219de686666623416fd5cb994",
+    "models\\cky_index_cache.py": "9c8e6aca864d0d626eea6b570b715782ec90f035def0df0f2afb2be7f8060100",
+    "models\\composer.py": "79987221a240c96b46a06389811521d022feee22db54b9e6c2a5f517d911eed3",
+    "models\\decoder.py": "2210312634f0e7e0fbd25b8cf45f4416d82226921dd921e92ce85b9e0812c5c3",
+    "models\\forest.py": "f040104decbd0f5f7021c16063e00bf7836b98c1af836cead365709784535a5f",
+    "models\\forest_lazy.py": "8319a9d01079a4d3426f98fe49a38ab833548777ff800df9a84a331ddfbe0f6e",
+    "models\\forest_reference.py": "43f3f9d5442cfbd1ff84eced6e4d64626983c79201c58ebfdd2de1d855e701fb",
+    "models\\forest_score_first.py": "06dd80f956c9f2d2b54b1d4d5fc5da31448d7df36bdc0cfbf510b1b054fb174b",
+    "models\\forest_score_reconstruct.py": "60c9b793ad76bc7db12648d261a6228fa04432719132c9bf3660f0f53465bfd0",
+    "models\\forest_tensorized.py": "8c4e869cd9cbbdc513152b133251c48201e16cd5c8c78ea1cd7d090a7060f4b0",
+    "models\\model.py": "1e5228da8dd7bb1a692986802ac36cda812e590666e17027f9112444b4cc782b",
+    "models\\precision_policy.py": "da7be7cc6735b3ff672b69a3f8dcbad4d723d45eb1b6a115ba966e538d141b93",
+    "models\\reader.py": "2b8312350f8df64f23b080d058cf5d1fa5f33c65a62c92060fde455b023081e3",
+    "models\\syntax.py": "c55cd9cd808061a0d37f4677e2b10889d66ea4a607b0fabeb76a0e860b33ed84",
+    "models\\__init__.py": "036e9d6d3bfc57b8a9dcf4f54569873a4a61c59fa6e47249962693fa0b79710b",
+    "E:\\dev\\AI\\NLP\\CCG-LM\\profile_cky_v35.py": "8e6e2c62d5c5b1a0df8f0a85d5167dc1431d62876dea96e3ef0e2369bbb1f71f"
+  },
+  "backend": {
+    "generic_fp32": "ieee",
+    "matmul_fp32": "ieee",
+    "cudnn_fp32": "ieee",
+    "fp16_reduced_reduction": true,
+    "bf16_reduced_reduction": true,
+    "fp16_accumulation": false
+  }
+}

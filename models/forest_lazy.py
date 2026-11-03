@@ -239,6 +239,16 @@ class LazyForestMixin:
         emission = torch.tensor(emit,device=leaves.device).reshape(n,root_slots,1)
         timings["index_h2d_host_ms"] = (time.perf_counter()-t0)*1000
         mark("index_end")
+        reconstruct = search.get("reconstruct")
+        if reconstruct is not None:
+            # V3-C: the search ran without autograd; rebuild root scores differentiably
+            # along the very same DAG plan. Semantic/coefficient code below is unchanged.
+            t0 = time.perf_counter()
+            root_s = reconstruct(dict(indices=indices,offsets=offsets,root_offset=root_offset,root_m=root_m,
+                                      left=left,right=right,root_cpu=root_cpu,masks=masks,lens=lens,decode=decode,
+                                      needed=needed,n=n,w=w,root_slots=root_slots))
+            timings["score_reconstruction_host_ms"] = (time.perf_counter()-t0)*1000
+            mark("reconstruction_end")
         t0 = time.perf_counter()
         hs = [leaves.reshape(n*w,d)]
         us = [span_coeff.diagonal(dim1=1,dim2=2).transpose(1,2).reshape(n*w,c)]
@@ -263,7 +273,9 @@ class LazyForestMixin:
             es = dict(events)
             timings.update(score_search_cuda_ms=es["search_start"].elapsed_time(es["search_end"]),
                            index_h2d_cuda_ms=es["dag_end"].elapsed_time(es["index_end"]),
-                           semantic_cuda_ms=es["index_end"].elapsed_time(es["semantic_end"]))
+                           semantic_cuda_ms=es["reconstruction_end" if "reconstruction_end" in es else "index_end"].elapsed_time(es["semantic_end"]))
+            if "reconstruction_end" in es:
+                timings["score_reconstruction_cuda_ms"]=es["index_end"].elapsed_time(es["reconstruction_end"])
         self.last_workload = dict(v2_composer_candidate_rows=v2_rows,
             v25_required_node_occurrences=occurrences,v25_unique_dag_nodes=internal,
             v25_unique_leaf_nodes=len(needed)-internal,v25_actual_composer_rows=internal,

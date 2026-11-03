@@ -1,0 +1,7 @@
+training arm v3
+training arm v3_compile_ro
+ARM FAILED (log retained): v3_compile_ro
+training arm v3c_compile_ro
+ARM FAILED (log retained): v3c_compile_ro
+  arm   implementation search_backend reconstruction_mode  steps  effective_tokens_per_update  micro_batch_size  ce_target_tokens  train_wall_seconds  total_wall_seconds  tokens_per_second_train_wall  final_train_nll_last10  final_val_nll  initial_val_nll  nonfinite_gradient_steps  mean_grad_norm  mean_span_scorer_grad_norm  final_candidate_entropy  final_root_candidate_count                                                init_weight_sha256  peak_gpu_gib  cache_misses  cache_build_seconds                                                                                                                                                                                                   timing_scope
+0  v3  lazy_tensorized          eager                 dag    100                         4096                 8            409600         1107.041194         1137.001817                    369.995265                4.444402       4.021152         9.819713                         0        2.178082                     0.00787                 0.913448                    3.978462  632de5d50b4024d271f9f74faabe013181035ee1cea70f74339be7c352a797f5      3.367477          1095             7.543874  train_wall = synchronized wall time of train_update (sampling, collation, H2D, forward, backward, clip, AdamW, CPU scheduling and GPU waits); excludes validation and checkpoint IO; not pure GPU kernel time

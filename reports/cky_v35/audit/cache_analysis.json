@@ -1,0 +1,6928 @@
+{
+  "probe_seed": 7350001,
+  "effective_tokens": 4096,
+  "stream_updates": 100,
+  "k": 4,
+  "r": 12,
+  "per_micro_batch": {
+    "1": {
+      "updates": 100,
+      "micro_batches": 34473,
+      "micro_batches_per_update": 344.73,
+      "unique_keys": 84,
+      "key_frequency": [
+        {
+          "words": 13,
+          "rows": 4,
+          "count": 2483,
+          "fraction": 0.07202738374960113
+        },
+        {
+          "words": 12,
+          "rows": 4,
+          "count": 2388,
+          "fraction": 0.06927160386389349
+        },
+        {
+          "words": 14,
+          "rows": 4,
+          "count": 2382,
+          "fraction": 0.06909755460795405
+        },
+        {
+          "words": 15,
+          "rows": 4,
+          "count": 2286,
+          "fraction": 0.06631276651292316
+        },
+        {
+          "words": 11,
+          "rows": 4,
+          "count": 2079,
+          "fraction": 0.06030806718301279
+        },
+        {
+          "words": 16,
+          "rows": 4,
+          "count": 1962,
+          "fraction": 0.05691410669219389
+        },
+        {
+          "words": 10,
+          "rows": 4,
+          "count": 1888,
+          "fraction": 0.05476749920227424
+        },
+        {
+          "words": 1,
+          "rows": 1,
+          "count": 1834,
+          "fraction": 0.05320105589881936
+        },
+        {
+          "words": 9,
+          "rows": 4,
+          "count": 1644,
+          "fraction": 0.04768949612740406
+        },
+        {
+          "words": 17,
+          "rows": 4,
+          "count": 1628,
+          "fraction": 0.04722536477823224
+        },
+        {
+          "words": 18,
+          "rows": 4,
+          "count": 1460,
+          "fraction": 0.042351985611928177
+        },
+        {
+          "words": 8,
+          "rows": 4,
+          "count": 1249,
+          "fraction": 0.03623125344472486
+        },
+        {
+          "words": 24,
+          "rows": 4,
+          "count": 1134,
+          "fraction": 0.03289530937255243
+        },
+        {
+          "words": 19,
+          "rows": 4,
+          "count": 1069,
+          "fraction": 0.03100977576654193
+        },
+        {
+          "words": 20,
+          "rows": 4,
+          "count": 868,
+          "fraction": 0.025179125692570997
+        },
+        {
+          "words": 7,
+          "rows": 4,
+          "count": 711,
+          "fraction": 0.020624836828822556
+        },
+        {
+          "words": 21,
+          "rows": 4,
+          "count": 678,
+          "fraction": 0.019667565921155688
+        },
+        {
+          "words": 13,
+          "rows": 1,
+          "count": 518,
+          "fraction": 0.015026252429437531
+        },
+        {
+          "words": 22,
+          "rows": 4,
+          "count": 497,
+          "fraction": 0.014417080033649523
+        },
+        {
+          "words": 13,
+          "rows": 2,
+          "count": 406,
+          "fraction": 0.011777332985234822
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 11574,
+          "misses": 22899,
+          "evictions": 22891,
+          "hit_rate": 0.3357410147071621,
+          "cold_unique_keys": 84,
+          "most_missed": [
+            {
+              "words": 14,
+              "rows": 4,
+              "misses": 1219
+            },
+            {
+              "words": 13,
+              "rows": 4,
+              "misses": 1211
+            },
+            {
+              "words": 12,
+              "rows": 4,
+              "misses": 1181
+            },
+            {
+              "words": 15,
+              "rows": 4,
+              "misses": 1179
+            },
+            {
+              "words": 11,
+              "rows": 4,
+              "misses": 1155
+            },
+            {
+              "words": 16,
+              "rows": 4,
+              "misses": 1117
+            },
+            {
+              "words": 10,
+              "rows": 4,
+              "misses": 1098
+            },
+            {
+              "words": 1,
+              "rows": 1,
+              "misses": 1092
+            }
+          ]
+        },
+        "16": {
+          "hits": 21106,
+          "misses": 13367,
+          "evictions": 13351,
+          "hit_rate": 0.6122472659762713,
+          "cold_unique_keys": 84,
+          "most_missed": [
+            {
+              "words": 17,
+              "rows": 4,
+              "misses": 502
+            },
+            {
+              "words": 24,
+              "rows": 4,
+              "misses": 495
+            },
+            {
+              "words": 8,
+              "rows": 4,
+              "misses": 494
+            },
+            {
+              "words": 9,
+              "rows": 4,
+              "misses": 493
+            },
+            {
+              "words": 1,
+              "rows": 1,
+              "misses": 479
+            },
+            {
+              "words": 19,
+              "rows": 4,
+              "misses": 479
+            },
+            {
+              "words": 18,
+              "rows": 4,
+              "misses": 474
+            },
+            {
+              "words": 16,
+              "rows": 4,
+              "misses": 458
+            }
+          ]
+        },
+        "32": {
+          "hits": 30356,
+          "misses": 4117,
+          "evictions": 4085,
+          "hit_rate": 0.8805732022162271,
+          "cold_unique_keys": 84,
+          "most_missed": [
+            {
+              "words": 13,
+              "rows": 2,
+              "misses": 121
+            },
+            {
+              "words": 6,
+              "rows": 4,
+              "misses": 119
+            },
+            {
+              "words": 13,
+              "rows": 3,
+              "misses": 118
+            },
+            {
+              "words": 23,
+              "rows": 4,
+              "misses": 113
+            },
+            {
+              "words": 11,
+              "rows": 1,
+              "misses": 112
+            },
+            {
+              "words": 16,
+              "rows": 3,
+              "misses": 112
+            },
+            {
+              "words": 14,
+              "rows": 2,
+              "misses": 110
+            },
+            {
+              "words": 22,
+              "rows": 4,
+              "misses": 110
+            }
+          ]
+        },
+        "64": {
+          "hits": 34023,
+          "misses": 450,
+          "evictions": 386,
+          "hit_rate": 0.9869463058045427,
+          "cold_unique_keys": 84,
+          "most_missed": [
+            {
+              "words": 5,
+              "rows": 1,
+              "misses": 15
+            },
+            {
+              "words": 18,
+              "rows": 1,
+              "misses": 15
+            },
+            {
+              "words": 19,
+              "rows": 2,
+              "misses": 14
+            },
+            {
+              "words": 22,
+              "rows": 3,
+              "misses": 14
+            },
+            {
+              "words": 21,
+              "rows": 3,
+              "misses": 14
+            },
+            {
+              "words": 19,
+              "rows": 1,
+              "misses": 14
+            },
+            {
+              "words": 7,
+              "rows": 2,
+              "misses": 14
+            },
+            {
+              "words": 23,
+              "rows": 3,
+              "misses": 13
+            }
+          ]
+        },
+        "128": {
+          "hits": 34389,
+          "misses": 84,
+          "evictions": 0,
+          "hit_rate": 0.997563310416848,
+          "cold_unique_keys": 84,
+          "most_missed": [
+            {
+              "words": 9,
+              "rows": 3,
+              "misses": 1
+            },
+            {
+              "words": 21,
+              "rows": 4,
+              "misses": 1
+            },
+            {
+              "words": 15,
+              "rows": 4,
+              "misses": 1
+            },
+            {
+              "words": 10,
+              "rows": 4,
+              "misses": 1
+            },
+            {
+              "words": 1,
+              "rows": 1,
+              "misses": 1
+            },
+            {
+              "words": 9,
+              "rows": 4,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 4,
+              "misses": 1
+            },
+            {
+              "words": 11,
+              "rows": 2,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 1834,
+        "1": 1825,
+        "2": 1774,
+        "3": 1807,
+        "4": 27233
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 13.355379572418995,
+      "padded_words_histogram": {
+        "1": 1834,
+        "3": 2,
+        "4": 26,
+        "5": 117,
+        "6": 513,
+        "7": 819,
+        "8": 1370,
+        "9": 1872,
+        "10": 2229,
+        "11": 2538,
+        "12": 2956,
+        "13": 3694,
+        "14": 2867,
+        "15": 2686,
+        "16": 2319,
+        "17": 1896,
+        "18": 1700,
+        "19": 1213,
+        "20": 972,
+        "21": 751,
+        "22": 542,
+        "23": 364,
+        "24": 1193
+      },
+      "history_slots_mean": 3.526237925332869,
+      "target_length_padded_mean": 11.89797812781017,
+      "word_padding_ratio_mean": 0.2741173525427419,
+      "history_slot_padding_ratio_mean": 0.05320105589881936,
+      "target_padding_ratio_mean": 0.0011689830852923359,
+      "span_utilization_mean": 0.6145747166360115,
+      "ce_tokens_per_micro_batch_mean": 11.88176253879848,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119697,
+        "duplicate_fraction": 0.00024221973506177719
+      }
+    },
+    "2": {
+      "updates": 100,
+      "micro_batches": 17260,
+      "micro_batches_per_update": 172.6,
+      "unique_keys": 79,
+      "key_frequency": [
+        {
+          "words": 15,
+          "rows": 8,
+          "count": 1650,
+          "fraction": 0.09559675550405562
+        },
+        {
+          "words": 13,
+          "rows": 8,
+          "count": 1612,
+          "fraction": 0.09339513325608342
+        },
+        {
+          "words": 16,
+          "rows": 8,
+          "count": 1602,
+          "fraction": 0.09281575898030127
+        },
+        {
+          "words": 14,
+          "rows": 8,
+          "count": 1522,
+          "fraction": 0.08818076477404403
+        },
+        {
+          "words": 17,
+          "rows": 8,
+          "count": 1428,
+          "fraction": 0.08273464658169177
+        },
+        {
+          "words": 18,
+          "rows": 8,
+          "count": 1378,
+          "fraction": 0.079837775202781
+        },
+        {
+          "words": 24,
+          "rows": 8,
+          "count": 1156,
+          "fraction": 0.06697566628041715
+        },
+        {
+          "words": 12,
+          "rows": 8,
+          "count": 1058,
+          "fraction": 0.061297798377752025
+        },
+        {
+          "words": 19,
+          "rows": 8,
+          "count": 1025,
+          "fraction": 0.05938586326767092
+        },
+        {
+          "words": 20,
+          "rows": 8,
+          "count": 848,
+          "fraction": 0.049130938586326764
+        },
+        {
+          "words": 11,
+          "rows": 8,
+          "count": 715,
+          "fraction": 0.0414252607184241
+        },
+        {
+          "words": 21,
+          "rows": 8,
+          "count": 666,
+          "fraction": 0.03858632676709154
+        },
+        {
+          "words": 22,
+          "rows": 8,
+          "count": 501,
+          "fraction": 0.02902665121668598
+        },
+        {
+          "words": 10,
+          "rows": 8,
+          "count": 465,
+          "fraction": 0.02694090382387022
+        },
+        {
+          "words": 23,
+          "rows": 8,
+          "count": 345,
+          "fraction": 0.01998841251448436
+        },
+        {
+          "words": 9,
+          "rows": 8,
+          "count": 275,
+          "fraction": 0.01593279258400927
+        },
+        {
+          "words": 8,
+          "rows": 8,
+          "count": 130,
+          "fraction": 0.007531865585168019
+        },
+        {
+          "words": 7,
+          "rows": 8,
+          "count": 66,
+          "fraction": 0.003823870220162225
+        },
+        {
+          "words": 1,
+          "rows": 2,
+          "count": 58,
+          "fraction": 0.0033603707995365005
+        },
+        {
+          "words": 13,
+          "rows": 4,
+          "count": 48,
+          "fraction": 0.0027809965237543454
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 8794,
+          "misses": 8466,
+          "evictions": 8458,
+          "hit_rate": 0.5095017381228274,
+          "cold_unique_keys": 79,
+          "most_missed": [
+            {
+              "words": 16,
+              "rows": 8,
+              "misses": 562
+            },
+            {
+              "words": 15,
+              "rows": 8,
+              "misses": 560
+            },
+            {
+              "words": 17,
+              "rows": 8,
+              "misses": 560
+            },
+            {
+              "words": 14,
+              "rows": 8,
+              "misses": 556
+            },
+            {
+              "words": 13,
+              "rows": 8,
+              "misses": 546
+            },
+            {
+              "words": 24,
+              "rows": 8,
+              "misses": 542
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 540
+            },
+            {
+              "words": 19,
+              "rows": 8,
+              "misses": 521
+            }
+          ]
+        },
+        "16": {
+          "hits": 14960,
+          "misses": 2300,
+          "evictions": 2284,
+          "hit_rate": 0.8667439165701043,
+          "cold_unique_keys": 79,
+          "most_missed": [
+            {
+              "words": 23,
+              "rows": 8,
+              "misses": 146
+            },
+            {
+              "words": 22,
+              "rows": 8,
+              "misses": 143
+            },
+            {
+              "words": 9,
+              "rows": 8,
+              "misses": 140
+            },
+            {
+              "words": 21,
+              "rows": 8,
+              "misses": 136
+            },
+            {
+              "words": 10,
+              "rows": 8,
+              "misses": 133
+            },
+            {
+              "words": 11,
+              "rows": 8,
+              "misses": 128
+            },
+            {
+              "words": 20,
+              "rows": 8,
+              "misses": 99
+            },
+            {
+              "words": 8,
+              "rows": 8,
+              "misses": 97
+            }
+          ]
+        },
+        "32": {
+          "hits": 16737,
+          "misses": 523,
+          "evictions": 491,
+          "hit_rate": 0.9696987253765933,
+          "cold_unique_keys": 79,
+          "most_missed": [
+            {
+              "words": 17,
+              "rows": 6,
+              "misses": 20
+            },
+            {
+              "words": 13,
+              "rows": 2,
+              "misses": 18
+            },
+            {
+              "words": 13,
+              "rows": 4,
+              "misses": 18
+            },
+            {
+              "words": 1,
+              "rows": 2,
+              "misses": 17
+            },
+            {
+              "words": 13,
+              "rows": 6,
+              "misses": 16
+            },
+            {
+              "words": 14,
+              "rows": 4,
+              "misses": 15
+            },
+            {
+              "words": 14,
+              "rows": 6,
+              "misses": 15
+            },
+            {
+              "words": 16,
+              "rows": 6,
+              "misses": 14
+            }
+          ]
+        },
+        "64": {
+          "hits": 17156,
+          "misses": 104,
+          "evictions": 40,
+          "hit_rate": 0.9939745075318656,
+          "cold_unique_keys": 79,
+          "most_missed": [
+            {
+              "words": 7,
+              "rows": 2,
+              "misses": 3
+            },
+            {
+              "words": 7,
+              "rows": 4,
+              "misses": 3
+            },
+            {
+              "words": 6,
+              "rows": 2,
+              "misses": 3
+            },
+            {
+              "words": 19,
+              "rows": 4,
+              "misses": 3
+            },
+            {
+              "words": 12,
+              "rows": 2,
+              "misses": 2
+            },
+            {
+              "words": 17,
+              "rows": 2,
+              "misses": 2
+            },
+            {
+              "words": 10,
+              "rows": 2,
+              "misses": 2
+            },
+            {
+              "words": 9,
+              "rows": 2,
+              "misses": 2
+            }
+          ]
+        },
+        "128": {
+          "hits": 17181,
+          "misses": 79,
+          "evictions": 0,
+          "hit_rate": 0.995422943221321,
+          "cold_unique_keys": 79,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 15,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 9,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 11,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 14,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 12,
+              "rows": 8,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 59,
+        "1": 111,
+        "2": 137,
+        "3": 174,
+        "4": 1611,
+        "5": 1527,
+        "6": 1474,
+        "7": 1440,
+        "8": 10727
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 16.168655851680185,
+      "padded_words_histogram": {
+        "1": 59,
+        "5": 5,
+        "6": 27,
+        "7": 76,
+        "8": 140,
+        "9": 295,
+        "10": 489,
+        "11": 759,
+        "12": 1118,
+        "13": 1747,
+        "14": 1595,
+        "15": 1714,
+        "16": 1670,
+        "17": 1494,
+        "18": 1421,
+        "19": 1053,
+        "20": 878,
+        "21": 686,
+        "22": 511,
+        "23": 351,
+        "24": 1172
+      },
+      "history_slots_mean": 3.9181344148319814,
+      "target_length_padded_mean": 14.598957126303592,
+      "word_padding_ratio_mean": 0.4235479182368531,
+      "history_slot_padding_ratio_mean": 0.11916521823097721,
+      "target_padding_ratio_mean": 0.17225118421011246,
+      "span_utilization_mean": 0.43770108833962795,
+      "ce_tokens_per_micro_batch_mean": 23.73117033603708,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119689,
+        "duplicate_fraction": 0.00030903897232015254
+      }
+    },
+    "4": {
+      "updates": 100,
+      "micro_batches": 8655,
+      "micro_batches_per_update": 86.55,
+      "unique_keys": 57,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 16,
+          "count": 1133,
+          "fraction": 0.13090699017908725
+        },
+        {
+          "words": 18,
+          "rows": 16,
+          "count": 974,
+          "fraction": 0.11253610629693818
+        },
+        {
+          "words": 17,
+          "rows": 16,
+          "count": 892,
+          "fraction": 0.10306181398035817
+        },
+        {
+          "words": 16,
+          "rows": 16,
+          "count": 862,
+          "fraction": 0.09959560947429232
+        },
+        {
+          "words": 19,
+          "rows": 16,
+          "count": 782,
+          "fraction": 0.0903523974581167
+        },
+        {
+          "words": 15,
+          "rows": 16,
+          "count": 717,
+          "fraction": 0.08284228769497401
+        },
+        {
+          "words": 20,
+          "rows": 16,
+          "count": 710,
+          "fraction": 0.08203350664355864
+        },
+        {
+          "words": 21,
+          "rows": 16,
+          "count": 589,
+          "fraction": 0.06805314846909301
+        },
+        {
+          "words": 14,
+          "rows": 16,
+          "count": 504,
+          "fraction": 0.058232235701906415
+        },
+        {
+          "words": 22,
+          "rows": 16,
+          "count": 462,
+          "fraction": 0.05337954939341421
+        },
+        {
+          "words": 13,
+          "rows": 16,
+          "count": 364,
+          "fraction": 0.04205661467359908
+        },
+        {
+          "words": 23,
+          "rows": 16,
+          "count": 317,
+          "fraction": 0.036626227614095896
+        },
+        {
+          "words": 12,
+          "rows": 16,
+          "count": 174,
+          "fraction": 0.020103986135181974
+        },
+        {
+          "words": 11,
+          "rows": 16,
+          "count": 56,
+          "fraction": 0.0064702484113229345
+        },
+        {
+          "words": 10,
+          "rows": 16,
+          "count": 24,
+          "fraction": 0.0027729636048526864
+        },
+        {
+          "words": 16,
+          "rows": 12,
+          "count": 6,
+          "fraction": 0.0006932409012131716
+        },
+        {
+          "words": 16,
+          "rows": 8,
+          "count": 5,
+          "fraction": 0.0005777007510109763
+        },
+        {
+          "words": 9,
+          "rows": 16,
+          "count": 5,
+          "fraction": 0.0005777007510109763
+        },
+        {
+          "words": 14,
+          "rows": 12,
+          "count": 5,
+          "fraction": 0.0005777007510109763
+        },
+        {
+          "words": 18,
+          "rows": 8,
+          "count": 4,
+          "fraction": 0.00046216060080878107
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 5644,
+          "misses": 3011,
+          "evictions": 3003,
+          "hit_rate": 0.6521086077411901,
+          "cold_unique_keys": 57,
+          "most_missed": [
+            {
+              "words": 19,
+              "rows": 16,
+              "misses": 249
+            },
+            {
+              "words": 15,
+              "rows": 16,
+              "misses": 241
+            },
+            {
+              "words": 21,
+              "rows": 16,
+              "misses": 238
+            },
+            {
+              "words": 14,
+              "rows": 16,
+              "misses": 236
+            },
+            {
+              "words": 18,
+              "rows": 16,
+              "misses": 230
+            },
+            {
+              "words": 20,
+              "rows": 16,
+              "misses": 226
+            },
+            {
+              "words": 22,
+              "rows": 16,
+              "misses": 226
+            },
+            {
+              "words": 16,
+              "rows": 16,
+              "misses": 223
+            }
+          ]
+        },
+        "16": {
+          "hits": 8506,
+          "misses": 149,
+          "evictions": 133,
+          "hit_rate": 0.982784517619873,
+          "cold_unique_keys": 57,
+          "most_missed": [
+            {
+              "words": 11,
+              "rows": 16,
+              "misses": 17
+            },
+            {
+              "words": 10,
+              "rows": 16,
+              "misses": 13
+            },
+            {
+              "words": 12,
+              "rows": 16,
+              "misses": 10
+            },
+            {
+              "words": 16,
+              "rows": 12,
+              "misses": 6
+            },
+            {
+              "words": 16,
+              "rows": 8,
+              "misses": 5
+            },
+            {
+              "words": 9,
+              "rows": 16,
+              "misses": 5
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 4
+            },
+            {
+              "words": 20,
+              "rows": 12,
+              "misses": 4
+            }
+          ]
+        },
+        "32": {
+          "hits": 8579,
+          "misses": 76,
+          "evictions": 44,
+          "hit_rate": 0.9912189485846331,
+          "cold_unique_keys": 57,
+          "most_missed": [
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 19,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 20,
+              "rows": 12,
+              "misses": 3
+            },
+            {
+              "words": 15,
+              "rows": 12,
+              "misses": 3
+            },
+            {
+              "words": 16,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 17,
+              "rows": 12,
+              "misses": 2
+            },
+            {
+              "words": 16,
+              "rows": 12,
+              "misses": 2
+            },
+            {
+              "words": 14,
+              "rows": 12,
+              "misses": 2
+            }
+          ]
+        },
+        "64": {
+          "hits": 8598,
+          "misses": 57,
+          "evictions": 0,
+          "hit_rate": 0.9934142114384749,
+          "cold_unique_keys": 57,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 13,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 16,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 15,
+              "rows": 16,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 8598,
+          "misses": 57,
+          "evictions": 0,
+          "hit_rate": 0.9934142114384749,
+          "cold_unique_keys": 57,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 13,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 16,
+              "rows": 16,
+              "misses": 1
+            },
+            {
+              "words": 15,
+              "rows": 16,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 1,
+        "1": 4,
+        "2": 1,
+        "3": 4,
+        "4": 27,
+        "5": 23,
+        "6": 21,
+        "7": 51,
+        "8": 153,
+        "9": 239,
+        "10": 302,
+        "11": 370,
+        "12": 1193,
+        "13": 1054,
+        "14": 1001,
+        "15": 871,
+        "16": 3340
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 18.42842287694974,
+      "padded_words_histogram": {
+        "1": 1,
+        "6": 1,
+        "7": 1,
+        "8": 5,
+        "9": 6,
+        "10": 28,
+        "11": 56,
+        "12": 178,
+        "13": 370,
+        "14": 516,
+        "15": 724,
+        "16": 874,
+        "17": 899,
+        "18": 980,
+        "19": 787,
+        "20": 717,
+        "21": 593,
+        "22": 464,
+        "23": 317,
+        "24": 1138
+      },
+      "history_slots_mean": 3.995840554592721,
+      "target_length_padded_mean": 17.205661467359906,
+      "word_padding_ratio_mean": 0.498849907408574,
+      "history_slot_padding_ratio_mean": 0.13114288465241672,
+      "target_padding_ratio_mean": 0.29229042262847565,
+      "span_utilization_mean": 0.34490387427492397,
+      "ce_tokens_per_micro_batch_mean": 47.32524552281918,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119665,
+        "duplicate_fraction": 0.0005094966840953896
+      }
+    },
+    "8": {
+      "updates": 100,
+      "micro_batches": 4357,
+      "micro_batches_per_update": 43.57,
+      "unique_keys": 64,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 32,
+          "count": 1073,
+          "fraction": 0.24627036952031214
+        },
+        {
+          "words": 20,
+          "rows": 32,
+          "count": 464,
+          "fraction": 0.10649529492770254
+        },
+        {
+          "words": 19,
+          "rows": 32,
+          "count": 456,
+          "fraction": 0.10465916915308698
+        },
+        {
+          "words": 18,
+          "rows": 32,
+          "count": 440,
+          "fraction": 0.10098691760385586
+        },
+        {
+          "words": 21,
+          "rows": 32,
+          "count": 434,
+          "fraction": 0.0996098232728942
+        },
+        {
+          "words": 22,
+          "rows": 32,
+          "count": 368,
+          "fraction": 0.08446178563231581
+        },
+        {
+          "words": 17,
+          "rows": 32,
+          "count": 346,
+          "fraction": 0.07941243975212302
+        },
+        {
+          "words": 23,
+          "rows": 32,
+          "count": 262,
+          "fraction": 0.06013311911865963
+        },
+        {
+          "words": 16,
+          "rows": 32,
+          "count": 223,
+          "fraction": 0.05118200596740877
+        },
+        {
+          "words": 15,
+          "rows": 32,
+          "count": 131,
+          "fraction": 0.030066559559329815
+        },
+        {
+          "words": 14,
+          "rows": 32,
+          "count": 48,
+          "fraction": 0.011016754647693368
+        },
+        {
+          "words": 13,
+          "rows": 32,
+          "count": 17,
+          "fraction": 0.0039017672710580675
+        },
+        {
+          "words": 12,
+          "rows": 32,
+          "count": 5,
+          "fraction": 0.0011475786091347257
+        },
+        {
+          "words": 16,
+          "rows": 12,
+          "count": 4,
+          "fraction": 0.0009180628873077806
+        },
+        {
+          "words": 24,
+          "rows": 16,
+          "count": 4,
+          "fraction": 0.0009180628873077806
+        },
+        {
+          "words": 18,
+          "rows": 8,
+          "count": 3,
+          "fraction": 0.0006885471654808355
+        },
+        {
+          "words": 19,
+          "rows": 8,
+          "count": 3,
+          "fraction": 0.0006885471654808355
+        },
+        {
+          "words": 20,
+          "rows": 12,
+          "count": 3,
+          "fraction": 0.0006885471654808355
+        },
+        {
+          "words": 22,
+          "rows": 28,
+          "count": 3,
+          "fraction": 0.0006885471654808355
+        },
+        {
+          "words": 21,
+          "rows": 24,
+          "count": 3,
+          "fraction": 0.0006885471654808355
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 3400,
+          "misses": 957,
+          "evictions": 949,
+          "hit_rate": 0.7803534542116135,
+          "cold_unique_keys": 64,
+          "most_missed": [
+            {
+              "words": 16,
+              "rows": 32,
+              "misses": 99
+            },
+            {
+              "words": 17,
+              "rows": 32,
+              "misses": 97
+            },
+            {
+              "words": 23,
+              "rows": 32,
+              "misses": 96
+            },
+            {
+              "words": 22,
+              "rows": 32,
+              "misses": 89
+            },
+            {
+              "words": 21,
+              "rows": 32,
+              "misses": 82
+            },
+            {
+              "words": 19,
+              "rows": 32,
+              "misses": 82
+            },
+            {
+              "words": 20,
+              "rows": 32,
+              "misses": 78
+            },
+            {
+              "words": 18,
+              "rows": 32,
+              "misses": 74
+            }
+          ]
+        },
+        "16": {
+          "hits": 4249,
+          "misses": 108,
+          "evictions": 92,
+          "hit_rate": 0.9752123020426899,
+          "cold_unique_keys": 64,
+          "most_missed": [
+            {
+              "words": 13,
+              "rows": 32,
+              "misses": 9
+            },
+            {
+              "words": 24,
+              "rows": 16,
+              "misses": 4
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 19,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 20,
+              "rows": 12,
+              "misses": 3
+            },
+            {
+              "words": 22,
+              "rows": 28,
+              "misses": 3
+            },
+            {
+              "words": 16,
+              "rows": 12,
+              "misses": 3
+            },
+            {
+              "words": 12,
+              "rows": 32,
+              "misses": 3
+            }
+          ]
+        },
+        "32": {
+          "hits": 4278,
+          "misses": 79,
+          "evictions": 47,
+          "hit_rate": 0.9818682579756713,
+          "cold_unique_keys": 64,
+          "most_missed": [
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 19,
+              "rows": 8,
+              "misses": 3
+            },
+            {
+              "words": 16,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 20,
+              "rows": 12,
+              "misses": 2
+            },
+            {
+              "words": 22,
+              "rows": 28,
+              "misses": 2
+            },
+            {
+              "words": 14,
+              "rows": 12,
+              "misses": 2
+            },
+            {
+              "words": 17,
+              "rows": 16,
+              "misses": 2
+            },
+            {
+              "words": 12,
+              "rows": 32,
+              "misses": 2
+            }
+          ]
+        },
+        "64": {
+          "hits": 4293,
+          "misses": 64,
+          "evictions": 0,
+          "hit_rate": 0.9853109938030755,
+          "cold_unique_keys": 64,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 16,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 20,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 32,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 4293,
+          "misses": 64,
+          "evictions": 0,
+          "hit_rate": 0.9853109938030755,
+          "cold_unique_keys": 64,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 16,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 20,
+              "rows": 32,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 32,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 1,
+        "1": 1,
+        "4": 15,
+        "5": 2,
+        "6": 2,
+        "7": 2,
+        "8": 8,
+        "9": 1,
+        "10": 1,
+        "11": 5,
+        "12": 8,
+        "13": 3,
+        "14": 8,
+        "15": 1,
+        "16": 18,
+        "17": 9,
+        "18": 21,
+        "19": 23,
+        "20": 46,
+        "21": 75,
+        "22": 109,
+        "23": 154,
+        "24": 249,
+        "25": 332,
+        "26": 355,
+        "27": 394,
+        "28": 598,
+        "29": 475,
+        "30": 449,
+        "31": 339,
+        "32": 653
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 20.383061739729172,
+      "padded_words_histogram": {
+        "1": 1,
+        "6": 1,
+        "7": 1,
+        "9": 1,
+        "10": 3,
+        "11": 1,
+        "12": 6,
+        "13": 20,
+        "14": 56,
+        "15": 133,
+        "16": 235,
+        "17": 353,
+        "18": 449,
+        "19": 462,
+        "20": 473,
+        "21": 442,
+        "22": 373,
+        "23": 263,
+        "24": 1084
+      },
+      "history_slots_mean": 3.998622905669038,
+      "target_length_padded_mean": 19.6610052788616,
+      "word_padding_ratio_mean": 0.5472642087961858,
+      "history_slot_padding_ratio_mean": 0.1313682415816912,
+      "target_padding_ratio_mean": 0.37764296413097176,
+      "span_utilization_mean": 0.2856824897735223,
+      "ce_tokens_per_micro_batch_mean": 94.00963966031674,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119633,
+        "duplicate_fraction": 0.000776773633129002
+      }
+    },
+    "16": {
+      "updates": 100,
+      "micro_batches": 2203,
+      "micro_batches_per_update": 22.03,
+      "unique_keys": 77,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 64,
+          "count": 932,
+          "fraction": 0.4230594643667726
+        },
+        {
+          "words": 22,
+          "rows": 64,
+          "count": 241,
+          "fraction": 0.10939627780299592
+        },
+        {
+          "words": 21,
+          "rows": 64,
+          "count": 220,
+          "fraction": 0.09986382206082614
+        },
+        {
+          "words": 23,
+          "rows": 64,
+          "count": 200,
+          "fraction": 0.09078529278256922
+        },
+        {
+          "words": 20,
+          "rows": 64,
+          "count": 195,
+          "fraction": 0.08851566046300499
+        },
+        {
+          "words": 19,
+          "rows": 64,
+          "count": 148,
+          "fraction": 0.06718111665910123
+        },
+        {
+          "words": 18,
+          "rows": 64,
+          "count": 100,
+          "fraction": 0.04539264639128461
+        },
+        {
+          "words": 17,
+          "rows": 64,
+          "count": 54,
+          "fraction": 0.02451202905129369
+        },
+        {
+          "words": 16,
+          "rows": 64,
+          "count": 15,
+          "fraction": 0.006808896958692692
+        },
+        {
+          "words": 24,
+          "rows": 48,
+          "count": 5,
+          "fraction": 0.0022696323195642307
+        },
+        {
+          "words": 24,
+          "rows": 44,
+          "count": 4,
+          "fraction": 0.0018157058556513845
+        },
+        {
+          "words": 20,
+          "rows": 36,
+          "count": 4,
+          "fraction": 0.0018157058556513845
+        },
+        {
+          "words": 15,
+          "rows": 64,
+          "count": 4,
+          "fraction": 0.0018157058556513845
+        },
+        {
+          "words": 24,
+          "rows": 56,
+          "count": 3,
+          "fraction": 0.0013617793917385383
+        },
+        {
+          "words": 18,
+          "rows": 8,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        },
+        {
+          "words": 19,
+          "rows": 40,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        },
+        {
+          "words": 22,
+          "rows": 60,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        },
+        {
+          "words": 24,
+          "rows": 52,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        },
+        {
+          "words": 21,
+          "rows": 24,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        },
+        {
+          "words": 24,
+          "rows": 36,
+          "count": 2,
+          "fraction": 0.0009078529278256923
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 1950,
+          "misses": 253,
+          "evictions": 245,
+          "hit_rate": 0.88515660463005,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 17,
+              "rows": 64,
+              "misses": 28
+            },
+            {
+              "words": 18,
+              "rows": 64,
+              "misses": 27
+            },
+            {
+              "words": 19,
+              "rows": 64,
+              "misses": 23
+            },
+            {
+              "words": 20,
+              "rows": 64,
+              "misses": 22
+            },
+            {
+              "words": 21,
+              "rows": 64,
+              "misses": 17
+            },
+            {
+              "words": 23,
+              "rows": 64,
+              "misses": 16
+            },
+            {
+              "words": 22,
+              "rows": 64,
+              "misses": 12
+            },
+            {
+              "words": 16,
+              "rows": 64,
+              "misses": 10
+            }
+          ]
+        },
+        "16": {
+          "hits": 2102,
+          "misses": 101,
+          "evictions": 85,
+          "hit_rate": 0.9541534271448026,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 16,
+              "rows": 64,
+              "misses": 5
+            },
+            {
+              "words": 20,
+              "rows": 36,
+              "misses": 4
+            },
+            {
+              "words": 15,
+              "rows": 64,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 48,
+              "misses": 3
+            },
+            {
+              "words": 17,
+              "rows": 64,
+              "misses": 2
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 19,
+              "rows": 40,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 44,
+              "misses": 2
+            }
+          ]
+        },
+        "32": {
+          "hits": 2114,
+          "misses": 89,
+          "evictions": 57,
+          "hit_rate": 0.9596005447117567,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 20,
+              "rows": 36,
+              "misses": 3
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 19,
+              "rows": 40,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 44,
+              "misses": 2
+            },
+            {
+              "words": 16,
+              "rows": 64,
+              "misses": 2
+            },
+            {
+              "words": 22,
+              "rows": 60,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 52,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 36,
+              "misses": 2
+            }
+          ]
+        },
+        "64": {
+          "hits": 2124,
+          "misses": 79,
+          "evictions": 15,
+          "hit_rate": 0.9641398093508852,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 36,
+              "misses": 2
+            },
+            {
+              "words": 21,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 64,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 2126,
+          "misses": 77,
+          "evictions": 0,
+          "hit_rate": 0.9650476622787109,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 21,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 20,
+              "rows": 64,
+              "misses": 1
+            },
+            {
+              "words": 22,
+              "rows": 64,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 1,
+        "1": 1,
+        "4": 5,
+        "6": 2,
+        "7": 1,
+        "8": 6,
+        "9": 1,
+        "11": 2,
+        "12": 3,
+        "13": 2,
+        "14": 3,
+        "16": 3,
+        "17": 1,
+        "18": 1,
+        "20": 4,
+        "22": 1,
+        "24": 3,
+        "25": 2,
+        "27": 2,
+        "28": 3,
+        "29": 1,
+        "30": 1,
+        "31": 2,
+        "32": 5,
+        "33": 2,
+        "34": 3,
+        "36": 2,
+        "37": 1,
+        "38": 2,
+        "39": 3,
+        "40": 6,
+        "41": 3,
+        "42": 7,
+        "43": 14,
+        "44": 18,
+        "45": 23,
+        "46": 28,
+        "47": 40,
+        "48": 55,
+        "49": 54,
+        "50": 75,
+        "51": 81,
+        "52": 124,
+        "53": 139,
+        "54": 162,
+        "55": 176,
+        "56": 168,
+        "57": 189,
+        "58": 177,
+        "59": 146,
+        "60": 142,
+        "61": 123,
+        "62": 79,
+        "63": 59,
+        "64": 46
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 22.004085338175216,
+      "padded_words_histogram": {
+        "1": 1,
+        "6": 1,
+        "10": 1,
+        "12": 1,
+        "13": 2,
+        "14": 2,
+        "15": 6,
+        "16": 23,
+        "17": 59,
+        "18": 109,
+        "19": 153,
+        "20": 207,
+        "21": 228,
+        "22": 252,
+        "23": 202,
+        "24": 956
+      },
+      "history_slots_mean": 3.9972764412165227,
+      "target_length_padded_mean": 22.14344076259646,
+      "word_padding_ratio_mean": 0.5820882424339243,
+      "history_slot_padding_ratio_mean": 0.13127247682967155,
+      "target_padding_ratio_mean": 0.4456210557412255,
+      "span_utilization_mean": 0.2450875793721854,
+      "ce_tokens_per_micro_batch_mean": 185.92827961870177,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119551,
+        "duplicate_fraction": 0.0014616708150276825
+      }
+    },
+    "32": {
+      "updates": 100,
+      "micro_batches": 1120,
+      "micro_batches_per_update": 11.2,
+      "unique_keys": 77,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 128,
+          "count": 697,
+          "fraction": 0.6223214285714286
+        },
+        {
+          "words": 23,
+          "rows": 128,
+          "count": 102,
+          "fraction": 0.09107142857142857
+        },
+        {
+          "words": 22,
+          "rows": 128,
+          "count": 95,
+          "fraction": 0.08482142857142858
+        },
+        {
+          "words": 21,
+          "rows": 128,
+          "count": 66,
+          "fraction": 0.05892857142857143
+        },
+        {
+          "words": 20,
+          "rows": 128,
+          "count": 40,
+          "fraction": 0.03571428571428571
+        },
+        {
+          "words": 19,
+          "rows": 128,
+          "count": 16,
+          "fraction": 0.014285714285714285
+        },
+        {
+          "words": 18,
+          "rows": 128,
+          "count": 7,
+          "fraction": 0.00625
+        },
+        {
+          "words": 24,
+          "rows": 108,
+          "count": 4,
+          "fraction": 0.0035714285714285713
+        },
+        {
+          "words": 24,
+          "rows": 100,
+          "count": 4,
+          "fraction": 0.0035714285714285713
+        },
+        {
+          "words": 24,
+          "rows": 112,
+          "count": 4,
+          "fraction": 0.0035714285714285713
+        },
+        {
+          "words": 24,
+          "rows": 104,
+          "count": 3,
+          "fraction": 0.0026785714285714286
+        },
+        {
+          "words": 24,
+          "rows": 88,
+          "count": 3,
+          "fraction": 0.0026785714285714286
+        },
+        {
+          "words": 24,
+          "rows": 96,
+          "count": 3,
+          "fraction": 0.0026785714285714286
+        },
+        {
+          "words": 24,
+          "rows": 92,
+          "count": 3,
+          "fraction": 0.0026785714285714286
+        },
+        {
+          "words": 24,
+          "rows": 80,
+          "count": 3,
+          "fraction": 0.0026785714285714286
+        },
+        {
+          "words": 18,
+          "rows": 8,
+          "count": 2,
+          "fraction": 0.0017857142857142857
+        },
+        {
+          "words": 20,
+          "rows": 100,
+          "count": 2,
+          "fraction": 0.0017857142857142857
+        },
+        {
+          "words": 24,
+          "rows": 64,
+          "count": 2,
+          "fraction": 0.0017857142857142857
+        },
+        {
+          "words": 24,
+          "rows": 52,
+          "count": 2,
+          "fraction": 0.0017857142857142857
+        },
+        {
+          "words": 22,
+          "rows": 96,
+          "count": 2,
+          "fraction": 0.0017857142857142857
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 985,
+          "misses": 135,
+          "evictions": 127,
+          "hit_rate": 0.8794642857142857,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 20,
+              "rows": 128,
+              "misses": 10
+            },
+            {
+              "words": 19,
+              "rows": 128,
+              "misses": 7
+            },
+            {
+              "words": 21,
+              "rows": 128,
+              "misses": 7
+            },
+            {
+              "words": 23,
+              "rows": 128,
+              "misses": 5
+            },
+            {
+              "words": 22,
+              "rows": 128,
+              "misses": 5
+            },
+            {
+              "words": 18,
+              "rows": 128,
+              "misses": 5
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            }
+          ]
+        },
+        "16": {
+          "hits": 1017,
+          "misses": 103,
+          "evictions": 87,
+          "hit_rate": 0.9080357142857143,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 18,
+              "rows": 128,
+              "misses": 4
+            },
+            {
+              "words": 19,
+              "rows": 128,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 96,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 112,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 80,
+              "misses": 3
+            },
+            {
+              "words": 20,
+              "rows": 128,
+              "misses": 2
+            }
+          ]
+        },
+        "32": {
+          "hits": 1032,
+          "misses": 88,
+          "evictions": 56,
+          "hit_rate": 0.9214285714285714,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            },
+            {
+              "words": 19,
+              "rows": 128,
+              "misses": 2
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 108,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 52,
+              "misses": 2
+            },
+            {
+              "words": 22,
+              "rows": 96,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 96,
+              "misses": 2
+            }
+          ]
+        },
+        "64": {
+          "hits": 1042,
+          "misses": 78,
+          "evictions": 14,
+          "hit_rate": 0.9303571428571429,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 20,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 21,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 22,
+              "rows": 128,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 1043,
+          "misses": 77,
+          "evictions": 0,
+          "hit_rate": 0.93125,
+          "cold_unique_keys": 77,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 19,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 20,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 18,
+              "rows": 8,
+              "misses": 1
+            },
+            {
+              "words": 21,
+              "rows": 128,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 22,
+              "rows": 128,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "0": 1,
+        "1": 1,
+        "4": 2,
+        "6": 1,
+        "7": 1,
+        "8": 3,
+        "9": 1,
+        "12": 1,
+        "13": 1,
+        "14": 1,
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "20": 2,
+        "27": 1,
+        "32": 1,
+        "34": 1,
+        "37": 1,
+        "40": 2,
+        "43": 1,
+        "44": 1,
+        "45": 2,
+        "47": 1,
+        "48": 3,
+        "50": 1,
+        "51": 2,
+        "52": 1,
+        "53": 1,
+        "55": 1,
+        "63": 2,
+        "65": 3,
+        "66": 1,
+        "67": 2,
+        "68": 4,
+        "69": 2,
+        "73": 2,
+        "74": 1,
+        "76": 1,
+        "77": 2,
+        "80": 3,
+        "82": 1,
+        "83": 1,
+        "84": 1,
+        "85": 5,
+        "86": 2,
+        "87": 1,
+        "89": 3,
+        "90": 4,
+        "91": 2,
+        "92": 1,
+        "93": 4,
+        "94": 8,
+        "95": 2,
+        "96": 11,
+        "97": 8,
+        "98": 7,
+        "99": 15,
+        "100": 17,
+        "101": 17,
+        "102": 27,
+        "103": 26,
+        "104": 38,
+        "105": 32,
+        "106": 43,
+        "107": 51,
+        "108": 39,
+        "109": 58,
+        "110": 57,
+        "111": 54,
+        "112": 72,
+        "113": 63,
+        "114": 62,
+        "115": 64,
+        "116": 49,
+        "117": 48,
+        "118": 41,
+        "119": 31,
+        "120": 29,
+        "121": 17,
+        "122": 12,
+        "123": 18,
+        "124": 7,
+        "125": 6,
+        "126": 2,
+        "127": 2,
+        "128": 1
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 23.089285714285715,
+      "padded_words_histogram": {
+        "1": 1,
+        "6": 1,
+        "10": 1,
+        "13": 1,
+        "14": 1,
+        "16": 2,
+        "17": 4,
+        "18": 11,
+        "19": 19,
+        "20": 50,
+        "21": 72,
+        "22": 108,
+        "23": 107,
+        "24": 742
+      },
+      "history_slots_mean": 3.994642857142857,
+      "target_length_padded_mean": 24.691964285714285,
+      "word_padding_ratio_mean": 0.6032180958136256,
+      "history_slot_padding_ratio_mean": 0.1316125375712636,
+      "target_padding_ratio_mean": 0.49995173815371413,
+      "span_utilization_mean": 0.2215864213836758,
+      "ce_tokens_per_micro_batch_mean": 365.7142857142857,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119421,
+        "duplicate_fraction": 0.002547483420476726
+      }
+    },
+    "64": {
+      "updates": 100,
+      "micro_batches": 600,
+      "micro_batches_per_update": 6.0,
+      "unique_keys": 72,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 256,
+          "count": 457,
+          "fraction": 0.7616666666666667
+        },
+        {
+          "words": 23,
+          "rows": 256,
+          "count": 22,
+          "fraction": 0.03666666666666667
+        },
+        {
+          "words": 22,
+          "rows": 256,
+          "count": 15,
+          "fraction": 0.025
+        },
+        {
+          "words": 21,
+          "rows": 256,
+          "count": 5,
+          "fraction": 0.008333333333333333
+        },
+        {
+          "words": 24,
+          "rows": 136,
+          "count": 4,
+          "fraction": 0.006666666666666667
+        },
+        {
+          "words": 24,
+          "rows": 108,
+          "count": 4,
+          "fraction": 0.006666666666666667
+        },
+        {
+          "words": 24,
+          "rows": 100,
+          "count": 4,
+          "fraction": 0.006666666666666667
+        },
+        {
+          "words": 24,
+          "rows": 112,
+          "count": 4,
+          "fraction": 0.006666666666666667
+        },
+        {
+          "words": 24,
+          "rows": 104,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 24,
+          "rows": 144,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 24,
+          "rows": 88,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 24,
+          "rows": 96,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 24,
+          "rows": 92,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 24,
+          "rows": 80,
+          "count": 3,
+          "fraction": 0.005
+        },
+        {
+          "words": 20,
+          "rows": 100,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        },
+        {
+          "words": 24,
+          "rows": 132,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        },
+        {
+          "words": 24,
+          "rows": 64,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        },
+        {
+          "words": 24,
+          "rows": 52,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        },
+        {
+          "words": 22,
+          "rows": 96,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        },
+        {
+          "words": 24,
+          "rows": 152,
+          "count": 2,
+          "fraction": 0.0033333333333333335
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 484,
+          "misses": 116,
+          "evictions": 108,
+          "hit_rate": 0.8066666666666666,
+          "cold_unique_keys": 72,
+          "most_missed": [
+            {
+              "words": 23,
+              "rows": 256,
+              "misses": 8
+            },
+            {
+              "words": 22,
+              "rows": 256,
+              "misses": 7
+            },
+            {
+              "words": 24,
+              "rows": 136,
+              "misses": 4
+            },
+            {
+              "words": 21,
+              "rows": 256,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 144,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 88,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 3
+            }
+          ]
+        },
+        "16": {
+          "hits": 503,
+          "misses": 97,
+          "evictions": 81,
+          "hit_rate": 0.8383333333333334,
+          "cold_unique_keys": 72,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 136,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 144,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 96,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 112,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 108,
+              "misses": 2
+            },
+            {
+              "words": 22,
+              "rows": 256,
+              "misses": 2
+            }
+          ]
+        },
+        "32": {
+          "hits": 514,
+          "misses": 86,
+          "evictions": 54,
+          "hit_rate": 0.8566666666666667,
+          "cold_unique_keys": 72,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 144,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 136,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 108,
+              "misses": 2
+            },
+            {
+              "words": 21,
+              "rows": 256,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 52,
+              "misses": 2
+            },
+            {
+              "words": 22,
+              "rows": 96,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 100,
+              "misses": 2
+            }
+          ]
+        },
+        "64": {
+          "hits": 528,
+          "misses": 72,
+          "evictions": 8,
+          "hit_rate": 0.88,
+          "cold_unique_keys": 72,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 256,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 136,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 40,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 256,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 108,
+              "misses": 1
+            },
+            {
+              "words": 22,
+              "rows": 124,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 528,
+          "misses": 72,
+          "evictions": 0,
+          "hit_rate": 0.88,
+          "cold_unique_keys": 72,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 256,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 136,
+              "misses": 1
+            },
+            {
+              "words": 17,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 104,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 40,
+              "misses": 1
+            },
+            {
+              "words": 23,
+              "rows": 256,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 108,
+              "misses": 1
+            },
+            {
+              "words": 22,
+              "rows": 124,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "27": 1,
+        "34": 1,
+        "37": 1,
+        "40": 2,
+        "43": 1,
+        "44": 1,
+        "45": 2,
+        "47": 1,
+        "48": 2,
+        "50": 1,
+        "51": 2,
+        "52": 1,
+        "53": 1,
+        "55": 1,
+        "63": 2,
+        "65": 3,
+        "66": 1,
+        "67": 2,
+        "68": 4,
+        "69": 2,
+        "73": 2,
+        "74": 1,
+        "76": 1,
+        "77": 2,
+        "80": 2,
+        "82": 1,
+        "83": 1,
+        "84": 1,
+        "85": 4,
+        "86": 2,
+        "89": 2,
+        "90": 2,
+        "91": 1,
+        "92": 1,
+        "93": 3,
+        "94": 2,
+        "95": 1,
+        "96": 1,
+        "97": 2,
+        "98": 1,
+        "100": 2,
+        "101": 2,
+        "102": 1,
+        "103": 1,
+        "104": 2,
+        "105": 1,
+        "106": 1,
+        "107": 2,
+        "109": 2,
+        "110": 1,
+        "112": 2,
+        "117": 1,
+        "120": 2,
+        "121": 1,
+        "122": 3,
+        "123": 1,
+        "124": 1,
+        "128": 1,
+        "129": 1,
+        "130": 2,
+        "133": 1,
+        "136": 1,
+        "137": 1,
+        "148": 1,
+        "156": 1,
+        "189": 1,
+        "190": 1,
+        "194": 1,
+        "197": 2,
+        "198": 2,
+        "200": 1,
+        "203": 4,
+        "204": 3,
+        "205": 4,
+        "206": 5,
+        "207": 5,
+        "208": 14,
+        "209": 7,
+        "210": 7,
+        "211": 11,
+        "212": 11,
+        "213": 19,
+        "214": 13,
+        "215": 16,
+        "216": 13,
+        "217": 13,
+        "218": 19,
+        "219": 15,
+        "220": 15,
+        "221": 19,
+        "222": 21,
+        "223": 23,
+        "224": 22,
+        "225": 17,
+        "226": 22,
+        "227": 24,
+        "228": 25,
+        "229": 19,
+        "230": 13,
+        "231": 17,
+        "232": 14,
+        "233": 16,
+        "234": 12,
+        "235": 6,
+        "236": 5,
+        "237": 6,
+        "238": 2,
+        "239": 3,
+        "240": 5,
+        "241": 2,
+        "242": 2,
+        "243": 1,
+        "244": 1,
+        "245": 1
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 23.676666666666666,
+      "padded_words_histogram": {
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "19": 3,
+        "20": 10,
+        "21": 9,
+        "22": 31,
+        "23": 29,
+        "24": 515
+      },
+      "history_slots_mean": 4,
+      "target_length_padded_mean": 27.453333333333333,
+      "word_padding_ratio_mean": 0.6134625252593009,
+      "history_slot_padding_ratio_mean": 0.13017575189488956,
+      "target_padding_ratio_mean": 0.548449501477445,
+      "span_utilization_mean": 0.20982405118021463,
+      "ce_tokens_per_micro_batch_mean": 682.6666666666666,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 119203,
+        "duplicate_fraction": 0.004368307635768343
+      }
+    },
+    "128": {
+      "updates": 100,
+      "micro_batches": 300,
+      "micro_batches_per_update": 3.0,
+      "unique_keys": 37,
+      "key_frequency": [
+        {
+          "words": 24,
+          "rows": 512,
+          "count": 199,
+          "fraction": 0.6633333333333333
+        },
+        {
+          "words": 24,
+          "rows": 356,
+          "count": 7,
+          "fraction": 0.023333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 364,
+          "count": 6,
+          "fraction": 0.02
+        },
+        {
+          "words": 24,
+          "rows": 368,
+          "count": 6,
+          "fraction": 0.02
+        },
+        {
+          "words": 24,
+          "rows": 392,
+          "count": 5,
+          "fraction": 0.016666666666666666
+        },
+        {
+          "words": 24,
+          "rows": 360,
+          "count": 5,
+          "fraction": 0.016666666666666666
+        },
+        {
+          "words": 24,
+          "rows": 352,
+          "count": 5,
+          "fraction": 0.016666666666666666
+        },
+        {
+          "words": 24,
+          "rows": 388,
+          "count": 4,
+          "fraction": 0.013333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 400,
+          "count": 4,
+          "fraction": 0.013333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 332,
+          "count": 4,
+          "fraction": 0.013333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 384,
+          "count": 4,
+          "fraction": 0.013333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 336,
+          "count": 4,
+          "fraction": 0.013333333333333334
+        },
+        {
+          "words": 24,
+          "rows": 324,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 308,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 328,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 344,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 340,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 312,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 348,
+          "count": 3,
+          "fraction": 0.01
+        },
+        {
+          "words": 24,
+          "rows": 380,
+          "count": 2,
+          "fraction": 0.006666666666666667
+        }
+      ],
+      "lru": {
+        "8": {
+          "hits": 219,
+          "misses": 81,
+          "evictions": 73,
+          "hit_rate": 0.73,
+          "cold_unique_keys": 37,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 356,
+              "misses": 5
+            },
+            {
+              "words": 24,
+              "rows": 360,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 388,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 400,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 352,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 368,
+              "misses": 4
+            },
+            {
+              "words": 24,
+              "rows": 392,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 364,
+              "misses": 3
+            }
+          ]
+        },
+        "16": {
+          "hits": 234,
+          "misses": 66,
+          "evictions": 50,
+          "hit_rate": 0.78,
+          "cold_unique_keys": 37,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 360,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 364,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 324,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 356,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 388,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 400,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 352,
+              "misses": 3
+            },
+            {
+              "words": 24,
+              "rows": 312,
+              "misses": 3
+            }
+          ]
+        },
+        "32": {
+          "hits": 262,
+          "misses": 38,
+          "evictions": 6,
+          "hit_rate": 0.8733333333333333,
+          "cold_unique_keys": 37,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 380,
+              "misses": 2
+            },
+            {
+              "words": 24,
+              "rows": 512,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 392,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 360,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 296,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 364,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 324,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 356,
+              "misses": 1
+            }
+          ]
+        },
+        "64": {
+          "hits": 263,
+          "misses": 37,
+          "evictions": 0,
+          "hit_rate": 0.8766666666666667,
+          "cold_unique_keys": 37,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 512,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 392,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 360,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 296,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 364,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 380,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 324,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 356,
+              "misses": 1
+            }
+          ]
+        },
+        "128": {
+          "hits": 263,
+          "misses": 37,
+          "evictions": 0,
+          "hit_rate": 0.8766666666666667,
+          "cold_unique_keys": 37,
+          "most_missed": [
+            {
+              "words": 24,
+              "rows": 512,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 392,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 360,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 296,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 364,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 380,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 324,
+              "misses": 1
+            },
+            {
+              "words": 24,
+              "rows": 356,
+              "misses": 1
+            }
+          ]
+        }
+      },
+      "history_sentence_length_histogram": {
+        "1": 1,
+        "2": 81,
+        "3": 3570,
+        "4": 3732,
+        "5": 6976,
+        "6": 9618,
+        "7": 9571,
+        "8": 9859,
+        "9": 10345,
+        "10": 10192,
+        "11": 10141,
+        "12": 9523,
+        "13": 9140,
+        "14": 6352,
+        "15": 5221,
+        "16": 3956,
+        "17": 2927,
+        "18": 2392,
+        "19": 1621,
+        "20": 1205,
+        "21": 925,
+        "22": 650,
+        "23": 410,
+        "24": 1318
+      },
+      "valid_history_count_histogram": {
+        "248": 1,
+        "250": 1,
+        "253": 1,
+        "255": 1,
+        "260": 1,
+        "261": 1,
+        "263": 1,
+        "267": 1,
+        "268": 1,
+        "269": 3,
+        "273": 4,
+        "274": 1,
+        "275": 2,
+        "276": 1,
+        "281": 1,
+        "282": 1,
+        "288": 1,
+        "290": 3,
+        "291": 2,
+        "292": 4,
+        "294": 1,
+        "295": 1,
+        "297": 1,
+        "298": 1,
+        "299": 3,
+        "300": 1,
+        "301": 2,
+        "302": 1,
+        "304": 3,
+        "306": 1,
+        "307": 4,
+        "309": 1,
+        "310": 2,
+        "311": 1,
+        "312": 1,
+        "314": 3,
+        "315": 1,
+        "317": 2,
+        "318": 2,
+        "321": 2,
+        "322": 2,
+        "323": 1,
+        "325": 2,
+        "326": 1,
+        "327": 1,
+        "328": 1,
+        "329": 1,
+        "330": 1,
+        "331": 2,
+        "333": 1,
+        "334": 1,
+        "335": 1,
+        "337": 1,
+        "338": 3,
+        "346": 1,
+        "347": 1,
+        "348": 2,
+        "350": 1,
+        "354": 1,
+        "355": 2,
+        "358": 2,
+        "359": 1,
+        "365": 2,
+        "369": 1,
+        "376": 1,
+        "403": 2,
+        "413": 1,
+        "414": 1,
+        "415": 1,
+        "418": 1,
+        "419": 1,
+        "420": 1,
+        "421": 1,
+        "422": 2,
+        "423": 3,
+        "425": 1,
+        "426": 3,
+        "427": 1,
+        "428": 6,
+        "429": 8,
+        "430": 1,
+        "431": 1,
+        "432": 5,
+        "433": 5,
+        "434": 4,
+        "435": 6,
+        "436": 2,
+        "437": 3,
+        "438": 4,
+        "439": 3,
+        "440": 3,
+        "441": 9,
+        "442": 1,
+        "443": 7,
+        "444": 6,
+        "445": 5,
+        "446": 9,
+        "447": 4,
+        "448": 9,
+        "449": 4,
+        "450": 7,
+        "451": 6,
+        "452": 7,
+        "453": 5,
+        "454": 7,
+        "455": 2,
+        "456": 8,
+        "457": 3,
+        "458": 7,
+        "459": 2,
+        "460": 1,
+        "461": 4,
+        "462": 2,
+        "463": 5,
+        "464": 2,
+        "465": 1,
+        "467": 1,
+        "468": 2,
+        "469": 1,
+        "470": 1,
+        "475": 1,
+        "481": 1
+      },
+      "target_length_histogram": {
+        "1": 12,
+        "2": 23,
+        "3": 55,
+        "4": 966,
+        "5": 1091,
+        "6": 2100,
+        "7": 2664,
+        "8": 2531,
+        "9": 2624,
+        "10": 2797,
+        "11": 2737,
+        "12": 2854,
+        "13": 2534,
+        "14": 2648,
+        "15": 1969,
+        "16": 1588,
+        "17": 1160,
+        "18": 945,
+        "19": 776,
+        "20": 555,
+        "21": 439,
+        "22": 338,
+        "23": 257,
+        "24": 208,
+        "25": 135,
+        "26": 114,
+        "27": 86,
+        "28": 59,
+        "29": 48,
+        "30": 24,
+        "31": 20,
+        "32": 18,
+        "33": 13,
+        "34": 11,
+        "35": 12,
+        "36": 9,
+        "37": 5,
+        "38": 2,
+        "39": 10,
+        "40": 6,
+        "41": 6,
+        "42": 3,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 1,
+        "48": 1,
+        "49": 2,
+        "50": 1,
+        "51": 4,
+        "54": 1,
+        "60": 1,
+        "71": 1,
+        "74": 1,
+        "79": 1
+      },
+      "padded_words_mean": 23.983333333333334,
+      "padded_words_histogram": {
+        "22": 1,
+        "23": 3,
+        "24": 296
+      },
+      "history_slots_mean": 4,
+      "target_length_padded_mean": 30.813333333333333,
+      "word_padding_ratio_mean": 0.6197622819239802,
+      "history_slot_padding_ratio_mean": 0.13160486157497786,
+      "target_padding_ratio_mean": 0.5967587845830816,
+      "span_utilization_mean": 0.20334299218478868,
+      "ce_tokens_per_micro_batch_mean": 1365.3333333333333,
+      "dedup": {
+        "history_occurrences": 119726,
+        "unique_histories": 118894,
+        "duplicate_fraction": 0.006949200674874256
+      }
+    },
+    "builds": [
+      {
+        "words": 1,
+        "rows": 1,
+        "build_wall_ms_min": 0.20280000171624124,
+        "build_wall_ms_max": 1.0821000032592565,
+        "device_bytes": 24,
+        "size": 1
+      },
+      {
+        "words": 4,
+        "rows": 1,
+        "build_wall_ms_min": 1.497500023106113,
+        "build_wall_ms_max": 65.83910001791082,
+        "device_bytes": 1120,
+        "size": 15
+      },
+      {
+        "words": 5,
+        "rows": 1,
+        "build_wall_ms_min": 1.6577999922446907,
+        "build_wall_ms_max": 1.7619999998714775,
+        "device_bytes": 2592,
+        "size": 27
+      },
+      {
+        "words": 6,
+        "rows": 1,
+        "build_wall_ms_min": 2.521399990655482,
+        "build_wall_ms_max": 13.74179997947067,
+        "device_bytes": 5392,
+        "size": 43
+      },
+      {
+        "words": 7,
+        "rows": 1,
+        "build_wall_ms_min": 2.860400010831654,
+        "build_wall_ms_max": 2.87279998883605,
+        "device_bytes": 10288,
+        "size": 63
+      },
+      {
+        "words": 8,
+        "rows": 1,
+        "build_wall_ms_min": 3.358400019351393,
+        "build_wall_ms_max": 3.4431999956723303,
+        "device_bytes": 18304,
+        "size": 87
+      },
+      {
+        "words": 9,
+        "rows": 1,
+        "build_wall_ms_min": 4.132100002607331,
+        "build_wall_ms_max": 4.236299981130287,
+        "device_bytes": 30464,
+        "size": 115
+      },
+      {
+        "words": 10,
+        "rows": 1,
+        "build_wall_ms_min": 5.281400022795424,
+        "build_wall_ms_max": 6.232099985936657,
+        "device_bytes": 47792,
+        "size": 147
+      },
+      {
+        "words": 11,
+        "rows": 1,
+        "build_wall_ms_min": 5.850099987583235,
+        "build_wall_ms_max": 5.943600001046434,
+        "device_bytes": 71312,
+        "size": 183
+      },
+      {
+        "words": 12,
+        "rows": 1,
+        "build_wall_ms_min": 6.982599996263161,
+        "build_wall_ms_max": 7.083900010911748,
+        "device_bytes": 102048,
+        "size": 223
+      },
+      {
+        "words": 13,
+        "rows": 1,
+        "build_wall_ms_min": 6.358100014040247,
+        "build_wall_ms_max": 8.27179997577332,
+        "device_bytes": 141024,
+        "size": 267
+      },
+      {
+        "words": 14,
+        "rows": 1,
+        "build_wall_ms_min": 7.094400003552437,
+        "build_wall_ms_max": 9.274700016248971,
+        "device_bytes": 189264,
+        "size": 315
+      },
+      {
+        "words": 15,
+        "rows": 1,
+        "build_wall_ms_min": 8.709999994607642,
+        "build_wall_ms_max": 8.799400005955249,
+        "device_bytes": 247792,
+        "size": 367
+      },
+      {
+        "words": 16,
+        "rows": 1,
+        "build_wall_ms_min": 12.560500006657094,
+        "build_wall_ms_max": 13.25139999971725,
+        "device_bytes": 317632,
+        "size": 423
+      },
+      {
+        "words": 17,
+        "rows": 1,
+        "build_wall_ms_min": 14.356900006532669,
+        "build_wall_ms_max": 17.94199997675605,
+        "device_bytes": 399808,
+        "size": 483
+      },
+      {
+        "words": 18,
+        "rows": 1,
+        "build_wall_ms_min": 15.776699990965426,
+        "build_wall_ms_max": 19.537199987098575,
+        "device_bytes": 495344,
+        "size": 547
+      },
+      {
+        "words": 19,
+        "rows": 1,
+        "build_wall_ms_min": 20.03590000094846,
+        "build_wall_ms_max": 20.83600001060404,
+        "device_bytes": 605264,
+        "size": 615
+      },
+      {
+        "words": 20,
+        "rows": 1,
+        "build_wall_ms_min": 17.61009998153895,
+        "build_wall_ms_max": 22.907400008989498,
+        "device_bytes": 730592,
+        "size": 687
+      },
+      {
+        "words": 21,
+        "rows": 1,
+        "build_wall_ms_min": 25.055900012375787,
+        "build_wall_ms_max": 35.596400004578754,
+        "device_bytes": 872352,
+        "size": 763
+      },
+      {
+        "words": 22,
+        "rows": 1,
+        "build_wall_ms_min": 29.564800002845004,
+        "build_wall_ms_max": 44.66730001149699,
+        "device_bytes": 1031568,
+        "size": 843
+      },
+      {
+        "words": 24,
+        "rows": 1,
+        "build_wall_ms_min": 30.05870000924915,
+        "build_wall_ms_max": 30.358999996678904,
+        "device_bytes": 1406464,
+        "size": 1015
+      },
+      {
+        "words": 1,
+        "rows": 2,
+        "build_wall_ms_min": 0.1618000096641481,
+        "build_wall_ms_max": 0.19459999748505652,
+        "device_bytes": 40,
+        "size": 2
+      },
+      {
+        "words": 5,
+        "rows": 2,
+        "build_wall_ms_min": 1.465099980123341,
+        "build_wall_ms_max": 1.4974999940022826,
+        "device_bytes": 3328,
+        "size": 54
+      },
+      {
+        "words": 6,
+        "rows": 2,
+        "build_wall_ms_min": 1.9246000156272203,
+        "build_wall_ms_max": 2.3221000155899674,
+        "device_bytes": 6896,
+        "size": 86
+      },
+      {
+        "words": 7,
+        "rows": 2,
+        "build_wall_ms_min": 2.258099993923679,
+        "build_wall_ms_max": 2.278300002217293,
+        "device_bytes": 13104,
+        "size": 126
+      },
+      {
+        "words": 8,
+        "rows": 2,
+        "build_wall_ms_min": 2.7040999848395586,
+        "build_wall_ms_max": 2.711200009798631,
+        "device_bytes": 23232,
+        "size": 174
+      },
+      {
+        "words": 9,
+        "rows": 2,
+        "build_wall_ms_min": 3.3144000044558197,
+        "build_wall_ms_max": 3.943599993363023,
+        "device_bytes": 38560,
+        "size": 230
+      },
+      {
+        "words": 10,
+        "rows": 2,
+        "build_wall_ms_min": 3.865200007567182,
+        "build_wall_ms_max": 3.9140000008046627,
+        "device_bytes": 60368,
+        "size": 294
+      },
+      {
+        "words": 11,
+        "rows": 2,
+        "build_wall_ms_min": 4.514600004767999,
+        "build_wall_ms_max": 5.056299996795133,
+        "device_bytes": 89936,
+        "size": 366
+      },
+      {
+        "words": 12,
+        "rows": 2,
+        "build_wall_ms_min": 5.3699999989476055,
+        "build_wall_ms_max": 5.997900007059798,
+        "device_bytes": 128544,
+        "size": 446
+      },
+      {
+        "words": 13,
+        "rows": 2,
+        "build_wall_ms_min": 6.264399999054149,
+        "build_wall_ms_max": 6.34569997782819,
+        "device_bytes": 177472,
+        "size": 534
+      },
+      {
+        "words": 14,
+        "rows": 2,
+        "build_wall_ms_min": 7.256700017023832,
+        "build_wall_ms_max": 7.826799992471933,
+        "device_bytes": 238000,
+        "size": 630
+      },
+      {
+        "words": 15,
+        "rows": 2,
+        "build_wall_ms_min": 8.365399989997968,
+        "build_wall_ms_max": 8.958499995060265,
+        "device_bytes": 311408,
+        "size": 734
+      },
+      {
+        "words": 16,
+        "rows": 2,
+        "build_wall_ms_min": 10.190000000875443,
+        "build_wall_ms_max": 11.035400006221607,
+        "device_bytes": 398976,
+        "size": 846
+      },
+      {
+        "words": 17,
+        "rows": 2,
+        "build_wall_ms_min": 12.847999983932823,
+        "build_wall_ms_max": 19.76619998458773,
+        "device_bytes": 501984,
+        "size": 966
+      },
+      {
+        "words": 18,
+        "rows": 2,
+        "build_wall_ms_min": 15.62360001844354,
+        "build_wall_ms_max": 16.709199990145862,
+        "device_bytes": 621712,
+        "size": 1094
+      },
+      {
+        "words": 19,
+        "rows": 2,
+        "build_wall_ms_min": 15.472800005227327,
+        "build_wall_ms_max": 19.478200003504753,
+        "device_bytes": 759440,
+        "size": 1230
+      },
+      {
+        "words": 20,
+        "rows": 2,
+        "build_wall_ms_min": 20.06969999638386,
+        "build_wall_ms_max": 21.576099999947473,
+        "device_bytes": 916448,
+        "size": 1374
+      },
+      {
+        "words": 21,
+        "rows": 2,
+        "build_wall_ms_min": 22.33240002533421,
+        "build_wall_ms_max": 24.150399985956028,
+        "device_bytes": 1094016,
+        "size": 1526
+      },
+      {
+        "words": 22,
+        "rows": 2,
+        "build_wall_ms_min": 25.383200001670048,
+        "build_wall_ms_max": 27.618299995083362,
+        "device_bytes": 1293424,
+        "size": 1686
+      },
+      {
+        "words": 23,
+        "rows": 2,
+        "build_wall_ms_min": 28.235500009031966,
+        "build_wall_ms_max": 30.622099991887808,
+        "device_bytes": 1515952,
+        "size": 1854
+      },
+      {
+        "words": 24,
+        "rows": 2,
+        "build_wall_ms_min": 31.305400014389306,
+        "build_wall_ms_max": 45.74939998565242,
+        "device_bytes": 1762880,
+        "size": 2030
+      },
+      {
+        "words": 4,
+        "rows": 3,
+        "build_wall_ms_min": 1.0651000193320215,
+        "build_wall_ms_max": 1.722199987852946,
+        "device_bytes": 1760,
+        "size": 45
+      },
+      {
+        "words": 5,
+        "rows": 3,
+        "build_wall_ms_min": 2.12320001446642,
+        "build_wall_ms_max": 3.2316999859176576,
+        "device_bytes": 4064,
+        "size": 81
+      },
+      {
+        "words": 6,
+        "rows": 3,
+        "build_wall_ms_min": 1.9038000027649105,
+        "build_wall_ms_max": 2.2019000025466084,
+        "device_bytes": 8400,
+        "size": 129
+      },
+      {
+        "words": 7,
+        "rows": 3,
+        "build_wall_ms_min": 2.259300003061071,
+        "build_wall_ms_max": 2.3234999971464276,
+        "device_bytes": 15920,
+        "size": 189
+      },
+      {
+        "words": 8,
+        "rows": 3,
+        "build_wall_ms_min": 2.8319999983068556,
+        "build_wall_ms_max": 3.31880000885576,
+        "device_bytes": 28160,
+        "size": 261
+      },
+      {
+        "words": 9,
+        "rows": 3,
+        "build_wall_ms_min": 3.1875999993644655,
+        "build_wall_ms_max": 3.2142999989446253,
+        "device_bytes": 46656,
+        "size": 345
+      },
+      {
+        "words": 10,
+        "rows": 3,
+        "build_wall_ms_min": 4.863600013777614,
+        "build_wall_ms_max": 5.483600019942969,
+        "device_bytes": 72944,
+        "size": 441
+      },
+      {
+        "words": 11,
+        "rows": 3,
+        "build_wall_ms_min": 4.583299974910915,
+        "build_wall_ms_max": 5.197699996642768,
+        "device_bytes": 108560,
+        "size": 549
+      },
+      {
+        "words": 12,
+        "rows": 3,
+        "build_wall_ms_min": 5.397900007665157,
+        "build_wall_ms_max": 7.486099988454953,
+        "device_bytes": 155040,
+        "size": 669
+      },
+      {
+        "words": 13,
+        "rows": 3,
+        "build_wall_ms_min": 6.49390000035055,
+        "build_wall_ms_max": 7.999000023119152,
+        "device_bytes": 213920,
+        "size": 801
+      },
+      {
+        "words": 14,
+        "rows": 3,
+        "build_wall_ms_min": 9.073699999134988,
+        "build_wall_ms_max": 9.80679999338463,
+        "device_bytes": 286736,
+        "size": 945
+      },
+      {
+        "words": 15,
+        "rows": 3,
+        "build_wall_ms_min": 9.329200023785233,
+        "build_wall_ms_max": 10.979499988025054,
+        "device_bytes": 375024,
+        "size": 1101
+      },
+      {
+        "words": 16,
+        "rows": 3,
+        "build_wall_ms_min": 10.060400003567338,
+        "build_wall_ms_max": 10.55360000464134,
+        "device_bytes": 480320,
+        "size": 1269
+      },
+      {
+        "words": 17,
+        "rows": 3,
+        "build_wall_ms_min": 14.015499997185543,
+        "build_wall_ms_max": 14.215099974535406,
+        "device_bytes": 604160,
+        "size": 1449
+      },
+      {
+        "words": 18,
+        "rows": 3,
+        "build_wall_ms_min": 13.284599990583956,
+        "build_wall_ms_max": 15.28720001806505,
+        "device_bytes": 748080,
+        "size": 1641
+      },
+      {
+        "words": 19,
+        "rows": 3,
+        "build_wall_ms_min": 16.62809998379089,
+        "build_wall_ms_max": 16.97619998594746,
+        "device_bytes": 913616,
+        "size": 1845
+      },
+      {
+        "words": 20,
+        "rows": 3,
+        "build_wall_ms_min": 21.10230000107549,
+        "build_wall_ms_max": 27.441300015198067,
+        "device_bytes": 1102304,
+        "size": 2061
+      },
+      {
+        "words": 21,
+        "rows": 3,
+        "build_wall_ms_min": 21.1974999983795,
+        "build_wall_ms_max": 23.584900016430765,
+        "device_bytes": 1315680,
+        "size": 2289
+      },
+      {
+        "words": 22,
+        "rows": 3,
+        "build_wall_ms_min": 24.733600002946332,
+        "build_wall_ms_max": 29.191600013291463,
+        "device_bytes": 1555280,
+        "size": 2529
+      },
+      {
+        "words": 23,
+        "rows": 3,
+        "build_wall_ms_min": 29.606399999465793,
+        "build_wall_ms_max": 34.14549998706207,
+        "device_bytes": 1822640,
+        "size": 2781
+      },
+      {
+        "words": 24,
+        "rows": 3,
+        "build_wall_ms_min": 31.105200003366917,
+        "build_wall_ms_max": 33.806299994466826,
+        "device_bytes": 2119296,
+        "size": 3045
+      },
+      {
+        "words": 3,
+        "rows": 4,
+        "build_wall_ms_min": 0.7818000158295035,
+        "build_wall_ms_max": 0.8368999988306314,
+        "device_bytes": 800,
+        "size": 28
+      },
+      {
+        "words": 4,
+        "rows": 4,
+        "build_wall_ms_min": 1.049399987095967,
+        "build_wall_ms_max": 1.0874000145122409,
+        "device_bytes": 2080,
+        "size": 60
+      },
+      {
+        "words": 5,
+        "rows": 4,
+        "build_wall_ms_min": 1.3718999980483204,
+        "build_wall_ms_max": 1.3848000089637935,
+        "device_bytes": 4800,
+        "size": 108
+      },
+      {
+        "words": 6,
+        "rows": 4,
+        "build_wall_ms_min": 2.0456000056583434,
+        "build_wall_ms_max": 2.2050999978091568,
+        "device_bytes": 9904,
+        "size": 172
+      },
+      {
+        "words": 7,
+        "rows": 4,
+        "build_wall_ms_min": 2.6863999955821782,
+        "build_wall_ms_max": 3.1039000023156404,
+        "device_bytes": 18736,
+        "size": 252
+      },
+      {
+        "words": 8,
+        "rows": 4,
+        "build_wall_ms_min": 2.7655999874696136,
+        "build_wall_ms_max": 2.766599995084107,
+        "device_bytes": 33088,
+        "size": 348
+      },
+      {
+        "words": 9,
+        "rows": 4,
+        "build_wall_ms_min": 3.953400009777397,
+        "build_wall_ms_max": 4.3913999979849905,
+        "device_bytes": 54752,
+        "size": 460
+      },
+      {
+        "words": 10,
+        "rows": 4,
+        "build_wall_ms_min": 3.8691999798174948,
+        "build_wall_ms_max": 3.8927000132389367,
+        "device_bytes": 85520,
+        "size": 588
+      },
+      {
+        "words": 11,
+        "rows": 4,
+        "build_wall_ms_min": 4.705400002421811,
+        "build_wall_ms_max": 6.070499977795407,
+        "device_bytes": 127184,
+        "size": 732
+      },
+      {
+        "words": 12,
+        "rows": 4,
+        "build_wall_ms_min": 7.124299998395145,
+        "build_wall_ms_max": 7.646200014278293,
+        "device_bytes": 181536,
+        "size": 892
+      },
+      {
+        "words": 13,
+        "rows": 4,
+        "build_wall_ms_min": 6.699599995044991,
+        "build_wall_ms_max": 7.494699995731935,
+        "device_bytes": 250368,
+        "size": 1068
+      },
+      {
+        "words": 14,
+        "rows": 4,
+        "build_wall_ms_min": 8.163399994373322,
+        "build_wall_ms_max": 10.205500002484769,
+        "device_bytes": 335472,
+        "size": 1260
+      },
+      {
+        "words": 15,
+        "rows": 4,
+        "build_wall_ms_min": 8.940899977460504,
+        "build_wall_ms_max": 10.904900002060458,
+        "device_bytes": 438640,
+        "size": 1468
+      },
+      {
+        "words": 16,
+        "rows": 4,
+        "build_wall_ms_min": 11.502800014568493,
+        "build_wall_ms_max": 14.122100023087114,
+        "device_bytes": 561664,
+        "size": 1692
+      },
+      {
+        "words": 17,
+        "rows": 4,
+        "build_wall_ms_min": 12.68849999178201,
+        "build_wall_ms_max": 12.867299985373393,
+        "device_bytes": 706336,
+        "size": 1932
+      },
+      {
+        "words": 18,
+        "rows": 4,
+        "build_wall_ms_min": 14.105699985520914,
+        "build_wall_ms_max": 14.63679998414591,
+        "device_bytes": 874448,
+        "size": 2188
+      },
+      {
+        "words": 19,
+        "rows": 4,
+        "build_wall_ms_min": 16.527600004337728,
+        "build_wall_ms_max": 20.720600005006418,
+        "device_bytes": 1067792,
+        "size": 2460
+      },
+      {
+        "words": 20,
+        "rows": 4,
+        "build_wall_ms_min": 20.917999994708225,
+        "build_wall_ms_max": 21.85679998365231,
+        "device_bytes": 1288160,
+        "size": 2748
+      },
+      {
+        "words": 21,
+        "rows": 4,
+        "build_wall_ms_min": 20.22829998168163,
+        "build_wall_ms_max": 21.141300007002428,
+        "device_bytes": 1537344,
+        "size": 3052
+      },
+      {
+        "words": 22,
+        "rows": 4,
+        "build_wall_ms_min": 28.676800022367388,
+        "build_wall_ms_max": 31.127800000831485,
+        "device_bytes": 1817136,
+        "size": 3372
+      },
+      {
+        "words": 23,
+        "rows": 4,
+        "build_wall_ms_min": 31.235900009050965,
+        "build_wall_ms_max": 34.19370000483468,
+        "device_bytes": 2129328,
+        "size": 3708
+      },
+      {
+        "words": 24,
+        "rows": 4,
+        "build_wall_ms_min": 31.36279998579994,
+        "build_wall_ms_max": 34.385900013148785,
+        "device_bytes": 2475712,
+        "size": 4060
+      },
+      {
+        "words": 9,
+        "rows": 6,
+        "build_wall_ms_min": 3.3503000158816576,
+        "build_wall_ms_max": 3.4524000075180084,
+        "device_bytes": 70944,
+        "size": 690
+      },
+      {
+        "words": 10,
+        "rows": 6,
+        "build_wall_ms_min": 3.9878000097814947,
+        "build_wall_ms_max": 5.949099984718487,
+        "device_bytes": 110672,
+        "size": 882
+      },
+      {
+        "words": 11,
+        "rows": 6,
+        "build_wall_ms_min": 4.657099983887747,
+        "build_wall_ms_max": 4.748300008941442,
+        "device_bytes": 164432,
+        "size": 1098
+      },
+      {
+        "words": 12,
+        "rows": 6,
+        "build_wall_ms_min": 5.63600001623854,
+        "build_wall_ms_max": 6.231300008948892,
+        "device_bytes": 234528,
+        "size": 1338
+      },
+      {
+        "words": 13,
+        "rows": 6,
+        "build_wall_ms_min": 8.624300011433661,
+        "build_wall_ms_max": 11.154100007843226,
+        "device_bytes": 323264,
+        "size": 1602
+      },
+      {
+        "words": 14,
+        "rows": 6,
+        "build_wall_ms_min": 8.858999994117767,
+        "build_wall_ms_max": 9.616199997253716,
+        "device_bytes": 432944,
+        "size": 1890
+      },
+      {
+        "words": 15,
+        "rows": 6,
+        "build_wall_ms_min": 9.329099993919954,
+        "build_wall_ms_max": 10.107899986905977,
+        "device_bytes": 565872,
+        "size": 2202
+      },
+      {
+        "words": 16,
+        "rows": 6,
+        "build_wall_ms_min": 11.102499993285164,
+        "build_wall_ms_max": 11.482300003990531,
+        "device_bytes": 724352,
+        "size": 2538
+      },
+      {
+        "words": 17,
+        "rows": 6,
+        "build_wall_ms_min": 12.065300019457936,
+        "build_wall_ms_max": 13.095300004351884,
+        "device_bytes": 910688,
+        "size": 2898
+      },
+      {
+        "words": 18,
+        "rows": 6,
+        "build_wall_ms_min": 17.445100005716085,
+        "build_wall_ms_max": 19.262899993918836,
+        "device_bytes": 1127184,
+        "size": 3282
+      },
+      {
+        "words": 19,
+        "rows": 6,
+        "build_wall_ms_min": 17.50379998702556,
+        "build_wall_ms_max": 20.470599993132055,
+        "device_bytes": 1376144,
+        "size": 3690
+      },
+      {
+        "words": 20,
+        "rows": 6,
+        "build_wall_ms_min": 18.40760000050068,
+        "build_wall_ms_max": 23.14840001054108,
+        "device_bytes": 1659872,
+        "size": 4122
+      },
+      {
+        "words": 21,
+        "rows": 6,
+        "build_wall_ms_min": 23.26539999921806,
+        "build_wall_ms_max": 23.457299976143986,
+        "device_bytes": 1980672,
+        "size": 4578
+      },
+      {
+        "words": 22,
+        "rows": 6,
+        "build_wall_ms_min": 27.692100004060194,
+        "build_wall_ms_max": 29.614600003696978,
+        "device_bytes": 2340848,
+        "size": 5058
+      },
+      {
+        "words": 23,
+        "rows": 6,
+        "build_wall_ms_min": 29.49600000283681,
+        "build_wall_ms_max": 31.541100004687905,
+        "device_bytes": 2742704,
+        "size": 5562
+      },
+      {
+        "words": 24,
+        "rows": 6,
+        "build_wall_ms_min": 34.97519998927601,
+        "build_wall_ms_max": 41.992400016169995,
+        "device_bytes": 3188544,
+        "size": 6090
+      },
+      {
+        "words": 5,
+        "rows": 8,
+        "build_wall_ms_min": 2.1376999793574214,
+        "build_wall_ms_max": 3.468800015980378,
+        "device_bytes": 7744,
+        "size": 216
+      },
+      {
+        "words": 6,
+        "rows": 8,
+        "build_wall_ms_min": 2.039200015133247,
+        "build_wall_ms_max": 2.5542000075802207,
+        "device_bytes": 15920,
+        "size": 344
+      },
+      {
+        "words": 7,
+        "rows": 8,
+        "build_wall_ms_min": 2.386600011959672,
+        "build_wall_ms_max": 2.5858999870251864,
+        "device_bytes": 30000,
+        "size": 504
+      },
+      {
+        "words": 8,
+        "rows": 8,
+        "build_wall_ms_min": 3.1561000214423984,
+        "build_wall_ms_max": 3.9018999959807843,
+        "device_bytes": 52800,
+        "size": 696
+      },
+      {
+        "words": 9,
+        "rows": 8,
+        "build_wall_ms_min": 4.711199988378212,
+        "build_wall_ms_max": 6.881700013764203,
+        "device_bytes": 87136,
+        "size": 920
+      },
+      {
+        "words": 10,
+        "rows": 8,
+        "build_wall_ms_min": 7.1666000003460795,
+        "build_wall_ms_max": 7.202799984952435,
+        "device_bytes": 135824,
+        "size": 1176
+      },
+      {
+        "words": 11,
+        "rows": 8,
+        "build_wall_ms_min": 4.81670000590384,
+        "build_wall_ms_max": 7.5827999971807,
+        "device_bytes": 201680,
+        "size": 1464
+      },
+      {
+        "words": 12,
+        "rows": 8,
+        "build_wall_ms_min": 6.0406000120565295,
+        "build_wall_ms_max": 8.228299993788823,
+        "device_bytes": 287520,
+        "size": 1784
+      },
+      {
+        "words": 13,
+        "rows": 8,
+        "build_wall_ms_min": 7.583200000226498,
+        "build_wall_ms_max": 10.27919998159632,
+        "device_bytes": 396160,
+        "size": 2136
+      },
+      {
+        "words": 14,
+        "rows": 8,
+        "build_wall_ms_min": 8.268500008853152,
+        "build_wall_ms_max": 9.38590001896955,
+        "device_bytes": 530416,
+        "size": 2520
+      },
+      {
+        "words": 15,
+        "rows": 8,
+        "build_wall_ms_min": 10.451100009959191,
+        "build_wall_ms_max": 15.467600023839623,
+        "device_bytes": 693104,
+        "size": 2936
+      },
+      {
+        "words": 16,
+        "rows": 8,
+        "build_wall_ms_min": 12.896500003989786,
+        "build_wall_ms_max": 14.7374999942258,
+        "device_bytes": 887040,
+        "size": 3384
+      },
+      {
+        "words": 17,
+        "rows": 8,
+        "build_wall_ms_min": 16.976799990516156,
+        "build_wall_ms_max": 17.788999975891784,
+        "device_bytes": 1115040,
+        "size": 3864
+      },
+      {
+        "words": 18,
+        "rows": 8,
+        "build_wall_ms_min": 17.29600000544451,
+        "build_wall_ms_max": 18.01170001272112,
+        "device_bytes": 1379920,
+        "size": 4376
+      },
+      {
+        "words": 19,
+        "rows": 8,
+        "build_wall_ms_min": 20.04160001524724,
+        "build_wall_ms_max": 20.5705999978818,
+        "device_bytes": 1684496,
+        "size": 4920
+      },
+      {
+        "words": 20,
+        "rows": 8,
+        "build_wall_ms_min": 19.87000001827255,
+        "build_wall_ms_max": 21.754799992777407,
+        "device_bytes": 2031584,
+        "size": 5496
+      },
+      {
+        "words": 21,
+        "rows": 8,
+        "build_wall_ms_min": 22.291900007985532,
+        "build_wall_ms_max": 26.2137999816332,
+        "device_bytes": 2424000,
+        "size": 6104
+      },
+      {
+        "words": 22,
+        "rows": 8,
+        "build_wall_ms_min": 27.299100009258837,
+        "build_wall_ms_max": 29.563500022049993,
+        "device_bytes": 2864560,
+        "size": 6744
+      },
+      {
+        "words": 23,
+        "rows": 8,
+        "build_wall_ms_min": 28.766100003849715,
+        "build_wall_ms_max": 29.16259999619797,
+        "device_bytes": 3356080,
+        "size": 7416
+      },
+      {
+        "words": 24,
+        "rows": 8,
+        "build_wall_ms_min": 34.416999988025054,
+        "build_wall_ms_max": 41.562600003089756,
+        "device_bytes": 3901376,
+        "size": 8120
+      },
+      {
+        "words": 8,
+        "rows": 12,
+        "build_wall_ms_min": 4.696399992099032,
+        "build_wall_ms_max": 4.750400024931878,
+        "device_bytes": 72512,
+        "size": 1044
+      },
+      {
+        "words": 12,
+        "rows": 12,
+        "build_wall_ms_min": 10.175399977015331,
+        "build_wall_ms_max": 13.726599980145693,
+        "device_bytes": 393504,
+        "size": 2676
+      },
+      {
+        "words": 13,
+        "rows": 12,
+        "build_wall_ms_min": 8.66429999587126,
+        "build_wall_ms_max": 9.485500020673499,
+        "device_bytes": 541952,
+        "size": 3204
+      },
+      {
+        "words": 14,
+        "rows": 12,
+        "build_wall_ms_min": 8.074899989878759,
+        "build_wall_ms_max": 13.755899999523535,
+        "device_bytes": 725360,
+        "size": 3780
+      },
+      {
+        "words": 15,
+        "rows": 12,
+        "build_wall_ms_min": 10.203199984971434,
+        "build_wall_ms_max": 11.36529998620972,
+        "device_bytes": 947568,
+        "size": 4404
+      },
+      {
+        "words": 16,
+        "rows": 12,
+        "build_wall_ms_min": 10.818799986736849,
+        "build_wall_ms_max": 12.916100007714704,
+        "device_bytes": 1212416,
+        "size": 5076
+      },
+      {
+        "words": 17,
+        "rows": 12,
+        "build_wall_ms_min": 13.296599994646385,
+        "build_wall_ms_max": 15.286299982108176,
+        "device_bytes": 1523744,
+        "size": 5796
+      },
+      {
+        "words": 18,
+        "rows": 12,
+        "build_wall_ms_min": 15.36869999836199,
+        "build_wall_ms_max": 19.139599986374378,
+        "device_bytes": 1885392,
+        "size": 6564
+      },
+      {
+        "words": 19,
+        "rows": 12,
+        "build_wall_ms_min": 19.190099992556497,
+        "build_wall_ms_max": 22.387899982277304,
+        "device_bytes": 2301200,
+        "size": 7380
+      },
+      {
+        "words": 20,
+        "rows": 12,
+        "build_wall_ms_min": 21.097399992868304,
+        "build_wall_ms_max": 22.04780001193285,
+        "device_bytes": 2775008,
+        "size": 8244
+      },
+      {
+        "words": 21,
+        "rows": 12,
+        "build_wall_ms_min": 23.48319999873638,
+        "build_wall_ms_max": 26.343400008045137,
+        "device_bytes": 3310656,
+        "size": 9156
+      },
+      {
+        "words": 22,
+        "rows": 12,
+        "build_wall_ms_min": 44.54460000852123,
+        "build_wall_ms_max": 51.26670000026934,
+        "device_bytes": 3911984,
+        "size": 10116
+      },
+      {
+        "words": 8,
+        "rows": 16,
+        "build_wall_ms_min": 3.0999000009614974,
+        "build_wall_ms_max": 3.179199993610382,
+        "device_bytes": 92224,
+        "size": 1392
+      },
+      {
+        "words": 9,
+        "rows": 16,
+        "build_wall_ms_min": 3.7862999888602644,
+        "build_wall_ms_max": 4.150900000240654,
+        "device_bytes": 151904,
+        "size": 1840
+      },
+      {
+        "words": 10,
+        "rows": 16,
+        "build_wall_ms_min": 4.375999997137114,
+        "build_wall_ms_max": 4.449600004591048,
+        "device_bytes": 236432,
+        "size": 2352
+      },
+      {
+        "words": 11,
+        "rows": 16,
+        "build_wall_ms_min": 5.945199984125793,
+        "build_wall_ms_max": 7.4806000047829,
+        "device_bytes": 350672,
+        "size": 2928
+      },
+      {
+        "words": 12,
+        "rows": 16,
+        "build_wall_ms_min": 6.389799993485212,
+        "build_wall_ms_max": 7.644400000572205,
+        "device_bytes": 499488,
+        "size": 3568
+      },
+      {
+        "words": 13,
+        "rows": 16,
+        "build_wall_ms_min": 7.548299996415153,
+        "build_wall_ms_max": 9.191499993903562,
+        "device_bytes": 687744,
+        "size": 4272
+      },
+      {
+        "words": 14,
+        "rows": 16,
+        "build_wall_ms_min": 13.376599992625415,
+        "build_wall_ms_max": 14.671799988718703,
+        "device_bytes": 920304,
+        "size": 5040
+      },
+      {
+        "words": 15,
+        "rows": 16,
+        "build_wall_ms_min": 10.148800007300451,
+        "build_wall_ms_max": 11.046200001146644,
+        "device_bytes": 1202032,
+        "size": 5872
+      },
+      {
+        "words": 16,
+        "rows": 16,
+        "build_wall_ms_min": 12.12240001768805,
+        "build_wall_ms_max": 15.54500000202097,
+        "device_bytes": 1537792,
+        "size": 6768
+      },
+      {
+        "words": 17,
+        "rows": 16,
+        "build_wall_ms_min": 13.592900009825826,
+        "build_wall_ms_max": 14.785300008952618,
+        "device_bytes": 1932448,
+        "size": 7728
+      },
+      {
+        "words": 18,
+        "rows": 16,
+        "build_wall_ms_min": 17.02490000752732,
+        "build_wall_ms_max": 22.77979999780655,
+        "device_bytes": 2390864,
+        "size": 8752
+      },
+      {
+        "words": 19,
+        "rows": 16,
+        "build_wall_ms_min": 17.2784999886062,
+        "build_wall_ms_max": 21.290199976647273,
+        "device_bytes": 2917904,
+        "size": 9840
+      },
+      {
+        "words": 20,
+        "rows": 16,
+        "build_wall_ms_min": 26.00089999032207,
+        "build_wall_ms_max": 26.824800006579608,
+        "device_bytes": 3518432,
+        "size": 10992
+      },
+      {
+        "words": 21,
+        "rows": 16,
+        "build_wall_ms_min": 29.82299998984672,
+        "build_wall_ms_max": 33.6492000205908,
+        "device_bytes": 4197312,
+        "size": 12208
+      },
+      {
+        "words": 22,
+        "rows": 16,
+        "build_wall_ms_min": 27.32669998658821,
+        "build_wall_ms_max": 27.974699973128736,
+        "device_bytes": 4959408,
+        "size": 13488
+      },
+      {
+        "words": 23,
+        "rows": 16,
+        "build_wall_ms_min": 32.938300020759925,
+        "build_wall_ms_max": 33.56889999122359,
+        "device_bytes": 5809584,
+        "size": 14832
+      },
+      {
+        "words": 24,
+        "rows": 16,
+        "build_wall_ms_min": 37.62390001793392,
+        "build_wall_ms_max": 38.40960000525229,
+        "device_bytes": 6752704,
+        "size": 16240
+      },
+      {
+        "words": 14,
+        "rows": 20,
+        "build_wall_ms_min": 11.171899997862056,
+        "build_wall_ms_max": 17.260199994780123,
+        "device_bytes": 1115248,
+        "size": 6300
+      },
+      {
+        "words": 18,
+        "rows": 20,
+        "build_wall_ms_min": 24.403200019150972,
+        "build_wall_ms_max": 24.724000017158687,
+        "device_bytes": 2896336,
+        "size": 10940
+      },
+      {
+        "words": 19,
+        "rows": 20,
+        "build_wall_ms_min": 20.491500006755814,
+        "build_wall_ms_max": 28.13099999912083,
+        "device_bytes": 3534608,
+        "size": 12300
+      },
+      {
+        "words": 21,
+        "rows": 20,
+        "build_wall_ms_min": 25.659000006271526,
+        "build_wall_ms_max": 26.361100026406348,
+        "device_bytes": 5083968,
+        "size": 15260
+      },
+      {
+        "words": 22,
+        "rows": 20,
+        "build_wall_ms_min": 30.477599997539073,
+        "build_wall_ms_max": 33.168099995236844,
+        "device_bytes": 6006832,
+        "size": 16860
+      },
+      {
+        "words": 24,
+        "rows": 20,
+        "build_wall_ms_min": 47.652200009906664,
+        "build_wall_ms_max": 59.333200013497844,
+        "device_bytes": 8178368,
+        "size": 20300
+      },
+      {
+        "words": 15,
+        "rows": 24,
+        "build_wall_ms_min": 15.280399995390326,
+        "build_wall_ms_max": 15.962500008754432,
+        "device_bytes": 1710960,
+        "size": 8808
+      },
+      {
+        "words": 16,
+        "rows": 24,
+        "build_wall_ms_min": 17.406900005880743,
+        "build_wall_ms_max": 21.233899984508753,
+        "device_bytes": 2188544,
+        "size": 10152
+      },
+      {
+        "words": 20,
+        "rows": 24,
+        "build_wall_ms_min": 30.19680001307279,
+        "build_wall_ms_max": 32.05899999011308,
+        "device_bytes": 5005280,
+        "size": 16488
+      },
+      {
+        "words": 21,
+        "rows": 24,
+        "build_wall_ms_min": 33.49109998089261,
+        "build_wall_ms_max": 35.34500001114793,
+        "device_bytes": 5970624,
+        "size": 18312
+      },
+      {
+        "words": 24,
+        "rows": 24,
+        "build_wall_ms_min": 37.91529999580234,
+        "build_wall_ms_max": 41.297699994174764,
+        "device_bytes": 9604032,
+        "size": 24360
+      },
+      {
+        "words": 14,
+        "rows": 28,
+        "build_wall_ms_min": 9.79060001554899,
+        "build_wall_ms_max": 11.737499997252598,
+        "device_bytes": 1505136,
+        "size": 8820
+      },
+      {
+        "words": 16,
+        "rows": 28,
+        "build_wall_ms_min": 13.280700019095093,
+        "build_wall_ms_max": 14.332499995362014,
+        "device_bytes": 2513920,
+        "size": 11844
+      },
+      {
+        "words": 18,
+        "rows": 28,
+        "build_wall_ms_min": 18.064200005028397,
+        "build_wall_ms_max": 18.492500006686896,
+        "device_bytes": 3907280,
+        "size": 15316
+      },
+      {
+        "words": 19,
+        "rows": 28,
+        "build_wall_ms_min": 20.707899995613843,
+        "build_wall_ms_max": 22.222300001885742,
+        "device_bytes": 4768016,
+        "size": 17220
+      },
+      {
+        "words": 22,
+        "rows": 28,
+        "build_wall_ms_min": 30.999200011137873,
+        "build_wall_ms_max": 31.57760002068244,
+        "device_bytes": 8101680,
+        "size": 23604
+      },
+      {
+        "words": 24,
+        "rows": 28,
+        "build_wall_ms_min": 37.53090000827797,
+        "build_wall_ms_max": 41.87340001226403,
+        "device_bytes": 11029696,
+        "size": 28420
+      },
+      {
+        "words": 10,
+        "rows": 32,
+        "build_wall_ms_min": 5.031000007875264,
+        "build_wall_ms_max": 6.139100005384535,
+        "device_bytes": 437648,
+        "size": 4704
+      },
+      {
+        "words": 11,
+        "rows": 32,
+        "build_wall_ms_min": 5.838900018716231,
+        "build_wall_ms_max": 6.637300015427172,
+        "device_bytes": 648656,
+        "size": 5856
+      },
+      {
+        "words": 12,
+        "rows": 32,
+        "build_wall_ms_min": 6.872099998872727,
+        "build_wall_ms_max": 7.364699995378032,
+        "device_bytes": 923424,
+        "size": 7136
+      },
+      {
+        "words": 13,
+        "rows": 32,
+        "build_wall_ms_min": 9.094600012758747,
+        "build_wall_ms_max": 10.01699999324046,
+        "device_bytes": 1270912,
+        "size": 8544
+      },
+      {
+        "words": 14,
+        "rows": 32,
+        "build_wall_ms_min": 10.032499994849786,
+        "build_wall_ms_max": 15.427400008775294,
+        "device_bytes": 1700080,
+        "size": 10080
+      },
+      {
+        "words": 15,
+        "rows": 32,
+        "build_wall_ms_min": 15.315899974666536,
+        "build_wall_ms_max": 16.058800014434382,
+        "device_bytes": 2219888,
+        "size": 11744
+      },
+      {
+        "words": 16,
+        "rows": 32,
+        "build_wall_ms_min": 13.844900007825345,
+        "build_wall_ms_max": 17.916800017701462,
+        "device_bytes": 2839296,
+        "size": 13536
+      },
+      {
+        "words": 17,
+        "rows": 32,
+        "build_wall_ms_min": 18.1260000099428,
+        "build_wall_ms_max": 19.535700004780665,
+        "device_bytes": 3567264,
+        "size": 15456
+      },
+      {
+        "words": 18,
+        "rows": 32,
+        "build_wall_ms_min": 22.457700019003823,
+        "build_wall_ms_max": 28.35940002114512,
+        "device_bytes": 4412752,
+        "size": 17504
+      },
+      {
+        "words": 19,
+        "rows": 32,
+        "build_wall_ms_min": 23.053299984894693,
+        "build_wall_ms_max": 24.19620001455769,
+        "device_bytes": 5384720,
+        "size": 19680
+      },
+      {
+        "words": 20,
+        "rows": 32,
+        "build_wall_ms_min": 27.813199994852766,
+        "build_wall_ms_max": 30.242100008763373,
+        "device_bytes": 6492128,
+        "size": 21984
+      },
+      {
+        "words": 21,
+        "rows": 32,
+        "build_wall_ms_min": 28.39769999263808,
+        "build_wall_ms_max": 32.86159998970106,
+        "device_bytes": 7743936,
+        "size": 24416
+      },
+      {
+        "words": 22,
+        "rows": 32,
+        "build_wall_ms_min": 31.41569998115301,
+        "build_wall_ms_max": 33.79629997652955,
+        "device_bytes": 9149104,
+        "size": 26976
+      },
+      {
+        "words": 23,
+        "rows": 32,
+        "build_wall_ms_min": 34.98650001711212,
+        "build_wall_ms_max": 38.81259998888709,
+        "device_bytes": 10716592,
+        "size": 29664
+      },
+      {
+        "words": 24,
+        "rows": 32,
+        "build_wall_ms_min": 42.582099995343015,
+        "build_wall_ms_max": 48.781199991935864,
+        "device_bytes": 12455360,
+        "size": 32480
+      },
+      {
+        "words": 20,
+        "rows": 36,
+        "build_wall_ms_min": 23.418800003128126,
+        "build_wall_ms_max": 27.054900012444705,
+        "device_bytes": 7235552,
+        "size": 24732
+      },
+      {
+        "words": 21,
+        "rows": 36,
+        "build_wall_ms_min": 31.7092000041157,
+        "build_wall_ms_max": 37.261799996485934,
+        "device_bytes": 8630592,
+        "size": 27468
+      },
+      {
+        "words": 22,
+        "rows": 36,
+        "build_wall_ms_min": 31.820900010643527,
+        "build_wall_ms_max": 32.09650001372211,
+        "device_bytes": 10196528,
+        "size": 30348
+      },
+      {
+        "words": 24,
+        "rows": 36,
+        "build_wall_ms_min": 38.22070002206601,
+        "build_wall_ms_max": 46.02939999313094,
+        "device_bytes": 13881024,
+        "size": 36540
+      },
+      {
+        "words": 17,
+        "rows": 40,
+        "build_wall_ms_min": 16.57310000155121,
+        "build_wall_ms_max": 21.603700006380677,
+        "device_bytes": 4384672,
+        "size": 19320
+      },
+      {
+        "words": 18,
+        "rows": 40,
+        "build_wall_ms_min": 21.74979998380877,
+        "build_wall_ms_max": 23.881400004029274,
+        "device_bytes": 5423696,
+        "size": 21880
+      },
+      {
+        "words": 19,
+        "rows": 40,
+        "build_wall_ms_min": 22.085900011006743,
+        "build_wall_ms_max": 26.01669999421574,
+        "device_bytes": 6618128,
+        "size": 24600
+      },
+      {
+        "words": 23,
+        "rows": 40,
+        "build_wall_ms_min": 36.57789999851957,
+        "build_wall_ms_max": 43.86569999041967,
+        "device_bytes": 13170096,
+        "size": 37080
+      },
+      {
+        "words": 24,
+        "rows": 40,
+        "build_wall_ms_min": 42.30170001392253,
+        "build_wall_ms_max": 43.08669999591075,
+        "device_bytes": 15306688,
+        "size": 40600
+      },
+      {
+        "words": 16,
+        "rows": 44,
+        "build_wall_ms_min": 14.66039998922497,
+        "build_wall_ms_max": 15.89899999089539,
+        "device_bytes": 3815424,
+        "size": 18612
+      },
+      {
+        "words": 20,
+        "rows": 44,
+        "build_wall_ms_min": 27.439900004537776,
+        "build_wall_ms_max": 27.90019998792559,
+        "device_bytes": 8722400,
+        "size": 30228
+      },
+      {
+        "words": 21,
+        "rows": 44,
+        "build_wall_ms_min": 31.01730000344105,
+        "build_wall_ms_max": 31.588999991072342,
+        "device_bytes": 10403904,
+        "size": 33572
+      },
+      {
+        "words": 22,
+        "rows": 44,
+        "build_wall_ms_min": 34.94109999155626,
+        "build_wall_ms_max": 37.66870000981726,
+        "device_bytes": 12291376,
+        "size": 37092
+      },
+      {
+        "words": 24,
+        "rows": 44,
+        "build_wall_ms_min": 42.95670002466068,
+        "build_wall_ms_max": 52.44470000616275,
+        "device_bytes": 16732352,
+        "size": 44660
+      },
+      {
+        "words": 18,
+        "rows": 48,
+        "build_wall_ms_min": 30.7285999879241,
+        "build_wall_ms_max": 42.8818000073079,
+        "device_bytes": 6434640,
+        "size": 26256
+      },
+      {
+        "words": 20,
+        "rows": 48,
+        "build_wall_ms_min": 26.656600006390363,
+        "build_wall_ms_max": 27.138300007209182,
+        "device_bytes": 9465824,
+        "size": 32976
+      },
+      {
+        "words": 22,
+        "rows": 48,
+        "build_wall_ms_min": 37.633300002198666,
+        "build_wall_ms_max": 41.201199986971915,
+        "device_bytes": 13338800,
+        "size": 40464
+      },
+      {
+        "words": 24,
+        "rows": 48,
+        "build_wall_ms_min": 43.89840000658296,
+        "build_wall_ms_max": 54.62340000667609,
+        "device_bytes": 18158016,
+        "size": 48720
+      },
+      {
+        "words": 19,
+        "rows": 52,
+        "build_wall_ms_min": 27.42440000292845,
+        "build_wall_ms_max": 29.89269999670796,
+        "device_bytes": 8468240,
+        "size": 31980
+      },
+      {
+        "words": 20,
+        "rows": 52,
+        "build_wall_ms_min": 28.05999998236075,
+        "build_wall_ms_max": 29.09450000151992,
+        "device_bytes": 10209248,
+        "size": 35724
+      },
+      {
+        "words": 24,
+        "rows": 52,
+        "build_wall_ms_min": 47.32839998905547,
+        "build_wall_ms_max": 48.00300000351854,
+        "device_bytes": 19583680,
+        "size": 52780
+      },
+      {
+        "words": 20,
+        "rows": 56,
+        "build_wall_ms_min": 28.942200005985796,
+        "build_wall_ms_max": 31.92720000515692,
+        "device_bytes": 10952672,
+        "size": 38472
+      },
+      {
+        "words": 22,
+        "rows": 56,
+        "build_wall_ms_min": 38.566000002902,
+        "build_wall_ms_max": 45.66439997870475,
+        "device_bytes": 15433648,
+        "size": 47208
+      },
+      {
+        "words": 23,
+        "rows": 56,
+        "build_wall_ms_min": 44.6436999773141,
+        "build_wall_ms_max": 45.563100022263825,
+        "device_bytes": 18077104,
+        "size": 51912
+      },
+      {
+        "words": 24,
+        "rows": 56,
+        "build_wall_ms_min": 48.54039999190718,
+        "build_wall_ms_max": 48.56809999910183,
+        "device_bytes": 21009344,
+        "size": 56840
+      },
+      {
+        "words": 22,
+        "rows": 60,
+        "build_wall_ms_min": 39.95750000467524,
+        "build_wall_ms_max": 40.20809999201447,
+        "device_bytes": 16481072,
+        "size": 50580
+      },
+      {
+        "words": 24,
+        "rows": 60,
+        "build_wall_ms_min": 48.96280000684783,
+        "build_wall_ms_max": 53.14830000861548,
+        "device_bytes": 22435008,
+        "size": 60900
+      },
+      {
+        "words": 15,
+        "rows": 64,
+        "build_wall_ms_min": 14.926499978173524,
+        "build_wall_ms_max": 16.312899999320507,
+        "device_bytes": 4255600,
+        "size": 23488
+      },
+      {
+        "words": 16,
+        "rows": 64,
+        "build_wall_ms_min": 18.159300001570955,
+        "build_wall_ms_max": 20.2696000051219,
+        "device_bytes": 5442304,
+        "size": 27072
+      },
+      {
+        "words": 17,
+        "rows": 64,
+        "build_wall_ms_min": 21.141999983228743,
+        "build_wall_ms_max": 21.227899997029454,
+        "device_bytes": 6836896,
+        "size": 30912
+      },
+      {
+        "words": 18,
+        "rows": 64,
+        "build_wall_ms_min": 22.681100002955645,
+        "build_wall_ms_max": 24.051499989582226,
+        "device_bytes": 8456528,
+        "size": 35008
+      },
+      {
+        "words": 19,
+        "rows": 64,
+        "build_wall_ms_min": 28.85290002450347,
+        "build_wall_ms_max": 33.502900012535974,
+        "device_bytes": 10318352,
+        "size": 39360
+      },
+      {
+        "words": 20,
+        "rows": 64,
+        "build_wall_ms_min": 28.70890000485815,
+        "build_wall_ms_max": 29.47040001163259,
+        "device_bytes": 12439520,
+        "size": 43968
+      },
+      {
+        "words": 21,
+        "rows": 64,
+        "build_wall_ms_min": 35.83680000156164,
+        "build_wall_ms_max": 36.24429999035783,
+        "device_bytes": 14837184,
+        "size": 48832
+      },
+      {
+        "words": 22,
+        "rows": 64,
+        "build_wall_ms_min": 36.44419999909587,
+        "build_wall_ms_max": 47.89470002287999,
+        "device_bytes": 17528496,
+        "size": 53952
+      },
+      {
+        "words": 23,
+        "rows": 64,
+        "build_wall_ms_min": 45.320200006244704,
+        "build_wall_ms_max": 47.71390001405962,
+        "device_bytes": 20530608,
+        "size": 59328
+      },
+      {
+        "words": 24,
+        "rows": 64,
+        "build_wall_ms_min": 49.351499998010695,
+        "build_wall_ms_max": 55.79159999615513,
+        "device_bytes": 23860672,
+        "size": 64960
+      },
+      {
+        "words": 21,
+        "rows": 68,
+        "build_wall_ms_min": 34.46549997897819,
+        "build_wall_ms_max": 40.03539998666383,
+        "device_bytes": 15723840,
+        "size": 51884
+      },
+      {
+        "words": 23,
+        "rows": 68,
+        "build_wall_ms_min": 45.92959998990409,
+        "build_wall_ms_max": 54.7124000149779,
+        "device_bytes": 21757360,
+        "size": 63036
+      },
+      {
+        "words": 24,
+        "rows": 68,
+        "build_wall_ms_min": 60.15730000217445,
+        "build_wall_ms_max": 62.02260000281967,
+        "device_bytes": 25286336,
+        "size": 69020
+      },
+      {
+        "words": 20,
+        "rows": 72,
+        "build_wall_ms_min": 38.54999999748543,
+        "build_wall_ms_max": 43.40830000001006,
+        "device_bytes": 13926368,
+        "size": 49464
+      },
+      {
+        "words": 22,
+        "rows": 72,
+        "build_wall_ms_min": 46.01459999685176,
+        "build_wall_ms_max": 53.02819999633357,
+        "device_bytes": 19623344,
+        "size": 60696
+      },
+      {
+        "words": 24,
+        "rows": 72,
+        "build_wall_ms_min": 57.664899999508634,
+        "build_wall_ms_max": 66.13250001100823,
+        "device_bytes": 26712000,
+        "size": 73080
+      },
+      {
+        "words": 20,
+        "rows": 76,
+        "build_wall_ms_min": 34.215600026072934,
+        "build_wall_ms_max": 36.35849998681806,
+        "device_bytes": 14669792,
+        "size": 52212
+      },
+      {
+        "words": 21,
+        "rows": 76,
+        "build_wall_ms_min": 36.956399999326095,
+        "build_wall_ms_max": 42.10620000958443,
+        "device_bytes": 17497152,
+        "size": 57988
+      },
+      {
+        "words": 22,
+        "rows": 76,
+        "build_wall_ms_min": 40.58130001067184,
+        "build_wall_ms_max": 42.98250001738779,
+        "device_bytes": 20670768,
+        "size": 64068
+      },
+      {
+        "words": 24,
+        "rows": 76,
+        "build_wall_ms_min": 49.067200015997514,
+        "build_wall_ms_max": 54.126700008055195,
+        "device_bytes": 28137664,
+        "size": 77140
+      },
+      {
+        "words": 22,
+        "rows": 80,
+        "build_wall_ms_min": 43.26399997808039,
+        "build_wall_ms_max": 51.141400006599724,
+        "device_bytes": 21718192,
+        "size": 67440
+      },
+      {
+        "words": 24,
+        "rows": 80,
+        "build_wall_ms_min": 52.05749999731779,
+        "build_wall_ms_max": 58.811399998376146,
+        "device_bytes": 29563328,
+        "size": 81200
+      },
+      {
+        "words": 21,
+        "rows": 84,
+        "build_wall_ms_min": 37.735699996119365,
+        "build_wall_ms_max": 38.227800017921254,
+        "device_bytes": 19270464,
+        "size": 64092
+      },
+      {
+        "words": 24,
+        "rows": 84,
+        "build_wall_ms_min": 56.842499994672835,
+        "build_wall_ms_max": 64.4118000054732,
+        "device_bytes": 30988992,
+        "size": 85260
+      },
+      {
+        "words": 24,
+        "rows": 88,
+        "build_wall_ms_min": 65.39989999146201,
+        "build_wall_ms_max": 90.6908999895677,
+        "device_bytes": 32414656,
+        "size": 89320
+      },
+      {
+        "words": 20,
+        "rows": 92,
+        "build_wall_ms_min": 36.02260001935065,
+        "build_wall_ms_max": 36.317899997811764,
+        "device_bytes": 17643488,
+        "size": 63204
+      },
+      {
+        "words": 24,
+        "rows": 92,
+        "build_wall_ms_min": 55.5746000027284,
+        "build_wall_ms_max": 62.270900001749396,
+        "device_bytes": 33840320,
+        "size": 93380
+      },
+      {
+        "words": 20,
+        "rows": 96,
+        "build_wall_ms_min": 38.85899999295361,
+        "build_wall_ms_max": 44.07140001421794,
+        "device_bytes": 18386912,
+        "size": 65952
+      },
+      {
+        "words": 22,
+        "rows": 96,
+        "build_wall_ms_min": 48.160400008782744,
+        "build_wall_ms_max": 52.70060000475496,
+        "device_bytes": 25907888,
+        "size": 80928
+      },
+      {
+        "words": 24,
+        "rows": 96,
+        "build_wall_ms_min": 60.29500000295229,
+        "build_wall_ms_max": 64.09689999418333,
+        "device_bytes": 35265984,
+        "size": 97440
+      },
+      {
+        "words": 20,
+        "rows": 100,
+        "build_wall_ms_min": 37.30429999995977,
+        "build_wall_ms_max": 42.47919999761507,
+        "device_bytes": 19130336,
+        "size": 68700
+      },
+      {
+        "words": 21,
+        "rows": 100,
+        "build_wall_ms_min": 39.60819999338128,
+        "build_wall_ms_max": 42.53060001065023,
+        "device_bytes": 22817088,
+        "size": 76300
+      },
+      {
+        "words": 24,
+        "rows": 100,
+        "build_wall_ms_min": 56.31400001584552,
+        "build_wall_ms_max": 69.44160000421107,
+        "device_bytes": 36691648,
+        "size": 101500
+      },
+      {
+        "words": 17,
+        "rows": 104,
+        "build_wall_ms_min": 26.296199997887015,
+        "build_wall_ms_max": 29.968000017106533,
+        "device_bytes": 10923936,
+        "size": 50232
+      },
+      {
+        "words": 19,
+        "rows": 104,
+        "build_wall_ms_min": 35.96020000986755,
+        "build_wall_ms_max": 36.48929999326356,
+        "device_bytes": 16485392,
+        "size": 63960
+      },
+      {
+        "words": 24,
+        "rows": 104,
+        "build_wall_ms_min": 60.65199998556636,
+        "build_wall_ms_max": 62.37149998196401,
+        "device_bytes": 38117312,
+        "size": 105560
+      },
+      {
+        "words": 20,
+        "rows": 108,
+        "build_wall_ms_min": 43.50569998496212,
+        "build_wall_ms_max": 43.70729997754097,
+        "device_bytes": 20617184,
+        "size": 74196
+      },
+      {
+        "words": 23,
+        "rows": 108,
+        "build_wall_ms_min": 57.749200001126155,
+        "build_wall_ms_max": 60.51619999925606,
+        "device_bytes": 34024880,
+        "size": 100116
+      },
+      {
+        "words": 24,
+        "rows": 108,
+        "build_wall_ms_min": 62.032599991653115,
+        "build_wall_ms_max": 64.01370000094175,
+        "device_bytes": 39542976,
+        "size": 109620
+      },
+      {
+        "words": 20,
+        "rows": 112,
+        "build_wall_ms_min": 42.5130000221543,
+        "build_wall_ms_max": 44.19449999113567,
+        "device_bytes": 21360608,
+        "size": 76944
+      },
+      {
+        "words": 23,
+        "rows": 112,
+        "build_wall_ms_min": 55.143200006568804,
+        "build_wall_ms_max": 65.1685000048019,
+        "device_bytes": 35251632,
+        "size": 103824
+      },
+      {
+        "words": 24,
+        "rows": 112,
+        "build_wall_ms_min": 63.12060001073405,
+        "build_wall_ms_max": 69.77989998995326,
+        "device_bytes": 40968640,
+        "size": 113680
+      },
+      {
+        "words": 22,
+        "rows": 116,
+        "build_wall_ms_min": 51.86989999492653,
+        "build_wall_ms_max": 53.48870001034811,
+        "device_bytes": 31145008,
+        "size": 97788
+      },
+      {
+        "words": 23,
+        "rows": 120,
+        "build_wall_ms_min": 56.51539997779764,
+        "build_wall_ms_max": 58.69350000284612,
+        "device_bytes": 37705136,
+        "size": 111240
+      },
+      {
+        "words": 24,
+        "rows": 120,
+        "build_wall_ms_min": 67.61490000644699,
+        "build_wall_ms_max": 70.82620001165196,
+        "device_bytes": 43819968,
+        "size": 121800
+      },
+      {
+        "words": 22,
+        "rows": 124,
+        "build_wall_ms_min": 53.243800008203834,
+        "build_wall_ms_max": 54.80739998165518,
+        "device_bytes": 33239856,
+        "size": 104532
+      },
+      {
+        "words": 24,
+        "rows": 124,
+        "build_wall_ms_min": 65.79780002357438,
+        "build_wall_ms_max": 75.22960001369938,
+        "device_bytes": 45245632,
+        "size": 125860
+      },
+      {
+        "words": 17,
+        "rows": 128,
+        "build_wall_ms_min": 31.686600006651133,
+        "build_wall_ms_max": 31.812500004889444,
+        "device_bytes": 13376160,
+        "size": 61824
+      },
+      {
+        "words": 18,
+        "rows": 128,
+        "build_wall_ms_min": 34.7810999955982,
+        "build_wall_ms_max": 42.377800011308864,
+        "device_bytes": 16544080,
+        "size": 70016
+      },
+      {
+        "words": 19,
+        "rows": 128,
+        "build_wall_ms_min": 37.97550001763739,
+        "build_wall_ms_max": 39.71109999110922,
+        "device_bytes": 20185616,
+        "size": 78720
+      },
+      {
+        "words": 20,
+        "rows": 128,
+        "build_wall_ms_min": 45.95529998186976,
+        "build_wall_ms_max": 46.800299984170124,
+        "device_bytes": 24334304,
+        "size": 87936
+      },
+      {
+        "words": 21,
+        "rows": 128,
+        "build_wall_ms_min": 47.53129999153316,
+        "build_wall_ms_max": 52.96159998397343,
+        "device_bytes": 29023680,
+        "size": 97664
+      },
+      {
+        "words": 22,
+        "rows": 128,
+        "build_wall_ms_min": 54.310400009853765,
+        "build_wall_ms_max": 57.52780000329949,
+        "device_bytes": 34287280,
+        "size": 107904
+      },
+      {
+        "words": 23,
+        "rows": 128,
+        "build_wall_ms_min": 65.15809998381883,
+        "build_wall_ms_max": 71.69850001810119,
+        "device_bytes": 40158640,
+        "size": 118656
+      },
+      {
+        "words": 24,
+        "rows": 128,
+        "build_wall_ms_min": 79.58989997860044,
+        "build_wall_ms_max": 111.27749999286607,
+        "device_bytes": 46671296,
+        "size": 129920
+      },
+      {
+        "words": 22,
+        "rows": 132,
+        "build_wall_ms_min": 72.617400001036,
+        "build_wall_ms_max": 74.98400000622496,
+        "device_bytes": 35334704,
+        "size": 111276
+      },
+      {
+        "words": 23,
+        "rows": 132,
+        "build_wall_ms_min": 66.35879998793826,
+        "build_wall_ms_max": 69.9470000108704,
+        "device_bytes": 41385392,
+        "size": 122364
+      },
+      {
+        "words": 24,
+        "rows": 132,
+        "build_wall_ms_min": 73.40599998133257,
+        "build_wall_ms_max": 84.44389997748658,
+        "device_bytes": 48096960,
+        "size": 133980
+      },
+      {
+        "words": 23,
+        "rows": 136,
+        "build_wall_ms_min": 67.7529999811668,
+        "build_wall_ms_max": 69.8190999974031,
+        "device_bytes": 42612144,
+        "size": 126072
+      },
+      {
+        "words": 24,
+        "rows": 136,
+        "build_wall_ms_min": 69.52049999381416,
+        "build_wall_ms_max": 73.48230000934564,
+        "device_bytes": 49522624,
+        "size": 138040
+      },
+      {
+        "words": 22,
+        "rows": 140,
+        "build_wall_ms_min": 56.790500006172806,
+        "build_wall_ms_max": 58.01269999938086,
+        "device_bytes": 37429552,
+        "size": 118020
+      },
+      {
+        "words": 22,
+        "rows": 144,
+        "build_wall_ms_min": 58.28320002183318,
+        "build_wall_ms_max": 62.54760001320392,
+        "device_bytes": 38476976,
+        "size": 121392
+      },
+      {
+        "words": 24,
+        "rows": 144,
+        "build_wall_ms_min": 82.78870000503957,
+        "build_wall_ms_max": 85.69730000454001,
+        "device_bytes": 52373952,
+        "size": 146160
+      },
+      {
+        "words": 24,
+        "rows": 148,
+        "build_wall_ms_min": 83.99800001643598,
+        "build_wall_ms_max": 86.78009998402558,
+        "device_bytes": 53799616,
+        "size": 150220
+      },
+      {
+        "words": 24,
+        "rows": 152,
+        "build_wall_ms_min": 73.38310001068749,
+        "build_wall_ms_max": 74.44270001724362,
+        "device_bytes": 55225280,
+        "size": 154280
+      },
+      {
+        "words": 24,
+        "rows": 164,
+        "build_wall_ms_min": 75.95129997935146,
+        "build_wall_ms_max": 80.30420000432059,
+        "device_bytes": 59502272,
+        "size": 166460
+      },
+      {
+        "words": 24,
+        "rows": 184,
+        "build_wall_ms_min": 82.1340000256896,
+        "build_wall_ms_max": 89.07170000020415,
+        "device_bytes": 66630592,
+        "size": 186760
+      },
+      {
+        "words": 19,
+        "rows": 256,
+        "build_wall_ms_min": 61.49140000343323,
+        "build_wall_ms_max": 131.62679999368265,
+        "device_bytes": 39920144,
+        "size": 157440
+      },
+      {
+        "words": 21,
+        "rows": 256,
+        "build_wall_ms_min": 78.13259999966249,
+        "build_wall_ms_max": 89.34850001242012,
+        "device_bytes": 57396672,
+        "size": 195328
+      },
+      {
+        "words": 22,
+        "rows": 256,
+        "build_wall_ms_min": 84.51240000431426,
+        "build_wall_ms_max": 84.89070000359789,
+        "device_bytes": 67804848,
+        "size": 215808
+      },
+      {
+        "words": 23,
+        "rows": 256,
+        "build_wall_ms_min": 98.7322999862954,
+        "build_wall_ms_max": 113.97080001188442,
+        "device_bytes": 79414704,
+        "size": 237312
+      },
+      {
+        "words": 24,
+        "rows": 256,
+        "build_wall_ms_min": 118.05630000890233,
+        "build_wall_ms_max": 126.8493999959901,
+        "device_bytes": 92292544,
+        "size": 259840
+      },
+      {
+        "words": 24,
+        "rows": 284,
+        "build_wall_ms_min": 124.94090001564473,
+        "build_wall_ms_max": 150.13910000561737,
+        "device_bytes": 102272192,
+        "size": 288260
+      },
+      {
+        "words": 24,
+        "rows": 292,
+        "build_wall_ms_min": 120.68859999999404,
+        "build_wall_ms_max": 125.65460000769235,
+        "device_bytes": 105123520,
+        "size": 296380
+      },
+      {
+        "words": 24,
+        "rows": 296,
+        "build_wall_ms_min": 117.3879999842029,
+        "build_wall_ms_max": 123.87219999800436,
+        "device_bytes": 106549184,
+        "size": 300440
+      },
+      {
+        "words": 24,
+        "rows": 300,
+        "build_wall_ms_min": 126.81430001975968,
+        "build_wall_ms_max": 128.64539999281988,
+        "device_bytes": 107974848,
+        "size": 304500
+      },
+      {
+        "words": 24,
+        "rows": 304,
+        "build_wall_ms_min": 119.18340000556782,
+        "build_wall_ms_max": 144.8726000089664,
+        "device_bytes": 109400512,
+        "size": 308560
+      },
+      {
+        "words": 24,
+        "rows": 308,
+        "build_wall_ms_min": 137.4610000057146,
+        "build_wall_ms_max": 141.5868999902159,
+        "device_bytes": 110826176,
+        "size": 312620
+      },
+      {
+        "words": 24,
+        "rows": 312,
+        "build_wall_ms_min": 132.6833000057377,
+        "build_wall_ms_max": 139.4012999953702,
+        "device_bytes": 112251840,
+        "size": 316680
+      },
+      {
+        "words": 24,
+        "rows": 316,
+        "build_wall_ms_min": 124.16470001335256,
+        "build_wall_ms_max": 142.3106000002008,
+        "device_bytes": 113677504,
+        "size": 320740
+      },
+      {
+        "words": 24,
+        "rows": 320,
+        "build_wall_ms_min": 150.96930001163855,
+        "build_wall_ms_max": 166.80030000861734,
+        "device_bytes": 115103168,
+        "size": 324800
+      },
+      {
+        "words": 24,
+        "rows": 324,
+        "build_wall_ms_min": 151.00060001714155,
+        "build_wall_ms_max": 175.36159997689538,
+        "device_bytes": 116528832,
+        "size": 328860
+      },
+      {
+        "words": 24,
+        "rows": 328,
+        "build_wall_ms_min": 132.79699999839067,
+        "build_wall_ms_max": 155.0658000051044,
+        "device_bytes": 117954496,
+        "size": 332920
+      },
+      {
+        "words": 24,
+        "rows": 332,
+        "build_wall_ms_min": 153.3317999856081,
+        "build_wall_ms_max": 186.41850000130944,
+        "device_bytes": 119380160,
+        "size": 336980
+      },
+      {
+        "words": 24,
+        "rows": 336,
+        "build_wall_ms_min": 160.2290000009816,
+        "build_wall_ms_max": 163.96949999034405,
+        "device_bytes": 120805824,
+        "size": 341040
+      },
+      {
+        "words": 24,
+        "rows": 340,
+        "build_wall_ms_min": 135.23970000096597,
+        "build_wall_ms_max": 138.63279999350198,
+        "device_bytes": 122231488,
+        "size": 345100
+      },
+      {
+        "words": 24,
+        "rows": 344,
+        "build_wall_ms_min": 132.14719999814406,
+        "build_wall_ms_max": 132.55940002272837,
+        "device_bytes": 123657152,
+        "size": 349160
+      },
+      {
+        "words": 23,
+        "rows": 348,
+        "build_wall_ms_min": 120.8092000160832,
+        "build_wall_ms_max": 124.71709999954328,
+        "device_bytes": 107630000,
+        "size": 322596
+      },
+      {
+        "words": 24,
+        "rows": 348,
+        "build_wall_ms_min": 136.72440001391806,
+        "build_wall_ms_max": 170.22390000056475,
+        "device_bytes": 125082816,
+        "size": 353220
+      },
+      {
+        "words": 23,
+        "rows": 352,
+        "build_wall_ms_min": 117.15840001124889,
+        "build_wall_ms_max": 120.09320000652224,
+        "device_bytes": 108856752,
+        "size": 326304
+      },
+      {
+        "words": 24,
+        "rows": 352,
+        "build_wall_ms_min": 158.77670000190847,
+        "build_wall_ms_max": 162.83099999418482,
+        "device_bytes": 126508480,
+        "size": 357280
+      },
+      {
+        "words": 24,
+        "rows": 356,
+        "build_wall_ms_min": 171.57519998727366,
+        "build_wall_ms_max": 187.61349999113008,
+        "device_bytes": 127934144,
+        "size": 361340
+      },
+      {
+        "words": 24,
+        "rows": 360,
+        "build_wall_ms_min": 165.6797000032384,
+        "build_wall_ms_max": 196.52159998076968,
+        "device_bytes": 129359808,
+        "size": 365400
+      },
+      {
+        "words": 24,
+        "rows": 364,
+        "build_wall_ms_min": 169.31610001483932,
+        "build_wall_ms_max": 187.6085999829229,
+        "device_bytes": 130785472,
+        "size": 369460
+      },
+      {
+        "words": 24,
+        "rows": 368,
+        "build_wall_ms_min": 155.80340000451542,
+        "build_wall_ms_max": 156.84469998814166,
+        "device_bytes": 132211136,
+        "size": 373520
+      },
+      {
+        "words": 24,
+        "rows": 372,
+        "build_wall_ms_min": 143.62160000018775,
+        "build_wall_ms_max": 159.66410000692122,
+        "device_bytes": 133636800,
+        "size": 377580
+      },
+      {
+        "words": 24,
+        "rows": 376,
+        "build_wall_ms_min": 172.91940000723116,
+        "build_wall_ms_max": 187.50689999433234,
+        "device_bytes": 135062464,
+        "size": 381640
+      },
+      {
+        "words": 24,
+        "rows": 380,
+        "build_wall_ms_min": 168.09240001020953,
+        "build_wall_ms_max": 184.20200000400655,
+        "device_bytes": 136488128,
+        "size": 385700
+      },
+      {
+        "words": 24,
+        "rows": 384,
+        "build_wall_ms_min": 155.16890000435524,
+        "build_wall_ms_max": 162.0499000127893,
+        "device_bytes": 137913792,
+        "size": 389760
+      },
+      {
+        "words": 24,
+        "rows": 388,
+        "build_wall_ms_min": 158.66300000925548,
+        "build_wall_ms_max": 173.846500023501,
+        "device_bytes": 139339456,
+        "size": 393820
+      },
+      {
+        "words": 24,
+        "rows": 392,
+        "build_wall_ms_min": 153.44800002640113,
+        "build_wall_ms_max": 194.07989998580888,
+        "device_bytes": 140765120,
+        "size": 397880
+      },
+      {
+        "words": 22,
+        "rows": 396,
+        "build_wall_ms_min": 114.34499997994862,
+        "build_wall_ms_max": 128.44000000040978,
+        "device_bytes": 104464688,
+        "size": 333828
+      },
+      {
+        "words": 24,
+        "rows": 400,
+        "build_wall_ms_min": 147.94540000730194,
+        "build_wall_ms_max": 162.35479997703806,
+        "device_bytes": 143616448,
+        "size": 406000
+      },
+      {
+        "words": 24,
+        "rows": 404,
+        "build_wall_ms_min": 147.94980001170188,
+        "build_wall_ms_max": 183.5074000118766,
+        "device_bytes": 145042112,
+        "size": 410060
+      },
+      {
+        "words": 24,
+        "rows": 408,
+        "build_wall_ms_min": 153.66079998784699,
+        "build_wall_ms_max": 173.53800000273623,
+        "device_bytes": 146467776,
+        "size": 414120
+      },
+      {
+        "words": 24,
+        "rows": 420,
+        "build_wall_ms_min": 171.3119999913033,
+        "build_wall_ms_max": 171.5579999727197,
+        "device_bytes": 150744768,
+        "size": 426300
+      },
+      {
+        "words": 24,
+        "rows": 440,
+        "build_wall_ms_min": 157.12550000171177,
+        "build_wall_ms_max": 177.98290000064299,
+        "device_bytes": 157873088,
+        "size": 446600
+      },
+      {
+        "words": 23,
+        "rows": 512,
+        "build_wall_ms_min": 165.39790001115762,
+        "build_wall_ms_max": 170.81280000275,
+        "device_bytes": 157926832,
+        "size": 474624
+      },
+      {
+        "words": 24,
+        "rows": 512,
+        "build_wall_ms_min": 174.20249999850057,
+        "build_wall_ms_max": 187.16300002415664,
+        "device_bytes": 183535040,
+        "size": 519680
+      }
+    ]
+  },
+  "notes": "Cache key=(padded words, B*padded history slots) exactly as CKYIndexCache (layout/k/r/device/dtype fixed). LRU simulated on the real probe key stream. Builds timed on device with sync (host planning + H2D)."
+}

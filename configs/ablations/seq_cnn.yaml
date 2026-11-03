@@ -1,0 +1,11 @@
+extends: ../v3.yaml
+name: seq_cnn_smoke
+data:
+  cache_dir: cache/tinystories
+model:
+  mode: seq_cnn4
+  cnn_kernel_size: 3
+  cnn_layers: 2
+  cnn_hidden_size: 256
+train:
+  output_dir: runs/seq_cnn_smoke

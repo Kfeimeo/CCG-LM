@@ -1,0 +1,527 @@
+{
+  "arguments": {
+    "config": "configs/ablations/seq_cnn.yaml",
+    "variants": [
+      "no_memory",
+      "pooling4",
+      "cnn_k1",
+      "cnn_k3",
+      "forest_scalar4"
+    ],
+    "seeds": [
+      42
+    ],
+    "budget_tokens": null,
+    "effective_tokens": null,
+    "micro_batch_size": null,
+    "cnn_layers": null,
+    "cnn_hidden_size": null,
+    "cache_dir": null,
+    "device": "cuda",
+    "output_dir": "reports/local_cnn/engineering_benchmark",
+    "train": false,
+    "benchmark": true,
+    "dry_run": false,
+    "evaluate": false,
+    "source": "synthetic",
+    "batch_size": 2,
+    "histories": 4,
+    "words": 24,
+    "target_length": 32,
+    "warmup": 3,
+    "repeats": 10
+  },
+  "runs": [
+    {
+      "variant": "no_memory",
+      "seed": 42,
+      "config": {
+        "name": "seq_cnn_smoke_no_memory",
+        "seed": 42,
+        "seeds": [
+          13,
+          42,
+          2026
+        ],
+        "data": {
+          "cache_dir": "cache/tinystories",
+          "max_history": 4,
+          "max_words": 24,
+          "max_target_length": 128,
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "split_seed": 2026,
+          "dev_fraction": 0.5
+        },
+        "model": {
+          "mode": "no_memory",
+          "forest_implementation": "lazy_tensorized",
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "max_target_length": 128,
+          "max_history": 4,
+          "max_words": 24,
+          "hidden_size": 320,
+          "layers": 4,
+          "heads": 4,
+          "ffn_size": 1280,
+          "dropout": 0.1,
+          "cross_layers": [
+            2,
+            4
+          ],
+          "syntax_embedding": 256,
+          "semantic_size": 256,
+          "syntax_hidden": 192,
+          "syntax_layers": 2,
+          "syntax_heads": 6,
+          "composer_hidden": 512,
+          "coefficient_size": 32,
+          "reader_heads": 4,
+          "reader_width": 160,
+          "candidates": 4,
+          "max_compositions": 12,
+          "prune_delta": 8.0,
+          "exploration": 0.1,
+          "prior_beta": 1.0,
+          "adapter_gate": -2.0,
+          "cnn_kernel_size": 3,
+          "cnn_layers": 2,
+          "cnn_hidden_size": 256
+        },
+        "train": {
+          "budget_tokens": 8192,
+          "effective_tokens": 4096,
+          "micro_batch_size": 4,
+          "decoder_lr": 0.0003,
+          "auxiliary_lr": 0.0005,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "grad_clip": 1.0,
+          "precision": "bf16",
+          "warmup_steps": 200,
+          "schedule_tokens": 500000000,
+          "min_lr_ratio": 0.1,
+          "checkpoint_tokens": [
+            4096,
+            8192
+          ],
+          "eval_every_steps": 2,
+          "save_every_steps": 100,
+          "eval_batches": 4,
+          "eval_batch_size": 8,
+          "device": "cuda",
+          "deterministic": false,
+          "progress": true,
+          "output_dir": "E:\\dev\\AI\\NLP\\CCG-LM\\reports\\local_cnn\\engineering_benchmark\\no_memory_seed42",
+          "drive_dir": null
+        },
+        "precision": {
+          "outer_autocast": "bf16",
+          "composer": "fp32_ieee",
+          "matmul_precision": "ieee",
+          "score_dtype": "existing",
+          "scaler_init_scale": 1024.0,
+          "scaler_growth_interval": 2000,
+          "reader": "bf16"
+        }
+      }
+    },
+    {
+      "variant": "pooling4",
+      "seed": 42,
+      "config": {
+        "name": "seq_cnn_smoke_pooling4",
+        "seed": 42,
+        "seeds": [
+          13,
+          42,
+          2026
+        ],
+        "data": {
+          "cache_dir": "cache/tinystories",
+          "max_history": 4,
+          "max_words": 24,
+          "max_target_length": 128,
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "split_seed": 2026,
+          "dev_fraction": 0.5
+        },
+        "model": {
+          "mode": "pooling4",
+          "forest_implementation": "lazy_tensorized",
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "max_target_length": 128,
+          "max_history": 4,
+          "max_words": 24,
+          "hidden_size": 320,
+          "layers": 4,
+          "heads": 4,
+          "ffn_size": 1280,
+          "dropout": 0.1,
+          "cross_layers": [
+            2,
+            4
+          ],
+          "syntax_embedding": 256,
+          "semantic_size": 256,
+          "syntax_hidden": 192,
+          "syntax_layers": 2,
+          "syntax_heads": 6,
+          "composer_hidden": 512,
+          "coefficient_size": 32,
+          "reader_heads": 4,
+          "reader_width": 160,
+          "candidates": 4,
+          "max_compositions": 12,
+          "prune_delta": 8.0,
+          "exploration": 0.1,
+          "prior_beta": 1.0,
+          "adapter_gate": -2.0,
+          "cnn_kernel_size": 3,
+          "cnn_layers": 2,
+          "cnn_hidden_size": 256
+        },
+        "train": {
+          "budget_tokens": 8192,
+          "effective_tokens": 4096,
+          "micro_batch_size": 4,
+          "decoder_lr": 0.0003,
+          "auxiliary_lr": 0.0005,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "grad_clip": 1.0,
+          "precision": "bf16",
+          "warmup_steps": 200,
+          "schedule_tokens": 500000000,
+          "min_lr_ratio": 0.1,
+          "checkpoint_tokens": [
+            4096,
+            8192
+          ],
+          "eval_every_steps": 2,
+          "save_every_steps": 100,
+          "eval_batches": 4,
+          "eval_batch_size": 8,
+          "device": "cuda",
+          "deterministic": false,
+          "progress": true,
+          "output_dir": "E:\\dev\\AI\\NLP\\CCG-LM\\reports\\local_cnn\\engineering_benchmark\\pooling4_seed42",
+          "drive_dir": null
+        },
+        "precision": {
+          "outer_autocast": "bf16",
+          "composer": "fp32_ieee",
+          "matmul_precision": "ieee",
+          "score_dtype": "existing",
+          "scaler_init_scale": 1024.0,
+          "scaler_growth_interval": 2000,
+          "reader": "bf16"
+        }
+      }
+    },
+    {
+      "variant": "cnn_k1",
+      "seed": 42,
+      "config": {
+        "name": "seq_cnn_smoke_cnn_k1",
+        "seed": 42,
+        "seeds": [
+          13,
+          42,
+          2026
+        ],
+        "data": {
+          "cache_dir": "cache/tinystories",
+          "max_history": 4,
+          "max_words": 24,
+          "max_target_length": 128,
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "split_seed": 2026,
+          "dev_fraction": 0.5
+        },
+        "model": {
+          "mode": "seq_cnn4",
+          "forest_implementation": "lazy_tensorized",
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "max_target_length": 128,
+          "max_history": 4,
+          "max_words": 24,
+          "hidden_size": 320,
+          "layers": 4,
+          "heads": 4,
+          "ffn_size": 1280,
+          "dropout": 0.1,
+          "cross_layers": [
+            2,
+            4
+          ],
+          "syntax_embedding": 256,
+          "semantic_size": 256,
+          "syntax_hidden": 192,
+          "syntax_layers": 2,
+          "syntax_heads": 6,
+          "composer_hidden": 512,
+          "coefficient_size": 32,
+          "reader_heads": 4,
+          "reader_width": 160,
+          "candidates": 4,
+          "max_compositions": 12,
+          "prune_delta": 8.0,
+          "exploration": 0.1,
+          "prior_beta": 1.0,
+          "adapter_gate": -2.0,
+          "cnn_kernel_size": 1,
+          "cnn_layers": 2,
+          "cnn_hidden_size": 256
+        },
+        "train": {
+          "budget_tokens": 8192,
+          "effective_tokens": 4096,
+          "micro_batch_size": 4,
+          "decoder_lr": 0.0003,
+          "auxiliary_lr": 0.0005,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "grad_clip": 1.0,
+          "precision": "bf16",
+          "warmup_steps": 200,
+          "schedule_tokens": 500000000,
+          "min_lr_ratio": 0.1,
+          "checkpoint_tokens": [
+            4096,
+            8192
+          ],
+          "eval_every_steps": 2,
+          "save_every_steps": 100,
+          "eval_batches": 4,
+          "eval_batch_size": 8,
+          "device": "cuda",
+          "deterministic": false,
+          "progress": true,
+          "output_dir": "E:\\dev\\AI\\NLP\\CCG-LM\\reports\\local_cnn\\engineering_benchmark\\cnn_k1_seed42",
+          "drive_dir": null
+        },
+        "precision": {
+          "outer_autocast": "bf16",
+          "composer": "fp32_ieee",
+          "matmul_precision": "ieee",
+          "score_dtype": "existing",
+          "scaler_init_scale": 1024.0,
+          "scaler_growth_interval": 2000,
+          "reader": "bf16"
+        }
+      }
+    },
+    {
+      "variant": "cnn_k3",
+      "seed": 42,
+      "config": {
+        "name": "seq_cnn_smoke_cnn_k3",
+        "seed": 42,
+        "seeds": [
+          13,
+          42,
+          2026
+        ],
+        "data": {
+          "cache_dir": "cache/tinystories",
+          "max_history": 4,
+          "max_words": 24,
+          "max_target_length": 128,
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "split_seed": 2026,
+          "dev_fraction": 0.5
+        },
+        "model": {
+          "mode": "seq_cnn4",
+          "forest_implementation": "lazy_tensorized",
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "max_target_length": 128,
+          "max_history": 4,
+          "max_words": 24,
+          "hidden_size": 320,
+          "layers": 4,
+          "heads": 4,
+          "ffn_size": 1280,
+          "dropout": 0.1,
+          "cross_layers": [
+            2,
+            4
+          ],
+          "syntax_embedding": 256,
+          "semantic_size": 256,
+          "syntax_hidden": 192,
+          "syntax_layers": 2,
+          "syntax_heads": 6,
+          "composer_hidden": 512,
+          "coefficient_size": 32,
+          "reader_heads": 4,
+          "reader_width": 160,
+          "candidates": 4,
+          "max_compositions": 12,
+          "prune_delta": 8.0,
+          "exploration": 0.1,
+          "prior_beta": 1.0,
+          "adapter_gate": -2.0,
+          "cnn_kernel_size": 3,
+          "cnn_layers": 2,
+          "cnn_hidden_size": 256
+        },
+        "train": {
+          "budget_tokens": 8192,
+          "effective_tokens": 4096,
+          "micro_batch_size": 4,
+          "decoder_lr": 0.0003,
+          "auxiliary_lr": 0.0005,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "grad_clip": 1.0,
+          "precision": "bf16",
+          "warmup_steps": 200,
+          "schedule_tokens": 500000000,
+          "min_lr_ratio": 0.1,
+          "checkpoint_tokens": [
+            4096,
+            8192
+          ],
+          "eval_every_steps": 2,
+          "save_every_steps": 100,
+          "eval_batches": 4,
+          "eval_batch_size": 8,
+          "device": "cuda",
+          "deterministic": false,
+          "progress": true,
+          "output_dir": "E:\\dev\\AI\\NLP\\CCG-LM\\reports\\local_cnn\\engineering_benchmark\\cnn_k3_seed42",
+          "drive_dir": null
+        },
+        "precision": {
+          "outer_autocast": "bf16",
+          "composer": "fp32_ieee",
+          "matmul_precision": "ieee",
+          "score_dtype": "existing",
+          "scaler_init_scale": 1024.0,
+          "scaler_growth_interval": 2000,
+          "reader": "bf16"
+        }
+      }
+    },
+    {
+      "variant": "forest_scalar4",
+      "seed": 42,
+      "config": {
+        "name": "seq_cnn_smoke_forest_scalar4",
+        "seed": 42,
+        "seeds": [
+          13,
+          42,
+          2026
+        ],
+        "data": {
+          "cache_dir": "cache/tinystories",
+          "max_history": 4,
+          "max_words": 24,
+          "max_target_length": 128,
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "split_seed": 2026,
+          "dev_fraction": 0.5
+        },
+        "model": {
+          "mode": "forest_scalar4",
+          "forest_implementation": "lazy_tensorized",
+          "vocab_size": 16000,
+          "word_vocab_size": 20000,
+          "max_target_length": 128,
+          "max_history": 4,
+          "max_words": 24,
+          "hidden_size": 320,
+          "layers": 4,
+          "heads": 4,
+          "ffn_size": 1280,
+          "dropout": 0.1,
+          "cross_layers": [
+            2,
+            4
+          ],
+          "syntax_embedding": 256,
+          "semantic_size": 256,
+          "syntax_hidden": 192,
+          "syntax_layers": 2,
+          "syntax_heads": 6,
+          "composer_hidden": 512,
+          "coefficient_size": 32,
+          "reader_heads": 4,
+          "reader_width": 160,
+          "candidates": 4,
+          "max_compositions": 12,
+          "prune_delta": 8.0,
+          "exploration": 0.1,
+          "prior_beta": 1.0,
+          "adapter_gate": -2.0,
+          "cnn_kernel_size": 3,
+          "cnn_layers": 2,
+          "cnn_hidden_size": 256
+        },
+        "train": {
+          "budget_tokens": 8192,
+          "effective_tokens": 4096,
+          "micro_batch_size": 4,
+          "decoder_lr": 0.0003,
+          "auxiliary_lr": 0.0005,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "grad_clip": 1.0,
+          "precision": "bf16",
+          "warmup_steps": 200,
+          "schedule_tokens": 500000000,
+          "min_lr_ratio": 0.1,
+          "checkpoint_tokens": [
+            4096,
+            8192
+          ],
+          "eval_every_steps": 2,
+          "save_every_steps": 100,
+          "eval_batches": 4,
+          "eval_batch_size": 8,
+          "device": "cuda",
+          "deterministic": false,
+          "progress": true,
+          "output_dir": "E:\\dev\\AI\\NLP\\CCG-LM\\reports\\local_cnn\\engineering_benchmark\\forest_scalar4_seed42",
+          "drive_dir": null
+        },
+        "precision": {
+          "outer_autocast": "bf16",
+          "composer": "fp32_ieee",
+          "matmul_precision": "ieee",
+          "score_dtype": "existing",
+          "scaler_init_scale": 1024.0,
+          "scaler_growth_interval": 2000,
+          "reader": "bf16"
+        }
+      }
+    }
+  ],
+  "note": "Same CE-token budget, data, schedule and decoder architecture; auxiliary parameter counts differ. Formal NLL comparisons require adequate training and repeated seeds."
+}

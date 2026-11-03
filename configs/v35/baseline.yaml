@@ -1,0 +1,8 @@
+# V3.5 baseline arm: V3 lazy_tensorized, eager search, main model, real TinyStories cache.
+extends: ../v3_main_125m.yaml
+name: v35_baseline
+model:
+  forest_implementation: lazy_tensorized
+train:
+  effective_tokens: 4096
+  output_dir: runs/cky_v35/baseline

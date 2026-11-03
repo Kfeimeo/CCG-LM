@@ -1,6 +1,8 @@
 .venv/
 .uv-cache/
 /.hf_token
+/Train.ipynb
+/notebooks_local/
 __pycache__/
 .pytest_cache/
 .pytest_tmp/

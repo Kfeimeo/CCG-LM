@@ -1,0 +1,1 @@
+triton-windows<3.9 ; platform_system == "Windows"  # torch.compile/inductor on Windows for the V3.5 compile experiments (torch 2.12 pairs with triton 3.8)

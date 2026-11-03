@@ -1,0 +1,5 @@
+bf16 main_b4_w24 ['v3', 'v3_compile_default', 'v3_compile_ro', 'v3c_compile_default', 'v3c_compile_ro']
+bf16 main_b8_w24 ['v3', 'v3_compile_default', 'v3_compile_ro', 'v3c_compile_default', 'v3c_compile_ro']
+bf16 real_b2 ['v3', 'v3_compile_default', 'v3_compile_ro', 'v3c_compile_default', 'v3c_compile_ro']
+bf16 real_main_mb4 ['v3', 'v3_compile_default', 'v3_compile_ro', 'v3c_compile_default', 'v3c_compile_ro']
+bf16 real_main_mb16 ['v3', 'v3_compile_default', 'v3_compile_ro', 'v3c_compile_default', 'v3c_compile_ro']

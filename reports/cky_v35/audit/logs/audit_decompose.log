@@ -1,0 +1,51 @@
+{"free_device_memory_gib_at_start": 6.9609375, "total_device_memory_gib": 7.99951171875, "allocator_cap_fraction": 0.8389183910150766, "allocator_cap_gib": 6.7109375, "alloc_conf": "expandable_segments:True"}
+E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1369: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return t.to(
+E:\anaconda3\envs\py312\Lib\site-packages\torch\profiler\profiler.py:272: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+USDT:2026-11-02 02:37:37 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:37:38 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:37:45 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:37:45 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 4, "batch": 0, "plain_wall_ms": 322.9, "gpu_busy_ms": 68.0, "launches": 5000}
+USDT:2026-11-02 02:38:02 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:38:03 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:38:11 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:38:12 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 4, "batch": 1, "plain_wall_ms": 352.7, "gpu_busy_ms": 60.8, "launches": 5575}
+USDT:2026-11-02 02:38:29 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:38:30 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:38:37 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:38:38 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 4, "batch": 2, "plain_wall_ms": 334.9, "gpu_busy_ms": 58.8, "launches": 4980}
+USDT:2026-11-02 02:38:58 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:38:58 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:39:07 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:39:07 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 8, "batch": 0, "plain_wall_ms": 373.8, "gpu_busy_ms": 69.4, "launches": 5708}
+USDT:2026-11-02 02:39:24 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:39:25 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:39:33 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:39:33 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 8, "batch": 1, "plain_wall_ms": 326.6, "gpu_busy_ms": 62.2, "launches": 5026}
+USDT:2026-11-02 02:39:48 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:39:49 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:39:56 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:39:57 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 8, "batch": 2, "plain_wall_ms": 295.6, "gpu_busy_ms": 59.5, "launches": 4915}
+USDT:2026-11-02 02:40:15 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:40:16 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:40:24 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:40:24 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 16, "batch": 0, "plain_wall_ms": 323.9, "gpu_busy_ms": 74.4, "launches": 5675}
+USDT:2026-11-02 02:40:41 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:40:42 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:40:50 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:40:50 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 16, "batch": 1, "plain_wall_ms": 370.8, "gpu_busy_ms": 81.6, "launches": 6038}
+USDT:2026-11-02 02:41:08 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:41:08 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+USDT:2026-11-02 02:41:16 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:415] profiler_start
+USDT:2026-11-02 02:41:17 120600:120812 C:\actions-runner\_work\pytorch\pytorch\third_party\kineto\libkineto\src\ActivityProfilerController.cpp:455] profiler_stop
+{"mbs": 16, "batch": 2, "plain_wall_ms": 347.5, "gpu_busy_ms": 79.5, "launches": 5582}
+audit complete

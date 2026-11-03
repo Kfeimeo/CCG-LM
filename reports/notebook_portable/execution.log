@@ -1,0 +1,34 @@
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Cloning into 'E:\dev\AI\NLP\CCG-LM\runs\notebook_portable_validation\fresh cloned source'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+{
+  "date": "2026-11-03",
+  "status": "passed",
+  "python": "E:\\anaconda3\\envs\\py312\\python.exe",
+  "project": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\fresh cloned source",
+  "storage": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data",
+  "cache": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data\\cache\\tinystories_integration",
+  "run": "E:\\dev\\AI\\NLP\\CCG-LM\\runs\\notebook_portable_validation\\persistent data\\runs\\notebook_smoke_20261103T063355Z_8c9cfe",
+  "actual_clone": true,
+  "clone_source": "Local Git transport; no network used during verification.",
+  "dependencies_installed": false,
+  "live_colab_tested": false,
+  "live_drive_mount_tested": false,
+  "target_tokens": [
+    256,
+    512,
+    768
+  ],
+  "steps": [
+    1,
+    2,
+    3
+  ],
+  "dev_target_tokens": 116,
+  "dev_nll": 9.741789192988955,
+  "model": "forest_vector4",
+  "implementation": "lazy_tensorized",
+  "separate_storage": true,
+  "plots_generated": true
+}

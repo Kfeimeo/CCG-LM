@@ -1,0 +1,8 @@
+# V3 with torch.compile(width_step, mode="reduce-overhead"): CUDA-graph trees per (words, width) graph, rows dim symbolic; cudagraph_mark_step_begin() before each search forward.
+extends: baseline.yaml
+name: v35_compile_reduce_overhead
+model:
+  forest_implementation: lazy_tensorized
+  search_backend: compile_reduce_overhead
+train:
+  output_dir: runs/cky_v35/compile_reduce_overhead

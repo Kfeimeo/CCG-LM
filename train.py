@@ -12,7 +12,7 @@ import torch
 from tqdm.auto import tqdm
 
 from data.dataset import StatefulSampler, StoryDataset
-from models.model import LatentForestLM, parameter_report
+from models.model import LatentForestLM, MODES, parameter_report
 from utils import (atomic_json, atomic_torch_save, autocast_context, choose_device, device_info,
                    grad_norm, load_config, restore_rng, rng_state, set_seed, sync_file, to_device)
 
@@ -110,7 +110,10 @@ def save_checkpoint(path, model, optimizer, scheduler, sampler, cfg, state, fing
     actual=getattr(model,"precision_policy",None)
     if expected != (actual.state_dict() if actual is not None else None):
         raise ValueError("Checkpoint config and runtime precision policy differ")
-    atomic_torch_save(dict(format_version=1, forest_implementation=model.forest.implementation if model.forest is not None else None, model=model.state_dict(), optimizer=optimizer.state_dict(),
+    atomic_torch_save(dict(format_version=1, forest_implementation=model.forest.implementation if model.forest is not None else None,
+                           forest_search_backend=getattr(model.forest, "search_backend", "eager") if model.forest is not None else None,
+                           forest_reconstruction_mode=getattr(model.forest, "reconstruction_mode", None) if model.forest is not None else None,
+                           model=model.state_dict(), optimizer=optimizer.state_dict(),
                            scheduler=scheduler.state_dict(), sampler=sampler.state_dict(), rng=rng_state(),
                            precision_policy=getattr(model,"precision_policy",None).state_dict() if getattr(model,"precision_policy",None) else None,
                            grad_scaler=scaler.state_dict() if scaler is not None else None,
@@ -319,7 +322,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/smoke.yaml")
     parser.add_argument("--resume")
-    parser.add_argument("--mode", choices=["no_memory", "pooling4", "fixed_tree4", "random_tree4", "forest_scalar4", "forest_vector4"])
+    parser.add_argument("--mode", choices=MODES)
     parser.add_argument("--seed", type=int)
     parser.add_argument("--budget-tokens", type=int)
     parser.add_argument("--micro-batch-size", type=int)
@@ -327,7 +330,7 @@ def main():
     parser.add_argument("--device")
     parser.add_argument("--cache-dir")
     parser.add_argument("--no-progress", action="store_true", help="Disable the target-token tqdm progress bar")
-    parser.add_argument("--forest-implementation", choices=["reference", "score_first", "lazy_semantic", "lazy_tensorized_a", "lazy_tensorized"])
+    parser.add_argument("--forest-implementation", choices=["reference", "score_first", "lazy_semantic", "lazy_tensorized_a", "lazy_tensorized", "lazy_tensorized_score_reconstruct"])
     args = parser.parse_args()
     cfg = load_config(args.config)
     for key, attr in [("budget_tokens", "budget_tokens"), ("micro_batch_size", "micro_batch_size"), ("output_dir", "output_dir"), ("device", "device")]:

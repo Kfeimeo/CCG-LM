@@ -11,9 +11,10 @@ from models.composer import Composer
 from models.decoder import Decoder
 from models.forest import SemanticForest, catalan, compose_tree, tree_for_length
 from models.reader import SemanticReader
+from models.seq_cnn import SequentialCNN
 from models.syntax import SyntaxEncoder
 
-MODES = ("no_memory", "pooling4", "fixed_tree4", "random_tree4", "forest_scalar4", "forest_vector4")
+MODES = ("no_memory", "pooling4", "seq_cnn4", "fixed_tree4", "random_tree4", "forest_scalar4", "forest_vector4")
 
 
 class PoolingMemory(nn.Module):
@@ -45,6 +46,7 @@ class LatentForestLM(nn.Module):
         self.readers = nn.ModuleDict()
         self.syntax = self.semantic_embedding = self.pooling = self.forest = None
         self.tree_composer = None
+        self.seq_cnn = None
         if self.mode != "no_memory":
             self.semantic_embedding = nn.Embedding(cfg["word_vocab_size"], cfg["semantic_size"], padding_idx=0)
             vector = self.mode == "forest_vector4"
@@ -53,8 +55,15 @@ class LatentForestLM(nn.Module):
                 self.forest = SemanticForest(Composer(cfg["semantic_size"], cfg["composer_hidden"]),
                                               cfg["candidates"], cfg["max_compositions"], cfg["prune_delta"], cfg["exploration"],
                                               implementation=cfg.get("forest_implementation", "reference"))
-            elif self.mode == "pooling4":
+                # V3.5 experiment switches; both default to the eager/shared-DAG behaviour.
+                self.forest.search_backend = cfg.get("search_backend", "eager")
+                self.forest.reconstruction_mode = cfg.get("reconstruction_mode", "dag")
+            elif self.mode in ("pooling4", "seq_cnn4"):
                 self.pooling = PoolingMemory(cfg["semantic_size"])
+                if self.mode == "seq_cnn4":
+                    self.seq_cnn = SequentialCNN(
+                        cfg["semantic_size"], cfg.get("cnn_kernel_size", 3),
+                        cfg.get("cnn_layers", 2), cfg.get("cnn_hidden_size"))
             else:
                 self.tree_composer = Composer(cfg["semantic_size"], cfg["composer_hidden"])
             self.readers = nn.ModuleDict({str(layer): SemanticReader(cfg, vector) for layer in cfg["cross_layers"]})
@@ -86,7 +95,8 @@ class LatentForestLM(nn.Module):
         else:
             valid = mask.any(-1)
             if self.pooling is not None:
-                vectors = self.pooling(leaves, mask)
+                contextual = self.seq_cnn(leaves, mask) if self.seq_cnn is not None else leaves
+                vectors = self.pooling(contextual, mask)
                 trees = None
             else:
                 # Baseline control paths group by sentence length and shape.

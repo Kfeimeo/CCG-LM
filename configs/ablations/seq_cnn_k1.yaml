@@ -1,0 +1,6 @@
+extends: seq_cnn.yaml
+name: seq_cnn_k1_smoke
+model:
+  cnn_kernel_size: 1
+train:
+  output_dir: runs/seq_cnn_k1_smoke

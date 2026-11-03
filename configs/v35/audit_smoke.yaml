@@ -1,0 +1,3 @@
+extends: ../v3.yaml
+data:
+  cache_dir: cache/tinystories

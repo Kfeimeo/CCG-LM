@@ -76,3 +76,13 @@ CPU Scalar/Vector各8步；真实TinyStories smoke模型从B2 seed42/500步恢�
 新增根目录 `Train.ipynb`，19个单元，复用原 `train.run()` 与评估代码。通过 nbformat schema、全部代码单元语法检查；使用 nbclient 启动真实 py312 CUDA 内核执行，V3 smoke/真实小缓存先训练512 CE Token，再通过 Notebook追加恢复到768，步数[1,2,3]、学习率与调度计数连续。训练曲线和开发集前两个batch评估（116目标Token）实际完成。另验证顶部恢复配置保留checkpoint中的模型/Seed/effective tokens，忽略新训练参数，累计预算单独提高。
 
 交付Notebook执行计数与输出均清空；原始执行副本在`runs/notebook_validation/executed_train.ipynb`，实际环境、路径和断言记录见 [Notebook 验证记录](notebook_training_validation.json)。本次没有修改模型、优化器或训练脚本，也没有重新进行研究Benchmark。
+
+
+## Local CNN memory baseline (2026-11-03)
+
+Added `seq_cnn4`, masked token-local CNN blocks, kernel=1/3 controls and `local_cnn_ablation.py`. Related model, data, resume, precision and Reader checks: **53 passed**. CUDA smoke trained on the existing tiny real-data cache to 256 CE tokens, resumed through the original training CLI to 384, and evaluated the 256-token checkpoint on the entire tiny-cache dev split (1041 targets). Notebook code is unchanged; CNN usage documentation was added and schema/AST/cleared outputs validated. Resident-batch full-update timings and scope limitations are documented in [local CNN report](local_cnn/README.md). No formal architecture-quality comparison was performed.
+
+
+## Portable training notebook (2026-11-03)
+
+`build_train_notebook.py` generates the Git-ignored, standalone `Train.ipynb`, with clone/install/authentication and source-independent cache/output paths. Seven launcher tests passed, including actual local Git clone, separate storage, secret handling and cache archive relocation. A full CUDA notebook execution from a fresh local clone trained 512 CE tokens and resumed to 768; plots and 116-token dev evaluation completed. Colab Secrets and hidden-input paths are unit-tested with test credentials; live Colab, network dependency installation and Google Drive mounting were not exercised. No plaintext HF token is embedded. Details: `notebook_portable_validation.json`; logs: `notebook_portable/`.

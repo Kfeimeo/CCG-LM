@@ -1,0 +1,21 @@
+........................................................................ [ 14%]
+.........................................s.............................. [ 28%]
+........................................................................ [ 42%]
+........................................................................ [ 56%]
+........................................................................ [ 70%]
+........................................................................ [ 84%]
+........................................................................ [ 98%]
+..........                                                               [100%]
+============================== warnings summary ===============================
+tests/test_cky_compile.py::test_backends_match_eager_cuda[dtype0-function]
+  E:\anaconda3\envs\py312\Lib\site-packages\torch\nn\modules\module.py:1369: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+    return t.to(
+
+tests/test_cky_compile.py: 14 warnings
+  E:\anaconda3\envs\py312\Lib\site-packages\torch\jit\_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_forest_lazy.py:14: No two-word subspan in a one-word sentence
+513 passed, 1 skipped, 15 warnings in 115.82s (0:01:55)

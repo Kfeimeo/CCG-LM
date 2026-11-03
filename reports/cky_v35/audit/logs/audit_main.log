@@ -1,0 +1,28 @@
+length/cache stream 1 unique keys 84 lru8 hit 0.336
+length/cache stream 2 unique keys 79 lru8 hit 0.51
+length/cache stream 4 unique keys 57 lru8 hit 0.652
+length/cache stream 8 unique keys 64 lru8 hit 0.78
+length/cache stream 16 unique keys 77 lru8 hit 0.885
+length/cache stream 32 unique keys 77 lru8 hit 0.879
+length/cache stream 64 unique keys 72 lru8 hit 0.807
+length/cache stream 128 unique keys 37 lru8 hit 0.73
+{"mbs": 1, "update": 0, "wall_ms": 68770.4, "micro_batches": 354, "tokens": 4096}
+{"mbs": 1, "update": 1, "wall_ms": 69484.8, "micro_batches": 346, "tokens": 4096}
+{"mbs": 1, "update": 2, "wall_ms": 67075.6, "micro_batches": 346, "tokens": 4096}
+{"mbs": 1, "update": 3, "wall_ms": 64490.7, "micro_batches": 330, "tokens": 4096}
+{"mbs": 2, "update": 0, "wall_ms": 36752.6, "micro_batches": 177, "tokens": 4096}
+{"mbs": 2, "update": 1, "wall_ms": 35853.7, "micro_batches": 173, "tokens": 4096}
+{"mbs": 2, "update": 2, "wall_ms": 36161.0, "micro_batches": 173, "tokens": 4096}
+{"mbs": 2, "update": 3, "wall_ms": 35341.1, "micro_batches": 165, "tokens": 4096}
+{"mbs": 4, "update": 0, "wall_ms": 20564.7, "micro_batches": 89, "tokens": 4096}
+{"mbs": 4, "update": 1, "wall_ms": 19581.5, "micro_batches": 87, "tokens": 4096}
+{"mbs": 4, "update": 2, "wall_ms": 23816.4, "micro_batches": 87, "tokens": 4096}
+{"mbs": 4, "update": 3, "wall_ms": 23878.0, "micro_batches": 83, "tokens": 4096}
+{"mbs": 8, "update": 0, "wall_ms": 14468.5, "micro_batches": 45, "tokens": 4096}
+{"mbs": 8, "update": 1, "wall_ms": 16588.5, "micro_batches": 44, "tokens": 4096}
+{"mbs": 8, "update": 2, "wall_ms": 16900.7, "micro_batches": 44, "tokens": 4096}
+{"mbs": 8, "update": 3, "wall_ms": 15914.2, "micro_batches": 42, "tokens": 4096}
+{"mbs": 8, "update": 4, "wall_ms": 16529.5, "micro_batches": 44, "tokens": 4096}
+{"mbs": 8, "update": 5, "wall_ms": 39098.7, "micro_batches": 44, "tokens": 4096}
+{"mbs": 8, "update": 6, "wall_ms": 20645.3, "micro_batches": 44, "tokens": 4096}
+{"mbs": 16, "update": 0, "wall_ms": 266091.8, "micro_batches": 23, "tokens": 4096}

@@ -1,0 +1,22 @@
+{
+  "rows": [
+    {
+      "variant": "foreach",
+      "steps": 8,
+      "wall_median_ms": 61.6765500017209,
+      "cuda_median_ms": 61.59871864318848,
+      "first_step_ms": 143.9333999878727
+    },
+    {
+      "variant": "fused",
+      "steps": 8,
+      "wall_median_ms": 10.799000010592863,
+      "cuda_median_ms": 10.72486400604248,
+      "first_step_ms": 46.308099990710616
+    }
+  ],
+  "parameter_max_abs_difference_after_8_steps": 1.9073486328125e-06,
+  "parameter_max_rel_difference": 3.816265106201172,
+  "identical": false,
+  "note": "Diagnostic only. The fused kernel evaluates the same AdamW update; floating-point differences are reported, not hidden. Training/benchmarks in this report keep the default implementation."
+}

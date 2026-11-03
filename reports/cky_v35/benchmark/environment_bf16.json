@@ -1,0 +1,46 @@
+{
+  "environment": {
+    "torch": "2.12.1+cu132",
+    "cuda_build": "13.2",
+    "cuda_available": true,
+    "bf16_supported": true,
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "memory_gib": 7.99951171875,
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "arguments": {
+    "output_dir": "reports/cky_v35/benchmark",
+    "cache_dir": "cache/tinystories",
+    "integration_cache_dir": "cache/tinystories_integration",
+    "arms": [
+      "v3",
+      "v3c",
+      "v3_compile_default",
+      "v3_compile_ro",
+      "v3c_compile_default",
+      "v3c_compile_ro"
+    ],
+    "precision": "bf16",
+    "warmup": 3,
+    "repeats": 10,
+    "worker": false,
+    "case": null,
+    "cases": [
+      "smoke_b2_w24",
+      "smoke_b8_w24",
+      "main_b1_w24",
+      "main_b4_w24",
+      "main_b8_w24",
+      "real_b2",
+      "real_main_mb4",
+      "real_main_mb16"
+    ],
+    "stream": false,
+    "stream_steps": 30,
+    "stream_micro_batch": 16
+  },
+  "protocol": "V3.5 snapshot-paired multi-arm CUDA benchmark: V3 eager vs V3-C vs local torch.compile arms.\n\nProtocol (per case, own subprocess): one physical model (seed 42), common zero-grad\nAdamW initialization, identical model/optimizer/RNG snapshot restored before EVERY\nsample, arms rotated each repeat, inputs resident, timings include forward, loss,\nbackward, clip and AdamW. Correctness (fixed weights, same RNG) and component\ndiagnostics (isolated score forward/backward, autograd nodes, profiler launches and\nkernel-active time) are measured separately from the uninstrumented samples.\nCompile arms report first-call compile time, warm steady state, recompiles and\nCUDA-graph usage separately; nothing is excluded from the stream measurement.\n"
+}

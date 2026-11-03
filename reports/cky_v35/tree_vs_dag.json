@@ -1,0 +1,613 @@
+{
+  "description": "C1 shared-DAG vs C2 per-root-tree reconstruction: forward bitwise, gradients strict",
+  "cases": [
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cpu",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 87.51601292826096,
+        "gradient_norm_lazy": 87.51601292826096,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        2.5011208057403564,
+        2.5011208057403564
+      ],
+      "composer_rows": [
+        39,
+        39
+      ],
+      "reconstruction_nodes": 64
+    },
+    {
+      "batch": 2,
+      "words": 24,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cpu",
+      "precision": "fp32",
+      "policy": "explore",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 1.1920928955078125e-07,
+        "max_relative_gradient_error": 0.5,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 123.28076738232008,
+        "gradient_norm_lazy": 123.28076738232008,
+        "normalized_l2_gradient_error": 2.368592751321445e-09
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        11.715035438537598,
+        11.715035438537598
+      ],
+      "composer_rows": [
+        145,
+        145
+      ],
+      "reconstruction_nodes": 224
+    },
+    {
+      "batch": 4,
+      "words": 16,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cpu",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 8.940696716308594e-08,
+        "max_relative_gradient_error": 1.0,
+        "max_relative_gradient_error_above_1e_5": 9.88527730783062e-08,
+        "gradient_norm_reference": 138.3267590745497,
+        "gradient_norm_lazy": 138.32675907480953,
+        "normalized_l2_gradient_error": 1.7896514309468458e-09
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        7.217497825622559,
+        7.217497825622559
+      ],
+      "composer_rows": [
+        126,
+        126
+      ],
+      "reconstruction_nodes": 209
+    },
+    {
+      "batch": 1,
+      "words": 1,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cpu",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 9.276268402444549,
+        "gradient_norm_lazy": 9.276268402444549,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    },
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cpu",
+      "precision": "fp32",
+      "policy": "empty",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 11.272323664806363,
+        "gradient_norm_lazy": 11.272323664806363,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    },
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 2.9802322387695312e-08,
+        "max_relative_gradient_error": 1.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 81.82797499786759,
+        "gradient_norm_lazy": 81.82797499786759,
+        "normalized_l2_gradient_error": 1.2079380095104372e-09
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        3.2313380241394043,
+        3.2313380241394043
+      ],
+      "composer_rows": [
+        42,
+        42
+      ],
+      "reconstruction_nodes": 64
+    },
+    {
+      "batch": 2,
+      "words": 24,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "fp32",
+      "policy": "explore",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 2.9802322387695312e-08,
+        "max_relative_gradient_error": 2.0,
+        "max_relative_gradient_error_above_1e_5": 8.746483217692003e-06,
+        "gradient_norm_reference": 108.88305124382367,
+        "gradient_norm_lazy": 108.8830512438395,
+        "normalized_l2_gradient_error": 7.799634265598025e-10
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        7.626117706298828,
+        7.626117706298828
+      ],
+      "composer_rows": [
+        152,
+        152
+      ],
+      "reconstruction_nodes": 224
+    },
+    {
+      "batch": 4,
+      "words": 16,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 5.960464477539063e-08,
+        "max_relative_gradient_error": 1.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 126.27781182741707,
+        "gradient_norm_lazy": 126.27781182741707,
+        "normalized_l2_gradient_error": 9.222229236103123e-10
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        3.125368118286133,
+        3.125368118286133
+      ],
+      "composer_rows": [
+        112,
+        112
+      ],
+      "reconstruction_nodes": 209
+    },
+    {
+      "batch": 1,
+      "words": 1,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "fp32",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 7.813151506828463,
+        "gradient_norm_lazy": 7.813151506828463,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    },
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "fp32",
+      "policy": "empty",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 12.042823616631654,
+        "gradient_norm_lazy": 12.042823616631654,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    },
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.003906309604644775,
+        "max_relative_gradient_error": 1.0000152587890625,
+        "max_relative_gradient_error_above_1e_5": 1.0000152587890625,
+        "gradient_norm_reference": 81.83042624831089,
+        "gradient_norm_lazy": 81.8304266212477,
+        "normalized_l2_gradient_error": 9.547255176232272e-05
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        3.230853319168091,
+        3.230862617492676
+      ],
+      "composer_rows": [
+        42,
+        42
+      ],
+      "reconstruction_nodes": 64
+    },
+    {
+      "batch": 2,
+      "words": 24,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "explore",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.00390625,
+        "max_relative_gradient_error": 1.3333333730697632,
+        "max_relative_gradient_error_above_1e_5": 1.3333333730697632,
+        "gradient_norm_reference": 108.78335779858607,
+        "gradient_norm_lazy": 108.78335850078702,
+        "normalized_l2_gradient_error": 0.00012050656854682034
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        7.6279449462890625,
+        7.627954959869385
+      ],
+      "composer_rows": [
+        152,
+        152
+      ],
+      "reconstruction_nodes": 224
+    },
+    {
+      "batch": 4,
+      "words": 16,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.007812380790710449,
+        "max_relative_gradient_error": 1.0,
+        "max_relative_gradient_error_above_1e_5": 1.0,
+        "gradient_norm_reference": 126.26252897097102,
+        "gradient_norm_lazy": 126.26252970887408,
+        "normalized_l2_gradient_error": 0.0001081112218716763
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        3.1285688877105713,
+        3.128598690032959
+      ],
+      "composer_rows": [
+        112,
+        112
+      ],
+      "reconstruction_nodes": 209
+    },
+    {
+      "batch": 1,
+      "words": 1,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 7.813161054499668,
+        "gradient_norm_lazy": 7.813161054499668,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    },
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "empty",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "passed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.0,
+        "max_relative_gradient_error": 0.0,
+        "max_relative_gradient_error_above_1e_5": 0.0,
+        "gradient_norm_reference": 12.042838353757798,
+        "gradient_norm_lazy": 12.042838353757798,
+        "normalized_l2_gradient_error": 0.0
+      },
+      "gradient_strict_failures": [],
+      "score_gradient_norm": [
+        0.0,
+        0.0
+      ],
+      "composer_rows": [
+        0,
+        0
+      ],
+      "reconstruction_nodes": 0
+    }
+  ],
+  "failed": [
+    {
+      "batch": 2,
+      "words": 8,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.003906309604644775,
+        "max_relative_gradient_error": 1.0000152587890625,
+        "max_relative_gradient_error_above_1e_5": 1.0000152587890625,
+        "gradient_norm_reference": 81.83042624831089,
+        "gradient_norm_lazy": 81.8304266212477,
+        "normalized_l2_gradient_error": 9.547255176232272e-05
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        3.230853319168091,
+        3.230862617492676
+      ],
+      "composer_rows": [
+        42,
+        42
+      ],
+      "reconstruction_nodes": 64
+    },
+    {
+      "batch": 2,
+      "words": 24,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "explore",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.00390625,
+        "max_relative_gradient_error": 1.3333333730697632,
+        "max_relative_gradient_error_above_1e_5": 1.3333333730697632,
+        "gradient_norm_reference": 108.78335779858607,
+        "gradient_norm_lazy": 108.78335850078702,
+        "normalized_l2_gradient_error": 0.00012050656854682034
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        7.6279449462890625,
+        7.627954959869385
+      ],
+      "composer_rows": [
+        152,
+        152
+      ],
+      "reconstruction_nodes": 224
+    },
+    {
+      "batch": 4,
+      "words": 16,
+      "k": 4,
+      "r": 12,
+      "vector": true,
+      "device": "cuda",
+      "precision": "bf16",
+      "policy": "normal",
+      "arms": [
+        "v3c",
+        "v3c_tree"
+      ],
+      "status": "failed",
+      "gradient": {
+        "max_absolute_gradient_error": 0.007812380790710449,
+        "max_relative_gradient_error": 1.0,
+        "max_relative_gradient_error_above_1e_5": 1.0,
+        "gradient_norm_reference": 126.26252897097102,
+        "gradient_norm_lazy": 126.26252970887408,
+        "normalized_l2_gradient_error": 0.0001081112218716763
+      },
+      "gradient_strict_failures": [
+        "scores"
+      ],
+      "score_gradient_norm": [
+        3.1285688877105713,
+        3.128598690032959
+      ],
+      "composer_rows": [
+        112,
+        112
+      ],
+      "reconstruction_nodes": 209
+    }
+  ]
+}

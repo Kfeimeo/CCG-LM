@@ -1,0 +1,37 @@
+{
+  "torch": "2.12.1+cu132",
+  "cuda_build": "13.2",
+  "cuda_available": true,
+  "bf16_supported": true,
+  "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+  "memory_gib": 7.99951171875,
+  "capability": [
+    8,
+    6
+  ]
+}
+{
+  "mode": "seq_cnn4",
+  "modules": {
+    "decoder": 10093440,
+    "readers": 369954,
+    "semantic_embedding": 5120000,
+    "pooling": 198400,
+    "seq_cnn": 394752
+  },
+  "total": 16176546
+}
+
+Train seq_cnn4:  67%|######6   | 256/384 [00:00<?, ?tok/s]
+Train seq_cnn4:  72%|#######2  | 277/384 [00:01<00:09, 11.7tok/s]
+Train seq_cnn4:  79%|#######9  | 304/384 [00:02<00:04, 19.6tok/s]
+Train seq_cnn4:  88%|########7 | 336/384 [00:03<00:01, 24.4tok/s]
+Train seq_cnn4: 100%|##########| 384/384 [00:04<00:00, 35.5tok/s]
+Validate: 100%|##########| 384/384 [00:04<00:00, 35.5tok/s]      
+Train seq_cnn4: 100%|##########| 384/384 [00:07<00:00, 35.5tok/s]
+Train seq_cnn4: 100%|##########| 384/384 [00:07<00:00, 35.5tok/s, nll=9.7471, step=3, tok_s=27, val=9.7533]
+                                                                                                           
+
+Train seq_cnn4: 100%|##########| 384/384 [00:07<00:00, 35.5tok/s, nll=9.7471, step=3, tok_s=27, val=9.7533]
+Train seq_cnn4: 100%|##########| 384/384 [00:08<00:00, 15.4tok/s, nll=9.7471, step=3, tok_s=27, val=9.7533]
+{"step": 3, "target_tokens": 384, "train_nll": 9.747080683708191, "step_tokens": 128, "micro_batches": 6, "span_scorer_grad_norm": 0.0, "composer_grad_norm": 0.0, "reader_grad_norm": 0.03213261812925339, "grad_norm": 5.966157913208008, "val_nll": 9.75328576111051, "step_seconds": 4.699619299964979, "train_seconds": 14.433719499967992, "elapsed_seconds": 21.04671960003907, "gpu_hours": 0.005846311000010852, "target_tokens_per_second": 27.236248689538286, "peak_gpu_gib": 0.3067803382873535, "decoder_lr": 4.499999999999999e-06}
