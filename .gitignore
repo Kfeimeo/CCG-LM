@@ -1,8 +1,11 @@
 .venv/
 .uv-cache/
 /.hf_token
+<<<<<<< HEAD
 /Train.ipynb
 /notebooks_local/
+=======
+>>>>>>> 5131668ee5dc373ea5b4611afd0ff060a384b3e5
 __pycache__/
 .pytest_cache/
 .pytest_tmp/

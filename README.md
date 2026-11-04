@@ -85,6 +85,8 @@ python -m data.prepare --config configs/main_125m.yaml --max-train-stories 1000 
 
 后续复用此缓存时保持相同的两个 limit 参数；正式训练使用全量缓存，不要混用该子集训练出来的 Tokenizer。
 
+词表统计与句子编码默认使用全部 CPU 核并行（`--workers N` 可限制，`--workers 1` 为单进程）。分块按故事顺序写出，任何 worker 数得到的缓存字节与 manifest fingerprint 完全一致；很小的输入会自动退回单进程。
+
 ## CKY 与梯度约定
 
 叶子包含该词的 Semantic Embedding 和叶 Span 的结构势；非叶候选计算：
