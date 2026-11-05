@@ -7,8 +7,8 @@ from models.forest import SemanticForest
 from models.forest_tensorized import SCORE_RECONSTRUCT
 from models.model import LatentForestLM
 from models.precision_policy import POLICIES,configure_model
-from v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
-from validate_cky_v25 import small_config,model_batch
+from legacy.cky_v3.v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
+from legacy.cky_v25.validate_cky_v25 import small_config,model_batch
 from utils import rng_state,restore_rng,set_seed
 
 CUDA=torch.cuda.is_available()

@@ -8,15 +8,15 @@ from __future__ import annotations
 import argparse,gc,itertools,json,traceback
 from pathlib import Path
 import torch
-from benchmark_cky_v2 import cpu_snapshot
+from legacy.cky_v2.benchmark_cky_v2 import cpu_snapshot
 from models.composer import Composer
 from models.forest import SemanticForest
 from models.forest_tensorized import SCORE_RECONSTRUCT
 from models.model import LatentForestLM
 from models.precision_policy import POLICIES,configure_model
-from reader_precision_study import tensor_errors,global_gradients
-from v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
-from validate_cky_v25 import small_config,model_batch,gradient_statistics
+from legacy.reader_v25.reader_precision_study import tensor_errors,global_gradients
+from legacy.cky_v3.v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
+from legacy.cky_v25.validate_cky_v25 import small_config,model_batch,gradient_statistics
 from utils import atomic_json,load_config,rng_state,restore_rng,set_seed
 
 ARMS={'v3':('lazy_tensorized','eager','dag'),'v3c':(SCORE_RECONSTRUCT,'eager','dag'),'v3c_tree':(SCORE_RECONSTRUCT,'eager','tree'),

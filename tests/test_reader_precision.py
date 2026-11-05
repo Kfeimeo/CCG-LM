@@ -4,7 +4,7 @@ import torch
 from models.reader import SemanticReader
 from models.model import LatentForestLM
 from models.precision_policy import PrecisionPolicy,configure_model
-from reader_precision_study import READER_POLICIES,ReaderObserver
+from legacy.reader_v25.reader_precision_study import READER_POLICIES,ReaderObserver
 from utils import rng_state,restore_rng
 
 @pytest.fixture(autouse=True)

@@ -7,7 +7,7 @@ import pytest
 import torch
 from models.composer import Composer
 from models.forest import SemanticForest
-from validate_cky_v2 import forest_case, model_gradient_case, training_case
+from legacy.cky_v2.validate_cky_v2 import forest_case, model_gradient_case, training_case
 
 
 @pytest.mark.parametrize("batch,words,k,r,vector", list(itertools.product([1, 2, 4], [4, 8, 16, 24], [1, 2, 4], [4, 12], [False, True])))

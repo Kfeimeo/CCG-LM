@@ -8,7 +8,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from models.composer import Composer
-from models.decoder import Decoder
+from models.decoder_llama import build_decoder
 from models.forest import SemanticForest, catalan, compose_tree, tree_for_length
 from models.reader import SemanticReader
 from models.seq_cnn import SequentialCNN
@@ -42,7 +42,7 @@ class LatentForestLM(nn.Module):
             raise ValueError(f"Unsupported mode {self.mode}")
         if cfg["candidates"] != 4:
             raise ValueError("The comparison protocol requires four slots; exact CKY tests use SemanticForest directly")
-        self.decoder = Decoder(cfg)
+        self.decoder = build_decoder(cfg)
         self.readers = nn.ModuleDict()
         self.syntax = self.semantic_embedding = self.pooling = self.forest = None
         self.tree_composer = None

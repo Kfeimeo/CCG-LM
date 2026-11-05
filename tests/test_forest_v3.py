@@ -7,7 +7,7 @@ from models.forest import SemanticForest
 from models.composer import Composer
 from models.model import LatentForestLM
 from models.precision_policy import POLICIES,configure_model
-from v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
+from legacy.cky_v3.v3_study import forest_pair,model_pair,compare_search,assert_rng_equal
 from utils import rng_state,restore_rng,set_seed
 
 @pytest.mark.parametrize('words,k,r',[(1,1,4),(4,4,12),(8,2,4),(16,4,12),(24,4,12)])
@@ -94,7 +94,7 @@ def test_checkpoint_switch_and_replay(tiny_config,tmp_path,legacy):
     assert sam.state_dict()==ra.state_dict() and sch.state_dict()==rs.state_dict()
     for x,y in zip(m.parameters(),r.parameters()):assert torch.equal(x,y)
     if legacy:
-        from validate_cky_v25 import model_batch
+        from legacy.cky_v25.validate_cky_v25 import model_batch
         m.forest.capture_spans=r.forest.capture_spans=True
         inputs=model_batch(cfg);state=rng_state();x=m(**inputs);end=rng_state();restore_rng(state);y=r(**inputs)
         compare_search(x['memory'],y['memory']);assert torch.equal(x['logits'],y['logits']);assert_rng_equal(end,rng_state())

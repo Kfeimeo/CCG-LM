@@ -5,7 +5,7 @@ from models.composer import Composer
 from models.forest import SemanticForest
 from models.forest_lazy import ScoreCell
 from utils import rng_state,restore_rng
-from validate_cky_v25 import forest_case,model_gradient_case
+from legacy.cky_v25.validate_cky_v25 import forest_case,model_gradient_case
 
 @pytest.mark.parametrize("words,k,r",[(1,1,4),(4,4,12),(8,2,4),(16,4,12),(24,4,12)])
 @pytest.mark.parametrize("policy",["normal","explore","ties","prune","empty","partial_inf","unreachable"])

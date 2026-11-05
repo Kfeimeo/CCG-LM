@@ -107,19 +107,19 @@ Composer 是共享的有序拼接 MLP（隐层 512）加左右独立残差投影
 python train.py --config configs/smoke.yaml --forest-implementation score_first
 python train.py --config configs/smoke.yaml --forest-implementation reference --output-dir runs/reference
 python profile_performance.py --config configs/main_125m.yaml --batch-size 1 --lengths 24 --forest-implementation score_first
-python validate_cky_v2.py --output-dir reports/cky_v2
-python benchmark_cky_v2.py --output-dir reports/cky_v2 --warmup 2 --repeats 5
+python legacy/cky_v2/validate_cky_v2.py --output-dir reports/cky_v2
+python legacy/cky_v2/benchmark_cky_v2.py --output-dir reports/cky_v2 --warmup 2 --repeats 5
 python -m pytest tests/test_forest_v2.py -q
 ```
 
-`benchmark_cky_v2.py` 在每次样本测量前恢复同一份权重、AdamW 和 RNG 快照，交替测量两条实现；只读快照恢复与 profiler 均不计入普通计时。验证脚本比较各 Span 的候选身份和顺序、输出、完整模型梯度及 8 步训练轨迹。Checkpoint 的参数键不变，恢复时可用 `--forest-implementation` 切换；浮点累计顺序存在微小梯度差异，不承诺跨实现逐位一致。完整 V2 结果与限制见 `reports/cky_v2/summary.md`；先前性能报告记录的是 V0。
+`legacy/cky_v2/benchmark_cky_v2.py` 在每次样本测量前恢复同一份权重、AdamW 和 RNG 快照，交替测量两条实现；只读快照恢复与 profiler 均不计入普通计时。验证脚本比较各 Span 的候选身份和顺序、输出、完整模型梯度及 8 步训练轨迹。Checkpoint 的参数键不变，恢复时可用 `--forest-implementation` 切换；浮点累计顺序存在微小梯度差异，不承诺跨实现逐位一致。完整 V2 结果与限制见 `reports/cky_v2/summary.md`；先前性能报告记录的是 V0。
 
 V2.5 可通过 `--forest-implementation lazy_semantic` 显式启用。它保留可微结构分数图，完成全部搜索后，只对有效根闭包内的 Candidate ID 构建共享 DAG，再按跨度宽度批量调用原 Composer。搜索期的 `ScoreCell` 不持有高维语义/系数；离散回溯信息只进行一次批量 D2H，传输同步与 CPU 建图时间单独计量。默认仍为 `score_first`，三种实现的参数键和 checkpoint 格式一致。
 
 ```bash
 python train.py --config configs/smoke.yaml --forest-implementation lazy_semantic --output-dir runs/lazy
-python validate_cky_v25.py --output-dir reports/cky_v25
-python benchmark_cky_v25.py --output-dir reports/cky_v25 --warmup 2 --repeats 5
+python legacy/cky_v25/validate_cky_v25.py --output-dir reports/cky_v25
+python legacy/cky_v25/benchmark_cky_v25.py --output-dir reports/cky_v25 --warmup 2 --repeats 5
 python -m pytest tests/test_forest_lazy.py -q
 ```
 
@@ -163,6 +163,27 @@ python experiments.py --config configs/scale_245m.yaml --parameters-only --outpu
 | forest_vector4 | 125,793,792 | 6,396,100 | 5,120,000 | 10,873,921 | 656,896 | 148,840,709 |
 
 `reports/*/parameters.csv` 提供三种规模的全部模块计数。没有做额外容量匹配；如调整 `syntax_hidden/layers`、`composer_hidden` 或 `reader_width` 等真实参与计算的维度，应保留新 YAML 并报告调整。每次训练自动输出参数 JSON、环境 JSON、真实 Token/s、步骤秒数和峰值分配显存；不会从参数量虚构吞吐量或 GPU 成本。
+
+## 主模型架构选择
+
+`model.decoder_arch` 选择主模型 decoder 的架构，默认 `gpt2`（现有 Pre-LN GPT：LayerNorm、可学习绝对位置、GELU FFN、绑定词嵌入），不写该键时模型结构、参数名和旧 checkpoint 完全不变。其余三种在 [models/decoder_llama.py](models/decoder_llama.py) 中实现，均为从零训练、不加载预训练权重，Reader 插入点、精度策略、优化器分组和 checkpoint 格式与 GPT 路径相同：
+
+| `decoder_arch` | 归一化 | 位置编码 | FFN | 注意力 | LM head |
+| --- | --- | --- | --- | --- | --- |
+| `llama2` | RMSNorm eps 1e-5 | RoPE theta 1e4 | SwiGLU | MHA，无 bias | 独立 |
+| `llama3` | RMSNorm eps 1e-5 | RoPE theta 5e5 | SwiGLU | GQA，默认 `kv_heads = heads // 4` | 独立 |
+| `qwen3` | RMSNorm eps 1e-6 | RoPE theta 1e6 | SwiGLU | GQA，默认 `kv_heads = heads // 2`，QK-RMSNorm | 绑定 |
+
+预设可以用 `kv_heads`、`rope_theta`、`qk_norm`、`tie_embeddings`、`norm_eps` 逐项覆盖。`ffn_size` 对 SwiGLU 是三个投影的隐层宽度，取 `8/3 * hidden_size`（768 对应 2048）时每层参数量与 GELU 3072 相同。`dropout` 的施加位置（嵌入、残差输出、SDPA）与 GPT 路径一致。`configs/arch/` 给出三份 125M 量级配置，均继承 `v3_main_125m.yaml`：
+
+```bash
+python train.py --config configs/arch/llama2_125m.yaml --cache-dir cache/tinystories
+python train.py --config configs/arch/llama3_125m.yaml --cache-dir cache/tinystories
+python train.py --config configs/arch/qwen3_125m.yaml --cache-dir cache/tinystories
+python -m pytest tests/test_decoder_arch.py -q
+```
+
+`forest_vector4` 下实际参数：gpt2 148.8M、llama2 160.9M（独立 LM head 多 12.3M）、llama3 146.7M、qwen3 139.2M；差异只来自 decoder。换架构会被 `train.py` 的恢复检查视为模型配置变化，只能新开 run。
 
 ## 训练、恢复与 Colab 持久化
 
@@ -244,23 +265,25 @@ CUDA 测试在没有 CUDA 版 PyTorch 时会明确 skip；Colab 有 GPU 时会�
 
 `data/prepare.py,dataset.py`：原始文本、Tokenizer、缓存、采样与 Collator；`models/`：Decoder、Syntax、Composer、Forest、Reader、模型接口；`train.py`：优化/计数/保存恢复；`evaluate.py`：指标/统计/绘图；`semantic_tests.py`：模板生成与条件似然；`experiments.py`：矩阵实验和参数统计；`configs/`、`tests/`、Notebook、本 README。
 
+历史版本（V2、V2.5、V2.5-P、V2.5-R、V3）的验证/基准/研究脚本已归档到 `legacy/`，按阶段分子目录；索引和运行方式见 [legacy/README.md](legacy/README.md)。它们仍被 `tests/` 和 V3.5 脚本作为库导入，运行时需以仓库根目录为工作目录。
+
 
 ## CKY V2.5-P precision study
 
 `configs/precision/{bf16,fp32_ieee,fp32_tf32,fp16}.yaml` 为 BF16 外层 Transformer 配置独立 Composer 精度。参数与 FP32 IEEE/TF32 树状态保持 FP32；FP16 组显式保存 Half 状态并使用 GradScaler，checkpoint 保存策略和 scaler，恢复时严格核对。原 BF16 AMP Composer 的 LayerNorm 输出其实为 FP32，详见真实 dtype trace。
 
 ```powershell
-& 'E:/anaconda3/envs/py312/python.exe' run_precision_study.py --resume
+& 'E:/anaconda3/envs/py312/python.exe' legacy/precision_v25/run_precision_study.py --resume
 # 单独实验
-& 'E:/anaconda3/envs/py312/python.exe' validate_precision_v25.py --resume
-& 'E:/anaconda3/envs/py312/python.exe' benchmark_precision_v25.py --resume
-& 'E:/anaconda3/envs/py312/python.exe' train_precision_stability.py --resume
+& 'E:/anaconda3/envs/py312/python.exe' legacy/precision_v25/validate_precision_v25.py --resume
+& 'E:/anaconda3/envs/py312/python.exe' legacy/precision_v25/benchmark_precision_v25.py --resume
+& 'E:/anaconda3/envs/py312/python.exe' legacy/precision_v25/train_precision_stability.py --resume
 & 'E:/anaconda3/envs/py312/python.exe' train.py --config configs/precision/fp32_ieee.yaml --forest-implementation lazy_semantic --output-dir runs/fp32_composer
 ```
 
 每个后端精度策略独立子进程，TF32 仅使用新版 `fp32_precision` API，要求支持该 API 的 CUDA PyTorch（本机 2.12.1+cu132；精度依赖见 `requirements-precision.txt`）。默认仍为 V2，未进入 V3。研究脚本固定 Score 原路径，另设 score FP32 控制，不混同归因。训练稳定性使用用户选择的 smoke 模型、104 个未再截断的真实缓存样本、effective CE tokens=16，完整固定 dev=1041 CE tokens；这些局部实验不代表大规模预训练结论。
 
-[完整精度报告](reports/cky_v25_precision/summary.md) 与原始 CSV/JSON 保留严格数值失败。`PrecisionStudy_Colab.ipynb` 和 `precision_study_cache.zip` 提供相同输入的第二种 GPU 入口；更换 GPU 必须使用新的 `--output-dir`，不能混入本机数据。当前没有实际 Blackwell 测量。
+[完整精度报告](reports/cky_v25_precision/summary.md) 与原始 CSV/JSON 保留严格数值失败。`legacy/precision_v25/PrecisionStudy_Colab.ipynb` 和 `precision_study_cache.zip` 提供相同输入的第二种 GPU 入口；更换 GPU 必须使用新的 `--output-dir`，不能混入本机数据。当前没有实际 Blackwell 测量。
 
 
 ## CKY V2.5-R Reader precision isolation
@@ -268,12 +291,12 @@ CUDA 测试在没有 CUDA 版 PyTorch 时会明确 skip；Colab 有 GPU 时会�
 `precision.reader: fp32_ieee` 可独立将 Semantic Reader 放入禁用 AMP 的 FP32 IEEE 区域，保留可微 cast、原生 SDPA、Dropout 和原公式；返回 dtype 维持 Decoder 接口。默认 `reader: bf16` 继承外层 AMP，默认 CKY 仍为 `score_first`。旧 precision checkpoint 缺失该字段时按原默认兼容。
 
 ```powershell
-& 'E:/anaconda3/envs/py312/python.exe' validate_reader_precision.py
-& 'E:/anaconda3/envs/py312/python.exe' benchmark_reader_precision.py --repeats 8
-& 'E:/anaconda3/envs/py312/python.exe' audit_reader_search.py --batch 1
-& 'E:/anaconda3/envs/py312/python.exe' audit_reader_search.py --batch 4
-& 'E:/anaconda3/envs/py312/python.exe' audit_reader_profiler.py
-& 'E:/anaconda3/envs/py312/python.exe' summarize_reader_precision.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/validate_reader_precision.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/benchmark_reader_precision.py --repeats 8
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/audit_reader_search.py --batch 1
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/audit_reader_search.py --batch 4
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/audit_reader_profiler.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/reader_v25/summarize_reader_precision.py
 # 可选 Reader FP32 的训练配置入口；本轮没有执行训练
 # train.py --config configs/precision/fp32_reader.yaml --forest-implementation lazy_semantic
 ```
@@ -285,12 +308,12 @@ CUDA 测试在没有 CUDA 版 PyTorch 时会明确 skip；Colab 有 GPU 时会�
 `lazy_tensorized` 使用按 width 的可微分数张量、缓存 ragged Gather/候选 ID 和根装配，保留原 Top-R/Top-K/两级探索、BF16 叶子加法顺序及同一 Lazy DAG/Composer 尾部。`lazy_tensorized_a` 保留 A 阶段 Cell/root 适配，用于阶段对照。默认仍为 `score_first`，可用配置 `configs/v3.yaml`（smoke）、`configs/v3_main_125m.yaml`、`configs/v3_fp32.yaml` 显式选择。无界 K=None/R=None 精确枚举使用旧搜索兼容路径，失败日志及严格测试保留。
 
 ```powershell
-& 'E:/anaconda3/envs/py312/python.exe' validate_cky_v3.py
-& 'E:/anaconda3/envs/py312/python.exe' train_cky_v3_validation.py
-& 'E:/anaconda3/envs/py312/python.exe' benchmark_cky_v3.py
-& 'E:/anaconda3/envs/py312/python.exe' benchmark_cky_v3.py --precision fp32 --cases main_b1_w24 main_b4_w24 --resume
-& 'E:/anaconda3/envs/py312/python.exe' profile_cky_v3_widths.py
-& 'E:/anaconda3/envs/py312/python.exe' summarize_cky_v3.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/validate_cky_v3.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/train_cky_v3_validation.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/benchmark_cky_v3.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/benchmark_cky_v3.py --precision fp32 --cases main_b1_w24 main_b4_w24 --resume
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/profile_cky_v3_widths.py
+& 'E:/anaconda3/envs/py312/python.exe' legacy/cky_v3/summarize_cky_v3.py
 ```
 
 已完成 1080 结构矩阵、36 边界、10 组完整梯度配对；413 tests passed、1 skipped。CPU FP32 8 步、真实 CUDA 从旧 Lazy 500 步续至 520 步及 V3 checkpoint 重放通过；另有 microbatch1 的真实梯度累积吞吐。九组最终配对（七种 BF16 形状、两个 IEEE 主模型）各侧 warmup2+有效8样本，另有 A/Lazy 与 B/A 的独立同轮测量。主模型 BF16 B4 update=545.6→297.1ms，配对中位倍率1.831x；完整 launches=14908→6332。独立缓存峰值2.737→2.741GiB，Composer785行/23次保持。只实测 RTX3070 Laptop，未进行编译、自定义 kernel 或 Blackwell 外推。

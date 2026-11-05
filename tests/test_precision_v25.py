@@ -5,7 +5,7 @@ from models.precision_policy import POLICIES,configure_model
 from models.model import LatentForestLM
 from train import make_optimizer,make_schedule,train_update,save_checkpoint,load_checkpoint
 from utils import rng_state,restore_rng
-from precision_study import search_equal
+from legacy.precision_v25.precision_study import search_equal
 
 @pytest.mark.skipif(not torch.cuda.is_available(),reason="CUDA required")
 @pytest.mark.parametrize("group",list("ABCDES"))
@@ -56,7 +56,7 @@ def test_gradscaler_resume_and_policy_guard(tiny_config,batch,tmp_path):
 def test_precision_backward_edge_reachability(group,edge):
     from models.composer import Composer
     from models.forest import SemanticForest
-    from precision_study import errors
+    from legacy.precision_v25.precision_study import errors
     previous=(torch.backends.fp32_precision,torch.backends.cuda.matmul.fp32_precision)
     try:
         policy=POLICIES[group];policy.configure_backend()

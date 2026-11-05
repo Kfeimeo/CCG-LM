@@ -3,7 +3,7 @@ import torch
 from models.cky_index_cache import CKYIndexCache
 from models.forest import SemanticForest
 from models.composer import Composer
-from v3_study import forest_pair,model_pair
+from legacy.cky_v3.v3_study import forest_pair,model_pair
 
 @pytest.mark.parametrize('words,k,r',[(1,1,4),(4,4,12),(8,2,4),(16,4,12),(24,4,12)])
 @pytest.mark.parametrize('policy',['normal','explore','ties','near_ties','prune','empty','partial_inf','all_inf'])
@@ -60,10 +60,10 @@ def test_bf16_leaf_add_before_float():
 @pytest.mark.parametrize('device,precision',[('cpu','fp32'),('cuda','fp32'),('cuda','bf16')])
 def test_native_legacy_width_probe_is_read_only(device,precision):
     if device=='cuda' and not torch.cuda.is_available():pytest.skip('CUDA required')
-    from profile_cky_v3_widths import WidthProbe,legacy_source_probe
+    from legacy.cky_v3.profile_cky_v3_widths import WidthProbe,legacy_source_probe
     from models.precision_policy import POLICIES
     from utils import set_seed,rng_state,restore_rng
-    from v3_study import assert_rng_equal
+    from legacy.cky_v3.v3_study import assert_rng_equal
     set_seed(42,True);pp=POLICIES['B' if precision=='bf16' else 'E'];pp.configure_backend()
     f=SemanticForest(Composer(8,16),exploration=.5,implementation='lazy_semantic').to(device).train();f.precision_policy=pp
     h=torch.randn(2,8,8,device=device,requires_grad=True);s=torch.randn(2,8,8,device=device,requires_grad=True);u=torch.randn(2,8,8,3,device=device,requires_grad=True)

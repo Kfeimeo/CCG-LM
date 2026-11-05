@@ -15,16 +15,16 @@ from collections import Counter
 from pathlib import Path
 import pandas as pd
 import torch
-from benchmark_cky_v2 import cpu_snapshot,snapshot_hash
-from benchmark_cky_v25 import autograd_nodes
+from legacy.cky_v2.benchmark_cky_v2 import cpu_snapshot,snapshot_hash
+from legacy.cky_v25.benchmark_cky_v25 import autograd_nodes
 from models.model import LatentForestLM
 from models.precision_policy import POLICIES,configure_model,backend_state
 from models.forest_reference import masked_log_softmax
 from models.forest_tensorized import SCORE_RECONSTRUCT
 from models.cky_compile import compile_counters,reset_compile_state,configure_inductor
 from profile_performance import make_batch
-from reader_precision_study import tensor_errors,global_gradients
-from v3_study import compare_search,assert_rng_equal
+from legacy.reader_v25.reader_precision_study import tensor_errors,global_gradients
+from legacy.cky_v3.v3_study import compare_search,assert_rng_equal
 from train import make_optimizer
 from utils import atomic_json,device_info,load_config,restore_rng,rng_state,set_seed,to_device
 

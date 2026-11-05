@@ -4,7 +4,7 @@ import torch
 from models.composer import Composer
 from models.forest import SemanticForest
 from models.cky_compile import width_step,COMPILE_BACKENDS
-from v3_study import compare_search,assert_rng_equal
+from legacy.cky_v3.v3_study import compare_search,assert_rng_equal
 from utils import rng_state,restore_rng,set_seed
 
 CUDA=torch.cuda.is_available()

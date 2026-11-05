@@ -23,7 +23,7 @@ from models.cky_index_cache import CKYIndexCache
 from models.model import LatentForestLM,parameter_report
 from models.precision_policy import PrecisionPolicy,backend_state,configure_model
 from models.forest_reference import masked_log_softmax
-from benchmark_cky_v25 import autograd_nodes
+from legacy.cky_v25.benchmark_cky_v25 import autograd_nodes
 from profile_performance import staged_step
 from train import make_optimizer,make_schedule
 from utils import atomic_json,device_info,load_config,restore_rng,rng_state,set_seed,sha256,to_device
@@ -129,7 +129,7 @@ def audited_update(model,sampler,optimizer,scheduler,tokens,mbs,device,policy,cl
 
 
 def fresh_state(model,optimizer):
-    from benchmark_cky_v2 import cpu_snapshot
+    from legacy.cky_v2.benchmark_cky_v2 import cpu_snapshot
     return dict(model=cpu_snapshot(model.state_dict()),optimizer=cpu_snapshot(optimizer.state_dict()),rng=rng_state())
 
 
