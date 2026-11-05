@@ -1,0 +1,15 @@
+# ~410M-class backbone (Pythia-410M shape): hidden 1024 / 24 layers / 16 heads / FFN 4096.
+# Forest, syntax, vocab and data settings stay identical to v3_main_125m; only the decoder and Readers grow.
+extends: v3_scale_245m.yaml
+name: scale_410m
+model:
+  hidden_size: 1024
+  layers: 24
+  heads: 16
+  ffn_size: 4096
+  cross_layers: [6, 12, 18, 24]
+  reader_heads: 16
+  reader_width: 1024
+train:
+  micro_batch_size: 1
+  output_dir: runs/v3_scale_410m

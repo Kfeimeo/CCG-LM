@@ -1,0 +1,14 @@
+# Larger decoder backbone (hidden 1024 / 18 layers / 16 heads) on the current V3 lazy_tensorized
+# forest and the V3 precision policy. Same data cache, vocab, forest and syntax settings as v3_main_125m.
+extends: scale_245m.yaml
+model:
+  forest_implementation: lazy_tensorized
+precision:
+  outer_autocast: bf16
+  composer: fp32_ieee
+  reader: bf16
+  matmul_precision: ieee
+  score_dtype: existing
+train:
+  micro_batch_size: 2
+  output_dir: runs/v3_scale_245m

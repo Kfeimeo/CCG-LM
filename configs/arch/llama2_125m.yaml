@@ -1,0 +1,9 @@
+# LLaMA2-style backbone (RMSNorm, RoPE theta 1e4, SwiGLU, MHA, untied LM head) at the main-model width.
+# ffn_size 2048 = 8/3 * 768 keeps per-layer parameters equal to the GPT-2 style 3072 GELU FFN.
+extends: ../v3_main_125m.yaml
+name: llama2_125m
+model:
+  decoder_arch: llama2
+  ffn_size: 2048
+train:
+  output_dir: runs/arch/llama2_125m

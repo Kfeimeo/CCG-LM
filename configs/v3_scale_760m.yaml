@@ -1,0 +1,15 @@
+# ~760M-class backbone (GPT-2 Large shape): hidden 1536 / 24 layers / 24 heads / FFN 6144.
+# Needs a >=16 GB GPU with AdamW; not intended for the 8 GB laptop GPU.
+extends: v3_scale_245m.yaml
+name: scale_760m
+model:
+  hidden_size: 1536
+  layers: 24
+  heads: 24
+  ffn_size: 6144
+  cross_layers: [6, 12, 18, 24]
+  reader_heads: 24
+  reader_width: 1536
+train:
+  micro_batch_size: 1
+  output_dir: runs/v3_scale_760m

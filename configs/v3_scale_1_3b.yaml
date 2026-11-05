@@ -1,0 +1,15 @@
+# ~1.3B-class backbone (GPT-3 XL shape): hidden 2048 / 24 layers / 16 heads / FFN 8192.
+# Needs a >=40 GB GPU (A100) with plain AdamW; forest/syntax/data settings unchanged.
+extends: v3_scale_245m.yaml
+name: scale_1_3b
+model:
+  hidden_size: 2048
+  layers: 24
+  heads: 16
+  ffn_size: 8192
+  cross_layers: [6, 12, 18, 24]
+  reader_heads: 16
+  reader_width: 2048
+train:
+  micro_batch_size: 1
+  output_dir: runs/v3_scale_1_3b
