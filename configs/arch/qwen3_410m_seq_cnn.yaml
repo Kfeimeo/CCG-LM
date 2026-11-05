@@ -1,0 +1,10 @@
+# Qwen3-style 410M backbone with the sequential-CNN memory baseline (same CNN settings as ablations/seq_cnn_main.yaml).
+extends: qwen3_410m.yaml
+name: qwen3_410m_seq_cnn
+model:
+  mode: seq_cnn4
+  cnn_kernel_size: 3
+  cnn_layers: 2
+  cnn_hidden_size: 256
+train:
+  output_dir: runs/arch/qwen3_410m_seq_cnn

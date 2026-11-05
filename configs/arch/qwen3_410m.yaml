@@ -1,0 +1,10 @@
+# Qwen3-style (RMSNorm eps 1e-6, RoPE 1e6, SwiGLU, GQA 16/8 heads, QK-norm, tied embeddings) on the 410m backbone shape.
+# ffn_size 2816 = 8/3 * 1024 rounded up to a multiple of 256, the usual LLaMA/Qwen convention.
+extends: ../v3_scale_410m.yaml
+name: qwen3_410m
+model:
+  decoder_arch: qwen3
+  ffn_size: 2816
+  kv_heads: 8
+train:
+  output_dir: runs/arch/qwen3_410m

@@ -1,0 +1,10 @@
+# LLaMA3-style (RMSNorm, RoPE 5e5, SwiGLU, GQA 16/4 heads, untied LM head) on the 410m backbone shape.
+# ffn_size 2816 = 8/3 * 1024 rounded up to a multiple of 256, the usual LLaMA/Qwen convention.
+extends: ../v3_scale_410m.yaml
+name: llama3_410m
+model:
+  decoder_arch: llama3
+  ffn_size: 2816
+  kv_heads: 4
+train:
+  output_dir: runs/arch/llama3_410m
